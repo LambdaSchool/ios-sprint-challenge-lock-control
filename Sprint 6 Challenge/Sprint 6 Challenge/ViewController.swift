@@ -10,16 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func resetLock(_ sender: Any) {
+        if isLocked == true {
+            UIView.animate(withDuration: 2.0) {
+                self.reset.tintColor = Appearance.pink.withAlphaComponent(1.0)
+                self.lockImageView.image = UIImage(named: "Unlocked")
+            }
+        } else {
+            UIView.animate(withDuration: 2.0) {
+                self.reset.tintColor = Appearance.pink.withAlphaComponent(0.0)
+                self.lockImageView.image = UIImage(named: "Locked")
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    var isLocked: Bool = true
+    
+    @IBOutlet weak var lockImageView: UIImageView!
+    @IBOutlet weak var reset: UIBarButtonItem!
+    
 }
 

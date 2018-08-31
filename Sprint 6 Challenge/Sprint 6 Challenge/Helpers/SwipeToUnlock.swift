@@ -14,12 +14,6 @@ import UIKit
     
     var xPercentagePosition: CGFloat = 0.0
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-    }
-    
     func updateValue(for touch: UITouch) {
         let touchPoint = touch.location(in: self)
         xPercentagePosition = touchPoint.x / bounds.width

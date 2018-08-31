@@ -42,17 +42,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lockImage" destination="NOg-sJ-F7i" id="l8y-2T-t5O"/>
-                        <segue destination="Gkk-qG-fjs" kind="presentation" identifier="showUnlock" id="54N-Vr-9Ut"/>
+                        <segue destination="Gkk-qG-fjs" kind="presentation" identifier="showUnlock" id="Qsp-uq-GZv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="IH3-xf-MAZ">
-                    <connections>
-                        <action selector="panGesture:" destination="BYZ-38-t0r" id="vuf-Ic-iNO"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="833" y="778"/>
+            <point key="canvasLocation" x="798" y="778"/>
         </scene>
         <!--Unlock View Controller-->
         <scene sceneID="xlL-9e-899">
@@ -69,16 +64,40 @@
                                     <constraint firstAttribute="height" constant="200" id="2Ys-5B-nbO"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-TV-ZJ0">
+                                <rect key="frame" x="315" y="26" width="44" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="Gkk-qG-fjs" eventType="touchUpInside" id="5Gw-Z0-kK8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="gAR-7l-47k" firstAttribute="trailing" secondItem="Tgi-TV-ZJ0" secondAttribute="trailing" constant="16" id="86h-iF-0M3"/>
+                            <constraint firstItem="Tgi-TV-ZJ0" firstAttribute="top" secondItem="gAR-7l-47k" secondAttribute="top" constant="6" id="JjC-mz-Iwk"/>
                             <constraint firstItem="CVg-SF-W8W" firstAttribute="centerX" secondItem="wTS-1t-uIm" secondAttribute="centerX" id="Ure-E0-6lR"/>
                             <constraint firstItem="CVg-SF-W8W" firstAttribute="centerY" secondItem="wTS-1t-uIm" secondAttribute="centerY" id="mhC-D2-rOA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gAR-7l-47k"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Dgf-hw-QNI" appends="YES" id="dmT-Ku-jN1"/>
+                        </connections>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="unlockImage" destination="CVg-SF-W8W" id="ZRy-NO-neT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfM-Pk-rKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Dgf-hw-QNI">
+                    <connections>
+                        <action selector="panGesture:" destination="Gkk-qG-fjs" id="MN0-nN-UYX"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1567" y="778"/>
         </scene>

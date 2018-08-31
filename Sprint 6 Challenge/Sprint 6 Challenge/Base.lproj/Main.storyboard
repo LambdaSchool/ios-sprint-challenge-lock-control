@@ -10,52 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Lock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPb-oh-EDn">
-                                <rect key="frame" x="37" y="183" width="300" height="300"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-Nf-vtT">
-                                        <rect key="frame" x="75" y="75" width="150" height="150"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="Kwm-PH-TYx"/>
-                                            <constraint firstAttribute="width" constant="150" id="d39-YV-pN7"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-sJ-F7i">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerY" secondItem="LPb-oh-EDn" secondAttribute="centerY" id="37b-XR-Gj2"/>
-                                    <constraint firstAttribute="height" constant="300" id="PmY-NX-9Uz"/>
-                                    <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerX" secondItem="LPb-oh-EDn" secondAttribute="centerX" id="lkt-bx-uiO"/>
-                                    <constraint firstAttribute="width" constant="300" id="voy-AC-v1F"/>
+                                    <constraint firstAttribute="height" constant="200" id="A0C-I8-yCu"/>
+                                    <constraint firstAttribute="width" constant="200" id="jrO-KT-C6b"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="IH3-xf-MAZ" appends="YES" id="a3B-dn-ake"/>
-                                </connections>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LPb-oh-EDn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="327-Un-gI9"/>
-                            <constraint firstItem="LPb-oh-EDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tXH-OT-bDD"/>
+                            <constraint firstItem="NOg-sJ-F7i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fyz-Tv-hSe"/>
+                            <constraint firstItem="NOg-sJ-F7i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="azr-AG-7uk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="VHr-uH-XSv">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="yn5-o5-bQC">
                             <connections>
-                                <action selector="reset:" destination="BYZ-38-t0r" id="hMf-zk-waf"/>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="Oy9-LH-lsI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lockImage" destination="NOg-sJ-F7i" id="l8y-2T-t5O"/>
+                        <segue destination="Gkk-qG-fjs" kind="presentation" identifier="showUnlock" id="54N-Vr-9Ut"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="IH3-xf-MAZ">
@@ -65,6 +53,34 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="833" y="778"/>
+        </scene>
+        <!--Unlock View Controller-->
+        <scene sceneID="xlL-9e-899">
+            <objects>
+                <viewController id="Gkk-qG-fjs" customClass="UnlockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wTS-1t-uIm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="CVg-SF-W8W">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1WV-gM-YIt"/>
+                                    <constraint firstAttribute="height" constant="200" id="2Ys-5B-nbO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CVg-SF-W8W" firstAttribute="centerX" secondItem="wTS-1t-uIm" secondAttribute="centerX" id="Ure-E0-6lR"/>
+                            <constraint firstItem="CVg-SF-W8W" firstAttribute="centerY" secondItem="wTS-1t-uIm" secondAttribute="centerY" id="mhC-D2-rOA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gAR-7l-47k"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfM-Pk-rKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mYW-9f-TZZ">
@@ -87,5 +103,6 @@
     </scenes>
     <resources>
         <image name="Locked" width="220" height="293"/>
+        <image name="Unlocked" width="220" height="293"/>
     </resources>
 </document>

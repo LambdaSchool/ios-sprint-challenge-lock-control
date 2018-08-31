@@ -10,8 +10,9 @@
 		057224D2213996EC00234518 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057224D1213996EC00234518 /* Animator.swift */; };
 		057224D721399A3B00234518 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057224D621399A3B00234518 /* CustomControl.swift */; };
 		057224D921399DF100234518 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057224D821399DF100234518 /* AppearanceHelper.swift */; };
+		057224DB2139B04000234518 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057224DA2139B04000234518 /* UnlockViewController.swift */; };
+		057224DD2139B05E00234518 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057224DC2139B05E00234518 /* LockViewController.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
-		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
@@ -21,9 +22,10 @@
 		057224D1213996EC00234518 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		057224D621399A3B00234518 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 		057224D821399DF100234518 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		057224DA2139B04000234518 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
+		057224DC2139B05E00234518 /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,7 +65,8 @@
 		057224D52139970400234518 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E22137397400E7FF73 /* ViewController.swift */,
+				057224DC2139B05E00234518 /* LockViewController.swift */,
+				057224DA2139B04000234518 /* UnlockViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,10 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057224DB2139B04000234518 /* UnlockViewController.swift in Sources */,
 				057224D2213996EC00234518 /* Animator.swift in Sources */,
-				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				057224D721399A3B00234518 /* CustomControl.swift in Sources */,
 				057224D921399DF100234518 /* AppearanceHelper.swift in Sources */,
+				057224DD2139B05E00234518 /* LockViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

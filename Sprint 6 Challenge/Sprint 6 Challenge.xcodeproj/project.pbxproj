@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
-		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		AC9EA5212139AD1F007A6ECD /* LockSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9EA5202139AD1F007A6ECD /* LockSlider.swift */; };
+		AC9EA5232139AE4C007A6ECD /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9EA5222139AE4C007A6ECD /* AutoLayoutHelper.swift */; };
+		AC9EA5252139B387007A6ECD /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9EA5242139B387007A6ECD /* AppearanceHelper.swift */; };
+		AC9EA5272139B50A007A6ECD /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC9EA5262139B509007A6ECD /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC9EA5202139AD1F007A6ECD /* LockSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSlider.swift; sourceTree = "<group>"; };
+		AC9EA5222139AE4C007A6ECD /* AutoLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutHelper.swift; sourceTree = "<group>"; };
+		AC9EA5242139B387007A6ECD /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		AC9EA5262139B509007A6ECD /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
+				AC9EA52B2139B6D3007A6ECD /* Ressources */,
+				AC9EA52A2139B6C2007A6ECD /* CustomUI */,
+				AC9EA5292139B6B6007A6ECD /* ViewControllers */,
+				AC9EA5282139B6A4007A6ECD /* Helpers */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
-				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = "Sprint 6 Challenge";
+			sourceTree = "<group>";
+		};
+		AC9EA5282139B6A4007A6ECD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AC9EA5242139B387007A6ECD /* AppearanceHelper.swift */,
+				AC9EA5222139AE4C007A6ECD /* AutoLayoutHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AC9EA5292139B6B6007A6ECD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AC9EA52A2139B6C2007A6ECD /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				AC9EA5202139AD1F007A6ECD /* LockSlider.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		AC9EA52B2139B6D3007A6ECD /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				468B89EC2137397500E7FF73 /* Info.plist */,
+				AC9EA5262139B509007A6ECD /* Montserrat-SemiBold.ttf */,
+				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC9EA5272139B50A007A6ECD /* Montserrat-SemiBold.ttf in Resources */,
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
-				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC9EA5252139B387007A6ECD /* AppearanceHelper.swift in Sources */,
+				AC9EA5232139AE4C007A6ECD /* AutoLayoutHelper.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				AC9EA5212139AD1F007A6ECD /* LockSlider.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +187,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		468B89E42137397400E7FF73 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				468B89E52137397400E7FF73 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		468B89E92137397500E7FF73 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,7 +317,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = SPRLQ9JET8;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 6 Challenge/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +335,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = SPRLQ9JET8;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 6 Challenge/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

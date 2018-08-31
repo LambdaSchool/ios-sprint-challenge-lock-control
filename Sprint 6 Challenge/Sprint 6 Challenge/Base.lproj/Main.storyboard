@@ -18,18 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EBo-jf-bSe">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPb-oh-EDn">
+                                <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="PmY-NX-9Uz"/>
+                                    <constraint firstAttribute="width" constant="300" id="voy-AC-v1F"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-Nf-vtT">
                                 <rect key="frame" x="87" y="233" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Veg-HK-IbB"/>
-                                    <constraint firstAttribute="height" constant="200" id="fAP-3g-Fl3"/>
+                                    <constraint firstAttribute="height" constant="200" id="RUI-Ka-L4f"/>
+                                    <constraint firstAttribute="width" constant="200" id="mk4-vR-Uz1"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EBo-jf-bSe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T53-qh-VAA"/>
-                            <constraint firstItem="EBo-jf-bSe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e4Y-zY-cqV"/>
+                            <constraint firstItem="LPb-oh-EDn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="327-Un-gI9"/>
+                            <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3J0-AK-cDQ"/>
+                            <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vvh-PE-1aM"/>
+                            <constraint firstItem="LPb-oh-EDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tXH-OT-bDD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,13 +50,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="lockImage" destination="EBo-jf-bSe" id="EEb-s3-2eU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="778"/>
+            <point key="canvasLocation" x="833" y="778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mYW-9f-TZZ">
@@ -67,4 +74,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="777.66116941529242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="220" height="293"/>
+    </resources>
 </document>

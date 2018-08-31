@@ -19,8 +19,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Appearance.setUpNavBar()        
+    
+    
     }
 }
 

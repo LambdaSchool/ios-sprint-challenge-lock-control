@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if lockControl.isLocked && isViewLoaded{
+        if isViewLoaded{
             resetButton.title = ""
             self.title = "Locked"
         }
@@ -21,7 +21,10 @@ class ViewController: UIViewController {
             resetButton.title = "Reset"
             self.title = "Unlocked"
     }
+    
     @IBAction func reset(_ sender: Any) {
+        self.title = "Locked"
+        resetButton.title = ""
         lockControl.reset()
     }
     

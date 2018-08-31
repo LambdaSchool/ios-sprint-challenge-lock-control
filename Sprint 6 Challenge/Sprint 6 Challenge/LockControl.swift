@@ -27,25 +27,27 @@ import UIKit
             let lockBarBolt = lockBarBolt else {return true}
         
         if lockBarBounds.contains(touchPoint){
-            sendActions(for: [.touchDragInside])
             lockBarBolt.frame.origin = touchPoint
-            print(touchPoint)
-            if lockBarActivateBounds.contains(touchPoint){
-                updateValue(at: touch)
-            }
+            sendActions(for: [.touchDragInside])
         } else {
             sendActions(for: [.touchDragOutside])
         }
         return true
     }
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-
-        
+        guard let touch = touch,
+         let lockBarActivateBounds = lockBarActivateBounds else {return}
+        let touchPoint = touch.location(in: self)
+        if lockBarActivateBounds.contains(touchPoint){
+            updateValue(at: touch)
+        }
     }
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: [.touchCancel])
     }
-    
+    func moveBolt(at touch: UITouch){
+        
+    }
     func updateValue(at touch: UITouch){
         imageView?.image = unlockedImage
         isLocked = false

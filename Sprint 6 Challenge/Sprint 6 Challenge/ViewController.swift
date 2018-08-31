@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        swipeToUnlockControl.ovalFrame = ovalView.frame
+        swipeToUnlockControl.ovalView = ovalView
 //        lockButton.title = ""
 //        lockButton.isEnabled = false
     }
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func swipe(_ sender: SwipeToUnlockControl) {
-        ovalView.frame = sender.ovalFrame
+        ovalView = sender.ovalView
     }
     
     

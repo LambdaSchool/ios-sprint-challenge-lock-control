@@ -10,17 +10,9 @@ import UIKit
 
 class SwipeToUnlockControl: UIControl {
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-//        setupSubviewCustomControl()
-//        print("HELLO WORLD!!!!!", oval)
-    }
-    
-    
     // MARK: - Properties
     
-    var ovalFrame: CGRect!
+    var ovalView: UIView!
     
     
     // MARK: - Override functions
@@ -29,9 +21,10 @@ class SwipeToUnlockControl: UIControl {
         let touchPoint = touch.location(in: self)
         
         // if the touchPoint is within the ovalFrame then sendActions (BUT ovalView is on top of it so it's still not going to work)
-        if ovalFrame.contains(touchPoint) {
-            sendActions(for: [.touchDown, .valueChanged])
-        }
+//        guard ovalFrame.contains(touchPoint) else {
+//            return false
+//        }
+        sendActions(for: [.touchDown])
         return true
     }
     
@@ -39,7 +32,7 @@ class SwipeToUnlockControl: UIControl {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             
-            ovalFrame = newOvalFrame(for: touchPoint)
+            ovalView = newOvalFrame(for: touchPoint)
             
             sendActions(for: [.touchDragInside, .valueChanged])
         } else {
@@ -56,7 +49,7 @@ class SwipeToUnlockControl: UIControl {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             
-            ovalFrame = newOvalFrame(for: touchPoint)
+            ovalView = newOvalFrame(for: touchPoint)
             
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
@@ -71,13 +64,13 @@ class SwipeToUnlockControl: UIControl {
     
     // MARK: - Private Functions
     
-    @inline(__always) private func newOvalFrame(for location: CGPoint) -> CGRect {
+    @inline(__always) private func newOvalFrame(for location: CGPoint) -> UIView {
 //        let origin = CGPoint(x: ovalFrame.origin.x, y: ovalFrame.origin.y)
-        let dx = location.x - ovalFrame.origin.x
+        let initialFrame = self.convert(ovalView.bounds, from: ovalView)
+        let dx = location.x - initialFrame.origin.x
         
-        ovalFrame.origin.x += dx
-        ovalFrame.origin.y = ovalFrame.origin.y
+        ovalView.frame.origin.x += dx
         
-        return ovalFrame
+        return ovalView
     }
 }

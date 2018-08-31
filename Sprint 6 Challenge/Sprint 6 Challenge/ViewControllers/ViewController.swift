@@ -35,6 +35,7 @@ class ViewController: UIViewController
         ls.dotColor = .black
         ls.allowDraggingOutside = true
         ls.translatesAutoresizingMaskIntoConstraints = false
+        ls.completePercentage = 0.7
         ls.addTarget(self, action: #selector(handleLockUnlocked), for: .valueChanged)
             
         return ls
@@ -52,13 +53,21 @@ class ViewController: UIViewController
     {
         if !lockSlider.isLocked
         {
-            lockImageView.image = #imageLiteral(resourceName: "Unlocked")
+            UIView.transition(with: lockImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                
+                self.lockImageView.image = #imageLiteral(resourceName: "Unlocked")
+                
+            }, completion: nil)
             navigationItem.rightBarButtonItem?.isEnabled = true
             navigationItem.rightBarButtonItem?.tintColor = .white
         }
         else
         {
-            lockImageView.image = #imageLiteral(resourceName: "Locked")
+            UIView.transition(with: lockImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                
+                self.lockImageView.image = #imageLiteral(resourceName: "Locked")
+                
+            }, completion: nil)
             navigationItem.rightBarButtonItem?.isEnabled = false
             navigationItem.rightBarButtonItem?.tintColor = .clear
         }

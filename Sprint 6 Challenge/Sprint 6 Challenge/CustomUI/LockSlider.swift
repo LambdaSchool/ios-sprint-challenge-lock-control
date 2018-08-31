@@ -20,6 +20,7 @@ class LockSlider: UIControl
         }
     }
     
+    public var completePercentage: CGFloat = 0.8
     public var allowDraggingOutside: Bool = true
     
     lazy var dot: UIView =
@@ -105,7 +106,7 @@ class LockSlider: UIControl
         
         let percentage = (touchPoint.x - startX) / (endX - startX)
         
-        if percentage < 0.8
+        if percentage < completePercentage
         {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
                 

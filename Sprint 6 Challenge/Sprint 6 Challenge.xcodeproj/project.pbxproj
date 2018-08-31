@@ -13,6 +13,7 @@
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		D6EBDE0A2139961300850516 /* SwipeToUnlockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBDE092139961300850516 /* SwipeToUnlockControl.swift */; };
+		D6EBDE0C2139A51800850516 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBDE0B2139A51800850516 /* AppearanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6EBDE092139961300850516 /* SwipeToUnlockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToUnlockControl.swift; sourceTree = "<group>"; };
+		D6EBDE0B2139A51800850516 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				D6EBDE0B2139A51800850516 /* AppearanceHelper.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				D6EBDE092139961300850516 /* SwipeToUnlockControl.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6EBDE0A2139961300850516 /* SwipeToUnlockControl.swift in Sources */,
+				D6EBDE0C2139A51800850516 /* AppearanceHelper.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);

@@ -17,18 +17,23 @@ class ViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 
+    @IBAction func changeLockState(_ sender: LockControl) {
+        if sender.isUnlocked  {
+            animate(lockState: true)
+        } else {
+            animate(lockState: false)
+        }
+    }
+    
     @IBAction func reset(_ sender: Any) {
-        animate()
+        animate(lockState: false)
     }
     let lockControl = LockControl()
     
-    func animate() {
-        if !lockControl.isUnlocked {
+    func animate(lockState: Bool) {
+        if lockState {
             UIView.animate(withDuration: 0.25) {
                 self.lockImageView.image = #imageLiteral(resourceName: "Unlocked")
                 self.reset.tintColor = UIColor.white.withAlphaComponent(1.0)

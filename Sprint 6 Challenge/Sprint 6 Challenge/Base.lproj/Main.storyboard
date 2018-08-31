@@ -38,12 +38,16 @@
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Jce-zB-h0N" firstAttribute="top" secondItem="LgD-bo-nir" secondAttribute="top" constant="5" id="AwE-w8-bna"/>
                                             <constraint firstAttribute="bottom" secondItem="Jce-zB-h0N" secondAttribute="bottom" constant="5" id="ZXC-Bl-TcA"/>
                                             <constraint firstAttribute="height" constant="40" id="mU8-qg-al3"/>
                                             <constraint firstItem="Jce-zB-h0N" firstAttribute="leading" secondItem="LgD-bo-nir" secondAttribute="leading" constant="5" id="yAd-NS-YEl"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="gqI-Th-3hc" appends="YES" id="09E-1T-802"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,15 +72,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sRp-Kh-sZa"/>
+                    <connections>
+                        <segue destination="ytm-vw-PdI" kind="show" id="icZ-MC-ZMS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="gqI-Th-3hc">
+                    <connections>
+                        <action selector="panLock:" destination="BYZ-38-t0r" id="zW1-Rq-cpb"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Locked View Controller-->
         <scene sceneID="hgB-TH-nHg">
             <objects>
-                <viewController id="ytm-vw-PdI" sceneMemberID="viewController">
+                <viewController id="ytm-vw-PdI" customClass="LockedViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hwi-jz-sYU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

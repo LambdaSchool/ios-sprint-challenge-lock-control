@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Hello!"
+        reset.tintColor = UIColor.clear
     }
 }
 

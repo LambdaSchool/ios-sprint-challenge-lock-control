@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2t-dz-32T" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="68" y="227" width="238" height="213"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="275" placeholderIntrinsicHeight="275" translatesAutoresizingMaskIntoConstraints="NO" id="T2t-dz-32T" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="49.5" y="196" width="275" height="275"/>
                                 <color key="backgroundColor" red="0.63319715101105634" green="0.770826123383342" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="customControl:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="o83-DP-VvK"/>
@@ -28,10 +28,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T2t-dz-32T" secondAttribute="trailing" constant="69" id="2Kg-n8-7Dy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T2t-dz-32T" secondAttribute="bottom" constant="227" id="UiA-Qm-N3v"/>
-                            <constraint firstItem="T2t-dz-32T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="163" id="Unb-u6-e2Y"/>
-                            <constraint firstItem="T2t-dz-32T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="sYa-Pp-ZTJ"/>
+                            <constraint firstItem="T2t-dz-32T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KGj-As-LkM"/>
+                            <constraint firstItem="T2t-dz-32T" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eoG-xx-FUB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

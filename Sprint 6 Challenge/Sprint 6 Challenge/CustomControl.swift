@@ -18,9 +18,7 @@ class CustomControl: UIControl {
     
     // Custom Control's appearance
     override var intrinsicContentSize: CGSize {
-        clipsToBounds = true
-        self.layer.cornerRadius = 40
-        return CGSize(width: 230, height: 230)
+        return CGSize(width: 280, height: 280)
     }
     
     required init?(coder aCoder: NSCoder) {
@@ -31,18 +29,58 @@ class CustomControl: UIControl {
     
     private func setup() {
         
-        imageView = UIImageView(frame: CGRect(x: 50, y: 30, width: 150, height: 150))
+        // custom control
+        clipsToBounds = true
+        self.layer.cornerRadius = 50
+        
+//        imageView = UIImageView(frame: CGRect(x: 50, y: 30, width: 150, height: 150))
+        imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "Locked")
         imageView.contentMode = .scaleAspectFit
         self.addSubview(imageView)
         
-        let sliderView = UIView(frame: CGRect(x: 10, y: 200, width: 260, height: 75))
-        sliderView.layer.cornerRadius = 35
+        let imageWidthConstraint = NSLayoutConstraint(item: imageView,
+                                                      attribute: .width,
+                                                      relatedBy: .equal,
+                                                      toItem: nil,
+                                                      attribute: .notAnAttribute,
+                                                      multiplier: 1.0,
+                                                      constant: 150.0)
+        
+        let imageHeightConstraint = NSLayoutConstraint(item: imageView,
+                                                       attribute: .height,
+                                                       relatedBy: .equal,
+                                                       toItem: imageView,
+                                                       attribute: .width,
+                                                       multiplier: 1.0,
+                                                       constant: 0.0)
+        
+        let imageCenterXConstraint = NSLayoutConstraint(item: imageView,
+                                                        attribute: .centerX,
+                                                        relatedBy: .equal,
+                                                        toItem: self,
+                                                        attribute: .centerX,
+                                                        multiplier: 1.0,
+                                                        constant: 0.0)
+        
+        let imageTopConstraint = NSLayoutConstraint(item: imageView,
+                                                    attribute: .top,
+                                                    relatedBy: .equal,
+                                                    toItem: self,
+                                                    attribute: .top,
+                                                    multiplier: 1.0,
+                                                    constant: 20.0)
+        
+        NSLayoutConstraint.activate([imageWidthConstraint, imageHeightConstraint, imageCenterXConstraint, imageTopConstraint])
+        
+        let sliderView = UIView(frame: CGRect(x: 10, y: intrinsicContentSize.height - 80 - 10, width: intrinsicContentSize.width - 20, height: 80))
+        sliderView.layer.cornerRadius = 40
         sliderView.backgroundColor = UIColor(red: 134.0/255.0, green: 163.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         sliderView.isUserInteractionEnabled = false
         self.addSubview(sliderView)
         
-        circleView = UIView(frame: CGRect(x: 20, y: 205, width: 60, height: 60))
+        circleView = UIView(frame: CGRect(x: 20, y: intrinsicContentSize.height - 60 - 20, width: 60, height: 60))
         circleView.layer.cornerRadius = 30
         circleView.backgroundColor = UIColor(red: 98.0/255.0, green: 119.0/255.0, blue: 155.0/255.0, alpha: 1.0)
         circleView.isUserInteractionEnabled = false
@@ -52,7 +90,7 @@ class CustomControl: UIControl {
     
     func reset() {
         UIView.animate(withDuration: 0.3) {
-            self.circleView.frame = CGRect(x: 20, y: 205, width: 60, height: 60)
+            self.circleView.frame = CGRect(x: 20, y: self.intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
         }
         
         isUnlocked = false
@@ -76,7 +114,7 @@ class CustomControl: UIControl {
         
         guard touchPoint.x > 0 && touchPoint.x < bounds.width - circleView.frame.width else { return true }
         
-        circleView.frame = CGRect(x: touchPoint.x, y: 205, width: 60, height: 60)
+        circleView.frame = CGRect(x: touchPoint.x, y: intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
         return true
     }
     
@@ -91,7 +129,7 @@ class CustomControl: UIControl {
             
 
             UIView.animate(withDuration: 0.3) {
-                self.circleView.frame = CGRect(x: 200, y: 205, width: 60, height: 60)
+                self.circleView.frame = CGRect(x: self.intrinsicContentSize.width - 60 - 20, y: self.intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
             }
         } else {
             reset()

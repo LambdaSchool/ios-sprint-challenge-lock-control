@@ -10,7 +10,7 @@ import UIKit
 
 class LockControl: UIControl {
     
-    var isUnlocked = true
+    var isUnlocked = false
     var progress: Float = 0.0
     
     
@@ -49,14 +49,17 @@ class LockControl: UIControl {
     }
     
     func updateValue(at touch: UITouch) {
-        let touchPoint = touch.location(in: self)
-        let x = touchPoint.x
-        progress = Float(min(x/self.bounds.size.width, 1))
-        print(progress)
-        if progress >= 0.80 {
-            isUnlocked = true
-            sendActions(for: .valueChanged)
+        if !isUnlocked {
+            let touchPoint = touch.location(in: self)
+            let x = touchPoint.x
+            progress = Float(min(x/self.bounds.size.width, 1))
+            print(progress)
+            if progress >= 0.80 {
+                isUnlocked = true
+                sendActions(for: .valueChanged)
+            }
         }
+        
     }
     
 }

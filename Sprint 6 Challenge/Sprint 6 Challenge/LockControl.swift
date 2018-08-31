@@ -17,26 +17,35 @@ import UIKit
     //MARK: - Touch Handlers
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if lockBoltBounds.contains(touchPoint){
+            sendActions(for: [.touchDown])
+        }
         return true
     }
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        moveBolt(at: touch)
+        
         let touchPoint = touch.location(in: self)
         
-        guard let lockBarBounds = lockBarBounds,
-            let lockBarActivateBounds = lockBarActivateBounds,
-            let lockBarBolt = lockBarBolt else {return true}
-        
         if lockBarBounds.contains(touchPoint){
-            lockBarBolt.frame.origin = touchPoint
+            
+            let lockBarFrame = lockBarBolt.frame
+            let frame = CGRect(x: touchPoint.x, y: lockBarFrame.origin.y, width: lockBarFrame.width, height: lockBarFrame.height)
+            
+            lockBarBolt.frame = frame
+            
             sendActions(for: [.touchDragInside])
+
         } else {
             sendActions(for: [.touchDragOutside])
         }
+        
         return true
     }
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         guard let touch = touch,
-         let lockBarActivateBounds = lockBarActivateBounds else {return}
+            let lockBarActivateBounds = lockBarActivateBounds else {return}
         let touchPoint = touch.location(in: self)
         if lockBarActivateBounds.contains(touchPoint){
             updateValue(at: touch)
@@ -61,7 +70,7 @@ import UIKit
     
     //MARK: - Build Control View
     func setup(){
-        
+        self.isUserInteractionEnabled = true
         clipsToBounds = true
         layer.cornerRadius = 16
         layer.backgroundColor = Appearance.lightSteelBlue.cgColor
@@ -69,12 +78,12 @@ import UIKit
         createImageView()
         createLockBar()
         
-//        let dummy = UIView(frame: lockBarBounds!)
-//        let dummy2 = UIView(frame:lockBarActivateBounds!)
-//        dummy.layer.backgroundColor = UIColor.red.cgColor
-//        dummy2.layer.backgroundColor = UIColor.purple.cgColor
-//        addSubview(dummy)
-//        addSubview(dummy2)
+//                let dummy = UIView(frame: lockBoltBounds!)
+//        //        let dummy2 = UIView(frame:lockBarActivateBounds!)
+//                dummy.layer.backgroundColor = UIColor.red.cgColor
+//        //        dummy2.layer.backgroundColor = UIColor.purple.cgColor
+//                addSubview(dummy)
+//        //        addSubview(dummy2)
     }
     
     func createImageView(){
@@ -86,7 +95,7 @@ import UIKit
         let imageView = UIImageView(frame: frame)
         imageView.contentMode = .scaleAspectFit
         imageView.image = lockedImage
-        
+        imageView.isUserInteractionEnabled = false
         addSubview(imageView)
         self.imageView = imageView
     }
@@ -99,6 +108,7 @@ import UIKit
         
         let lockFrame = CGRect(x: 16, y: y, width: width, height: height)
         let lockBar = UIView(frame: lockFrame)
+        lockBar.isUserInteractionEnabled = false
         lockBar.layer.backgroundColor = UIColor.white.cgColor
         lockBar.clipsToBounds = true
         lockBar.layer.cornerRadius = height/2
@@ -109,6 +119,7 @@ import UIKit
         let radius = lockBar.frame.height - 6
         let boltFrame = CGRect(x: 5, y: 5/2, width: radius, height: radius)
         let bolt = UIView(frame: boltFrame)
+        bolt.isUserInteractionEnabled = false
         bolt.clipsToBounds = true
         bolt.layer.cornerRadius = radius/2
         bolt.layer.backgroundColor = Appearance.midnightBlue.cgColor
@@ -120,19 +131,22 @@ import UIKit
                                     y: lockBar.frame.origin.y,
                                     width: lockBarWidth/5,
                                     height: lockBar.frame.height)
-
+        
         lockBarActivateBounds = activateBounds
         lockBarBounds = self.convert(lockBar.bounds, from: lockBar)
+        lockBoltBounds = self.convert(bolt.bounds, from:bolt)
+        lockBarBolt = bolt
         
     }
     
     // MARK: - Properties
     private(set) var isLocked: Bool = true
     
-    private var imageView: UIImageView?
-    private var lockBarBolt: UIView?
-    private var lockBarBounds: CGRect?
-    private var lockBarActivateBounds: CGRect?
+    private var imageView: UIImageView!
+    private var lockBarBolt: UIView!
+    private var lockBoltBounds: CGRect!
+    private var lockBarBounds: CGRect!
+    private var lockBarActivateBounds: CGRect!
     private let lockedImage = UIImage(named: "Locked")!
     private let unlockedImage = UIImage(named: "Unlocked")!
     

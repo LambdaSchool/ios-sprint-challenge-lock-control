@@ -26,9 +26,9 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N44-H2-5x4" customClass="SliderControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="518" width="327" height="41"/>
+                                        <gestureRecognizers/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="N44-H2-5x4" secondAttribute="trailing" constant="8" id="0g9-b9-BfB"/>
                                     <constraint firstAttribute="trailing" secondItem="wjN-4i-njQ" secondAttribute="trailing" constant="8" id="2NN-Xb-bGL"/>

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        swipeToUnlockControl.ovalFrame = ovalView.frame
 //        lockButton.title = ""
 //        lockButton.isEnabled = false
     }
@@ -21,11 +22,19 @@ class ViewController: UIViewController {
     var isLocked: Bool = true
     @IBOutlet weak var lockButton: UIBarButtonItem!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var ovalView: UIView!
+    @IBOutlet weak var swipeToUnlockControl: SwipeToUnlockControl!
+    
     
     
     @IBAction func lock(_ sender: Any) {
         toggleLocked()
     }
+    
+    @IBAction func swipe(_ sender: SwipeToUnlockControl) {
+        ovalView.frame = sender.ovalFrame
+    }
+    
     
     
     func toggleLocked() {

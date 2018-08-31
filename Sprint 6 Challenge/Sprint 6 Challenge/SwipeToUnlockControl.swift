@@ -13,7 +13,6 @@ class SwipeToUnlockControl: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        oval = subviews.first
 //        setupSubviewCustomControl()
 //        print("HELLO WORLD!!!!!", oval)
     }
@@ -21,12 +20,13 @@ class SwipeToUnlockControl: UIControl {
     
     // MARK: - Properties
     
-    var oval: UIView!
+    var ovalFrame: CGRect!
     
     
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        // oval doesn't need to be animated because touch should be in the same place?
+        let touchPoint = touch.location(in: self)
+        ovalFrame = newOvalFrame(for: touchPoint)
         sendActions(for: [.touchDown, .valueChanged])
         return true
     }
@@ -35,7 +35,7 @@ class SwipeToUnlockControl: UIControl {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             
-            oval.frame = newOvalPosition(for: touchPoint)
+            ovalFrame = newOvalFrame(for: touchPoint)
             
             sendActions(for: [.touchDragInside, .valueChanged])
         } else {
@@ -52,7 +52,7 @@ class SwipeToUnlockControl: UIControl {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             
-            oval.frame = newOvalPosition(for: touchPoint)
+            ovalFrame = newOvalFrame(for: touchPoint)
             
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
@@ -67,13 +67,13 @@ class SwipeToUnlockControl: UIControl {
     
     // MARK: - Private Functions
     
-    @inline(__always) private func newOvalPosition(for location: CGPoint) -> CGRect {
+    @inline(__always) private func newOvalFrame(for location: CGPoint) -> CGRect {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let dx = location.x - center.x
         
-        let frame = oval.frame
+        ovalFrame.origin.x += dx
         
-        return frame
+        return ovalFrame
     }
     
     

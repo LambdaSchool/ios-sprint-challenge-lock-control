@@ -13,7 +13,7 @@ class SwipeToUnlockControl: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
+        oval = subviews.first
 //        setupSubviewCustomControl()
 //        print("HELLO WORLD!!!!!", oval)
     }
@@ -22,6 +22,72 @@ class SwipeToUnlockControl: UIControl {
     // MARK: - Properties
     
     var oval: UIView!
+    
+    
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        // oval doesn't need to be animated because touch should be in the same place?
+        sendActions(for: [.touchDown, .valueChanged])
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            
+            oval.frame = newOvalPosition(for: touchPoint)
+            
+            sendActions(for: [.touchDragInside, .valueChanged])
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        defer { super.endTracking(touch, with: event) }
+        
+        guard let touch = touch else { return }
+        
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            
+            oval.frame = newOvalPosition(for: touchPoint)
+            
+            sendActions(for: [.touchUpInside, .valueChanged])
+        } else {
+            sendActions(for: [.touchUpOutside])
+        }
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        sendActions(for: [.touchCancel])
+    }
+    
+    
+    // MARK: - Private Functions
+    
+    @inline(__always) private func newOvalPosition(for location: CGPoint) -> CGRect {
+        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let dx = location.x - center.x
+        
+        let frame = oval.frame
+        
+        return frame
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     // MARK: - functions

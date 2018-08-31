@@ -35,14 +35,14 @@ class ViewController: UIViewController {
     
     func animate(lockState: Bool) {
         if lockState {
-            UIView.animate(withDuration: 0.25) {
+            UIView.animate(withDuration: 0.5) {
                 self.lockImageView.image = #imageLiteral(resourceName: "Unlocked")
                 self.reset.isEnabled = true
                 self.reset.tintColor = .white
                 
             }
         } else {
-            UIView.animate(withDuration: 0.25) {
+            UIView.animate(withDuration: 0.5) {
                 self.lockImageView.image = #imageLiteral(resourceName: "Locked")
                 self.reset.isEnabled = false
                 self.reset.tintColor = .clear

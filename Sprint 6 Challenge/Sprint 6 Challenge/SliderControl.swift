@@ -72,7 +72,7 @@ class SliderControl: UIControl {
         sendActions(for: .touchCancel)
     }
     
-    // remember to set the view subclass in storyboards
+    // remember to set the view subclass in storyboards - check
     
     // also if else animate the reset button
     

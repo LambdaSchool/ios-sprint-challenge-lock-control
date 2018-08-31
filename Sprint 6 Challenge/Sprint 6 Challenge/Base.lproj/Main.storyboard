@@ -71,7 +71,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sRp-Kh-sZa"/>
+                    <navigationItem key="navigationItem" id="sRp-Kh-sZa">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="udb-hS-FUd">
+                            <connections>
+                                <action selector="reset:" destination="ytm-vw-PdI" id="Kut-XV-Ko1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="ytm-vw-PdI" kind="show" identifier="showLockedScreen" id="icZ-MC-ZMS"/>
                     </connections>
@@ -143,13 +149,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gRe-wN-LFc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="WEr-62-8XG">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="udb-hS-FUd">
-                            <connections>
-                                <action selector="reset:" destination="ytm-vw-PdI" id="Kut-XV-Ko1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="WEr-62-8XG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65X-wt-Z43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

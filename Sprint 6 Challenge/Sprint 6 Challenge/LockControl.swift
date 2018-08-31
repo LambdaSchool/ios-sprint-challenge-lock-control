@@ -14,7 +14,38 @@ class LockControl: UIControl {
         super.init(coder: aDecoder)
         setup()
     }
+    //MARK: - Touch Handlers
     
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        updateValue(at: touch)
+        return true
+    }
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if lockBarBounds.contains(touchPoint){
+            sendActions(for: [.touchDragInside])
+            if lockBarActivateBounds.contains(touchPoint){
+                updateValue(at: touch)
+            }
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        return true
+    }
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+
+        
+    }
+    override func cancelTracking(with event: UIEvent?) {
+        sendActions(for: [.touchCancel])
+    }
+    
+    func updateValue(at touch: UITouch){
+        
+    }
+    
+    
+    //MARK: - Build Control View
     func setup(){
         
         clipsToBounds = true
@@ -61,11 +92,24 @@ class LockControl: UIControl {
         bolt.layer.backgroundColor = Appearance.midnightBlue.cgColor
         lockBar.addSubview(bolt)
         
+        //for use in touch handling
+        let lockBarWidth = lockBar.frame.width
+        let activateBounds = CGRect(x: lockBar.frame.origin.x + lockBarWidth/5*4,
+                                    y: lockBar.frame.origin.y,
+                                    width: lockBarWidth/5,
+                                    height: lockBar.frame.height)
+
+//        lockBarActivateBounds = self.convert(lockBar.bounds, from: lockBar)
+        lockBarActivateBounds = activateBounds
+        lockBarBounds = lockBar.bounds
         
     }
     
-    //Properties
+    // MARK: - Properties
     var isLocked: Bool = true
+    
+    private var lockBarBounds: CGRect!
+    private var lockBarActivateBounds: CGRect!
     private let lockedImage = UIImage(named: "Locked")
     private let unlockedImage = UIImage(named: "Unlocked")
     

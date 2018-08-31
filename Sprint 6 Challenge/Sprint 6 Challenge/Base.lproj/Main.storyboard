@@ -33,13 +33,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VHr-uH-XSv">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="yn5-o5-bQC">
-                            <connections>
-                                <action selector="reset:" destination="BYZ-38-t0r" id="Oy9-LH-lsI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="VHr-uH-XSv"/>
                     <connections>
                         <outlet property="lockImage" destination="NOg-sJ-F7i" id="l8y-2T-t5O"/>
                         <segue destination="Gkk-qG-fjs" kind="presentation" identifier="showUnlock" id="Qsp-uq-GZv"/>

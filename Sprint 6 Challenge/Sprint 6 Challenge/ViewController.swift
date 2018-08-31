@@ -18,13 +18,11 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func unlock(_ lockControl: LockControl) {
-        if lockControl.isLocked{
             resetButton.title = "Reset"
             self.title = "Unlocked"
-        }
     }
     @IBAction func reset(_ sender: Any) {
-        
+        lockControl.reset()
     }
     
     @IBOutlet weak var resetButton: UIBarButtonItem!

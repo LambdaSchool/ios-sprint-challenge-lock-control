@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LockControl: UIControl {
+@IBDesignable class LockControl: UIControl {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -17,13 +17,19 @@ class LockControl: UIControl {
     //MARK: - Touch Handlers
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        updateValue(at: touch)
         return true
     }
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
+        
+        guard let lockBarBounds = lockBarBounds,
+            let lockBarActivateBounds = lockBarActivateBounds,
+            let lockBarBolt = lockBarBolt else {return true}
+        
         if lockBarBounds.contains(touchPoint){
             sendActions(for: [.touchDragInside])
+            lockBarBolt.frame.origin = touchPoint
+            print(touchPoint)
             if lockBarActivateBounds.contains(touchPoint){
                 updateValue(at: touch)
             }
@@ -41,9 +47,15 @@ class LockControl: UIControl {
     }
     
     func updateValue(at touch: UITouch){
-        
+        imageView?.image = unlockedImage
+        isLocked = false
+        sendActions(for: [.valueChanged])
     }
     
+    func reset(){
+        imageView?.image = lockedImage
+        isLocked = true
+    }
     
     //MARK: - Build Control View
     func setup(){
@@ -54,6 +66,13 @@ class LockControl: UIControl {
         
         createImageView()
         createLockBar()
+        
+//        let dummy = UIView(frame: lockBarBounds!)
+//        let dummy2 = UIView(frame:lockBarActivateBounds!)
+//        dummy.layer.backgroundColor = UIColor.red.cgColor
+//        dummy2.layer.backgroundColor = UIColor.purple.cgColor
+//        addSubview(dummy)
+//        addSubview(dummy2)
     }
     
     func createImageView(){
@@ -67,6 +86,7 @@ class LockControl: UIControl {
         imageView.image = lockedImage
         
         addSubview(imageView)
+        self.imageView = imageView
     }
     
     func createLockBar(){
@@ -99,19 +119,20 @@ class LockControl: UIControl {
                                     width: lockBarWidth/5,
                                     height: lockBar.frame.height)
 
-//        lockBarActivateBounds = self.convert(lockBar.bounds, from: lockBar)
         lockBarActivateBounds = activateBounds
-        lockBarBounds = lockBar.bounds
+        lockBarBounds = self.convert(lockBar.bounds, from: lockBar)
         
     }
     
     // MARK: - Properties
-    var isLocked: Bool = true
+    private(set) var isLocked: Bool = true
     
-    private var lockBarBounds: CGRect!
-    private var lockBarActivateBounds: CGRect!
-    private let lockedImage = UIImage(named: "Locked")
-    private let unlockedImage = UIImage(named: "Unlocked")
+    private var imageView: UIImageView?
+    private var lockBarBolt: UIView?
+    private var lockBarBounds: CGRect?
+    private var lockBarActivateBounds: CGRect?
+    private let lockedImage = UIImage(named: "Locked")!
+    private let unlockedImage = UIImage(named: "Unlocked")!
     
     
     

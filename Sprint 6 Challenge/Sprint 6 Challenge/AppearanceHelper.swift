@@ -15,6 +15,5 @@ enum Appearance {
         UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
         UINavigationBar.appearance().backgroundColor = UIColor(red: 26/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = .white
-        UIImageView.appearance().backgroundColor = .lightGray
     }
 }

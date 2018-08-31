@@ -14,14 +14,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xid-QH-72E">
-                                <rect key="frame" x="67" y="188" width="240" height="291"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="hu7-bP-PIX">
                                 <rect key="frame" x="67" y="188" width="240" height="293"/>
                             </imageView>
@@ -32,24 +28,28 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Xid-QH-72E" firstAttribute="leading" secondItem="hu7-bP-PIX" secondAttribute="leading" id="1bz-pe-2ga"/>
-                            <constraint firstItem="Xid-QH-72E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4H7-Y9-a81"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xid-QH-72E" secondAttribute="bottom" constant="188" id="8en-ac-WPv"/>
                             <constraint firstItem="gbT-oU-gc4" firstAttribute="trailing" secondItem="hu7-bP-PIX" secondAttribute="trailing" id="BcX-Jt-D6c"/>
                             <constraint firstItem="gbT-oU-gc4" firstAttribute="centerX" secondItem="hu7-bP-PIX" secondAttribute="centerX" id="JlI-cG-7Bi"/>
+                            <constraint firstItem="hu7-bP-PIX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sgn-va-jh5"/>
                             <constraint firstItem="gbT-oU-gc4" firstAttribute="top" secondItem="hu7-bP-PIX" secondAttribute="bottom" constant="8" symbolic="YES" id="U4i-5z-HIl"/>
-                            <constraint firstItem="Xid-QH-72E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Y8I-7a-gvJ"/>
-                            <constraint firstItem="Xid-QH-72E" firstAttribute="trailing" secondItem="hu7-bP-PIX" secondAttribute="trailing" id="lyh-6q-urW"/>
+                            <constraint firstItem="hu7-bP-PIX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="V6g-mM-SSx"/>
                             <constraint firstItem="gbT-oU-gc4" firstAttribute="leading" secondItem="hu7-bP-PIX" secondAttribute="leading" id="o3F-KF-7q5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gbT-oU-gc4" secondAttribute="bottom" constant="140" id="tkQ-kT-j7y"/>
-                            <constraint firstItem="Xid-QH-72E" firstAttribute="top" secondItem="hu7-bP-PIX" secondAttribute="top" id="xQe-iU-fJS"/>
-                            <constraint firstItem="Xid-QH-72E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xSR-1G-pMS"/>
+                            <constraint firstItem="hu7-bP-PIX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="y6a-oO-mS3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="B7b-OM-QNq">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="9GQ-nB-85V"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="9GQ-nB-85V">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="ELl-mi-YeQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lockImageView" destination="hu7-bP-PIX" id="nhq-AV-y9i"/>
+                        <outlet property="reset" destination="9GQ-nB-85V" id="ja1-F0-j29"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

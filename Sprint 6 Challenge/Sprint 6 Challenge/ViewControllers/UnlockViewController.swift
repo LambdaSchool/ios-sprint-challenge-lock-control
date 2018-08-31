@@ -60,6 +60,8 @@ class UnlockViewController: UIViewController {
         
         // Setup container grey container view
         containerView.layer.cornerRadius = sliderContainerView.bounds.height / 5
+        containerView.center.x = view.frame.width / 2
+        containerView.center.y = view.frame.height / 2
         containerView.clipsToBounds = true
         
         // Setup the container view for the round slider

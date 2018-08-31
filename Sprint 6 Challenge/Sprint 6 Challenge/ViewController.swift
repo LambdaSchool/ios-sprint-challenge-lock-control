@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        reset.isEnabled = false
+        reset.tintColor = .clear
     }
 
    
@@ -29,20 +30,22 @@ class ViewController: UIViewController {
     
     @IBAction func reset(_ sender: Any) {
         animate(lockState: false)
+
     }
-    let lockControl = LockControl()
     
     func animate(lockState: Bool) {
         if lockState {
             UIView.animate(withDuration: 0.25) {
                 self.lockImageView.image = #imageLiteral(resourceName: "Unlocked")
-                self.reset.tintColor = UIColor.white.withAlphaComponent(1.0)
+                self.reset.isEnabled = true
+                self.reset.tintColor = .white
                 
             }
         } else {
             UIView.animate(withDuration: 0.25) {
                 self.lockImageView.image = #imageLiteral(resourceName: "Locked")
-                self.reset.tintColor = UIColor.white.withAlphaComponent(0.0)
+                self.reset.isEnabled = false
+                self.reset.tintColor = .clear
             }
         }
     }

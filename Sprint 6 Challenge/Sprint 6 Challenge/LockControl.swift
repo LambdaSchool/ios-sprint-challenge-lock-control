@@ -15,8 +15,13 @@ class LockControl: UIControl {
     
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        updateValue(at: touch)
-        sendActions(for: .touchDown)
+        if isUnlocked {
+            reset()
+        } else {
+            updateValue(at: touch)
+            sendActions(for: .touchDown)
+            
+        }
         return true
     }
     
@@ -60,6 +65,11 @@ class LockControl: UIControl {
             }
         }
         
+    }
+    
+    func reset() {
+        progress = 0.0
+        isUnlocked = false
     }
     
 }

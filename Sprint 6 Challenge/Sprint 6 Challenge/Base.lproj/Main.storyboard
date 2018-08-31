@@ -20,25 +20,31 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPb-oh-EDn">
                                 <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-Nf-vtT">
+                                        <rect key="frame" x="75" y="75" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Kwm-PH-TYx"/>
+                                            <constraint firstAttribute="width" constant="150" id="d39-YV-pN7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerY" secondItem="LPb-oh-EDn" secondAttribute="centerY" id="37b-XR-Gj2"/>
                                     <constraint firstAttribute="height" constant="300" id="PmY-NX-9Uz"/>
+                                    <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerX" secondItem="LPb-oh-EDn" secondAttribute="centerX" id="lkt-bx-uiO"/>
                                     <constraint firstAttribute="width" constant="300" id="voy-AC-v1F"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="IH3-xf-MAZ" appends="YES" id="a3B-dn-ake"/>
+                                </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-Nf-vtT">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="RUI-Ka-L4f"/>
-                                    <constraint firstAttribute="width" constant="200" id="mk4-vR-Uz1"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LPb-oh-EDn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="327-Un-gI9"/>
-                            <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3J0-AK-cDQ"/>
-                            <constraint firstItem="Yma-Nf-vtT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vvh-PE-1aM"/>
                             <constraint firstItem="LPb-oh-EDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tXH-OT-bDD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -52,6 +58,11 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="IH3-xf-MAZ">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="vuf-Ic-iNO"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="833" y="778"/>
         </scene>

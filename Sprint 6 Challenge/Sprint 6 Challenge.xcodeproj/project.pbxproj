@@ -43,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				1026199521399B2C00AC8C7F /* AppearanceHelper.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
@@ -73,6 +72,7 @@
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				102619932139964000AC8C7F /* ViewController.swift */,
 				102619912139953400AC8C7F /* LockControl.swift */,
+				1026199521399B2C00AC8C7F /* AppearanceHelper.swift */,
 				10261990213993C700AC8C7F /* Resources */,
 			);
 			path = "Sprint 6 Challenge";

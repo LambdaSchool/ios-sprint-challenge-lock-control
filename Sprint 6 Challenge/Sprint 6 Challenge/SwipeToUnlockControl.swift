@@ -23,11 +23,15 @@ class SwipeToUnlockControl: UIControl {
     var ovalFrame: CGRect!
     
     
+    // MARK: - Override functions
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
-        ovalFrame = newOvalFrame(for: touchPoint)
-        sendActions(for: [.touchDown, .valueChanged])
+        
+        // if the touchPoint is within the ovalFrame then sendActions (BUT ovalView is on top of it so it's still not going to work)
+        if ovalFrame.contains(touchPoint) {
+            sendActions(for: [.touchDown, .valueChanged])
+        }
         return true
     }
     
@@ -68,59 +72,11 @@ class SwipeToUnlockControl: UIControl {
     // MARK: - Private Functions
     
     @inline(__always) private func newOvalFrame(for location: CGPoint) -> CGRect {
-        let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        let dx = location.x - center.x
+        let origin = CGPoint(x: ovalFrame.origin.x, y: ovalFrame.origin.y)
+        let dx = location.x - origin.x
         
         ovalFrame.origin.x += dx
         
         return ovalFrame
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // MARK: - functions
-    
-//    func setupSubviewCustomControl() {
-//        let oval = UIView()
-//        translatesAutoresizingMaskIntoConstraints = false
-//        oval.backgroundColor = UIColor.darkGray
-//        addSubview(oval)
-//
-//        print("HELLO WORLD!!!!!!! 2", self.center)
-//        let ovalCenterY = NSLayoutConstraint(item: oval, attribute: .centerY,
-//                                             relatedBy: .equal,
-//                                             toItem: self, attribute: .centerY,
-//                                             multiplier: 1,
-//                                             constant: 0.0)
-//        let ovalLeading = NSLayoutConstraint(item: oval, attribute: .leading,
-//                                             relatedBy: .equal,
-//                                             toItem: self, attribute: .leading,
-//                                             multiplier: 1,
-//                                             constant: 0.0)
-//        let ovalWidth = NSLayoutConstraint(item: oval, attribute: .width,
-//                                           relatedBy: .equal,
-//                                           toItem: nil, attribute: .notAnAttribute,
-//                                           multiplier: 1,
-//                                           constant: 40.0)
-//        let ovalHeight = NSLayoutConstraint(item: oval, attribute: .height,
-//                                            relatedBy: .equal,
-//                                            toItem: nil, attribute: .notAnAttribute,
-//                                            multiplier: 1,
-//                                            constant: 40.0)
-//        NSLayoutConstraint.activate([ovalCenterY, ovalLeading, ovalWidth, ovalHeight])
-//
-//        self.oval = oval
-//    }
 }

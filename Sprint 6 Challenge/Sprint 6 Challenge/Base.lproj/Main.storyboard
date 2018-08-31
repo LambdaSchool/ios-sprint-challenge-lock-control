@@ -67,8 +67,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Swipe to unlock" id="xwV-gW-VZU">
-                        <barButtonItem key="rightBarButtonItem" title="Lock" id="vvs-Ih-9bd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Lock" id="vvs-Ih-9bd">
+                            <connections>
+                                <action selector="lock:" destination="BYZ-38-t0r" id="yxb-8c-YqK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="image" destination="eSd-Uh-HGQ" id="Qx8-Nw-hg9"/>
+                        <outlet property="lockButton" destination="vvs-Ih-9bd" id="2bI-9P-c1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

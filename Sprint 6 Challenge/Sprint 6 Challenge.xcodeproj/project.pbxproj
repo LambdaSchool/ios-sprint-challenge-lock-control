@@ -13,6 +13,7 @@
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		BE44E9D32139912600BB4E11 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44E9D22139912600BB4E11 /* AppearanceHelper.swift */; };
 		BE44E9D52139A00D00BB4E11 /* LockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44E9D42139A00D00BB4E11 /* LockControl.swift */; };
+		BE44E9D72139A48E00BB4E11 /* Animator+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44E9D62139A48E00BB4E11 /* Animator+Views.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE44E9D22139912600BB4E11 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		BE44E9D42139A00D00BB4E11 /* LockControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockControl.swift; sourceTree = "<group>"; };
+		BE44E9D62139A48E00BB4E11 /* Animator+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animator+Views.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BE44E9D22139912600BB4E11 /* AppearanceHelper.swift */,
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				BE44E9D42139A00D00BB4E11 /* LockControl.swift */,
+				BE44E9D62139A48E00BB4E11 /* Animator+Views.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 				BE44E9D52139A00D00BB4E11 /* LockControl.swift in Sources */,
 				BE44E9D32139912600BB4E11 /* AppearanceHelper.swift in Sources */,
+				BE44E9D72139A48E00BB4E11 /* Animator+Views.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

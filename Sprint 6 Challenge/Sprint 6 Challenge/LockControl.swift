@@ -32,6 +32,7 @@ class LockControl:UIControl
 	let unlockedImg = UIImage(named: "Unlocked")
 
 	var lockView:UIImageView!
+	var unlockView:UIImageView!
 	var sliderFrameView:UIView!
 	var sliderView:UIView!
 
@@ -57,6 +58,12 @@ class LockControl:UIControl
 		lockView.image = lockedImg
 		lockView.contentMode = .scaleAspectFit
 		addSubview(lockView)
+
+		unlockView = UIImageView(frame: lockView.frame)
+		unlockView.image = unlockedImg
+		unlockView.contentMode = .scaleAspectFit
+		unlockView.alpha = 0
+		addSubview(unlockView)
 
 		sliderFrameView = UIView(frame: rect2(
 			16.0 , self.bounds.height - sliderFrameSize - 16,
@@ -88,19 +95,23 @@ class LockControl:UIControl
 	// these instructions are weird.
 	func lock()
 	{
-		self.lockView.image = unlockedImg
 		self.isUserInteractionEnabled = false
-		UIView.animate(withDuration: 0.25) {
+		UIView.animate(withDuration: 0.5, animations: {
 			self.sliderView.frame.origin.x = self.sliderEndX
+			self.lockView.alpha = 0
+			self.unlockView.alpha = 1
+		}) { success in
+			self.sendActions(for: [.primaryActionTriggered])
 		}
 	}
 
 	func unlock()
 	{
-		self.lockView.image = lockedImg
 		self.isUserInteractionEnabled = true
-		UIView.animate(withDuration: 0.25) {
+		UIView.animate(withDuration: 0.5) {
 			self.sliderView.frame.origin.x = self.sliderStartX
+			self.lockView.alpha = 1
+			self.unlockView.alpha = 0
 		}
 	}
 

@@ -13,18 +13,21 @@
         <!--Lock Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uS-LF-zh9" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="67" y="245.5" width="240" height="240"/>
+                                <rect key="frame" x="67" y="245" width="240" height="240"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="9bR-fO-0p8"/>
                                     <constraint firstAttribute="height" constant="240" id="NsG-Qn-lUW"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="segueToOther:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="8DJ-zA-Hgu"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,10 +44,44 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lock" destination="9uS-LF-zh9" id="w3R-qF-FNy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
+        </scene>
+        <!--OtherVC-->
+        <scene sceneID="TJV-Xh-ktc">
+            <objects>
+                <viewController storyboardIdentifier="OtherVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vra-yX-83t" customClass="OtherVC" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZmY-2f-7P8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="Szz-y2-0a4">
+                                <rect key="frame" x="147" y="36" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0U4-Fx-jBE"/>
+                                    <constraint firstAttribute="height" constant="80" id="Zhu-AP-DsZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Szz-y2-0a4" firstAttribute="centerX" secondItem="es4-Y5-0wz" secondAttribute="centerX" id="FDJ-Mf-2ce"/>
+                            <constraint firstItem="Szz-y2-0a4" firstAttribute="top" secondItem="es4-Y5-0wz" secondAttribute="top" constant="16" id="qLd-EI-shh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="es4-Y5-0wz"/>
+                    </view>
+                    <connections>
+                        <outlet property="picture" destination="Szz-y2-0a4" id="RGo-Jz-Lip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXH-vG-vgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZbX-vf-9c0">
@@ -65,4 +102,7 @@
             <point key="canvasLocation" x="6" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unlocked" width="220" height="293"/>
+    </resources>
 </document>

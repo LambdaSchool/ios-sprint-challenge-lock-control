@@ -14,6 +14,7 @@
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		F84005A1213998F400A907A8 /* LockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A0213998F400A907A8 /* LockedViewController.swift */; };
 		F84005A321399DC600A907A8 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A221399DC600A907A8 /* Animator.swift */; };
+		F84005A62139B0EA00A907A8 /* SliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A52139B0EA00A907A8 /* SliderControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F84005A0213998F400A907A8 /* LockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedViewController.swift; sourceTree = "<group>"; };
 		F84005A221399DC600A907A8 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		F84005A52139B0EA00A907A8 /* SliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				468B89EC2137397500E7FF73 /* Info.plist */,
 				F84005A42139A4D900A907A8 /* ViewControllers */,
 				F84005A221399DC600A907A8 /* Animator.swift */,
+				F84005A52139B0EA00A907A8 /* SliderControl.swift */,
 			);
 			path = "Sprint 6 Challenge";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				F84005A1213998F400A907A8 /* LockedViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				F84005A62139B0EA00A907A8 /* SliderControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

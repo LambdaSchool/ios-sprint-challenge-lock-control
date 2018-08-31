@@ -25,7 +25,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="mhi-0N-Bfr">
                                         <rect key="frame" x="17.5" y="60" width="220" height="135"/>
                                     </imageView>
-                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-bo-nir">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-bo-nir" customClass="SliderControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="10" y="205" width="235" height="40"/>
                                         <subviews>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jce-zB-h0N">
@@ -73,7 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sRp-Kh-sZa"/>
                     <connections>
-                        <segue destination="ytm-vw-PdI" kind="show" id="icZ-MC-ZMS"/>
+                        <segue destination="ytm-vw-PdI" kind="show" identifier="showLockedScreen" id="icZ-MC-ZMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
         </scene>
-        <!--Locked View Controller-->
+        <!--Title-->
         <scene sceneID="hgB-TH-nHg">
             <objects>
                 <viewController id="ytm-vw-PdI" customClass="LockedViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,6 +143,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gRe-wN-LFc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="WEr-62-8XG">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="udb-hS-FUd">
+                            <connections>
+                                <action selector="reset:" destination="ytm-vw-PdI" id="Kut-XV-Ko1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65X-wt-Z43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -31,5 +31,9 @@ class LockedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func reset(_ sender: Any) {
+        
+    }
+    
 }

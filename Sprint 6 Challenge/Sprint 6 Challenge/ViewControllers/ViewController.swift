@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
-    override var transitioningDelegate: UIViewControllerTransitioningDelegate?
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.transitioningDelegate = self
+    }
     
     @IBAction func panLock(_ sender: UIPanGestureRecognizer) {
         guard let sliderView = view.viewWithTag(1) else { return }
@@ -45,6 +45,10 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
             break
         }
     
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

@@ -31,12 +31,19 @@ import UIKit
         if lockBarBounds.contains(touchPoint){
             
             let lockBarFrame = lockBarBolt.frame
-            let frame = CGRect(x: touchPoint.x, y: lockBarFrame.origin.y, width: lockBarFrame.width, height: lockBarFrame.height)
+            let frame = CGRect(x: touchPoint.x-lockBarBolt.frame.width/2,
+                               y: lockBarFrame.origin.y,
+                               width: lockBarFrame.width,
+                               height: lockBarFrame.height)
             
             lockBarBolt.frame = frame
+            if lockBarActivateBounds.contains(touchPoint){
+                updateValue(at: touch)
+                return false
+                
+            }
             
             sendActions(for: [.touchDragInside])
-
         } else {
             sendActions(for: [.touchDragOutside])
         }
@@ -66,6 +73,11 @@ import UIKit
     func reset(){
         imageView?.image = lockedImage
         isLocked = true
+        lockBarBolt.frame = lockBoltBounds
+        
+                let dummy = UIView(frame: lockBoltBounds!)
+                dummy.layer.backgroundColor = UIColor.red.cgColor
+                addSubview(dummy)
     }
     
     //MARK: - Build Control View
@@ -77,13 +89,14 @@ import UIKit
         
         createImageView()
         createLockBar()
+//
+//        let dummy = UIView(frame: lockBarBounds!)
+//        dummy.layer.backgroundColor = UIColor.red.cgColor
+//        addSubview(dummy)
+        //        let dummy2 = UIView(frame:lockBarActivateBounds!)
+        //        dummy2.layer.backgroundColor = UIColor.purple.cgColor
         
-//                let dummy = UIView(frame: lockBoltBounds!)
-//        //        let dummy2 = UIView(frame:lockBarActivateBounds!)
-//                dummy.layer.backgroundColor = UIColor.red.cgColor
-//        //        dummy2.layer.backgroundColor = UIColor.purple.cgColor
-//                addSubview(dummy)
-//        //        addSubview(dummy2)
+        //        addSubview(dummy2)
     }
     
     func createImageView(){
@@ -133,7 +146,11 @@ import UIKit
                                     height: lockBar.frame.height)
         
         lockBarActivateBounds = activateBounds
-        lockBarBounds = self.convert(lockBar.bounds, from: lockBar)
+        let lockBarFrame = self.convert(lockBar.bounds, from: lockBar)
+        lockBarBounds = CGRect(x: lockBarFrame.origin.x + radius,
+                               y: lockBarFrame.origin.y,
+                               width: lockBarFrame.width - radius*2,
+                               height: lockBarFrame.height)
         lockBoltBounds = self.convert(bolt.bounds, from:bolt)
         lockBarBolt = bolt
         

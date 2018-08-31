@@ -20,9 +20,10 @@ class LockControl: UIControl {
         } else {
             updateValue(at: touch)
             sendActions(for: .touchDown)
+            return true
             
         }
-        return true
+        return false
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -62,12 +63,15 @@ class LockControl: UIControl {
             if progress >= 0.80 {
                 isUnlocked = true
                 sendActions(for: .valueChanged)
+                touch.view?.isUserInteractionEnabled = false
+            
             }
         }
         
     }
     
     func reset() {
+        
         progress = 0.0
         isUnlocked = false
     }

@@ -1,24 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uO0-Sz-YsF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Hello!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="hu7-bP-PIX">
+                                <rect key="frame" x="67" y="188" width="240" height="293"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbT-oU-gc4" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="67" y="489" width="240" height="38"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="changeLockState:" destination="BYZ-38-t0r" eventType="valueChanged" id="k6L-o5-0So"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gbT-oU-gc4" firstAttribute="trailing" secondItem="hu7-bP-PIX" secondAttribute="trailing" id="BcX-Jt-D6c"/>
+                            <constraint firstItem="gbT-oU-gc4" firstAttribute="centerX" secondItem="hu7-bP-PIX" secondAttribute="centerX" id="JlI-cG-7Bi"/>
+                            <constraint firstItem="hu7-bP-PIX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sgn-va-jh5"/>
+                            <constraint firstItem="gbT-oU-gc4" firstAttribute="top" secondItem="hu7-bP-PIX" secondAttribute="bottom" constant="8" symbolic="YES" id="U4i-5z-HIl"/>
+                            <constraint firstItem="hu7-bP-PIX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="V6g-mM-SSx"/>
+                            <constraint firstItem="gbT-oU-gc4" firstAttribute="leading" secondItem="hu7-bP-PIX" secondAttribute="leading" id="o3F-KF-7q5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gbT-oU-gc4" secondAttribute="bottom" constant="140" id="tkQ-kT-j7y"/>
+                            <constraint firstItem="hu7-bP-PIX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="y6a-oO-mS3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Hello!" id="B7b-OM-QNq">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="9GQ-nB-85V">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="ELl-mi-YeQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lockImageView" destination="hu7-bP-PIX" id="nhq-AV-y9i"/>
+                        <outlet property="reset" destination="9GQ-nB-85V" id="ja1-F0-j29"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="42J-1z-Muz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uO0-Sz-YsF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3kU-y4-vls">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10000000149011612" blue="0.10000000149011612" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HPP-SD-DUN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hp-uZ-xJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="220" height="293"/>
+    </resources>
 </document>

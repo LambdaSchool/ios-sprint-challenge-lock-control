@@ -72,10 +72,11 @@ class SwipeToUnlockControl: UIControl {
     // MARK: - Private Functions
     
     @inline(__always) private func newOvalFrame(for location: CGPoint) -> CGRect {
-        let origin = CGPoint(x: ovalFrame.origin.x, y: ovalFrame.origin.y)
-        let dx = location.x - origin.x
+//        let origin = CGPoint(x: ovalFrame.origin.x, y: ovalFrame.origin.y)
+        let dx = location.x - ovalFrame.origin.x
         
         ovalFrame.origin.x += dx
+        ovalFrame.origin.y = ovalFrame.origin.y
         
         return ovalFrame
     }

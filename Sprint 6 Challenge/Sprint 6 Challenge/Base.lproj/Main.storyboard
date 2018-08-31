@@ -18,61 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV7-Z6-KTc">
-                                <rect key="frame" x="34" y="145" width="307" height="376"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-vj-Wef">
-                                        <rect key="frame" x="8" y="314" width="291" height="54"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afm-Iu-RJY">
-                                                <rect key="frame" x="8" y="5" width="44" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.92953938250000001" green="0.78949743510000003" blue="0.2172295451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="rUG-5b-rqg"/>
-                                        </constraints>
-                                    </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="ESN-Oa-PrK">
-                                        <rect key="frame" x="33" y="64" width="241" height="214"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.96993869539999999" blue="0.8862368464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79F-pg-fH2" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="34" y="145.5" width="307" height="376"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="PLI-vj-Wef" secondAttribute="trailing" constant="8" id="2gC-XU-9dZ"/>
-                                    <constraint firstItem="PLI-vj-Wef" firstAttribute="top" secondItem="ESN-Oa-PrK" secondAttribute="bottom" constant="36" id="58f-Vk-ODg"/>
-                                    <constraint firstAttribute="bottom" secondItem="PLI-vj-Wef" secondAttribute="bottom" constant="8" id="72D-wN-v7U"/>
-                                    <constraint firstItem="PLI-vj-Wef" firstAttribute="leading" secondItem="NV7-Z6-KTc" secondAttribute="leading" constant="8" id="q7s-2c-Vuc"/>
-                                    <constraint firstAttribute="trailing" secondItem="ESN-Oa-PrK" secondAttribute="trailing" constant="33" id="q9Z-uE-wLy"/>
-                                    <constraint firstItem="ESN-Oa-PrK" firstAttribute="top" secondItem="NV7-Z6-KTc" secondAttribute="top" constant="64" id="sch-bT-5qz"/>
-                                    <constraint firstItem="ESN-Oa-PrK" firstAttribute="leading" secondItem="NV7-Z6-KTc" secondAttribute="leading" constant="33" id="sgI-Se-28v"/>
+                                    <constraint firstAttribute="width" constant="307" id="65g-nF-qQj"/>
+                                    <constraint firstAttribute="height" constant="376" id="xT1-wP-XQ8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NV7-Z6-KTc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="Vgh-Op-gNE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NV7-Z6-KTc" secondAttribute="bottom" constant="146" id="iUT-a7-T2Z"/>
-                            <constraint firstItem="NV7-Z6-KTc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="81" id="mNx-e4-vQH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NV7-Z6-KTc" secondAttribute="trailing" constant="34" id="qcN-1D-3ic"/>
+                            <constraint firstItem="79F-pg-fH2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PEG-Q1-yRg"/>
+                            <constraint firstItem="79F-pg-fH2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3w-aT-8cQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="uBY-Ow-hB0"/>
                     </view>
                     <navigationItem key="navigationItem" id="i5L-J1-mbB">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="BRK-Xp-owu"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="backgroundView" destination="NV7-Z6-KTc" id="COl-Vr-4Xj"/>
-                        <outlet property="lockImageView" destination="ESN-Oa-PrK" id="yfa-8I-VeT"/>
-                        <outlet property="slideBackground" destination="PLI-vj-Wef" id="XsL-Q1-R12"/>
-                        <outlet property="sliderView" destination="Afm-Iu-RJY" id="imh-ku-Bt2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.79999999999995" y="-580.65967016491754"/>
+            <point key="canvasLocation" x="1084" y="-684.10794602698661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KjT-fF-7b3">
@@ -93,7 +61,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="-564.46776611694156"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Locked" width="220" height="293"/>
-    </resources>
 </document>

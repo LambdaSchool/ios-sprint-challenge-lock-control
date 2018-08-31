@@ -34,9 +34,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USn-eh-e3n" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="67" y="225" width="240" height="217"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USn-eh-e3n" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="37" y="183" width="300" height="300"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="JT6-1N-mtd"/>
+                                    <constraint firstAttribute="height" constant="300" id="gSr-cq-wm0"/>
+                                </constraints>
                                 <connections>
                                     <action selector="unlock:" destination="XVq-r0-yP5" eventType="valueChanged" id="oPr-xB-Im9"/>
                                 </connections>

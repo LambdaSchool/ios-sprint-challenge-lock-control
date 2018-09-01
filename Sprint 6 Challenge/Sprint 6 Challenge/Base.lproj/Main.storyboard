@@ -35,7 +35,11 @@
                         <viewLayoutGuide key="safeArea" id="uBY-Ow-hB0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="bpf-Xt-PV4">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="8MG-q7-pma"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="8MG-q7-pma">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="fV6-Po-4iF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

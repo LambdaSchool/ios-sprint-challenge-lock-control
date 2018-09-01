@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController
 {
-
+    var customControl: CustomControl?
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var slideBackground: UIView!
     @IBOutlet weak var sliderView: UIView!
@@ -23,46 +23,52 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
     }
-
-    
-    
-    @IBAction func slide(_ sender: UIPanGestureRecognizer)
+   
+    @IBAction func reset(_ sender: Any)
     {
-        let translation = sender.translation(in: self.view)
-        if let view = sender.view {
-            view.center = CGPoint(x:view.center.x + translation.x,
-                                  y:view.center.y + translation.y)
-        }
-        sender.setTranslation(CGPoint.zero, in: self.view)
         
-
-        
-        switch sender.state {
-        case .began:
-            let location = sender.location(in: view)
-            if location.x < view.bounds.midX {
-                interactionController = UIPercentDrivenInteractiveTransition()
-                
-            }
-        case .changed:
-            let translation = sender.translation(in: view)
-            let percentageComplete = fabs(translation.x / view.bounds.width)
-            interactionController?.update(percentageComplete)
-        case .ended:
-            if sender.velocity(in: backgroundView).x > 0 {
-                interactionController?.finish()
-            } else {
-                interactionController?.cancel()
-            }
-            interactionController = nil
-        default:
-            break
-        }
+        print("tapped")
     }
     
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interactionController
-    }
+    
+    
+//    @IBAction func slide(_ sender: UIPanGestureRecognizer)
+//    {
+//        let translation = sender.translation(in: self.view)
+//        if let view = sender.view {
+//            view.center = CGPoint(x:view.center.x + translation.x,
+//                                  y:view.center.y + translation.y)
+//        }
+//        sender.setTranslation(CGPoint.zero, in: self.view)
+//        
+//
+//        
+//        switch sender.state {
+//        case .began:
+//            let location = sender.location(in: view)
+//            if location.x < view.bounds.midX {
+//                interactionController = UIPercentDrivenInteractiveTransition()
+//                
+//            }
+//        case .changed:
+//            let translation = sender.translation(in: view)
+//            let percentageComplete = fabs(translation.x / view.bounds.width)
+//            interactionController?.update(percentageComplete)
+//        case .ended:
+//            if sender.velocity(in: backgroundView).x > 0 {
+//                interactionController?.finish()
+//            } else {
+//                interactionController?.cancel()
+//            }
+//            interactionController = nil
+//        default:
+//            break
+//        }
+//    }
+//    
+//    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//        return interactionController
+//    }
     
 //    if recognizer.state == UIGestureRecognizerState.ended {
 //    // 1

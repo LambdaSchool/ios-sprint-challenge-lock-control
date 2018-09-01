@@ -65,6 +65,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="wjN-4i-njQ" id="vdN-7Y-46q"/>
+                        <outlet property="resetButton" destination="Vs8-jD-Lbh" id="3AM-hc-BiH"/>
                         <outlet property="slider" destination="N44-H2-5x4" id="3OZ-Qe-XbW"/>
                     </connections>
                 </viewController>

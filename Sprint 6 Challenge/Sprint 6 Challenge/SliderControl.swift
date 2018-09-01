@@ -9,20 +9,20 @@
 import UIKit
 
 class SliderControl: UIControl {
-
+  
   required init?(coder aCoder: NSCoder) {
     super.init(coder: aCoder)
     setup()
   }
-
+  
   private let sliderControl = UIView(frame: CGRect(x: 0, y: 0, width: 41, height: 41))
   public var progress = 0.0
   private var shouldMove = false
-
+  
   private func setup() {
     self.backgroundColor = UIColor.lightGray
     sliderControl.backgroundColor = .black
-
+    
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
     self.addGestureRecognizer(panGesture)
     self.addSubview(sliderControl)
@@ -45,13 +45,13 @@ class SliderControl: UIControl {
       self.sliderControl.frame.origin.x = 0
     }
   }
-
+  
   @objc func pan(_ sender: UIPanGestureRecognizer) {
     let x = sender.location(in: self).x
     if x <= 0 || x > self.bounds.size.width - self.sliderControl.bounds.size.width {
       return
     }
-
+    
     switch sender.state {
     case .began:
       shouldMove = x < sliderControl.bounds.size.width
@@ -67,6 +67,7 @@ class SliderControl: UIControl {
       shouldMove = false
       sliderControl.layoutIfNeeded()
       self.layoutIfNeeded()
+      
       if progress > 65 && sender.velocity(in: self).x > -1.0 {
         UIView.animate(withDuration: 0.25, animations: {
           self.sliderControl.frame.origin.x = self.bounds.size.width - self.sliderControl.bounds.size.width
@@ -82,5 +83,5 @@ class SliderControl: UIControl {
     default: break
     }
   }
-
+  
 }

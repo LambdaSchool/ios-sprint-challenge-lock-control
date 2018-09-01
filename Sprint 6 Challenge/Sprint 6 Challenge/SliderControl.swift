@@ -10,30 +10,40 @@ import UIKit
 
 class SliderControl: UIControl {
 
-  public override init(frame: CGRect) {
-    super.init(frame: frame)
-    setup()
-  }
-
   required init?(coder aCoder: NSCoder) {
     super.init(coder: aCoder)
     setup()
   }
 
-  private let sliderControl = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 41))
-  private var progress = 0.0
+  private let sliderControl = UIView(frame: CGRect(x: 0, y: 0, width: 41, height: 41))
+  public var progress = 0.0
   private var shouldMove = false
 
   private func setup() {
     self.backgroundColor = UIColor.lightGray
-    sliderControl.clipsToBounds = true
     sliderControl.backgroundColor = .black
-    sliderControl.layer.masksToBounds = true
 
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
     self.addGestureRecognizer(panGesture)
-    self.setNeedsLayout()
     self.addSubview(sliderControl)
+  }
+  
+  public func fade() {
+    UIView.animate(withDuration: 0.25, animations: {
+      self.alpha = 0.0
+    }) { (success) in
+      self.progress = 0.0
+      self.sliderControl.frame.origin.x = 0
+    }
+  }
+  
+  public func reset() {
+    UIView.animate(withDuration: 0.25, animations: {
+      self.alpha = 1.0
+    }) { (success) in
+      self.progress = 0.0
+      self.sliderControl.frame.origin.x = 0
+    }
   }
 
   @objc func pan(_ sender: UIPanGestureRecognizer) {
@@ -44,24 +54,27 @@ class SliderControl: UIControl {
 
     switch sender.state {
     case .began:
-      shouldMove = x < sliderControl.bounds.size.width + 10
+      shouldMove = x < sliderControl.bounds.size.width
       self.sendActions(for: .editingDidBegin)
     case .changed:
       if shouldMove {
-        sliderControl.frame.origin.x = x
+        sliderControl.frame.origin.x = x - 20
         progress = (Double(min(x / self.bounds.size.width, 1)) + 0.1289) * 100
         self.sendActions(for: .valueChanged)
       }
     case .ended: fallthrough
     case .cancelled:
+      shouldMove = false
+      sliderControl.layoutIfNeeded()
+      self.layoutIfNeeded()
       if progress > 65 && sender.velocity(in: self).x > -1.0 {
-        UIView.animate(withDuration: 0.5) {
-          self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
           self.sliderControl.frame.origin.x = self.bounds.size.width - self.sliderControl.bounds.size.width
+        }) { (success) in
+          self.sendActions(for: .primaryActionTriggered)
         }
       } else {
-        UIView.animate(withDuration: 0.5) {
-          self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25) {
           self.sliderControl.frame.origin.x = 0
           self.progress = 0.0
         }

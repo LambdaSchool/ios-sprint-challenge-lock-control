@@ -21,12 +21,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwU-8d-tdV">
                                 <rect key="frame" x="16" y="80" width="343" height="567"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="wjN-4i-njQ">
-                                        <rect key="frame" x="8" y="8" width="327" height="293"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="wjN-4i-njQ">
+                                        <rect key="frame" x="8" y="8" width="327" height="301"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N44-H2-5x4" customClass="SliderControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="518" width="303" height="41"/>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="N44-H2-5x4" customClass="SliderControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="526" width="303" height="41"/>
                                         <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="1V7-56-oeh"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="unlock:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="uKF-E1-SAv"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -37,7 +43,7 @@
                                     <constraint firstItem="wjN-4i-njQ" firstAttribute="leading" secondItem="xwU-8d-tdV" secondAttribute="leading" constant="8" id="UvE-4d-B7D"/>
                                     <constraint firstItem="N44-H2-5x4" firstAttribute="leading" secondItem="xwU-8d-tdV" secondAttribute="leading" constant="20" id="blp-eL-fb2"/>
                                     <constraint firstItem="N44-H2-5x4" firstAttribute="top" secondItem="wjN-4i-njQ" secondAttribute="bottom" constant="217" id="fiA-51-ugy"/>
-                                    <constraint firstAttribute="bottom" secondItem="N44-H2-5x4" secondAttribute="bottom" constant="8" id="poA-aw-PMy"/>
+                                    <constraint firstAttribute="bottom" secondItem="N44-H2-5x4" secondAttribute="bottom" id="poA-aw-PMy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -51,8 +57,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qyw-TM-PtW">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Vs8-jD-Lbh"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Vs8-jD-Lbh">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="X9Y-dv-O9R"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="wjN-4i-njQ" id="vdN-7Y-46q"/>
+                        <outlet property="slider" destination="N44-H2-5x4" id="3OZ-Qe-XbW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

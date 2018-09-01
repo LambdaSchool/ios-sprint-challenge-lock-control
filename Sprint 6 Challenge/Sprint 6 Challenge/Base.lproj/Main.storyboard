@@ -25,17 +25,17 @@
                                         <rect key="frame" x="8" y="8" width="327" height="293"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N44-H2-5x4" customClass="SliderControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="518" width="327" height="41"/>
+                                        <rect key="frame" x="20" y="518" width="303" height="41"/>
                                         <gestureRecognizers/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="N44-H2-5x4" secondAttribute="trailing" constant="8" id="0g9-b9-BfB"/>
+                                    <constraint firstAttribute="trailing" secondItem="N44-H2-5x4" secondAttribute="trailing" constant="20" id="0g9-b9-BfB"/>
                                     <constraint firstAttribute="trailing" secondItem="wjN-4i-njQ" secondAttribute="trailing" constant="8" id="2NN-Xb-bGL"/>
                                     <constraint firstItem="wjN-4i-njQ" firstAttribute="top" secondItem="xwU-8d-tdV" secondAttribute="top" constant="8" id="AGO-ay-8et"/>
                                     <constraint firstItem="N44-H2-5x4" firstAttribute="centerX" secondItem="xwU-8d-tdV" secondAttribute="centerX" id="GNh-b8-Krw"/>
                                     <constraint firstItem="wjN-4i-njQ" firstAttribute="leading" secondItem="xwU-8d-tdV" secondAttribute="leading" constant="8" id="UvE-4d-B7D"/>
-                                    <constraint firstItem="N44-H2-5x4" firstAttribute="leading" secondItem="xwU-8d-tdV" secondAttribute="leading" constant="8" id="blp-eL-fb2"/>
+                                    <constraint firstItem="N44-H2-5x4" firstAttribute="leading" secondItem="xwU-8d-tdV" secondAttribute="leading" constant="20" id="blp-eL-fb2"/>
                                     <constraint firstItem="N44-H2-5x4" firstAttribute="top" secondItem="wjN-4i-njQ" secondAttribute="bottom" constant="217" id="fiA-51-ugy"/>
                                     <constraint firstAttribute="bottom" secondItem="N44-H2-5x4" secondAttribute="bottom" constant="8" id="poA-aw-PMy"/>
                                 </constraints>

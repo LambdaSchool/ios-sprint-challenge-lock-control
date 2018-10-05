@@ -23,9 +23,9 @@ class LockControl: UIControl {
         self.isUserInteractionEnabled = true
         self.layer.cornerRadius = 20
         clipsToBounds = true
+        setupImageView()
         setupSlider()
         setupDotView()
-        setupImageView()
     }
     
     func setupSlider() {
@@ -41,7 +41,7 @@ class LockControl: UIControl {
     
     func setupDotView() {
         dotView = UIView(frame: CGRect(x: 0, y: 0, width: 40.0, height: 35.0))
-        dotView.backgroundColor = UIColor.lightGray
+        dotView.backgroundColor = UIColor.black
         dotView.isUserInteractionEnabled = true
         dotView.clipsToBounds = true
         dotView.layer.cornerRadius = dotView.frame.size.width / 2
@@ -114,7 +114,6 @@ class LockControl: UIControl {
         guard let touchPoint = touch?.location(in: dotView),
             let touch = touch else { return }
         if dotView.center.x < sliderView.bounds.width*0.80 {
-            dotView.frame.origin.x = 0
             reset()
         }
         
@@ -149,6 +148,9 @@ class LockControl: UIControl {
         NSLayoutConstraint.activate([imageCenterXConstraint, imageCenterYConstraint])
     }
     
+    
+    //This doesn't work
+    //throws error
     func setupsliderViewContraints(sliderView: UIView) {
         sliderView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -161,25 +163,25 @@ class LockControl: UIControl {
             multiplier: 1,
             constant: 20)
         
-        let sliderWidthConstraint = NSLayoutConstraint(
-            item: sliderView,
-            attribute: .width,
-            relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
-            multiplier: 1,
-            constant: 100)
+//        let sliderWidthConstraint = NSLayoutConstraint(
+//            item: sliderView,
+//            attribute: .width,
+//            relatedBy: .equal,
+//            toItem: nil,
+//            attribute: .notAnAttribute,
+//            multiplier: 1,
+//            constant: 100)
+//
+//        let sliderHeightConstraint = NSLayoutConstraint(
+//            item: sliderView,
+//            attribute: .height,
+//            relatedBy: .equal,
+//            toItem: nil,
+//            attribute: .notAnAttribute,
+//            multiplier: 1,
+//            constant: 100)
         
-        let sliderHeightConstraint = NSLayoutConstraint(
-            item: sliderView,
-            attribute: .height,
-            relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
-            multiplier: 1,
-            constant: 100)
         
-        
-        NSLayoutConstraint.activate([sliderBottomConstraint, sliderHeightConstraint, sliderWidthConstraint])
+        NSLayoutConstraint.activate([sliderBottomConstraint])
     }
 }

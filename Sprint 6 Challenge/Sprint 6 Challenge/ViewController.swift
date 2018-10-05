@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetButton.title = ""
+        self.resetButton.title = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +21,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func lockSwitch(_ lockingControl: LockControl) {
-        if lockControl.unlocked {
-            resetButton.title = "Reset"
-        } else {
-            resetButton.title = ""
+        UIView.animate(withDuration: 1) {
+            if self.lockControl.unlocked {
+                self.resetButton.title = "Reset"
+            } else {
+                self.resetButton.title = ""
+            }
         }
     }
     

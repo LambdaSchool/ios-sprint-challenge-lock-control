@@ -6,12 +6,15 @@
 //  Copyright © 2018 Lambda School. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum AppearanceHelper {
     
     static func setTheme() {
-        
+        UINavigationBar.appearance().barTintColor = .red
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        UIImageView.appearance().backgroundColor = .lightGray
+        UIView.appearance().layer.cornerRadius = 40
     }
     
 }

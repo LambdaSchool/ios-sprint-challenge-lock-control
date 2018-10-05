@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -27,38 +26,43 @@
                                     <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hm6-Aa-C1i"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BQE-YQ-cJU">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZzW-6u-acq">
+                                <rect key="frame" x="53" y="233" width="269" height="219"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="xeN-x3-fB4">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="242"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-oK-cYO">
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="139"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="269" id="SVM-z6-oJU"/>
+                                            <constraint firstAttribute="height" constant="139" id="dEz-5Q-ELp"/>
+                                        </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-72-1aF" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="250" width="300" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-Tu-owg">
+                                        <rect key="frame" x="0.0" y="139" width="269" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="V3X-Jx-os9"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="bXZ-ub-lPD"/>
-                                    <constraint firstAttribute="width" constant="300" id="rop-Eh-bVD"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zWb-Fh-LVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="320" id="AzK-cS-HDy"/>
-                            <constraint firstItem="zWb-Fh-LVs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="DoM-d8-C4H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWb-Fh-LVs" secondAttribute="trailing" constant="16" id="czr-hF-b6J"/>
-                            <constraint firstItem="BQE-YQ-cJU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wVH-xh-Pcm"/>
-                            <constraint firstItem="BQE-YQ-cJU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zsX-b9-QDU"/>
+                            <constraint firstItem="zWb-Fh-LVs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="PWJ-A8-Ozz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zWb-Fh-LVs" secondAttribute="trailing" id="Pg2-nK-6Ee"/>
+                            <constraint firstItem="ZzW-6u-acq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="Tty-gW-x8v"/>
+                            <constraint firstItem="zWb-Fh-LVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="320" id="WCh-3G-ofr"/>
+                            <constraint firstItem="ZzW-6u-acq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gHc-ZN-zET"/>
+                            <constraint firstItem="ZzW-6u-acq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="169" id="kMo-VP-f96"/>
+                            <constraint firstItem="ZzW-6u-acq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mdu-yE-af6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="7dO-w2-g27"/>
                     <connections>
-                        <outlet property="lockedImage" destination="xeN-x3-fB4" id="8F1-Tx-gBo"/>
+                        <outlet property="lockedImage" destination="fAq-oK-cYO" id="upQ-YY-aq0"/>
                         <outlet property="resetButton" destination="zWb-Fh-LVs" id="Au3-HF-EdW"/>
-                        <outlet property="swipeControl" destination="XCD-72-1aF" id="oEQ-Hg-krn"/>
+                        <outlet property="swipeControl" destination="PjR-Tu-owg" id="8B0-kw-gM7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

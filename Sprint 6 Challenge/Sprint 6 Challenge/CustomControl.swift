@@ -10,6 +10,8 @@ import UIKit
 
 class CustomControl: UIControl {
     
+    let dot = UIView()
+    
     // Init
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,12 +23,12 @@ class CustomControl: UIControl {
     
     func createDot() {
         
-        let dot = UIView()
         let swipeFrameX = self.frame.origin.x
         let swipeFrameY = self.frame.origin.y
         dot.frame = CGRect(x: swipeFrameX + 10, y: swipeFrameY-130, width: 60, height: 60)
         dot.layer.cornerRadius = 30
         dot.backgroundColor = .black
+        dot.isUserInteractionEnabled = true
         
         self.addSubview(dot)
     }
@@ -66,12 +68,33 @@ class CustomControl: UIControl {
     
     func updateLocation(at touch: UITouch) {
         let touchPoint = touch.location(in: self)
-        // if customcontrol contains touchpoint
-        // then set dot's frame to touchpoint
-        sendActions(for: .valueChanged)
+        if self.frame.contains(touchPoint) {
+            UIView.animate(withDuration: 0.5) {
+                self.dot.transform = CGAffineTransform.init(translationX: touchPoint.x, y: touchPoint.y)
+            }
+            sendActions(for: .valueChanged)
+        }
+        return
     }
 
-    func animate() {
+    func animate(at touchPoint: CGPoint) {
         // animate image and button
+        func lock() {
+            
+        }
+        
+        func unLock() {
+            
+        }
+        
+        if touchPoint.x < self.bounds.size.width * 0.8  {
+            
+            UIView.animate(withDuration: 0.3) {
+                <#code#>
+            }
+        } else if touchPoint.x > 0.8 {
+            return
+            
+        }
     }
 }

@@ -24,6 +24,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cfh-Hf-607" secondAttribute="height" multiplier="1:1" id="JjU-LH-7xt"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="changeButton:" destination="BYZ-38-t0r" eventType="valueChanged" id="grO-uO-QGj"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,10 +38,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="0pr-gO-FCi">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="nYH-jr-mdX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="nYH-jr-mdX">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="1vU-0C-ooO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="resetButton" destination="nYH-jr-mdX" id="qAx-ul-Zjg"/>
+                        <outlet property="unlockCustomControl" destination="cfh-Hf-607" id="g5R-p8-uxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

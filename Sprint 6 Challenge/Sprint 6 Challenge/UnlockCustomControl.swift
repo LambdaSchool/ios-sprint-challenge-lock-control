@@ -27,18 +27,21 @@ class UnlockCustomControl: UIControl {
         lockImageView.image = UIImage(named: "Locked")
         lockImageView.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 3 * self.bounds.height / 4)
         lockImageView.contentMode = .scaleAspectFit
+        lockImageView.isUserInteractionEnabled = false
         views.append(lockImageView)
         addSubview(lockImageView)
         
         
         slider.frame = CGRect(x: 0, y: lockImageView.bounds.height, width: self.bounds.width, height: self.bounds.height / 4)
         slider.backgroundColor = UIColor.gray
+        slider.isUserInteractionEnabled = false
         slider.layer.cornerRadius = 20
         views.append(slider)
         addSubview(slider)
         
         indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
         indicator.backgroundColor = UIColor.black
+        indicator.isUserInteractionEnabled = true
         indicator.layer.cornerRadius = indicator.frame.height / 2
         views.append(indicator)
         addSubview(indicator)
@@ -54,10 +57,15 @@ class UnlockCustomControl: UIControl {
         let start = indicator.frame.width + 10
         let end = sliderWidth - 10
         
-        let dx = touchPoint.x - start
+        let dx = start - touchPoint.x
         
-        percentComplete = Double(dx / end - start)
+        let calculation = Double(dx / (end - start))
+        percentComplete = abs(calculation)
         
+    }
+    
+    private func unlockImage() {
+        lockImageView.image = UIImage(named: "Unlocked")
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -69,9 +77,16 @@ class UnlockCustomControl: UIControl {
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         
-        if slider.bounds.contains(touchPoint) {
+        if bounds.contains(touchPoint) {
             updatePercent(with: touchPoint)
-            indicator.frame = CGRect(x: touchPoint.x, y: indicator.frame.origin.y, width: indicator.frame.width, height: indicator.frame.height
+            print(percentComplete)
+            
+            let sliderWidth = slider.bounds.width
+            let start = indicator.frame.width + 10
+            let end = sliderWidth - 10
+            let x = Double(end - start)  * percentComplete
+            
+            indicator.frame = CGRect(x: CGFloat(x), y: indicator.frame.origin.y, width: indicator.frame.width, height: indicator.frame.height
             )
             
             print(touchPoint)
@@ -88,8 +103,15 @@ class UnlockCustomControl: UIControl {
         
         let touchPoint = touch.location(in: self)
         
-        if slider.bounds.contains(touchPoint) {
+        if bounds.contains(touchPoint) {
+            
             updatePercent(with: touchPoint)
+            if percentComplete < 0.8 {
+                indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+            } else {
+                indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+                unlockImage()
+            }
             
             sendActions(for: [.touchUpInside, .valueChanged])
             

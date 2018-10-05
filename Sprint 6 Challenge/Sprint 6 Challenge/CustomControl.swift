@@ -11,6 +11,7 @@ import UIKit
 class CustomControl: UIControl {
     
     let dot = UIView()
+    var image: UIImageView!
     
     // Init
     
@@ -38,6 +39,7 @@ class CustomControl: UIControl {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         sendActions(for: .touchDown)
         updateLocation(at: touch)
+        animateImage(at: touch)
         return true
     }
     
@@ -46,6 +48,7 @@ class CustomControl: UIControl {
         if bounds.contains(touchPoint) {
             sendActions(for: .touchDragInside)
             updateLocation(at: touch)
+            animateImage(at: touch)
         } else {
             sendActions(for: .touchDragOutside)
         }
@@ -76,25 +79,27 @@ class CustomControl: UIControl {
         }
         return
     }
-
-    func animate(at touchPoint: CGPoint) {
-        // animate image and button
-        func lock() {
-            
-        }
+    
+    func unLock() {
+        guard let image = image else { return }
+        image.image = #imageLiteral(resourceName: "Unlocked")
+    }
+    
+    func reset() {
+        guard let image = image else { return }
+        dot.frame.origin.x = 0.0
+        image.image = #imageLiteral(resourceName: "Locked")
+    }
+    
+    func animateImage(at touch: UITouch) {
+        let touchPoint = touch.location(in: self)
         
-        func unLock() {
-            
-        }
-        
+        // change image and make button visible        
         if touchPoint.x < self.bounds.size.width * 0.8  {
-            
-            UIView.animate(withDuration: 0.3) {
-                <#code#>
-            }
+            unLock()
+            dot.isUserInteractionEnabled = false
         } else if touchPoint.x > 0.8 {
-            return
-            
+            reset()
         }
     }
 }

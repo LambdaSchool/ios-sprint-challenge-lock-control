@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var customControl: CustomControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +20,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: Any) {
-        
+        guard let custom = customControl else { return }
+        custom.dot.isUserInteractionEnabled = true
+        resetButton.setTitle("Reset", for: .normal)
     }
     
     @IBOutlet weak var resetButton: UIButton!
     //@IBOutlet weak var backView: UIView!
     @IBOutlet weak var lockedImage: UIImageView!
     @IBOutlet weak var swipeControl: UIView!
-    
+
 }
 

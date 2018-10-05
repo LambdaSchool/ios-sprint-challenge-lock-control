@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var customLock: LockControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        updateViews()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func resetLock(_ sender: Any) {
+        customLock.reset()
+        updateViews()
     }
 
-
+    @IBAction func unlock(_ sender: Any) {
+        updateViews()
+    }
+    
+    
+    private func updateViews() {
+        title = customLock.isUnlocked ? "Hello!" : "Please unlock."
+    }
 }
 

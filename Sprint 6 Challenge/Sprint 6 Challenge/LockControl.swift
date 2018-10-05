@@ -9,7 +9,7 @@
 import UIKit
 
 class LockControl: UIControl {
-    var unlocked: Bool = false
+    var isUnlocked: Bool = false
     private var imageView: UIImageView!
     private var barView: UIView!
     private var thumb: UIView!
@@ -19,7 +19,8 @@ class LockControl: UIControl {
     
     func reset() {
         imageView.image = lockedImage
-        thumb.frame = thumbOffset(by: 6)
+        slideThumb(to: 6)
+        isUnlocked = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,15 +58,18 @@ class LockControl: UIControl {
         let touchPoint = touch.location(in: barView)
         let percentage = calculatePercentage(with: touchPoint)
         if percentage > 0.8 {
-            unlocked = true
+            isUnlocked = true
             imageView.image = unlockedImage
+            sendActions(for: .valueChanged)
+            if thumb.frame.origin.x != 184 { slideThumb(to: 184) }
         } else {
-            thumb.frame = thumbOffset(by: 6)
+            reset()
         }
     }
     
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: .touchCancel)
+        reset()
     }
     
     private func setupControl() {
@@ -102,6 +106,12 @@ class LockControl: UIControl {
     
     private func thumbOffset(by offset: CGFloat) -> CGRect {
         return CGRect(x: offset, y: 6, width: 38, height: 38)
+    }
+    
+    private func slideThumb(to point: CGFloat) {
+        UIView.animate(withDuration: 0.3) {
+            self.thumb.frame = self.thumbOffset(by: point)
+        }
     }
     
     override var intrinsicContentSize: CGSize {

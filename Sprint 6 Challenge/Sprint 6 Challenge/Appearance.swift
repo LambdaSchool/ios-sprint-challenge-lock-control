@@ -23,10 +23,13 @@ enum Appearance {
         
         let barButtonFont = Appearance.setTitleFont(with: .title1, pointSize: 20)
         let barButtonFontAttributes = [NSAttributedString.Key.font: barButtonFont]
+        let disabledBarButtonFontAttributes = [NSAttributedString.Key.font: barButtonFont, NSAttributedString.Key.foregroundColor: Appearance.paleYellow]
         
-        
-        UIBarButtonItem.appearance().tintColor = Appearance.paleYellow
         UIBarButtonItem.appearance().setTitleTextAttributes(barButtonFontAttributes, for: .normal)
+            UIBarButtonItem.appearance().setTitleTextAttributes(barButtonFontAttributes, for: .selected)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(disabledBarButtonFontAttributes, for: .disabled)
+        
         
     }
     

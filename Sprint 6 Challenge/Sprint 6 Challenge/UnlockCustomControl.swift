@@ -28,7 +28,6 @@ class UnlockCustomControl: UIControl {
         lockImageView.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 3 * self.bounds.height / 4)
         lockImageView.contentMode = .scaleAspectFit
         lockImageView.isUserInteractionEnabled = false
-        views.append(lockImageView)
         addSubview(lockImageView)
         
         
@@ -36,21 +35,16 @@ class UnlockCustomControl: UIControl {
         slider.backgroundColor = UIColor.gray
         slider.isUserInteractionEnabled = false
         slider.layer.cornerRadius = 20
-        views.append(slider)
         addSubview(slider)
         
         indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
         indicator.backgroundColor = UIColor.black
         indicator.isUserInteractionEnabled = true
         indicator.layer.cornerRadius = indicator.frame.height / 2
-        views.append(indicator)
         addSubview(indicator)
     }
     
     private func updatePercent(with touchPoint: CGPoint) {
-        
-        guard let indicator = views.last else { return }
-        let slider = views[1]
         
         
         let sliderWidth = slider.bounds.width
@@ -79,7 +73,6 @@ class UnlockCustomControl: UIControl {
         
         if bounds.contains(touchPoint) {
             updatePercent(with: touchPoint)
-            print(percentComplete)
             
             let sliderWidth = slider.bounds.width
             let start = indicator.frame.width + 10
@@ -111,11 +104,19 @@ class UnlockCustomControl: UIControl {
             } else {
                 indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
                 unlockImage()
+                self.isUserInteractionEnabled = false
             }
-            
             sendActions(for: [.touchUpInside, .valueChanged])
             
         } else {
+            
+            if percentComplete < 0.8 {
+                indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+            } else {
+                indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+                unlockImage()
+                self.isUserInteractionEnabled = false
+            }
             sendActions(for: [.touchUpOutside])
         }
     }
@@ -128,7 +129,5 @@ class UnlockCustomControl: UIControl {
     var lockImageView = UIImageView()
     var slider = UIView()
     var indicator = UIView()
-    
-    var views: [UIView] = []
     var percentComplete: Double = 0.0
 }

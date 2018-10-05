@@ -11,6 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var customLock: LockControl!
+    @IBOutlet weak var resetButton: UIBarButtonItem! {
+        didSet {
+            let buttonFrame = CGRect(x: 0, y: 0, width: resetButton.width, height: 30)
+            let button = UIButton(frame: buttonFrame)
+            button.setTitle("Reset", for: .normal)
+            button.setTitleColor(.accentColor, for: .normal)
+            button.alpha = 0.0
+            button.addTarget(self, action: #selector(resetLock), for: .touchUpInside)
+            resetButton.customView = button
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +30,7 @@ class ViewController: UIViewController {
         updateViews()
     }
 
-    @IBAction func resetLock(_ sender: Any) {
+   @objc func resetLock(_ sender: Any) {
         customLock.reset()
         updateViews()
     }
@@ -30,6 +42,23 @@ class ViewController: UIViewController {
     
     private func updateViews() {
         title = customLock.isUnlocked ? "Hello!" : "Please unlock."
+        view.backgroundColor = .darkColor
+        
+        if customLock.isUnlocked {
+            UIView.animate(withDuration: 0.3) {
+                self.resetButton.customView?.alpha = 1.0
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.resetButton.customView?.alpha = 0.0
+            }
+        }
     }
+}
+
+class NavigationController: UINavigationController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
 }
 

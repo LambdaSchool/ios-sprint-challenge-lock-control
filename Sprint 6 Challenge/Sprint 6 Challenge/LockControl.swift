@@ -54,7 +54,7 @@ class LockControl: UIControl {
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         defer { super.endTracking(touch, with: event) }
-        guard let touch = touch else { return }
+        guard let touch = touch, !isUnlocked else { return }
         let touchPoint = touch.location(in: barView)
         let percentage = calculatePercentage(with: touchPoint)
         if percentage > 0.8 {
@@ -73,7 +73,7 @@ class LockControl: UIControl {
     }
     
     private func setupControl() {
-        backgroundColor = .lightGray
+        backgroundColor = .darkerColor
         layer.cornerRadius = 30
         
         imageView = UIImageView(frame: CGRect(x: 60, y: 46, width: 120, height: 120))
@@ -83,14 +83,16 @@ class LockControl: UIControl {
         
         barView = UIView(frame: CGRect(x: 6, y: 184, width: 228, height: 50))
         addSubview(barView)
-        barView.backgroundColor = .gray
+        barView.backgroundColor = .darkColor
         barView.layer.cornerRadius = barView.bounds.height / 2
         barView.isUserInteractionEnabled = false
         
         thumb = UIView(frame: thumbOffset(by: 6))
         barView.addSubview(thumb)
-        thumb.backgroundColor = .black
+        thumb.backgroundColor = .darkerColor
         thumb.layer.cornerRadius = thumb.bounds.height/2
+        thumb.layer.borderColor = UIColor.accentColor.cgColor
+        thumb.layer.borderWidth = 2
         thumb.isUserInteractionEnabled = false
     }
     

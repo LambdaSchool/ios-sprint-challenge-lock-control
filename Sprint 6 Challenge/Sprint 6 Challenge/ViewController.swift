@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         if unlockCustomControl.percentComplete > 0.8 {
             button.isEnabled = true
             button.tintColor = UIColor.black
-            unlockCustomControl.indicator.isUserInteractionEnabled = false
+            unlockCustomControl.isUserInteractionEnabled = false
         }
     }
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func resetLock(_ sender: Any) {
-        unlockCustomControl.indicator.isUserInteractionEnabled = true
+        unlockCustomControl.isUserInteractionEnabled = true
         unlockCustomControl.lockImageView.image = UIImage(named: "Locked")
         unlockCustomControl.percentComplete = 0.0
         unlockCustomControl.layoutSubviews()

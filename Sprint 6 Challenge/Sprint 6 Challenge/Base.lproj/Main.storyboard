@@ -36,7 +36,7 @@
                                             <constraint firstAttribute="height" constant="139" id="dEz-5Q-ELp"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-Tu-owg">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-Tu-owg" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="139" width="269" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -49,11 +49,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zWb-Fh-LVs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="PWJ-A8-Ozz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zWb-Fh-LVs" secondAttribute="trailing" id="Pg2-nK-6Ee"/>
                             <constraint firstItem="ZzW-6u-acq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="Tty-gW-x8v"/>
                             <constraint firstItem="zWb-Fh-LVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="320" id="WCh-3G-ofr"/>
                             <constraint firstItem="ZzW-6u-acq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gHc-ZN-zET"/>
                             <constraint firstItem="ZzW-6u-acq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="169" id="kMo-VP-f96"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWb-Fh-LVs" secondAttribute="trailing" constant="16" id="mKC-12-591"/>
                             <constraint firstItem="ZzW-6u-acq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mdu-yE-af6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -19,7 +19,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func lockSwitch(_ lockingControl: LockControl) {
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+    }
+    
+    
+    
+    @IBOutlet weak var lockControl: LockControl!
+    
 
 }
 

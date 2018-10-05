@@ -14,13 +14,7 @@ class SwipeControl: UIControl {
     
     let trackingBall = UILabel()
     
-    var unlockedPercentBar: [Int]{
-        var array: [Int] = []
-        for i in 1...100{
-            array.append(i)
-        }
-        return array
-    }
+    var unlockedValueTracker: Int = 100
     
     // MARK :- Local Functions
     
@@ -38,7 +32,7 @@ class SwipeControl: UIControl {
         trackingBall.textColor = .gray
         
         // setup container view
-        trackingBall.frame = CGRect(x: 0, y: 0, width: 300, height: 35)
+        trackingBall.frame = CGRect(x: 0, y: 0, width: 30, height: 35)
 //        let containerView = UIView(frame: containerViewFrame)
         
         // add tracking ball to container view
@@ -51,7 +45,11 @@ class SwipeControl: UIControl {
     private func updateValue (at touch: UITouch){
         
         // change x positon of the tracking ball
-            // change relative percent completed array
+        if trackingBall.frame.contains(touch.location(in: self)) && trackingBall.frame.maxX <= 200 {
+            
+            trackingBall.frame = trackingBall.frame.offsetBy(dx: 32, dy: 0)
+    
+        }
         
     }
     
@@ -59,7 +57,7 @@ class SwipeControl: UIControl {
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
-        updateValue(at: touch)
+//        updateValue(at: touch)
         
         return true
     }
@@ -68,8 +66,9 @@ class SwipeControl: UIControl {
         let touchPoint = touch.location(in: self)
         
         if bounds.contains(touchPoint) {
+            
             updateValue(at: touch)
-            sendActions(for: [.touchDragInside])
+            sendActions(for: [.touchDragInside, .valueChanged])
             
         } else {
             sendActions(for: [.touchDragOutside, .valueChanged])

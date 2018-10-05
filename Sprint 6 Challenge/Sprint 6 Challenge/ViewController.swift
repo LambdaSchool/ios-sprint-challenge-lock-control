@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     let lockedImage = UIImage(named: "Locked")!
     let unlockedImage = UIImage(named: "Unlocked")!
     
+    let lockImageView = UIImageView()
+    
     @IBOutlet weak var swipeContainerView: UIView!
     
     var isUnlocked: Bool = false
@@ -32,7 +34,7 @@ class ViewController: UIViewController {
     
     private func setupLockScreen(){
         
-        let lockImageView = UIImageView()
+        
         lockImageView.image = lockedImage
         
         let containerViewFrame = CGRect(x: 0, y: 0, width: 350, height: 350.0)
@@ -49,20 +51,9 @@ class ViewController: UIViewController {
         //setup swipe Container
         swipeContainerView.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
         
-//        let swipeCenterContstraint = NSLayoutConstraint(item: swipeContainerView, attribute: .centerX, relatedBy: .equal, toItem: lockImageView.centerX, attribute: .centerX, multiplier: 1, constant: 0)
-        
-//        let swipeTopContstraint = NSLayoutConstraint(item: swipeContainerView, attribute: .top, relatedBy: .equal, toItem: lockImageView, attribute: .top, multiplier: 1, constant: 10)
-//
-//        let swipeWidthConstraint = NSLayoutConstraint(item: swipeContainerView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: lockImageView.bounds.width + 20)
-//
-//        let swipeHeightConstraint = NSLayoutConstraint(item: swipeContainerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
-        
-//        NSLayoutConstraint.activate([swipeTopContstraint, swipeWidthConstraint, swipeHeightConstraint ])
-        
         let swipeContainerViewFrame = CGRect(x: 10, y: 300, width: lockImageView.bounds.width + 100, height: 38)
         swipeContainerView.frame = swipeContainerViewFrame
         swipeContainerView.center.x = containerView.frame.width / 2
-//        swipeContainerView.center.y = containerView.center.y
         swipeContainerView.layer.cornerRadius = 15
         
         containerView.addSubview(lockImageView)
@@ -72,7 +63,11 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func swipedToUnlock(_ sender: Any) {
+    @IBAction func swipedToUnlock(_ swiper: SwipeControl) {
+        
+        if swiper.trackingBall.frame.maxX == 200 {
+            lockImageView.image = unlockedImage
+        }
         
     }
     

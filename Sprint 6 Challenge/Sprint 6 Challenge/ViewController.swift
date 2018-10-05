@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        resetButton.title = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,12 +21,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func lockSwitch(_ lockingControl: LockControl) {
+        if lockControl.unlocked {
+            resetButton.title = "Reset"
+        } else {
+            resetButton.title = ""
+        }
     }
     
     @IBAction func reset(_ sender: Any) {
+        lockControl.reset()
+        resetButton.title = ""
     }
     
     
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     @IBOutlet weak var lockControl: LockControl!
     

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSY-fd-CU2" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="67" y="147" width="240" height="297"/>
+                                <rect key="frame" x="46" y="97" width="282" height="443"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -39,6 +39,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lockControl" destination="vSY-fd-CU2" id="UnE-9s-H61"/>
+                        <outlet property="resetButton" destination="bTG-Ex-ApC" id="UkN-XL-GGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

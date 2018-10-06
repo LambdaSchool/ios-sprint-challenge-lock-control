@@ -17,7 +17,7 @@ class LockViewController: UIViewController {
     }
     
     private func handleLockState() {
-        navigationController?.title = lockControl.isLocked ? "Lock 🔐" : "Lock 🔓"
+        title = lockControl.isLocked ? "Locked 🔐" : "Unlocked! 🔓"
         resetBarButton.isEnabled = lockControl.isLocked ? false : true
         resetBarButton.title = lockControl.isLocked ? "" : "Reset"
     }

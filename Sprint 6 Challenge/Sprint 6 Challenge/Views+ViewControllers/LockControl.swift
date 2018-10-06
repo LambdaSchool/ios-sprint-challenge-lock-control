@@ -123,8 +123,7 @@ class LockControl: UIControl {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         
         // I know it's supposed to be 80 but I made my lock kinda small :/
-        // And the values are a little under since I'm using the minX value
-        if currentSliderPercent >= 70 { unlock() } else { lock() }
+        if currentSliderPercent >= 77.5 { unlock() } else { lock() }
         
         super.endTracking(touch, with: event)
         
@@ -173,6 +172,8 @@ class LockControl: UIControl {
                         self.touchView.frame = self.touchViewInitialRect
                         
         }, completion: nil)
+        
+        sendActions(for: [.valueChanged])
         
     }
     

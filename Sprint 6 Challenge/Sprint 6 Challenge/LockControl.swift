@@ -17,6 +17,7 @@ class LockControl: UIControl {
     let lockedImage = UIImage(named: "Locked")!
     let unlockedImage = UIImage(named: "Unlocked")!
     var unlocked: Bool = false
+    var sliderBounds: CGRect!
     
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
@@ -29,9 +30,9 @@ class LockControl: UIControl {
     }
     
     func setupSlider() {
-        let sliderFrame = CGRect(x: 0, y: self.bounds.height * 0.80, width: self.bounds.width, height: 40)
+        let sliderFrame = CGRect(x: self.bounds.width*0.05, y: self.bounds.height*0.80 , width: self.bounds.width*0.90, height: 40)
         sliderView = UIView(frame: sliderFrame)
-        sliderView.isUserInteractionEnabled = true
+        sliderView.isUserInteractionEnabled = false
         sliderView.clipsToBounds = true
         sliderView.layer.cornerRadius = 20
         sliderView.backgroundColor = UIColor.darkGray
@@ -42,7 +43,7 @@ class LockControl: UIControl {
     func setupDotView() {
         dotView = UIView(frame: CGRect(x: 0, y: 0, width: 40.0, height: 35.0))
         dotView.backgroundColor = UIColor.black
-        dotView.isUserInteractionEnabled = true
+        dotView.isUserInteractionEnabled = false
         dotView.clipsToBounds = true
         dotView.layer.cornerRadius = dotView.frame.size.width / 2
         sliderView.addSubview(dotView)
@@ -57,19 +58,14 @@ class LockControl: UIControl {
         
     }
     
-    
-    //It only works if you drag from top of the superView
-    // Works but not how I want to it work
-    //Still can't drag on dot
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: self)
-        if sliderView.bounds.contains(touchPoint) {
+        let touchPoint = touch.location(in: dotView)
+        if dotView.bounds.contains(touchPoint) {
             print("begins tracking")
             update(at: touch)
             sendActions(for: [.touchDown])
         } else {
-            print(touchPoint)
-            print("not in the slider")
+            print("not in the dotView")
             return false
         }
         return true
@@ -85,7 +81,7 @@ class LockControl: UIControl {
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: self)
+        let touchPoint = touch.location(in: sliderView)
         if sliderView.bounds.contains(touchPoint) {
             print("continue tracking")
             update(at: touch)
@@ -151,37 +147,37 @@ class LockControl: UIControl {
     
     //This doesn't work
     //throws error
-    func setupsliderViewContraints(sliderView: UIView) {
-        sliderView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let sliderBottomConstraint = NSLayoutConstraint(
-            item: sliderView,
-            attribute: .bottom,
-            relatedBy: .equal,
-            toItem: self.safeAreaLayoutGuide,
-            attribute: .bottom,
-            multiplier: 1,
-            constant: 20)
-        
-//        let sliderWidthConstraint = NSLayoutConstraint(
-//            item: sliderView,
-//            attribute: .width,
-//            relatedBy: .equal,
-//            toItem: nil,
-//            attribute: .notAnAttribute,
-//            multiplier: 1,
-//            constant: 100)
+//    func setupsliderViewContraints(sliderView: UIView) {
+//        //sliderView.translatesAutoresizingMaskIntoConstraints = false
 //
-//        let sliderHeightConstraint = NSLayoutConstraint(
+////        let sliderViewTopConstraint = NSLayoutConstraint(
+////            item: sliderView,
+////            attribute: .top,
+////            relatedBy: .equal,
+////            toItem: currentImageView,
+////            attribute: .top,
+////            multiplier: 1,
+////            constant: 1)
+////
+////        let sliderViewBottomConstraint = NSLayoutConstraint(
+////            item: sliderView,
+////            attribute: .bottom,
+////            relatedBy: .equal,
+////            toItem: self,
+////            attribute: .bottom,
+////            multiplier: 1,
+////            constant: 1)
+//        let sliderViewCenterXConstraint = NSLayoutConstraint(
 //            item: sliderView,
-//            attribute: .height,
+//            attribute: .centerX,
 //            relatedBy: .equal,
-//            toItem: nil,
-//            attribute: .notAnAttribute,
+//            toItem: self,
+//            attribute: .centerX,
 //            multiplier: 1,
-//            constant: 100)
-        
-        
-        NSLayoutConstraint.activate([sliderBottomConstraint])
-    }
+//            constant: 0)
+//
+//
+//        NSLayoutConstraint.activate([sliderViewCenterXConstraint])
+//
+//    }
 }

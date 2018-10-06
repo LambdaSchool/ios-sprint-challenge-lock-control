@@ -13,6 +13,8 @@
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		960F687C21692DF900AF1FC8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F687B21692DF900AF1FC8 /* Appearance.swift */; };
+		960F687F216930E500AF1FC8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F687E216930E500AF1FC8 /* Helpers.swift */; };
+		960F6881216931AA00AF1FC8 /* LockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6880216931AA00AF1FC8 /* LockControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960F687B21692DF900AF1FC8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		960F687E216930E500AF1FC8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		960F6880216931AA00AF1FC8 /* LockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,19 +62,20 @@
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
-				960F687921692DD500AF1FC8 /* View Controllers */,
+				960F687921692DD500AF1FC8 /* Views+ViewControllers */,
 				960F687D2169301D00AF1FC8 /* Helpers */,
 				960F687A21692DDE00AF1FC8 /* Resources */,
 			);
 			path = "Sprint 6 Challenge";
 			sourceTree = "<group>";
 		};
-		960F687921692DD500AF1FC8 /* View Controllers */ = {
+		960F687921692DD500AF1FC8 /* Views+ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				468B89E22137397400E7FF73 /* LockViewController.swift */,
+				960F6880216931AA00AF1FC8 /* LockControl.swift */,
 			);
-			path = "View Controllers";
+			path = "Views+ViewControllers";
 			sourceTree = "<group>";
 		};
 		960F687A21692DDE00AF1FC8 /* Resources */ = {
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				960F687B21692DF900AF1FC8 /* Appearance.swift */,
+				960F687E216930E500AF1FC8 /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -162,9 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960F6881216931AA00AF1FC8 /* LockControl.swift in Sources */,
 				468B89E32137397400E7FF73 /* LockViewController.swift in Sources */,
 				960F687C21692DF900AF1FC8 /* Appearance.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				960F687F216930E500AF1FC8 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lock 🔓-->
+        <!--Lock 🔐-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,37 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-P0-vAg">
-                                <rect key="frame" x="70" y="158" width="235" height="235"/>
-                                <color key="backgroundColor" white="0.926331426056338" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-P0-vAg" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="60" y="116" width="255" height="255"/>
+                                <color key="backgroundColor" white="0.90580985915492962" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="P4u-P0-vAg" secondAttribute="height" multiplier="1:1" id="vqx-ij-x8P"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lockValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SbU-yM-xSR"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.98474319552032041" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="P4u-P0-vAg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="4y6-NG-Q9v"/>
-                            <constraint firstItem="P4u-P0-vAg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="608-5L-g85"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P4u-P0-vAg" secondAttribute="trailing" constant="70" id="8KC-M4-jsH"/>
+                            <constraint firstItem="P4u-P0-vAg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="4y6-NG-Q9v"/>
+                            <constraint firstItem="P4u-P0-vAg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-32" id="608-5L-g85"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P4u-P0-vAg" secondAttribute="trailing" constant="60" id="8KC-M4-jsH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Lock 🔓" id="gWN-pP-Zdr"/>
+                    <navigationItem key="navigationItem" title="Lock 🔐" id="gWN-pP-Zdr">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="i9F-QS-UXp">
+                            <connections>
+                                <action selector="resetBarButtonItem:" destination="BYZ-38-t0r" id="7Ff-E9-yHC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lockControl" destination="P4u-P0-vAg" id="XTy-9d-uKb"/>
+                        <outlet property="resetBarButton" destination="i9F-QS-UXp" id="tI4-i4-7jB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="912.79999999999995" y="-564.46776611694156"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="sna-Dh-c8G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iKr-OI-PtQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iKr-OI-PtQ" customClass="NavController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="XpQ-Ur-pC3">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -64,4 +72,5 @@
             <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

@@ -91,6 +91,10 @@ class LockControl: UIControl {
         
         currentSliderPercent = (touchView.frame.maxX / touchViewMaxX) * 100
         
+        if currentSliderPercent >= 78 {
+            endTracking(touch, with: event)
+        }
+        
         if touchView.frame.minX >= touchViewMinX && touchView.frame.maxX <= touchViewMaxX {
             
             touchView.transform = CGAffineTransform(translationX: touchPointX, y: 0)

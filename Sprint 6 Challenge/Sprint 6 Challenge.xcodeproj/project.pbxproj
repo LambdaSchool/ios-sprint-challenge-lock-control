@@ -16,6 +16,7 @@
 		F145F61D2167C2CC00D5ECC9 /* Lambda Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F145F61C2167C2CC00D5ECC9 /* Lambda Icon.jpg */; };
 		F145F6232167C63600D5ECC9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145F6222167C63600D5ECC9 /* Lock.swift */; };
 		F145F6252167E18D00D5ECC9 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145F6242167E18D00D5ECC9 /* Animator.swift */; };
+		F1E57E4C216979EE00C9BC84 /* UnlockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E57E4B216979EE00C9BC84 /* UnlockedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F145F61C2167C2CC00D5ECC9 /* Lambda Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lambda Icon.jpg"; sourceTree = "<group>"; };
 		F145F6222167C63600D5ECC9 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		F145F6242167E18D00D5ECC9 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		F1E57E4B216979EE00C9BC84 /* UnlockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				F145F6222167C63600D5ECC9 /* Lock.swift */,
+				F1E57E4B216979EE00C9BC84 /* UnlockedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F145F6252167E18D00D5ECC9 /* Animator.swift in Sources */,
+				F1E57E4C216979EE00C9BC84 /* UnlockedViewController.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				F145F61B2167BF2400D5ECC9 /* Appearance.swift in Sources */,
 				F145F6232167C63600D5ECC9 /* Lock.swift in Sources */,

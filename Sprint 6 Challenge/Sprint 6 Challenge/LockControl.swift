@@ -41,7 +41,7 @@ class LockControl: UIControl {
     }
     
     func setupDotView() {
-        dotView = UIView(frame: CGRect(x: 0, y: 0, width: 40.0, height: 35.0))
+        dotView = UIView(frame: CGRect(x: 0, y: 2, width: 40.0, height: 35.0))
         dotView.backgroundColor = UIColor.black
         dotView.isUserInteractionEnabled = false
         dotView.clipsToBounds = true
@@ -94,7 +94,9 @@ class LockControl: UIControl {
     
     private func update(at touch: UITouch) {
          let touchPoint = touch.location(in: self)
-         dotView.center.x = touchPoint.x
+        UIView.animate(withDuration: 0.1) {
+            self.dotView.center.x = touchPoint.x
+        }
         if dotView.center.x > sliderView.bounds.width*0.80 {
             currentImageView.image = unlockedImage
             unlocked = true

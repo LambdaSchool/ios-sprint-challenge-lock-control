@@ -9,14 +9,7 @@
 import UIKit
 
 class UnlockCustomControl: UIControl {
-    
-    
-//    required init?(coder aCoder: NSCoder) {
-//        super.init(coder: aCoder)
-//
-//        setUp()
-//    }
-    
+        
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -37,11 +30,13 @@ class UnlockCustomControl: UIControl {
         slider.layer.cornerRadius = 20
         addSubview(slider)
         
-        indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+        //slider.frame.origin.y +
+        indicator.frame = CGRect(x: 10, y: 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
         indicator.backgroundColor = UIColor.black
-        indicator.isUserInteractionEnabled = true
         indicator.layer.cornerRadius = indicator.frame.height / 2
-        addSubview(indicator)
+        indicator.isUserInteractionEnabled = true
+        indicator.clipsToBounds = true
+        slider.addSubview(indicator)
     }
     
     private func updatePercent(with touchPoint: CGPoint) {
@@ -63,13 +58,18 @@ class UnlockCustomControl: UIControl {
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: slider)
+         if bounds.contains(touchPoint) {
+            print(touchPoint)
+        }
         
-//        sendActions(for: [.touchDown, .valueChanged])
+        
+        sendActions(for: [.touchDown, .valueChanged])
         return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: self)
+        let touchPoint = touch.location(in: slider)
         
         if bounds.contains(touchPoint) {
             updatePercent(with: touchPoint)
@@ -100,9 +100,9 @@ class UnlockCustomControl: UIControl {
             
             updatePercent(with: touchPoint)
             if percentComplete < 0.8 {
-                indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+                indicator.frame = CGRect(x: 10, y: 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
             } else {
-                indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+                indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
                 unlockImage()
                 self.isUserInteractionEnabled = false
             }
@@ -111,9 +111,9 @@ class UnlockCustomControl: UIControl {
         } else {
             
             if percentComplete < 0.8 {
-                indicator.frame = CGRect(x: 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+                indicator.frame = CGRect(x: 10, y: 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
             } else {
-                indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: slider.frame.origin.y + 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
+                indicator.frame = CGRect(x: slider.bounds.width - indicator.frame.width - 10, y: 10, width: slider.frame.height - 20, height: slider.frame.height - 20)
                 unlockImage()
                 self.isUserInteractionEnabled = false
             }

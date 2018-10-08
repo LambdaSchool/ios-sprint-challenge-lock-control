@@ -26,7 +26,8 @@ enum Appearance {
         let disabledBarButtonFontAttributes = [NSAttributedString.Key.font: barButtonFont, NSAttributedString.Key.foregroundColor: Appearance.paleYellow]
         
         UIBarButtonItem.appearance().setTitleTextAttributes(barButtonFontAttributes, for: .normal)
-            UIBarButtonItem.appearance().setTitleTextAttributes(barButtonFontAttributes, for: .selected)
+        UIBarButtonItem.appearance().setTitleTextAttributes(barButtonFontAttributes, for: .selected)
+        UIBarButtonItem.appearance().setTitleTextAttributes(barButtonFontAttributes, for: .highlighted)
         
         UIBarButtonItem.appearance().setTitleTextAttributes(disabledBarButtonFontAttributes, for: .disabled)
         

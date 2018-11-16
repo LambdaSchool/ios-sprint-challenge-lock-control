@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LockControl: UIControl {
+@IBDesignable class LockControl: UIControl {
     
     // iniitializers
     // set up func
@@ -60,21 +60,44 @@ class LockControl: UIControl {
     
     // MARK: - UI Control
     
-//    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-//        <#code#>
-//    }
-//
-//    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-//        <#code#>
-//    }
-//
-//    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-//        <#code#>
-//    }
-//
-//    override func cancelTracking(with event: UIEvent?) {
-//        <#code#>
-//    }
+   
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
+        let touchPoint = touch.location(in: self)
+        
+        sendActions(for: [.touchDown, .valueChanged])
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        
+        if bounds.contains(touchPoint){
+            
+            sendActions(for: [.touchDragInside, .valueChanged])
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        defer { super.endTracking(touch, with: event)}
+        
+        guard let touch = touch else { return }
+        
+        let touchPoint = touch.location(in: self)
+        
+        if bounds.contains(touchPoint) {
+            sendActions(for: [.touchUpInside, .valueChanged])
+        } else {
+            sendActions(for: .touchUpOutside)
+        }
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        sendActions(for: .touchCancel)
+    }
     
     
     

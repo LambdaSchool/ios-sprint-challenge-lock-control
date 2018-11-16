@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     }
 
     
+    @IBAction func resetLockButton(_ sender: Any) {
+        
+    }
+    
     
     
 }

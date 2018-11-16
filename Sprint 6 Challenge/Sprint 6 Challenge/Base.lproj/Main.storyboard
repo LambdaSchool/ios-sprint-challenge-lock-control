@@ -33,7 +33,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Can you unlock this?" id="mxR-aI-vnE">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="p7E-Wm-THI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="p7E-Wm-THI">
+                            <connections>
+                                <action selector="resetLockButton:" destination="BYZ-38-t0r" id="Q3S-u7-Gmz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

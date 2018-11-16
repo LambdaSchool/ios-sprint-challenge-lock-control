@@ -59,10 +59,12 @@ class LockAnimation: UIControl {
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: block)
-        if block.bounds.contains(touchPoint) {
-            sendActions(for: .touchDown)
-            return true
+        if !isUnlocked {
+            let touchPoint = touch.location(in: block)
+            if block.bounds.contains(touchPoint) {
+                sendActions(for: .touchDown)
+                return true
+            }
         }
         return false
     }

@@ -36,9 +36,9 @@ import UIKit
         // make each item a layer , like in photoshop
         
         // ball layer (use corner radius to make round
-        ball.frame = CGRect(x: 0, y: 0, width: ballFrame.bounds.width , height: ballFrame.bounds.height )
+        ball.frame = CGRect(x: 2, y: 4, width: 40, height: 40)
         ball.backgroundColor = Appearance.michiganBlue
-        ball.layer.cornerRadius = self.bounds.height / 4
+        ball.layer.cornerRadius = ballFrame.bounds.height / 2.5
         
         ballFrame.addSubview(ball)
         
@@ -51,8 +51,8 @@ import UIKit
         
         // image layer(lock),
         lockImage.image = UIImage(named: "Locked")
-        lockImage.frame = CGRect(x: 0, y: 0 , width: self.bounds.width / 2, height: self.bounds.height / 2 )
-        lockImage.contentMode = .scaleAspectFit
+        lockImage.frame = CGRect(x: 60, y: 40, width: self.bounds.width / 2.0, height: self.bounds.height / 3 )
+        lockImage.contentMode = .scaleAspectFill
         addSubview(lockImage)
        
         

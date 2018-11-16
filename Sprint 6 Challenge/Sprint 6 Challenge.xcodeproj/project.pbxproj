@@ -12,6 +12,10 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		F84005A1213998F400A907A8 /* LockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A0213998F400A907A8 /* LockedViewController.swift */; };
+		F84005A321399DC600A907A8 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A221399DC600A907A8 /* Animator.swift */; };
+		F84005A62139B0EA00A907A8 /* SliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A52139B0EA00A907A8 /* SliderControl.swift */; };
+		F84005A82139B91300A907A8 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84005A72139B91300A907A8 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F84005A0213998F400A907A8 /* LockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedViewController.swift; sourceTree = "<group>"; };
+		F84005A221399DC600A907A8 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		F84005A52139B0EA00A907A8 /* SliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
+		F84005A72139B91300A907A8 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,25 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
+				F84005A72139B91300A907A8 /* Appearance.swift */,
+				F84005A42139A4D900A907A8 /* ViewControllers */,
+				F84005A221399DC600A907A8 /* Animator.swift */,
+				F84005A52139B0EA00A907A8 /* SliderControl.swift */,
 			);
 			path = "Sprint 6 Challenge";
+			sourceTree = "<group>";
+		};
+		F84005A42139A4D900A907A8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+				F84005A0213998F400A907A8 /* LockedViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84005A321399DC600A907A8 /* Animator.swift in Sources */,
+				F84005A82139B91300A907A8 /* Appearance.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				F84005A1213998F400A907A8 /* LockedViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				F84005A62139B0EA00A907A8 /* SliderControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

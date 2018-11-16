@@ -201,6 +201,7 @@ protocol UnlockDelegate {
                 self.delegate?.buttonStatus(status: "Unlocked", sender: self)
             }
         }
+        
     }
     
     //reset button animation (RESET)

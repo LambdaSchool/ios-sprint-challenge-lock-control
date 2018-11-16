@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    
+    @IBAction func reset(_ sender: Any) {
+    }
+    
+    
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var resetBButton: UIBarButtonItem!
+    
 }
 

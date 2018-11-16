@@ -37,6 +37,7 @@ class LockControl: UIControl {
         
         lockImage.image = UIImage(named: "Locked")
         lockImage.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+        addSubview(lockImage)
        
         
         

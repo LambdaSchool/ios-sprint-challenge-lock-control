@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11091E31219F2688004B8445 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11091E30219F2688004B8445 /* Appearance.swift */; };
+		11091E33219F2747004B8445 /* LockAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11091E32219F2747004B8445 /* LockAnimation.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11091E30219F2688004B8445 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		11091E32219F2747004B8445 /* LockAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAnimation.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				11091E30219F2688004B8445 /* Appearance.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
+				11091E32219F2747004B8445 /* LockAnimation.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
@@ -137,7 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				11091E31219F2688004B8445 /* Appearance.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				11091E33219F2747004B8445 /* LockAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

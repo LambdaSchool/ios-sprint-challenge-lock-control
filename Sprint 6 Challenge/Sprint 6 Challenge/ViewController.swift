@@ -9,17 +9,37 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var lockAnimation: LockAnimation!
+    @IBOutlet weak var resetButtonOutlet: UIBarButtonItem!
+    
+    @IBAction func resetButton(_ sender: Any) {
+        resetLock()
+        updateViews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateViews()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func resetLock() {
+        lockAnimation.reset()
+        updateViews()
     }
+    
 
-
+    func updateViews() {
+        if lockAnimation.isUnlocked {
+            UIView.animate(withDuration: 0.5) {
+                self.resetButtonOutlet.title = "Reset"
+            }
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.resetButtonOutlet.title = ""
+            }
+        }
+    }
+    
 }
 

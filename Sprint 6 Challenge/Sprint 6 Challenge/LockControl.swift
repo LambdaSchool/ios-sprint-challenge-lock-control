@@ -36,7 +36,7 @@ import UIKit
         // make each item a layer , like in photoshop
         
         // ball layer (use corner radius to make round
-        ball.frame = CGRect(x: 0, y: 0, width: self.bounds.width / 2, height: self.bounds.height / 2)
+        ball.frame = CGRect(x: 0, y: 0, width: ballFrame.bounds.width , height: ballFrame.bounds.height )
         ball.backgroundColor = Appearance.michiganBlue
         ball.layer.cornerRadius = self.bounds.height / 4
         

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Theme.changeAppearance()
         Theme.changeTitleLook()
+        LockViewController().changeImage()
         return true
     }
 

@@ -20,10 +20,17 @@ class LockViewController: UIViewController, UnlockDelegate {
     
     @IBOutlet weak var padlock: UIImageView!
     
+    func changeImage() {
+        
+        guard let unlockimage = UIImage(named: "Unlocked") else { return }
+        
+        if SlideUnlock().unlocked == true { padlock.image = unlockimage }
+    }
+    
+    
     @IBAction func resetButton(_ sender: Any) {
         self.unlocker.reset() //Resets the slider
     }
-    
     
     //Set delegate for slide to unlock
     override func viewDidLoad() {

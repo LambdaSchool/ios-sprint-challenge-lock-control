@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var lockAnimation: LockAnimation!
     @IBOutlet weak var resetButtonOutlet: UIBarButtonItem!
     
+    @IBAction func lockValueChanged(_ sender: LockAnimation) {
+        updateViews()
+    }
+    
+    
+    
     @IBAction func resetButton(_ sender: Any) {
         resetLock()
         updateViews()
@@ -21,6 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     func resetLock() {
@@ -30,12 +37,16 @@ class ViewController: UIViewController {
     
 
     func updateViews() {
+        print("Updating button")
+        print("lock animation is unlocked: \(lockAnimation.isUnlocked)")
         if lockAnimation.isUnlocked {
             UIView.animate(withDuration: 0.5) {
+                self.resetButtonOutlet.isEnabled = true
                 self.resetButtonOutlet.title = "Reset"
             }
         } else {
             UIView.animate(withDuration: 0.5) {
+                self.resetButtonOutlet.isEnabled = false
                 self.resetButtonOutlet.title = ""
             }
         }

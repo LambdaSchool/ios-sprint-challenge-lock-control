@@ -42,7 +42,7 @@ class LockAnimation: UIControl {
         imageView.image = lockedImage
         
         // sliding bar
-        barView = UIView(frame: CGRect(x: 6, y: 184, width: 228, height: 50))
+        barView = UIView(frame: CGRect(x: 8, y: 184, width: 228, height: 50))
         addSubview(barView)
         barView.backgroundColor = #colorLiteral(red: 1, green: 0.6733359602, blue: 0.2927009187, alpha: 1)
         barView.layer.cornerRadius = barView.bounds.height / 2
@@ -76,7 +76,7 @@ class LockAnimation: UIControl {
         }
         
         let perc = findPercentage(with: touchPoint)
-        let offset = (perc * 178) + 6
+        let offset = (perc * 178) + 8
         block.frame = blockFrame(offset: offset)
         
         return true
@@ -84,23 +84,26 @@ class LockAnimation: UIControl {
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         defer { super.endTracking(touch, with: event) }
-        print("end tracking")
+        
         guard let touch = touch, !isUnlocked else { return }
-        print("have touch \(touch)")
+        
         let touchPoint = touch.location(in: barView)
         let perc = findPercentage(with: touchPoint)
+        
         print("perc: \(perc)")
+        
         if perc > 0.8 {
             isUnlocked = true
             imageView.image = unlockedImage
             sendActions(for: .valueChanged)
             if block.frame.origin.x != 184 {
                 moveBlock(to: 184)
-            } else {
-                reset()
             }
+        } else {
+            reset()
         }
     }
+
     
     
     override func cancelTracking(with event: UIEvent?) {

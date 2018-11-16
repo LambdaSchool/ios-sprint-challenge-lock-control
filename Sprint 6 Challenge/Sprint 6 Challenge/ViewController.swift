@@ -40,14 +40,14 @@ class ViewController: UIViewController {
         print("Updating button")
         print("lock animation is unlocked: \(lockAnimation.isUnlocked)")
         if lockAnimation.isUnlocked {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 1) {
                 self.resetButtonOutlet.isEnabled = true
-                self.resetButtonOutlet.title = "Reset"
+                self.resetButtonOutlet.tintColor = nil
             }
         } else {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 2) {
                 self.resetButtonOutlet.isEnabled = false
-                self.resetButtonOutlet.title = ""
+                self.resetButtonOutlet.tintColor = UIColor.clear
             }
         }
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		44A5174F219F2106009AE8DA /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A5174E219F2106009AE8DA /* Pacifico.ttf */; };
 		44A51751219F2348009AE8DA /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A51750219F2348009AE8DA /* AppearanceHelper.swift */; };
+		44A51753219F292A009AE8DA /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A51752219F292A009AE8DA /* Lock.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		44A5174E219F2106009AE8DA /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		44A51750219F2348009AE8DA /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		44A51752219F292A009AE8DA /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				44A51750219F2348009AE8DA /* AppearanceHelper.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
+				44A51752219F292A009AE8DA /* Lock.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				44A5174E219F2106009AE8DA /* Pacifico.ttf */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				44A51753219F292A009AE8DA /* Lock.swift in Sources */,
 				44A51751219F2348009AE8DA /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

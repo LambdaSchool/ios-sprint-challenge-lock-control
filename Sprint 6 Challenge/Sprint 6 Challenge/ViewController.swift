@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        locking()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,9 +23,25 @@ class ViewController: UIViewController {
 
     
     
-    @IBAction func reset(_ sender: Any) {
+    @IBAction func lockAction(_ lock: Lock) {
+       locking()
+       
     }
     
+    
+    @IBOutlet var lockingAction: Lock!
+    
+    
+    @IBAction func reset(_ sender: Any) {
+      lockingAction.open()
+    }
+    
+    
+    private func locking(){
+         resetBButton.title = lockingAction.isLocked ? "" : "Reset"
+        resetBButton.isEnabled = lockingAction.isLocked ? false : true
+        
+    }
     
     
     
@@ -32,6 +49,7 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var resetBButton: UIBarButtonItem!
+ 
     
 }
 

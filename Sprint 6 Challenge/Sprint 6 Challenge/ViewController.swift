@@ -12,14 +12,39 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        swipeToUnlockControl.ovalView = ovalView
+//        lockButton.title = ""
+//        lockButton.isEnabled = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    var isLocked: Bool = true
+    @IBOutlet weak var lockButton: UIBarButtonItem!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var ovalView: UIView!
+    @IBOutlet weak var swipeToUnlockControl: SwipeToUnlockControl!
+    
+    
+    
+    @IBAction func lock(_ sender: Any) {
+        toggleLocked()
     }
-
-
+    
+    @IBAction func swipe(_ sender: SwipeToUnlockControl) {
+        ovalView = sender.ovalView
+    }
+    
+    
+    
+    func toggleLocked() {
+        if self.isLocked {
+            self.isLocked = !self.isLocked
+            self.image.image = UIImage(named: "Unlocked")
+        } else {
+            self.isLocked = !self.isLocked
+            self.image.image = UIImage(named: "Locked")
+        }
+    }
 }
 

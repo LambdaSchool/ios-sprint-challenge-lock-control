@@ -9,9 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // set up reset button
+    // make button appear when 80% ?
+    //
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
     }
 
@@ -20,6 +25,7 @@ class ViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var lockControl: NSLayoutConstraint!
     
     
 }

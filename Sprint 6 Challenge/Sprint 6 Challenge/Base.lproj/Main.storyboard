@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" red="1" green="0.65590123749999996" blue="0.53127390470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.65590123749999996" blue="0.53127390470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8lE-co-Sld" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ET2-cT-7Wn"/>
                             <constraint firstItem="8lE-co-Sld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Vxh-qw-Ym9"/>
@@ -39,6 +39,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lockControl" destination="Z0L-cj-RL2" id="0Um-3X-haz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

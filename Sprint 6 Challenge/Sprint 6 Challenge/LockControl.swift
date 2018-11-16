@@ -40,22 +40,21 @@ import UIKit
         ball.backgroundColor = Appearance.michiganBlue
         ball.layer.cornerRadius = self.bounds.height / 4
         
-        addSubview(ball)
+        ballFrame.addSubview(ball)
         
         // ball frame
-        ballFrame.frame = CGRect(x: 20, y: 20, width: self.bounds.width - 10, height: self.bounds.height - 50)
+        ballFrame.frame = CGRect(x: 5, y: 160, width: self.bounds.width - 10, height: self.bounds.height - 170)
         ballFrame.backgroundColor = Appearance.michiganMaize
+        ballFrame.layer.cornerRadius = self.bounds.height / 32
         
         addSubview(ballFrame)
         
         // image layer(lock),
         lockImage.image = UIImage(named: "Locked")
-        lockImage.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+        lockImage.frame = CGRect(x: 0, y: 0 , width: self.bounds.width / 2, height: self.bounds.height / 2 )
+        lockImage.contentMode = .scaleAspectFit
         addSubview(lockImage)
        
-        
-        
-        
         
     }
     
@@ -66,7 +65,11 @@ import UIKit
    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
-        let touchPoint = touch.location(in: self)
+        let touchPoint = touch.location(in: ballFrame)
+        if bounds.contains(touchPoint) {
+            print(touchPoint)
+           
+        }
         
         sendActions(for: [.touchDown, .valueChanged])
         return true

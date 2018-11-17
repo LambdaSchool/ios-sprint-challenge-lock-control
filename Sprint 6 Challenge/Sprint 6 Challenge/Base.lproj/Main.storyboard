@@ -1,24 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g4d-vS-jZ8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Lock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-sJ-F7i">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="A0C-I8-yCu"/>
+                                    <constraint firstAttribute="width" constant="200" id="jrO-KT-C6b"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NOg-sJ-F7i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fyz-Tv-hSe"/>
+                            <constraint firstItem="NOg-sJ-F7i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="azr-AG-7uk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VHr-uH-XSv"/>
+                    <connections>
+                        <outlet property="lockImage" destination="NOg-sJ-F7i" id="l8y-2T-t5O"/>
+                        <segue destination="Gkk-qG-fjs" kind="presentation" identifier="showUnlock" id="Qsp-uq-GZv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="798" y="778"/>
+        </scene>
+        <!--Unlock View Controller-->
+        <scene sceneID="xlL-9e-899">
+            <objects>
+                <viewController id="Gkk-qG-fjs" customClass="UnlockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wTS-1t-uIm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="CVg-SF-W8W">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1WV-gM-YIt"/>
+                                    <constraint firstAttribute="height" constant="200" id="2Ys-5B-nbO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-TV-ZJ0">
+                                <rect key="frame" x="315" y="26" width="44" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="Gkk-qG-fjs" eventType="touchUpInside" id="5Gw-Z0-kK8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gAR-7l-47k" firstAttribute="trailing" secondItem="Tgi-TV-ZJ0" secondAttribute="trailing" constant="16" id="86h-iF-0M3"/>
+                            <constraint firstItem="Tgi-TV-ZJ0" firstAttribute="top" secondItem="gAR-7l-47k" secondAttribute="top" constant="6" id="JjC-mz-Iwk"/>
+                            <constraint firstItem="CVg-SF-W8W" firstAttribute="centerX" secondItem="wTS-1t-uIm" secondAttribute="centerX" id="Ure-E0-6lR"/>
+                            <constraint firstItem="CVg-SF-W8W" firstAttribute="centerY" secondItem="wTS-1t-uIm" secondAttribute="centerY" id="mhC-D2-rOA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gAR-7l-47k"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Dgf-hw-QNI" appends="YES" id="dmT-Ku-jN1"/>
+                        </connections>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="unlockImage" destination="CVg-SF-W8W" id="ZRy-NO-neT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfM-Pk-rKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Dgf-hw-QNI">
+                    <connections>
+                        <action selector="panGesture:" destination="Gkk-qG-fjs" id="MN0-nN-UYX"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1567" y="778"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mYW-9f-TZZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g4d-vS-jZ8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t7S-6B-r2t">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LMs-cY-bsM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1M-23-YsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="777.66116941529242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="220" height="293"/>
+        <image name="Unlocked" width="220" height="293"/>
+    </resources>
 </document>

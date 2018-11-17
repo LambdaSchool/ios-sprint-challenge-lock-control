@@ -10,8 +10,6 @@ import UIKit
 
 //@IBDesignable
 class Lock: UIControl {
-
-    
     private let touchView = UIView()
     private var firstTouch = CGRect()
     private var lockImage: UIImage {
@@ -19,23 +17,16 @@ class Lock: UIControl {
     }
     private let imageView = UIImageView()
     private let slide = UIView()
-   
-   
-    
     
     var isLocked: Bool = true
     
-    
-    
     override func layoutSubviews() {
-        
         backgroundColor = UIColor.gray
         layer.masksToBounds = true
-    
         slide.isUserInteractionEnabled = false
         slide.backgroundColor = UIColor.lightGray
         
-        let sliderViewRect = CGRect(x: bounds.minX + 6, y: bounds.maxY - 50, width: bounds.size.width - 10, height: 40)
+        let sliderViewRect = CGRect(x: bounds.minX + 10, y: bounds.maxY - 50, width: bounds.size.width - 10, height: 40)
         slide.frame = sliderViewRect
         
         slide.layer.masksToBounds = true
@@ -43,14 +34,13 @@ class Lock: UIControl {
         
         addSubview(slide)
         
-        
         touchView.isUserInteractionEnabled = false
         touchView.backgroundColor = .black
         
-        touchMinX = slide.bounds.minX + 7
-        touchMaxX = slide.frame.width - 7
+        touchMinX = slide.bounds.minX + 5
+        touchMaxX = slide.frame.width - 5
         
-        firstTouch = CGRect(x: touchMinX, y: slide.bounds.minY + 8, width: slide.bounds.height - 6, height: slide.bounds.height - 6)
+        firstTouch = CGRect(x: touchMinX, y: slide.bounds.minY + 6, width: slide.bounds.height - 6, height: slide.bounds.height - 6)
         touchView.frame = firstTouch
         
         touchView.layer.masksToBounds = true
@@ -58,21 +48,19 @@ class Lock: UIControl {
         
         slide.addSubview(touchView)
         
-        
-        let imageRect = CGRect(x: bounds.minX, y: bounds.minY + 30, width: bounds.width, height: (bounds.height - slide.frame.height) - 70)
-     imageView.frame = imageRect
+        let imageRect = CGRect(x: bounds.minX, y: bounds.minY + 30, width: bounds.width, height: (bounds.height - slide.frame.height) - 40)
+        imageView.frame = imageRect
         
         imageView.image = lockImage
-       imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         
         addSubview(imageView)
     }
     
-    
     private func unlock() {
         
         isLocked = false
-        isUserInteractionEnabled = false
+        
         imageView.image = lockImage
         
         UIView.animate(withDuration: 0.20,
@@ -86,10 +74,9 @@ class Lock: UIControl {
         }, completion: nil)
         
         sendActions(for: [.valueChanged])
-        
     }
     
-    func open() {
+    func closed() {
         isLocked = true
         isUserInteractionEnabled = true
         
@@ -99,17 +86,20 @@ class Lock: UIControl {
                        delay: 0,
                        usingSpringWithDamping: 1.0,
                        initialSpringVelocity: 0.8,
-                       options: [.allowUserInteraction], animations: {
-                        
+                       options: [.allowUserInteraction],
+                       animations: {
                         self.touchView.frame = self.firstTouch
-                        
-        }, completion: nil)
-         sendActions(for: [.valueChanged])
+        },
+                       completion: nil)
+        
+        sendActions(for: [.valueChanged])
         
     }
     
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        if !isLocked {return false}
+        
         let touchPoint = touch.location(in: slide)
         
         if touchView.frame.contains(touchPoint) {
@@ -122,7 +112,7 @@ class Lock: UIControl {
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: slide)
-        let touchPointX = touchPoint.x - (touchView.frame.width / 4.5)
+        let touchPointX = touchPoint.x - (touchView.frame.width / 1.5)
         
         PercentSlider = (touchView.frame.maxX / touchMaxX) * 100
         
@@ -156,9 +146,10 @@ class Lock: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-             if PercentSlider >= 80 { unlock() } else { open() }
+        if PercentSlider >= 80 { unlock() } else { closed()}
         super.endTracking(touch, with: event)
-        guard let touch = touch,
+        guard
+            let touch = touch,
             let event = event else { return }
         super.beginTracking(touch, with: event)
     }
@@ -166,20 +157,15 @@ class Lock: UIControl {
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: [.touchCancel])
     }
-
     
-   
     private var touchMinX: CGFloat = 0
     private var touchMaxX: CGFloat = 0
     private var PercentSlider: CGFloat = 0
     private var startX: CGFloat = 0
-    
-    
-    
 }
 
-    
-    
+
+
 
 
 

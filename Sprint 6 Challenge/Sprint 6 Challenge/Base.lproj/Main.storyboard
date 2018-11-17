@@ -23,9 +23,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Hello!" id="J3t-bq-uIj">
-                                        <barButtonItem key="rightBarButtonItem" title="Reset" id="EgP-RZ-zhj">
+                                        <barButtonItem key="rightBarButtonItem" title="Reset" style="plain" id="1bT-N5-GrI">
                                             <connections>
-                                                <action selector="reset:" destination="BYZ-38-t0r" id="wxB-5w-xaW"/>
+                                                <action selector="reset:" destination="BYZ-38-t0r" id="1kD-gh-rFk"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -37,7 +37,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="LHb-Qs-JVh"/>
                         <connections>
                             <action selector="lockAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="7od-Aj-2jS"/>
                         </connections>
@@ -45,12 +45,12 @@
                     <connections>
                         <outlet property="imageView" destination="xt9-71-lAe" id="tvP-WW-POX"/>
                         <outlet property="lockingAction" destination="8bC-Xf-vdC" id="eSH-xR-Eij"/>
-                        <outlet property="resetBButton" destination="EgP-RZ-zhj" id="4dN-KA-GOz"/>
+                        <outlet property="resetBButton" destination="1bT-N5-GrI" id="NcB-la-noU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.799999999999997" y="26.53673163418291"/>
+            <point key="canvasLocation" x="56.800000000000004" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

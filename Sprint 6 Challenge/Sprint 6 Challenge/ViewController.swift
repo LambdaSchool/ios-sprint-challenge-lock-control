@@ -30,4 +30,4 @@ class ViewController: UIViewController {
     
 }
 
-var lockControl = LockControl?
+

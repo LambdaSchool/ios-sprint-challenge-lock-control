@@ -62,5 +62,13 @@ class MainViewController: UIViewController {
         if slider.value > 80.0 {
         unlock(imageView: lockView, images: lockImages) }
     }
+    
+    @IBAction func resetButton(_ sender: UIBarButtonItem) {
+        
+        
+        slider.value = 0
+        lockView.stopAnimating()
+    }
+    
 
 }

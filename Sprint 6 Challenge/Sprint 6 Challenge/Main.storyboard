@@ -49,7 +49,11 @@
                         <viewLayoutGuide key="safeArea" id="dxh-oV-Rgg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Padlock App" id="FgQ-Jr-a6a">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="rLo-FT-5kh"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="rLo-FT-5kh">
+                            <connections>
+                                <action selector="resetButton:" destination="i8o-qz-lV8" id="11W-m3-kFj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="lockView" destination="jTI-XL-TE5" id="EUy-rW-VDH"/>

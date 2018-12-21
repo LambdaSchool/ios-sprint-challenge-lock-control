@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bOg-hX-fH9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Padlock App-->
+        <scene sceneID="RYt-mS-vmF">
+            <objects>
+                <viewController id="i8o-qz-lV8" customClass="MainViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ePi-9U-Nly">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-RJ-WUQ">
+                                <rect key="frame" x="37" y="180" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="jTI-XL-TE5">
+                                        <rect key="frame" x="50" y="22" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="2kN-Q4-hQs"/>
+                                            <constraint firstAttribute="width" secondItem="jTI-XL-TE5" secondAttribute="height" multiplier="1:1" id="dxW-13-iE9"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="e1z-o1-3So"/>
+                                    <constraint firstItem="jTI-XL-TE5" firstAttribute="centerX" secondItem="b9G-RJ-WUQ" secondAttribute="centerX" id="mO9-nI-TxV"/>
+                                    <constraint firstItem="jTI-XL-TE5" firstAttribute="top" secondItem="b9G-RJ-WUQ" secondAttribute="top" constant="22" id="tME-Dv-0ho"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b9G-RJ-WUQ" firstAttribute="leading" secondItem="dxh-oV-Rgg" secondAttribute="leading" constant="37" id="2fP-ez-RQN"/>
+                            <constraint firstItem="dxh-oV-Rgg" firstAttribute="trailing" secondItem="b9G-RJ-WUQ" secondAttribute="trailing" constant="38" id="Sxu-RK-WIg"/>
+                            <constraint firstItem="b9G-RJ-WUQ" firstAttribute="top" secondItem="dxh-oV-Rgg" secondAttribute="top" constant="116" id="y63-f2-PM8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dxh-oV-Rgg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Padlock App" id="FgQ-Jr-a6a">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="rLo-FT-5kh">
+                            <connections>
+                                <action selector="resetButton:" destination="i8o-qz-lV8" id="11W-m3-kFj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lockView" destination="jTI-XL-TE5" id="EUy-rW-VDH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4w-7r-Z4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="84.107946026986511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mjd-2J-3II">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bOg-hX-fH9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oYp-ke-lxV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i8o-qz-lV8" kind="relationship" relationship="rootViewController" id="mDV-r2-qrN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4o-1q-2cG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="84.107946026986511"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+    </resources>
+</document>

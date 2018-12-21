@@ -21,7 +21,7 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-RJ-WUQ">
                                 <rect key="frame" x="37" y="136" width="300" height="300"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jTI-XL-TE5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="jTI-XL-TE5">
                                         <rect key="frame" x="50" y="22" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="2kN-Q4-hQs"/>
@@ -54,4 +54,7 @@
             <point key="canvasLocation" x="24.800000000000001" y="84.107946026986511"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+    </resources>
 </document>

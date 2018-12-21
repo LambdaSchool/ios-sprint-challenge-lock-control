@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         //Create the slider as soon as the view loads
-        slider = UISlider(frame: CGRect(x: 20, y: 232, width: 260, height: 20))
+        slider = CustomSlider(frame: CGRect(x: 20, y: 232, width: 260, height: 20))
         slider.center = self.view.center
         //slider.trackRect(forBounds: CGRect(x: 20, y: 232, width: 260, height: 60))
         slider.minimumValue = 0
@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var lockView: UIImageView!
     
-    var slider: UISlider!
+    var slider: CustomSlider!
     
     var lockImages: [UIImage] = [] //Array of images to be animated
     

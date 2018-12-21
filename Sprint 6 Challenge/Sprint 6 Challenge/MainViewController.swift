@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        slider = UISlider(frame: CGRect(x: 20, y: 232, width: 260, height: 60))
+        //Create the slider as soon as the view loads
+        slider = UISlider(frame: CGRect(x: 20, y: 232, width: 260, height: 20))
         slider.center = self.view.center
         //slider.trackRect(forBounds: CGRect(x: 20, y: 232, width: 260, height: 60))
         slider.minimumValue = 0
@@ -22,12 +23,11 @@ class MainViewController: UIViewController {
         slider.minimumTrackTintColor = UIColor.gray
         slider.maximumTrackTintColor = UIColor.gray
         slider.thumbTintColor = UIColor.black
-        slider.isContinuous = true //Slider value changes instantly as thumb is moved vs only when movement is completed.
-        
-        slider.addTarget(self, action: #selector(sliderMoved(sender:)), for: UIControlEvents.valueChanged)
+        slider.isContinuous = false //Slider value changes instantly as thumb is moved if true, or only when movement is completed if false.
+        slider.addTarget(self, action: #selector(sliderMoved(sender:)), for: UIControlEvents.valueChanged) //Makes slider target function below.
         self.view.addSubview(slider)
         
-        addImages()
+        addImages() //Creates the animation array as sson as the view loads
         
     }
     
@@ -39,13 +39,11 @@ class MainViewController: UIViewController {
     
     
     //Add the padlock images to the array above
-    func addImages() -> [UIImage] {
+    func addImages(){
         //let lockedImage = UIImage(named: "Locked")!
         let unlockedImage = UIImage(named: "Unlocked")!
         //lockImages.append(lockedImage)
         lockImages.append(unlockedImage)
-        return lockImages
-        
     }
     
     //Animate the padlock unlocking
@@ -53,7 +51,7 @@ class MainViewController: UIViewController {
        
         imageView.animationImages = images
         imageView.animationDuration = 1.0
-        imageView.animationRepeatCount = 1
+        //imageView.animationRepeatCount = 1
         imageView.startAnimating()
         
     }

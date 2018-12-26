@@ -12,14 +12,15 @@ enum Appearance {
     
     static func setAppearance() {
         
-        UINavigationBar.appearance().barTintColor = UIColor.darkGray
+        UINavigationBar.appearance().barTintColor = UIColor.orange
         
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         UINavigationBar.appearance().titleTextAttributes = attributes
         UINavigationBar.appearance().largeTitleTextAttributes = attributes
         
-        UIBarButtonItem.appearance().tintColor = .white
+        UIBarButtonItem.appearance().tintColor = UIColor.black
         
         
+    
     }
 }

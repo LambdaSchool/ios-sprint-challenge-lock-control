@@ -8,30 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
-		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		F10C65DE21CFF57C006D66C7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C65DD21CFF57C006D66C7 /* MainViewController.swift */; };
 		F145F61B2167BF2400D5ECC9 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145F61A2167BF2400D5ECC9 /* Appearance.swift */; };
-		F145F61D2167C2CC00D5ECC9 /* Lambda Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F145F61C2167C2CC00D5ECC9 /* Lambda Icon.jpg */; };
-		F145F6232167C63600D5ECC9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145F6222167C63600D5ECC9 /* Lock.swift */; };
-		F145F6252167E18D00D5ECC9 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145F6242167E18D00D5ECC9 /* Animator.swift */; };
-		F1E57E4C216979EE00C9BC84 /* UnlockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E57E4B216979EE00C9BC84 /* UnlockedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10C65DD21CFF57C006D66C7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F145F61A2167BF2400D5ECC9 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		F145F61C2167C2CC00D5ECC9 /* Lambda Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lambda Icon.jpg"; sourceTree = "<group>"; };
-		F145F6222167C63600D5ECC9 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
-		F145F6242167E18D00D5ECC9 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		F1E57E4B216979EE00C9BC84 /* UnlockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				F145F61A2167BF2400D5ECC9 /* Appearance.swift */,
-				F145F6242167E18D00D5ECC9 /* Animator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -84,9 +75,7 @@
 		F145F6192167BF0600D5ECC9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				F145F6222167C63600D5ECC9 /* Lock.swift */,
-				F1E57E4B216979EE00C9BC84 /* UnlockedViewController.swift */,
+				F10C65DD21CFF57C006D66C7 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -96,7 +85,6 @@
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				F145F61C2167C2CC00D5ECC9 /* Lambda Icon.jpg */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = Resources;
@@ -170,7 +158,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F145F61D2167C2CC00D5ECC9 /* Lambda Icon.jpg in Resources */,
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
@@ -184,12 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F145F6252167E18D00D5ECC9 /* Animator.swift in Sources */,
-				F1E57E4C216979EE00C9BC84 /* UnlockedViewController.swift in Sources */,
-				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				F145F61B2167BF2400D5ECC9 /* Appearance.swift in Sources */,
-				F145F6232167C63600D5ECC9 /* Lock.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				F10C65DE21CFF57C006D66C7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

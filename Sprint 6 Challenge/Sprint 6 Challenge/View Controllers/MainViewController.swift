@@ -21,16 +21,12 @@ class MainViewController: UIViewController {
     let slideView = UIView()
     let buttonView = UIView()
     
-    var buttonViewOrigin: CGPoint!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
         setupViews()
         addPanGesture(view: buttonView)
-        buttonViewOrigin = buttonView.center
-        
     }
     
     // MARK: - Gesture Methods
@@ -49,21 +45,23 @@ class MainViewController: UIViewController {
         case .began:
             moveViewWithPan(view: buttonView, sender: sender)
         case .changed:
-            if buttonView.center.x < 87.5 {
-                buttonView.center.x = 87.5
-            } else if buttonView.center.x > 285.0 {
-                buttonView.center.x = 285.0
+            if buttonView.frame.origin.x < 5 {
+                returnViewToOrigin(view: buttonView)
+            } else if buttonView.center.x > 225 {
+                buttonView.center.x = 225
+                buttonView.center.y = 25
             } else {
                 moveViewWithPan(view: buttonView, sender: sender)
             }
         case .ended:
-            if buttonView.center.x < 285.0 * 0.80 {
+            if buttonView.center.x < 225.0 * 0.80 {
                 returnViewToOrigin(view: buttonView)
             } else {
                 setViewUnlocked(view: buttonView)
                 self.unlockedImageView.alpha = 1.0
                 self.lockedImageView.alpha = 0.0
                 resetButton.title = "Reset"
+                resetButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)], for: .normal)
                 buttonView.gestureRecognizers?.forEach(buttonView.removeGestureRecognizer)
             }            
         default:
@@ -73,23 +71,25 @@ class MainViewController: UIViewController {
     
     func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer) {
         
-        let translation = sender.translation(in: view)
-        view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
-        sender.setTranslation(CGPoint.zero, in: view)
+        let translation = sender.translation(in: slideView)
+        if buttonView.center.x + translation.x >= 25 {
+          buttonView.frame.origin = CGPoint(x: view.frame.origin.x + translation.x, y: view.frame.origin.y)
+        }
+        sender.setTranslation(CGPoint.zero, in: slideView)
         
     }
     
     func returnViewToOrigin(view: UIView) {
         
         UIView.animate(withDuration: 0.3, animations: {
-            view.frame.origin = CGPoint(x: 67.5, y: 501.0)
+            self.buttonView.frame.origin = CGPoint(x: 5, y: 5)
         })
     }
     
     func setViewUnlocked(view: UIView) {
         
         UIView.animate(withDuration: 0.3, animations: {
-            view.frame.origin = CGPoint(x: 267.5, y: 501.0)
+            self.buttonView.frame.origin = CGPoint(x: 205, y: 5)
         })
     }
     
@@ -194,7 +194,7 @@ class MainViewController: UIViewController {
         buttonView.backgroundColor = .black
         buttonView.layer.cornerRadius = 20
         
-        view.addSubview(buttonView)
+        slideView.addSubview(buttonView)
         
         let buttonBottomConstraint = NSLayoutConstraint(item: buttonView,
                                                         attribute: .bottom,
@@ -205,12 +205,12 @@ class MainViewController: UIViewController {
                                                         constant: -5)
         
         let buttonCenterXConstraint = NSLayoutConstraint(item: buttonView,
-                                                         attribute: .centerX,
+                                                         attribute: .leading,
                                                          relatedBy: .equal,
-                                                         toItem: view,
-                                                         attribute: .centerX,
+                                                         toItem: slideView,
+                                                         attribute: .leading,
                                                          multiplier: 1.0,
-                                                         constant: -100)
+                                                         constant: 5)
         
         let buttonWidthConstraint = NSLayoutConstraint(item: buttonView,
                                                        attribute: .width,

@@ -12,7 +12,7 @@ enum Appearance {
     
     static func setAppearance() {
         
-        UINavigationBar.appearance().barTintColor = UIColor.orange
+        UINavigationBar.appearance().barTintColor = UIColor.red
         
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         UINavigationBar.appearance().titleTextAttributes = attributes

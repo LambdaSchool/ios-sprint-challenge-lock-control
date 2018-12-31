@@ -34,31 +34,32 @@ class LockControl: UIControl {
         // make each item a layer , like in photoshop
         
         // ball layer (use corner radius to make round
-        ball.frame = CGRect(x: 2, y: 4, width: 40, height: 40)
+        ball.isUserInteractionEnabled = true
+        ball.frame = CGRect(x: 5, y: 5, width: ballFrame.frame.height - 17.5, height: ballFrame.frame.height - 17.5 )
         ball.backgroundColor = Appearance.michiganBlue
         ball.layer.borderWidth = 2.2
-        ball.layer.cornerRadius = ballFrame.bounds.height / 2.5
-        ball.isUserInteractionEnabled = true //true
+        ball.layer.cornerRadius = ballFrame.frame.height / 2.75
+       
         ballFrame.addSubview(ball)
         
         // ball frame
-        ballFrame.frame = CGRect(x: 5, y: 160, width: self.bounds.width - 10, height: self.bounds.height - 170)
+        ballFrame.isUserInteractionEnabled = false
+        ballFrame.frame = CGRect(x: 0, y: lockImage.bounds.height, width: self.bounds.width, height: self.bounds.height * 0.25)
         ballFrame.backgroundColor = Appearance.michiganMaize
         ballFrame.layer.borderWidth = 1
         ballFrame.layer.borderColor = UIColor.blue.cgColor
         ballFrame.layer.cornerRadius = self.bounds.height / 32
         addSubview(ballFrame)
-        ballFrame.isUserInteractionEnabled = false
+        
         
         // image layer(lock),
         lockImage.image = UIImage(named: "Locked")
-        lockImage.frame = CGRect(x: 60, y: 40, width: self.bounds.width / 2.0, height: self.bounds.height / 3 )
-        lockImage.contentMode = .scaleAspectFill
+        lockImage.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height:  self.bounds.height * 0.75)
+        lockImage.contentMode = .scaleAspectFit
         addSubview(lockImage)
        
     }
     
-   
     private func calucuatePercent(with touchPoint: CGPoint) {
         // start position
         // end position
@@ -66,14 +67,11 @@ class LockControl: UIControl {
         // calculate percentage from within the width of ball frame.
         
         let ballFrameWidth = ballFrame.bounds.width
-        let startPosition = ball.frame.width
+        let startPosition = ball.frame.width + 5
         let endPosition = ballFrameWidth - 5
-        
         let distance = startPosition - touchPoint.x
         let percentCalc = Double(distance / (endPosition - startPosition))
-        
-        
-        
+        percentComplete = abs(percentCalc)
         
     }
     
@@ -81,21 +79,31 @@ class LockControl: UIControl {
     // MARK: - UI Control
    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        
         let touchPoint = touch.location(in: ballFrame)
-        if ballFrame.bounds.contains(touchPoint) {
-            print(touchPoint)
-            ball.frame = CGRect(x: touchPoint.x - 20, y: ball.frame.origin.y, width: 40, height: 40)        }
+        if bounds.contains(touchPoint) {
+        }
+//        if ballFrame.bounds.contains(touchPoint) {
+//            print(touchPoint)
+//            ball.frame = CGRect(x: touchPoint.x - 20, y: ball.frame.origin.y, width: ballFrame.frame.height - 17.5, height: ballFrame.frame.height - 17.5)        }
         sendActions(for: [.touchDown, .valueChanged])
         return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: ballFrame)
+        
         if ballFrame.bounds.contains(touchPoint){
+            calucuatePercent(with: touchPoint)
+            
+            let ballFrameWidth = ballFrame.bounds.width
+            let start = ball.frame.width + 5
+            let end = ballFrameWidth - 5
+            let x = Double(end - start) * percentComplete
+            
+            ball.frame = CGRect(x: CGFloat(x), y:ball.frame.origin.y, width: ball.frame.width, height: ball.frame.height)
+            
             sendActions(for: [.touchDragInside, .valueChanged])
-            print(touchPoint)
-            ball.frame = CGRect(x: touchPoint.x - 20, y: ball.frame.origin.y, width: 40, height: 40)
+           
         } else {
             sendActions(for: [.touchDragOutside])
         }
@@ -104,33 +112,50 @@ class LockControl: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        defer { super.endTracking(touch, with: event)}
+        //defer { super.endTracking(touch, with: event)}
         
         guard let touch = touch else { return }
         
         let touchPoint = touch.location(in: ballFrame)
         
         if bounds.contains(touchPoint) {
-            ball.frame = CGRect(x: 5 , y: ball.frame.origin.y, width: 40, height: 40)
-            sendActions(for: [.touchUpInside, .valueChanged])
+            calucuatePercent(with: touchPoint)
+            if percentComplete < 0.8 {
+                ball.frame = CGRect(x: 5, y: 5, width: ballFrame.frame.height - 17.5, height: ballFrame.frame.height - 17.5 )
+            
+//            ball.frame = CGRect(x: 5 , y: ball.frame.origin.y, width: 40, height: 40)
+//            sendActions(for: [.touchUpInside, .valueChanged])
+            
         } else {
-            ball.frame = CGRect(x: ballFrame.frame.width - 42, y: ball.frame.origin.y, width: 40, height: 40) //??
-            sendActions(for: .touchUpOutside)
+            ball.frame = CGRect(x: ballFrame.bounds.width - ball.frame.width - 5 , y: 5, width: ballFrame.frame.height - 17.5, height: ballFrame.frame.height - 17.5)
+            unlockImage()
+            self.isUserInteractionEnabled = false
         }
+        sendActions(for: [.touchUpOutside, .valueChanged])
+    
+        } else {
+            ball.frame = CGRect (x: ballFrame.bounds.width - ball.frame.width - 5, y: 5, width: ballFrame.frame.height - 17.5, height: ballFrame.frame.height - 17.5)
+            unlockImage()
+            self.isUserInteractionEnabled = false
+    }
+        sendActions(for: .touchUpOutside)
     }
     
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: .touchCancel)
+        super.cancelTracking(with: event)
     }
     
     
-    
-    
+    private func unlockImage() {
+        lockImage.image = UIImage(named: "Unlocked")
+    }
     
     // MARK: - Properties
     var lockImage = UIImageView()
     var ball = UIView()
     var ballFrame = UIView()
+    var percentComplete: Double = 0.0
 
     
     

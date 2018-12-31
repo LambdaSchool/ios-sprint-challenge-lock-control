@@ -14,24 +14,28 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8lE-co-Sld" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="67" y="225" width="241" height="217"/>
-                                <color key="backgroundColor" red="1" green="0.65590123749999996" blue="0.53127390470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lE-co-Sld" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="52.5" y="198" width="270" height="270"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="8lE-co-Sld" secondAttribute="height" multiplier="1:1" id="wwx-ew-mPs"/>
+                                    <constraint firstAttribute="height" constant="270" id="6om-Fc-pKA"/>
+                                    <constraint firstAttribute="width" constant="270" id="ZfM-Mt-bck"/>
+                                    <constraint firstAttribute="width" secondItem="8lE-co-Sld" secondAttribute="height" multiplier="1:1" id="gmh-Ru-VuJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="nMd-Mh-SP5"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="updateButton:" destination="BYZ-38-t0r" eventType="valueChanged" id="mYP-sF-gkG"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8lE-co-Sld" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ET2-cT-7Wn"/>
-                            <constraint firstItem="8lE-co-Sld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Vxh-qw-Ym9"/>
-                            <constraint firstItem="8lE-co-Sld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z0L-cj-RL2"/>
-                            <constraint firstItem="8lE-co-Sld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="109" id="eJZ-tf-lSL"/>
+                            <constraint firstItem="8lE-co-Sld" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ych-04-e1m"/>
+                            <constraint firstItem="8lE-co-Sld" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-58.5" id="zRq-SA-N9H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -43,7 +47,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="lockControl" destination="Z0L-cj-RL2" id="0Um-3X-haz"/>
+                        <outlet property="lockControl" destination="8lE-co-Sld" id="Q7q-XH-dfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

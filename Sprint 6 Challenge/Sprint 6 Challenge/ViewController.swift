@@ -9,17 +9,46 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // set up reset button
+    // make button appear when 80% ?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        guard let button = self.navigationItem.rightBarButtonItems?.first else {return}
+        button.isEnabled = false
+        button.tintColor = Appearance.michiganBlue
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func resetLockButton(_ sender: Any) {
+        guard let button = self.navigationItem.rightBarButtonItems?.first else {return}
+        button.isEnabled = false
+        
+        lockControl.isUserInteractionEnabled = true
+        lockControl.lockImage.image = UIImage(named: "Locked")
+        lockControl.percentComplete = 0.0
+        lockControl.layoutSubviews()
+        
     }
-
-
+    
+    @IBOutlet weak var lockControl: LockControl!
+    
+    
+    @IBAction func updateButton(_ lockControl: LockControl) {
+        guard let button = self.navigationItem.rightBarButtonItems?.first else { return}
+        button.isEnabled = false
+        
+        if lockControl.percentComplete > 0.8 {
+            button.isEnabled = true
+            button.tintColor = Appearance.michiganMaize
+            lockControl.isUserInteractionEnabled = false
+        } else {
+            button.tintColor = Appearance.michiganBlue
+        }
+    }
+    
+    
 }
+
 

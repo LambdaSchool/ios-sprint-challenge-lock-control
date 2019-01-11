@@ -90,7 +90,7 @@ class CustomControl: UIControl {
             if subview.tag == 1 {
                 if subview.frame.contains(touchPoint){
                     updateValue(at: touch, for: subview)
-                    sendActions(for: [.touchDown,.valueChanged])
+                    sendActions(for: [.touchDown])
                     return true
                 }
             }
@@ -110,13 +110,12 @@ class CustomControl: UIControl {
             if subview.tag == 1 {
                 if subview.frame.contains(touchPoint){
                     updateValue(at: touch, for: subview)
-                    if(subview.center.x > 180){
+                    if(subview.center.x > 185){
                         locked = 0
-                        print("Unlocked")
                         snapToUnlockedPosition(for: subview)
                         unlockPicture()
                     }
-                    sendActions(for: [.touchDown,.valueChanged])
+                    sendActions(for: [.touchDown])
                     return true
                 } else {
 //                    snapBack(for: subview)
@@ -135,9 +134,8 @@ class CustomControl: UIControl {
         
         for subview in self.subviews {
             if subview.tag == 1 {
-                if(subview.center.x > 180){
+                if(subview.center.x > 185){
                     locked = 0
-                    print("Unlocked")
                     snapToUnlockedPosition(for: subview)
                     sendActions(for: [.touchUpInside, .valueChanged])
                 } else {
@@ -157,8 +155,6 @@ class CustomControl: UIControl {
     func updateValue(at touch: UITouch, for subview: UIView) {
         
         let touchPoint = touch.location(in: self)
-        print(touchPoint)
-        
         
         if touchPoint.x > 14 + subview.bounds.width/2 && touchPoint.x < self.bounds.width - 14.0 - subview.bounds.width/2 {
             subview.center.x = touchPoint.x

@@ -12,23 +12,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resetBarButton: UIBarButtonItem!
     @IBOutlet weak var customControl: CustomControl!
-    
-    @IBAction func updateLock(_ control: CustomControl) {
-        
-        let value = control.locked
-        if value == 1 {
-            self.title = ("Locked")
-        } else {
-            self.title = ("Unlocked")
-        }
-        
-    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+       // was going to implement this here
 //        resetBarButton.isEnabled = false
 //        resetBarButton.tintColor = UIColor.clear
     }

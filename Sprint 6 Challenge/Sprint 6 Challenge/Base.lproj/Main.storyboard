@@ -42,7 +42,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="customControl" destination="FbN-cL-K3h" id="api-t8-oNv"/>
+                        <outlet property="customControl" destination="FbN-cL-K3h" id="67L-TV-4TT"/>
                         <outlet property="resetBarButton" destination="DC1-6n-8Vk" id="9Am-b7-Sgt"/>
                     </connections>
                 </viewController>

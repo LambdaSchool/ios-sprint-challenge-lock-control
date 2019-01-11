@@ -36,25 +36,41 @@ class CustomControl: UIControl {
         setup()
     }
     
+    func reset(){
+        for subview in self.subviews {
+            if subview.tag == 1 {
+                snapBack(for: subview)
+            }
+        }
+        locked = 1
+        lockPicture()
+    }
+    
     private func setup(){
         
         
         self.layer.cornerRadius = 30
         self.backgroundColor = .gray
-        print(self.center)
+        
+        
         let lockImageView = UIImageView(frame: CGRect(x: self.bounds.midX/2, y: self.bounds.midY/2 - 20, width: self.bounds.width/2, height: self.bounds.height/2))
         lockImageView.image = UIImage(named: "Locked")
         lockImageView.contentMode = .scaleAspectFit
+        lockImageView.tag = 2
         self.addSubview(lockImageView)
         
         let sliderBackground = UIView(frame: CGRect(x: 8.0, y: self.bounds.height - 58.0, width: self.bounds.width - 16.0, height: 50.0))
         sliderBackground.layer.cornerRadius = 25
         sliderBackground.backgroundColor = .white
+        sliderBackground.isUserInteractionEnabled = false
         self.addSubview(sliderBackground)
         
         let thumbView = UIView(frame: CGRect(x: 14.0, y: self.bounds.height - 51.0, width: 36, height: 36))
         thumbView.layer.cornerRadius = 18
         thumbView.backgroundColor = .black
+        thumbView.isUserInteractionEnabled = false
+        thumbView.tag = 1
+        
         self.addSubview(thumbView)
         
         
@@ -68,9 +84,18 @@ class CustomControl: UIControl {
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
         
-        updateValue(at: touch)
-        sendActions(for: [.touchDown,.valueChanged])
+        for subview in self.subviews {
+            if subview.tag == 1 {
+                if subview.frame.contains(touchPoint){
+                    updateValue(at: touch, for: subview)
+                    sendActions(for: [.touchDown,.valueChanged])
+                    return true
+                }
+            }
+        }
+        
         return true
     }
     
@@ -81,13 +106,25 @@ class CustomControl: UIControl {
         
         let touchPoint = touch.location(in: self)
         
-        if bounds.contains(touchPoint){
-            // TODO: Implement func
-            updateValue(at: touch)
-            sendActions(for: [.touchDragInside, .valueChanged])
-        } else {
-            sendActions(for: [.touchDragOutside])
+        for subview in self.subviews {
+            if subview.tag == 1 {
+                if subview.frame.contains(touchPoint){
+                    updateValue(at: touch, for: subview)
+                    if(subview.center.x > 180){
+                        locked = 0
+                        print("Unlocked")
+                        snapToUnlockedPosition(for: subview)
+                        unlockPicture()
+                    }
+                    sendActions(for: [.touchDown,.valueChanged])
+                    return true
+                } else {
+//                    snapBack(for: subview)
+                    sendActions(for: [.touchDragOutside])
+                }
+            }
         }
+        
         return true
     }
     
@@ -95,15 +132,19 @@ class CustomControl: UIControl {
         defer {
             super.endTracking(touch, with: event)
         }
-        guard let touch = touch else { return }
         
-        let touchPoint = touch.location(in: self)
-        
-        if bounds.contains(touchPoint){
-            updateValue(at: touch)
-            sendActions(for: [.touchUpInside, .valueChanged])
-        } else {
-            sendActions(for: [.touchUpOutside])
+        for subview in self.subviews {
+            if subview.tag == 1 {
+                if(subview.center.x > 180){
+                    locked = 0
+                    print("Unlocked")
+                    snapToUnlockedPosition(for: subview)
+                    sendActions(for: [.touchUpInside, .valueChanged])
+                } else {
+                    snapBack(for: subview)
+                    sendActions(for: [.touchUpOutside])
+                }
+            }
         }
         
     }
@@ -113,32 +154,55 @@ class CustomControl: UIControl {
         super.cancelTracking(with: event)
     }
     
-    func updateValue(at touch: UITouch) {
+    func updateValue(at touch: UITouch, for subview: UIView) {
         
         let touchPoint = touch.location(in: self)
         print(touchPoint)
-        for index in 0..<labelArray.count {
+        
+        
+        if touchPoint.x > 14 + subview.bounds.width/2 && touchPoint.x < self.bounds.width - 14.0 - subview.bounds.width/2 {
+            subview.center.x = touchPoint.x
+        }
+        sendActions(for: [.valueChanged])
+        
+    }
+    
+    func snapBack(for subview: UIView){
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            subview.center = CGPoint(x: 14 + subview.bounds.width/2 , y: subview.center.y)
+        })
+        
+    }
+    
+    func snapToUnlockedPosition(for subview: UIView){
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            subview.center = CGPoint(x: self.bounds.width - 14.0 - subview.bounds.width/2 , y: subview.center.y)
+        })
+        
+    }
+    
+    func unlockPicture(){
+        
+        for subview in self.subviews{
+            if subview .isKind(of: UIImageView.self){
+                guard let imageView = subview as? UIImageView else { return }
+                imageView.image = UIImage(named: "Unlocked")
             
-            
-            if labelArray[index].frame.contains(touchPoint){
-                value = labelArray[index].tag
-                print(value)
-                sendActions(for: [.valueChanged])
-                print(labelArray[index].frame)
-                for label in labelArray {
-                    
-                    if label.tag <= index + 1{
-                        label.textColor = componentInactiveColor
-                    } else {
-                        label.textColor = componentActiveColor
-                    }
-                }
-                
+            }
+        }
+    }
+    
+    func lockPicture(){
+        
+        for subview in self.subviews{
+            if subview .isKind(of: UIImageView.self){
+                guard let imageView = subview as? UIImageView else { return }
+                imageView.image = UIImage(named: "Locked")
                 
             }
-            
         }
-        
     }
     
 }

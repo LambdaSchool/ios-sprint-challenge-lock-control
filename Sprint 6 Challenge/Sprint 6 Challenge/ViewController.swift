@@ -8,11 +8,11 @@ class ViewController: UIViewController {
         //gray square
         let graySquare = UIView()
         graySquare.translatesAutoresizingMaskIntoConstraints = false
-        graySquare.backgroundColor = .gray
+        graySquare.backgroundColor = .lightGray
         graySquare.layer.cornerRadius = 20
         view.addSubview(graySquare)
         
-        let widthConstraint = NSLayoutConstraint(item: graySquare,
+        let widthConstraintSq = NSLayoutConstraint(item: graySquare,
                                                  attribute: .width,
                                                  relatedBy: .equal,
                                                  toItem: nil,
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
                                                  multiplier: 1.0,
                                                  constant: 200.0)
         
-        let heightConstraint = NSLayoutConstraint(item: graySquare,
+        let heightConstraintSq = NSLayoutConstraint(item: graySquare,
                                                   attribute: .height,
                                                   relatedBy: .equal,
                                                   toItem: graySquare,
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
                                                   multiplier: 1.0,
                                                   constant: 0.0)
         
-        let centerYConstraint = NSLayoutConstraint(item: graySquare,
+        let centerYConstraintSq = NSLayoutConstraint(item: graySquare,
                                                    attribute: .centerY,
                                                    relatedBy: .equal,
                                                    toItem: view,
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
                                                    multiplier: 1.0,
                                                    constant: 0.0)
         
-        let centerXConstraint = NSLayoutConstraint(item: graySquare,
+        let centerXConstraintSq = NSLayoutConstraint(item: graySquare,
                                                    attribute: .centerX,
                                                    relatedBy: .equal,
                                                    toItem: view,
@@ -44,9 +44,51 @@ class ViewController: UIViewController {
                                                    multiplier: 1.0,
                                                    constant: 0.0)
         
-        NSLayoutConstraint.activate([heightConstraint, widthConstraint, centerYConstraint, centerXConstraint])
+        //cylinder
+        let cylinder = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
+        cylinder.translatesAutoresizingMaskIntoConstraints = false
+        cylinder.backgroundColor = .black
+        cylinder.layer.cornerRadius = 40
+        view.addSubview(cylinder)
+        
+        let topConstraintCy = NSLayoutConstraint(item: cylinder,
+                                                 attribute: .bottom,
+                                                 relatedBy: .equal,
+                                                 toItem: graySquare,
+                                                 attribute: .bottom,
+                                                 multiplier: 1.0,
+                                                 constant: -10.0)
+        
+        let bottomConstraintCy = NSLayoutConstraint(item: cylinder,
+                                                    attribute: .centerX,
+                                                    relatedBy: .lessThanOrEqual,
+                                                    toItem: graySquare,
+                                                    attribute: .centerX,
+                                                    multiplier: 1.0,
+                                                    constant: 0.0)
+        
+
+        let widthConstraintCy = NSLayoutConstraint(item: cylinder,
+                                                 attribute: .width,
+                                                 relatedBy: .equal,
+                                                 toItem: graySquare,
+                                                 attribute: .width,
+                                                 multiplier: 1.0,
+                                                 constant: 0.0)
+
+        let heightConstraintCy = NSLayoutConstraint(item: cylinder,
+                                                  attribute: .height,
+                                                  relatedBy: .lessThanOrEqual,
+                                                  toItem: graySquare,
+                                                  attribute: .width,
+                                                  multiplier: 1.0,
+                                                  constant: 0.0)
+
+        
+
+        
+        NSLayoutConstraint.activate([heightConstraintSq, widthConstraintSq, centerYConstraintSq, centerXConstraintSq, heightConstraintCy, widthConstraintCy, topConstraintCy, bottomConstraintCy])
+        
     }
-    
-    
 }
 

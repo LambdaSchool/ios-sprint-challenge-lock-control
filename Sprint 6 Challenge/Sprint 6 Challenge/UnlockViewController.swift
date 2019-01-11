@@ -11,7 +11,11 @@ import UIKit
 class UnlockViewController: UIViewController {
 
     @IBAction func reset(_ sender: UIButton) {
-        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func slider(_ sender: CustomControl) {
+        // TODO
     }
     
     override func viewDidLoad() {
@@ -19,5 +23,5 @@ class UnlockViewController: UIViewController {
     }
     
     @IBOutlet weak var resetLock: UIButton!
-    
+    @IBOutlet weak var sliderUnlock: CustomControl!
 }

@@ -15,6 +15,7 @@
 		4992C62D21E90BEB00D3A31D /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992C62C21E90BEB00D3A31D /* UnlockViewController.swift */; };
 		4992C62F21E90C3600D3A31D /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992C62E21E90C3600D3A31D /* Appearance.swift */; };
 		4992C63121E913DA00D3A31D /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992C63021E913DA00D3A31D /* CustomControl.swift */; };
+		4992C63321E91B6600D3A31D /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992C63221E91B6600D3A31D /* Animator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4992C62C21E90BEB00D3A31D /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		4992C62E21E90C3600D3A31D /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		4992C63021E913DA00D3A31D /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		4992C63221E91B6600D3A31D /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				4992C63221E91B6600D3A31D /* Animator.swift */,
 				4992C63021E913DA00D3A31D /* CustomControl.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				4992C62C21E90BEB00D3A31D /* UnlockViewController.swift */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4992C63321E91B6600D3A31D /* Animator.swift in Sources */,
 				4992C62D21E90BEB00D3A31D /* UnlockViewController.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,

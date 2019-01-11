@@ -31,6 +31,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-8y-IPH" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="246" width="241" height="50"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="hOU-lv-mEJ"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -45,6 +48,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="y9w-su-sIo"/>
+                    <connections>
+                        <outlet property="sliderLock" destination="BLx-8y-IPH" id="fOO-u6-F5U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,6 +77,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-6z-Awx" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="245" width="241" height="50"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="slider:" destination="JRm-aP-gKV" eventType="valueChanged" id="1Ra-kB-8UB"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -108,6 +117,7 @@
                     <connections>
                         <outlet property="reset" destination="Rm6-xw-CFf" id="hzS-9f-8PB"/>
                         <outlet property="resetLock" destination="JBa-zD-1jw" id="nhG-m9-Vki"/>
+                        <outlet property="sliderUnlock" destination="SbC-6z-Awx" id="zak-g8-VXn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDS-NC-ing" userLabel="First Responder" sceneMemberID="firstResponder"/>

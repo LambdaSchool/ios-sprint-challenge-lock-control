@@ -15,6 +15,7 @@
 		845A15A221E8FDD30046CFAA /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A15A121E8FDD30046CFAA /* AppearanceHelper.swift */; };
 		845A15A421E900360046CFAA /* NORTHWEST-Rough.otf in Resources */ = {isa = PBXBuildFile; fileRef = 845A15A321E900360046CFAA /* NORTHWEST-Rough.otf */; };
 		845A15A821E905600046CFAA /* MostlyMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845A15A721E905600046CFAA /* MostlyMono.ttf */; };
+		845A15AA21E916120046CFAA /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A15A921E916120046CFAA /* CustomControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		845A15A121E8FDD30046CFAA /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		845A15A321E900360046CFAA /* NORTHWEST-Rough.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NORTHWEST-Rough.otf"; sourceTree = "<group>"; };
 		845A15A721E905600046CFAA /* MostlyMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MostlyMono.ttf; sourceTree = "<group>"; };
+		845A15A921E916120046CFAA /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				845A15A121E8FDD30046CFAA /* AppearanceHelper.swift */,
+				845A15A921E916120046CFAA /* CustomControl.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				845A15A321E900360046CFAA /* NORTHWEST-Rough.otf */,
@@ -148,6 +151,7 @@
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				845A15AA21E916120046CFAA /* CustomControl.swift in Sources */,
 				845A15A221E8FDD30046CFAA /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

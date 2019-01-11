@@ -83,7 +83,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="QaT-CB-q3p">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="51T-Nf-6Aj"/>
+                        <barButtonItem key="rightBarButtonItem" id="51T-Nf-6Aj">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="rM9-k4-bWz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="controlContainerView" destination="GJe-3T-T00" id="Fji-tn-YQJ"/>

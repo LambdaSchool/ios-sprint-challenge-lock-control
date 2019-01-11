@@ -50,10 +50,22 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uiu-gy-8T0" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="166" width="260" height="50"/>
+                                                <subviews>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yeQ-UI-Obm">
+                                                        <rect key="frame" x="6" y="0.0" width="248" height="51"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </slider>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="yeQ-UI-Obm" secondAttribute="trailing" constant="8" id="7EC-MC-FMV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yeQ-UI-Obm" secondAttribute="bottom" id="8nM-M5-g8G"/>
                                                     <constraint firstAttribute="width" constant="260" id="iQX-Sa-oNi"/>
                                                     <constraint firstAttribute="height" constant="50" id="iWF-6C-7Vd"/>
+                                                    <constraint firstItem="yeQ-UI-Obm" firstAttribute="leading" secondItem="Uiu-gy-8T0" secondAttribute="leading" constant="8" id="niY-m2-WnA"/>
+                                                    <constraint firstItem="yeQ-UI-Obm" firstAttribute="top" secondItem="Uiu-gy-8T0" secondAttribute="top" id="uCA-2A-u3g"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

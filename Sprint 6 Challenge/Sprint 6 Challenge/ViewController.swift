@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         mainView.layer.cornerRadius = 50
         swipeView.layer.cornerRadius = 25
         
-        swipeView.backgroundColor = AppearanceHelper.pastelBlue
-        mainView.backgroundColor = AppearanceHelper.almond
+        swipeView.backgroundColor = AppearanceHelper.almond
+        mainView.backgroundColor = AppearanceHelper.pastelBlue
         
         // Set image
         let lockedImage = UIImage(named: "Locked")

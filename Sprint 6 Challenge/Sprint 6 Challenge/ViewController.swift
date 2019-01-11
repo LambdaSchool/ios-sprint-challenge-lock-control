@@ -15,19 +15,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Hello!"
-        
-    }
+        navigationItem.rightBarButtonItem?.title = ""
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet weak var resetBarButton: UIBarButtonItem!
     @IBOutlet weak var lockunlockImage: UIImageView!
     @IBAction func reset(_ sender: Any) {
         
         //reset()
         locked()
-        
+        navigationItem.rightBarButtonItem?.title = ""
+       
     }
     
     @IBAction func rounded(_ sender: Radius) {
@@ -37,8 +40,14 @@ class ViewController: UIViewController {
     
     @IBAction func Unlock(_ sender: CustomControl) {
         
+      
+        
+        
+    navigationItem.rightBarButtonItem?.title = "Reset"
         unlock()
     }
+    
+    
     func unlock() {
         lockunlockImage.image = UIImage(named: "Unlocked")
        

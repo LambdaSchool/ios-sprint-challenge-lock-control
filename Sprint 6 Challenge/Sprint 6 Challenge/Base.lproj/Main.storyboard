@@ -62,6 +62,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lockunlockImage" destination="XYH-Ka-7C3" id="t0C-XF-Vyi"/>
+                        <outlet property="resetBarButton" destination="Xua-17-Sg6" id="bA3-Nv-hPj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

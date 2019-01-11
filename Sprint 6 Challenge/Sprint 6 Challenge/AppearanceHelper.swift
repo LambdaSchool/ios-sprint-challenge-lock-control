@@ -16,6 +16,7 @@ enum AppearanceHelper {
     
     static func setRedAppearance() {
         
+        
         UINavigationBar.appearance().barTintColor = lambdaRed
         UIBarButtonItem.appearance().tintColor = buttonBlack
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]

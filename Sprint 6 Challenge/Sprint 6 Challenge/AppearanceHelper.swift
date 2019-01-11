@@ -2,8 +2,7 @@ import UIKit
 
 enum AppearanceHelper {
     
-    static var lipstickRed = UIColor(named: "lipstickRed")
-    static var darkGray = UIColor(named: "darkGray")
+    static var lipstickRed = UIColor(displayP3Red: 0.297, green: 0.0, blue: 0.0, alpha: 1.0)
     
     static func setDarkAppearance() {
         UINavigationBar.appearance().barTintColor = lipstickRed

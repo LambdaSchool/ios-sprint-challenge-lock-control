@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134323FA213A5A6D00368033 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134323F9213A5A6D00368033 /* AppearanceHelper.swift */; };
+		1379618621399A20004B9D86 /* SliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1379618521399A20004B9D86 /* SliderControl.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		134323F9213A5A6D00368033 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		1379618521399A20004B9D86 /* SliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		134323F8213A5A5E00368033 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				134323F9213A5A6D00368033 /* AppearanceHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1379618721399A25004B9D86 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		468B89D42137397400E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +74,14 @@
 		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				134323F8213A5A5E00368033 /* Helpers */,
+				1379618721399A25004B9D86 /* View Controllers */,
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
+				1379618521399A20004B9D86 /* SliderControl.swift */,
 			);
 			path = "Sprint 6 Challenge";
 			sourceTree = "<group>";
@@ -136,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				134323FA213A5A6D00368033 /* AppearanceHelper.swift in Sources */,
+				1379618621399A20004B9D86 /* SliderControl.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

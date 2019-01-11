@@ -14,9 +14,9 @@ class Radius: UIControl {
         super.layoutSubviews()
         
         clipsToBounds = true
-        layer.cornerRadius = frame.width / 2
-        layer.borderWidth = 1.0
-        layer.borderColor = UIColor.black.cgColor
+        layer.cornerRadius = frame.width / 8
+//        layer.borderWidth = 1.0
+//        layer.borderColor = UIColor.black.cgColor
         
     }
 }

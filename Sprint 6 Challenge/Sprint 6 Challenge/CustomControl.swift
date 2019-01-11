@@ -11,6 +11,13 @@ import UIKit
 class CustomControl: UIControl {
     
   
+    var viewController = ViewController()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        clipsToBounds = true
+        layer.cornerRadius = 19
+    }
     static var value: Int = 1
     
     private let componentDimension: CGFloat = 40.0
@@ -23,14 +30,14 @@ class CustomControl: UIControl {
         setup()
    
     }
-   
+    
     var labels: [UILabel] = []
     
     func setup() {
        
         var tags: [Int] = []
         var coordinate: CGFloat = 8.0
-        for number in 1...6 {
+        for number in 1...1 {
         
             var label = UILabel()
             
@@ -39,7 +46,7 @@ class CustomControl: UIControl {
             label = UILabel(frame: CGRect(x: location, y: 0.0, width: componentDimension, height: componentDimension))
             label.tag = number
             label.font = UIFont.boldSystemFont(ofSize: 32.0)
-            label.text = "✯"
+            label.text = "⚫️"
             label.textAlignment = .center
             label.textColor = componentInactiveColor
             self.addSubview(label)
@@ -55,7 +62,7 @@ class CustomControl: UIControl {
     
     override var intrinsicContentSize: CGSize {
         let componentsWidth = CGFloat(componentCount) * componentDimension
-        let componentsSpacing = CGFloat(componentCount + 7) * 8.0
+        let componentsSpacing = CGFloat(componentCount + 5) * 8.0
         let width = componentsWidth + componentsSpacing
         return CGSize(width: width, height: componentDimension)
     }
@@ -100,23 +107,20 @@ class CustomControl: UIControl {
                 label.textColor = componentActiveColor
                 label.performFlare()
                 sendActions(for: [.valueChanged])
-            } else {
-                label.textColor = componentInactiveColor
-                sendActions(for: [.valueChanged])
+            }
             }
         }
     }
-}
+
     extension UIView {
         // "Flare view" animation sequence
         func performFlare() {
-            func flare()   { transform = CGAffineTransform(scaleX: 2.6, y: 2.6)
-                             transform = CGAffineTransform(rotationAngle: 30.0) }
+            func flare()   { transform = CGAffineTransform(translationX: 234, y: 9) }
             func unflare() { transform = .identity }
             
             UIView.animate(withDuration: 0.3,
                            animations: { flare() },
-                           completion: { _ in UIView.animate(withDuration: 0.1) { unflare() }})
+                           completion: { _ in UIView.animate(withDuration: 0.5) { unflare() }})
         }
     }
     

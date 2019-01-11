@@ -11,7 +11,8 @@ import UIKit
 enum AppearanceHelper {
     
     static var someBlue = UIColor(red:37.0/255.0, green:74.0/255.0, blue: 108.0/255.0, alpha: 1.0)
-   
+  
+    // this will add a theme to my navigation area
     static func setAppearance() {
         UINavigationBar.appearance().backgroundColor = someBlue
         UIBarButtonItem.appearance().tintColor = someBlue

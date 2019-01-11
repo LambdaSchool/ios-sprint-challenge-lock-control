@@ -18,36 +18,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-mE-iiH">
-                                <rect key="frame" x="67" y="145" width="240" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-mE-iiH">
+                                <rect key="frame" x="61" y="186" width="250" height="313"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkF-yG-yYv">
-                                        <rect key="frame" x="8" y="215" width="224" height="37"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkF-yG-yYv" customClass="slider" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="256" width="224" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-XJ-kYC">
-                                                <rect key="frame" x="8" y="0.0" width="38" height="37"/>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qCl-w3-xyz">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="p5b-Xq-5iO">
-                                        <rect key="frame" x="46" y="18" width="148" height="183"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="p5b-Xq-5iO">
+                                        <rect key="frame" x="58" y="41" width="136" height="170"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="p5b-Xq-5iO" firstAttribute="leading" secondItem="3rH-mE-iiH" secondAttribute="leading" constant="58" id="Pdh-aa-Ibv"/>
+                                    <constraint firstAttribute="trailing" secondItem="p5b-Xq-5iO" secondAttribute="trailing" constant="58" id="WfO-bZ-wHI"/>
+                                    <constraint firstItem="p5b-Xq-5iO" firstAttribute="top" secondItem="3rH-mE-iiH" secondAttribute="top" constant="41" id="lE9-QY-bgn"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3rH-mE-iiH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="122" id="1uy-pl-RHO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3rH-mE-iiH" secondAttribute="bottom" constant="168" id="6G7-pB-Roh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3rH-mE-iiH" secondAttribute="trailing" constant="62" id="HBg-Bo-PHN"/>
+                            <constraint firstItem="3rH-mE-iiH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="61" id="hKE-YP-PMC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="tHE-Ay-3KO">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Dd8-s5-aWF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Dd8-s5-aWF">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="sOb-M5-5FS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bigView" destination="3rH-mE-iiH" id="yfJ-uE-gfS"/>
+                        <outlet property="sliderBall" destination="qCl-w3-xyz" id="j6w-B9-vhC"/>
+                        <outlet property="sliderView" destination="pkF-yG-yYv" id="Qpm-Qk-3Dc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

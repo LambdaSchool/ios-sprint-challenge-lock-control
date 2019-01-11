@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7vM-NH-L5h">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hello!-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzt-Lv-fq0">
+                                <rect key="frame" x="75" y="94.5" width="225" height="225"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pzt-Lv-fq0" secondAttribute="height" id="RUz-Bw-Xbt"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="bpB-B4-Kb2">
+                                <rect key="frame" x="112.5" y="132" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bpB-B4-Kb2" secondAttribute="height" multiplier="1:1" id="ach-H9-S70"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="qwt-VD-x4T">
+                                <rect key="frame" x="73" y="428" width="229" height="31"/>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1p-Sb-AqI" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="75" y="477" width="225" height="42"/>
+                                <color key="backgroundColor" red="0.085788884950000005" green="0.31963832489999999" blue="0.083076498870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="updateImage:" destination="BYZ-38-t0r" eventType="valueChanged" id="PQf-Vx-l5F"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bpB-B4-Kb2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="1if-Hw-EAG"/>
+                            <constraint firstItem="pzt-Lv-fq0" firstAttribute="leading" secondItem="qwt-VD-x4T" secondAttribute="leading" id="2eK-l5-a85"/>
+                            <constraint firstItem="pzt-Lv-fq0" firstAttribute="leading" secondItem="y1p-Sb-AqI" secondAttribute="leading" id="98g-EX-75W"/>
+                            <constraint firstItem="qwt-VD-x4T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9V9-qK-INQ"/>
+                            <constraint firstItem="pzt-Lv-fq0" firstAttribute="trailing" secondItem="y1p-Sb-AqI" secondAttribute="trailing" id="BIT-lo-aBi"/>
+                            <constraint firstItem="qwt-VD-x4T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BbO-HQ-wR1"/>
+                            <constraint firstItem="y1p-Sb-AqI" firstAttribute="top" secondItem="qwt-VD-x4T" secondAttribute="bottom" constant="19" id="OJb-Gi-Bwu"/>
+                            <constraint firstItem="pzt-Lv-fq0" firstAttribute="width" secondItem="bpB-B4-Kb2" secondAttribute="width" multiplier="3:2" id="Stg-7o-fa8"/>
+                            <constraint firstItem="bpB-B4-Kb2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-126.5" id="e0Z-vj-60L"/>
+                            <constraint firstItem="y1p-Sb-AqI" firstAttribute="top" secondItem="bpB-B4-Kb2" secondAttribute="bottom" constant="195" id="gvQ-uh-LAu"/>
+                            <constraint firstItem="bpB-B4-Kb2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o6W-JA-6aq"/>
+                            <constraint firstItem="pzt-Lv-fq0" firstAttribute="trailing" secondItem="qwt-VD-x4T" secondAttribute="trailing" id="t4Z-ze-Vo9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y1p-Sb-AqI" secondAttribute="bottom" constant="148" id="trZ-Cq-OlS"/>
+                            <constraint firstItem="pzt-Lv-fq0" firstAttribute="centerY" secondItem="bpB-B4-Kb2" secondAttribute="centerY" id="uBo-L5-7r3"/>
+                            <constraint firstItem="y1p-Sb-AqI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w1Q-pl-nmf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hello!" id="c2C-o2-iq8">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="khL-BP-I0V">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="Zve-85-gvl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="padLock" destination="bpB-B4-Kb2" id="CGi-zW-gLA"/>
+                        <outlet property="resetButton" destination="khL-BP-I0V" id="dNi-05-j1x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="114.69265367316342"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tcx-vx-9cn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7vM-NH-L5h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FCc-Up-u3D">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mkg-Lr-YRV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JmI-RK-UnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+    </resources>
+</document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C946C4F21E8FB0E000996C0 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C946C4E21E8FB0E000996C0 /* CustomControl.swift */; };
+		2C946C5221E90715000996C0 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C946C5121E90715000996C0 /* AppearanceHelper.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C946C4E21E8FB0E000996C0 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		2C946C5121E90715000996C0 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C946C4B21E8F812000996C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E42137397400E7FF73 /* Main.storyboard */,
+				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C946C4C21E8F81A000996C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+				2C946C4E21E8FB0E000996C0 /* CustomControl.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C946C4D21E8F82F000996C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E72137397500E7FF73 /* Assets.xcassets */,
+				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C946C5321E9076F000996C0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2C946C5121E90715000996C0 /* AppearanceHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		468B89D42137397400E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +93,10 @@
 		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+				2C946C5321E9076F000996C0 /* Helper */,
+				2C946C4C21E8F81A000996C0 /* ViewControllers */,
+				2C946C4B21E8F812000996C0 /* Views */,
+				2C946C4D21E8F82F000996C0 /* Resources */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = "Sprint 6 Challenge";
@@ -136,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				2C946C5221E90715000996C0 /* AppearanceHelper.swift in Sources */,
+				2C946C4F21E8FB0E000996C0 /* CustomControl.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

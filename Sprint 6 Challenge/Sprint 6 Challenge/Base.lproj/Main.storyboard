@@ -48,7 +48,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="fOT-ZQ-AmT"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uiu-gy-8T0">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uiu-gy-8T0" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="166" width="260" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -78,11 +78,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Unlock Me!" id="jdQ-7E-cqy">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="efc-X6-3pb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="efc-X6-3pb">
+                            <connections>
+                                <action selector="resetButton:" destination="BYZ-38-t0r" id="0vt-DP-k3h"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageOutlet" destination="Mmt-5G-DFW" id="LFy-jo-3Hq"/>
                         <outlet property="mainView" destination="KCt-N1-lRu" id="lhw-qI-0FJ"/>
+                        <outlet property="resetOutlet" destination="efc-X6-3pb" id="rPh-ox-6bO"/>
                         <outlet property="swipeView" destination="Uiu-gy-8T0" id="TRU-ch-Hdl"/>
                     </connections>
                 </viewController>

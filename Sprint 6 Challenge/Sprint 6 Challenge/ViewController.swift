@@ -5,7 +5,24 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageOutlet: UIImageView!
+    @IBOutlet weak var resetOutlet: UIBarButtonItem!
     
+    var shouldReset: Bool = false
+    
+    @IBAction func resetButton(_ sender: Any) {
+        
+        if shouldReset == false {
+            UIView.animate(withDuration: 0.5) {
+                self.resetOutlet.tintColor = AppearanceHelper.wenge
+            }
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.resetOutlet.tintColor = AppearanceHelper.lavender
+            }
+        }
+        shouldReset = !shouldReset
+    }
+
     @IBOutlet weak var swipeView: UIView!
     
     @IBOutlet weak var mainView: UIView!
@@ -24,9 +41,11 @@ class ViewController: UIViewController {
         mainView.layer.cornerRadius = 50
         swipeView.layer.cornerRadius = 25
         
+        swipeView.backgroundColor = AppearanceHelper.pastelBlue
+        mainView.backgroundColor = AppearanceHelper.almond
+        
         // Set image
         let lockedImage = UIImage(named: "Locked")
-        //        let lockedImageView = UIImageView(image: lockedImage!)
         imageOutlet = UIImageView(image: lockedImage!)
         
         

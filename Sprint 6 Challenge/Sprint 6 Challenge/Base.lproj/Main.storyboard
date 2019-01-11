@@ -18,39 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGm-cP-hJY">
-                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="CWA-rS-ntX"/>
-                                    <constraint firstAttribute="height" constant="200" id="NlW-Vk-JTI"/>
-                                </constraints>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="EfI-Gd-7Xk">
+                                <rect key="frame" x="67" y="185" width="241" height="296"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-2G-G9J">
+                                        <rect key="frame" x="20.5" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="6Oz-4h-c7Y"/>
+                                            <constraint firstAttribute="width" constant="200" id="TEF-xp-aSX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-8y-IPH" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="246" width="241" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fGm-cP-hJY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Enf-m2-M69"/>
-                            <constraint firstItem="fGm-cP-hJY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fyU-lP-gZ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfI-Gd-7Xk" secondAttribute="trailing" constant="67" id="K3E-9P-6cv"/>
+                            <constraint firstItem="EfI-Gd-7Xk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="Y7W-Uv-PxR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EfI-Gd-7Xk" secondAttribute="bottom" constant="186" id="ybR-rA-Xmx"/>
+                            <constraint firstItem="EfI-Gd-7Xk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="zkY-vC-qOL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="y9w-su-sIo">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="sra-yh-ShX">
-                            <connections>
-                                <action selector="resetLock:" destination="BYZ-38-t0r" id="0yN-O6-sNL"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="lockView" destination="fGm-cP-hJY" id="hNn-kx-h1y"/>
-                        <outlet property="reset" destination="sra-yh-ShX" id="6XD-Ul-zrC"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Home" id="y9w-su-sIo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="-579"/>
+            <point key="canvasLocation" x="-39.200000000000003" y="-579.76011994002999"/>
         </scene>
-        <!--Unlock View Controller-->
+        <!--Unlock-->
         <scene sceneID="Xms-gW-BGZ">
             <objects>
                 <viewController id="JRm-aP-gKV" customClass="UnlockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,29 +58,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDx-J8-Bbi">
-                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-sD-wLy">
+                                <rect key="frame" x="67" y="186" width="241" height="295"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-K2-CsM">
+                                        <rect key="frame" x="20.5" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="rFT-u6-Yv4"/>
+                                            <constraint firstAttribute="width" constant="200" id="tzC-9r-Tqf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-6z-Awx" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="245" width="241" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Oni-tR-fxc"/>
-                                    <constraint firstAttribute="width" constant="200" id="ehx-P5-KuS"/>
+                                    <constraint firstItem="SbC-6z-Awx" firstAttribute="centerX" secondItem="JSV-sD-wLy" secondAttribute="centerX" id="ExH-Ek-jiA"/>
+                                    <constraint firstItem="SbC-6z-Awx" firstAttribute="leading" secondItem="JSV-sD-wLy" secondAttribute="leading" id="GQd-g4-jf3"/>
                                 </constraints>
-                            </view>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBa-zD-1jw">
+                                <rect key="frame" x="317" y="29" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="JRm-aP-gKV" eventType="touchUpInside" id="E6g-Vf-PV3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZDx-J8-Bbi" firstAttribute="centerY" secondItem="xfN-hn-1io" secondAttribute="centerY" id="iQK-ig-pfh"/>
-                            <constraint firstItem="ZDx-J8-Bbi" firstAttribute="centerX" secondItem="xfN-hn-1io" secondAttribute="centerX" id="q8W-sF-KmP"/>
+                            <constraint firstItem="JSV-sD-wLy" firstAttribute="centerY" secondItem="xfN-hn-1io" secondAttribute="centerY" id="IIT-d2-LBK"/>
+                            <constraint firstItem="JSV-sD-wLy" firstAttribute="leading" secondItem="jHx-WF-IYz" secondAttribute="leading" constant="67" id="Xes-0u-djq"/>
+                            <constraint firstItem="jHx-WF-IYz" firstAttribute="trailing" secondItem="JBa-zD-1jw" secondAttribute="trailing" constant="19" id="YoH-hg-Tj6"/>
+                            <constraint firstItem="jHx-WF-IYz" firstAttribute="bottom" secondItem="JBa-zD-1jw" secondAttribute="bottom" constant="608" id="mDQ-pr-Tuc"/>
+                            <constraint firstItem="jHx-WF-IYz" firstAttribute="trailing" secondItem="JSV-sD-wLy" secondAttribute="trailing" constant="67" id="njP-yJ-zeE"/>
+                            <constraint firstItem="jHx-WF-IYz" firstAttribute="bottom" secondItem="JSV-sD-wLy" secondAttribute="bottom" constant="186" id="yrL-YA-x8Q"/>
+                            <constraint firstItem="JBa-zD-1jw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jHx-WF-IYz" secondAttribute="leading" symbolic="YES" id="zXQ-cb-9l9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jHx-WF-IYz"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Unlock" id="NFi-Sy-P0n">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Rm6-xw-CFf">
+                            <connections>
+                                <action selector="reset:" destination="JRm-aP-gKV" id="hcM-Uf-ANj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="unlockView" destination="ZDx-J8-Bbi" id="2zX-n1-KPX"/>
+                        <outlet property="reset" destination="Rm6-xw-CFf" id="hzS-9f-8PB"/>
+                        <outlet property="resetLock" destination="JBa-zD-1jw" id="nhG-m9-Vki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDS-NC-ing" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="-579"/>
+            <point key="canvasLocation" x="647" y="-579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GhA-gi-Rph">
@@ -101,4 +133,8 @@
             <point key="canvasLocation" x="-767" y="-578"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+        <image name="Unlocked" width="440" height="586"/>
+    </resources>
 </document>

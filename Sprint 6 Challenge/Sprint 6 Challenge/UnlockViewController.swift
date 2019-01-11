@@ -10,12 +10,14 @@ import UIKit
 
 class UnlockViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    @IBAction func reset(_ sender: UIButton) {
+        
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
-    @IBOutlet weak var unlockView: UIView!
+    @IBOutlet weak var resetLock: UIButton!
     
 }

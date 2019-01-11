@@ -9,13 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-   
-    @IBAction func resetLock(_ sender: Any) {
-        
-    }
     
-    @IBOutlet weak var reset: UIBarButtonItem!
-    @IBOutlet weak var lockView: UIView!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
 }
 

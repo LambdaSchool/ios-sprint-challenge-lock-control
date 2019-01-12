@@ -10,22 +10,18 @@ import Foundation
 import UIKit
 
 struct AppearanceHelper {
-    static var maroonRed = UIColor(red: 143.0/255.0, green: 9.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+    static var maroonRed = UIColor(red: 175.0/255.0, green: 5.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+    static var darkRed = #colorLiteral(red: 0.5432647839, green: 0.02619154518, blue: 0.04654160588, alpha: 1)
     
     static func setAppearance() {
-        // Styling the Navigation Color: Fail...
-        UINavigationBar.appearance().tintColor = maroonRed
-        // Styling the Navigation Title text
-        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        UINavigationBar.appearance().barTintColor = darkRed
+        //Styling the Navigation Title text
+        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
-        
-        // Styling the bar item text.
-        let barTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.green]
-        UIBarButtonItem.appearance().setTitleTextAttributes(barTextAttributes, for: .normal)
+
     }
     
-    static func changeBarItemColor () {
-        let barTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        UIBarButtonItem.appearance().setTitleTextAttributes(barTextAttributes, for: .normal)
-    }
+    
+    
+    
 }

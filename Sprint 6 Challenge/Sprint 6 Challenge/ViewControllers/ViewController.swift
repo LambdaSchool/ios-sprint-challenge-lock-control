@@ -10,34 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
+    @IBOutlet weak var grayBackground: UIView!
     @IBOutlet weak var resetButton: UIBarButtonItem!
+   
     @IBAction func resetButtonTapped(_ sender: Any) {
         self.padLock.image = UIImage(named: "Locked")
-        //resetButton.tintColor = AppearanceHelper.maroonRed
-        //resetButton.accessibilityElementsHidden = true
-        AppearanceHelper.changeBarItemColor()
+        CustomControl.thumb.frame = CGRect(x: 3, y: 6, width: 20, height: 20)
+        resetButton.title = ""
+        resetButton.isEnabled = false
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationItem.leftBarButtonItem = nil
-        
+        resetButton.title = ""
+        resetButton.isEnabled = false
+
     }
+
     @IBOutlet weak var padLock: UIImageView!
-    
     @IBAction func updateImage(_ sender: Any) {
-        // if CustomControl.value is greater than 80% unlock
-        if true {
+        let value = CustomControl.value
+        if value >= 180 {
             self.padLock.image = UIImage(named: "Unlocked")
-            UIView.animate(withDuration: 5.0) {
-                self.navigationItem.leftBarButtonItem = self.resetButton
-                AppearanceHelper.changeBarItemColor()
-                //self.resetButton.tintColor = .black
-                //self.resetButton.accessibilityElementsHidden = true
+            UIView.animate(withDuration: 3.0) {
+                self.resetButton.title = "Reset"
+                self.resetButton.isEnabled = true
             }
         }
     }
-    
-    
 }
 

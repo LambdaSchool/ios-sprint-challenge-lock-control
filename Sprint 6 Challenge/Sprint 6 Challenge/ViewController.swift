@@ -9,54 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
+    @IBOutlet weak var lockUnlockImageView: UIImageView!
+    @IBOutlet weak var mainBackraundView: CustomControl!
+    @IBOutlet weak var resetButtonOutlet: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lockUnlockImageView.image = UIImage(named: "Locked")
+        mainBackraundView.layer.cornerRadius = 35
         navigationItem.title = "Hello!"
         navigationItem.rightBarButtonItem?.title = ""
-
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBOutlet weak var resetBarButton: UIBarButtonItem!
-    @IBOutlet weak var lockunlockImage: UIImageView!
-    @IBAction func reset(_ sender: Any) {
-        
-        //reset()
-        locked()
-        navigationItem.rightBarButtonItem?.title = ""
-       
-    }
-    
-    @IBAction func rounded(_ sender: Radius) {
-    }
-    
-  
-    
-    @IBAction func Unlock(_ sender: CustomControl) {
-        
-      
+    @IBAction func CoustomView(_ sender: CustomControl) {
         
         
-    navigationItem.rightBarButtonItem?.title = "Reset"
-        unlock()
+       let value = CustomControl.value
+       if value >= 200 {
+            lockUnlockImageView.image = UIImage(named: "Unlocked")
+            UIView.animate(withDuration: 1.0) {
+                self.resetButtonOutlet.title = "Reset"
+                self.resetButtonOutlet.isEnabled = true
+   }
+        }
+    }
+    @IBAction func resetButton(_ sender: Any) {
+        
+        lockUnlockImageView.image = UIImage(named: "Locked")
+        CustomControl.blackCircle.frame = CGRect(x: 7, y: 7, width: 37, height: 37)
+        resetButtonOutlet.title = ""
+        resetButtonOutlet.isEnabled = false
     }
     
-    
-    func unlock() {
-        lockunlockImage.image = UIImage(named: "Unlocked")
-       
-    }
-    func locked() {
-        lockunlockImage.image = UIImage(named: "Locked")
-    }
-    
-    var unlockImage: UIImage = UIImage(named: "Unlocked")!
-    var lockedImage: UIImage = UIImage(named: "Locked")!
 }
-

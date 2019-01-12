@@ -10,73 +10,51 @@ import UIKit
 
 class CustomControl: UIControl {
     
-  
-    var viewController = ViewController()
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        clipsToBounds = true
-        layer.cornerRadius = 19
-    }
-    static var value: Int = 1
+    static var value: CGFloat = 0.0
+    static var blackCircle = UIView(frame: CGRect(x: 7, y: 7, width: 37, height: 37))
+    var sliderGreyBackground = UIView(frame: CGRect(x: 9, y: 223, width: 263, height: 50))
     
-    private let componentDimension: CGFloat = 40.0
-    private let componentCount = 5
-    private let componentActiveColor = UIColor.black
-    private let componentInactiveColor = UIColor.gray
     
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
-        setup()
-   
-    }
-    
-    var labels: [UILabel] = []
-    
-    func setup() {
-       
-        var tags: [Int] = []
-        var coordinate: CGFloat = 8.0
-        for number in 1...1 {
         
-            var label = UILabel()
-            
-            
-            let location: CGFloat = coordinate
-            label = UILabel(frame: CGRect(x: location, y: 0.0, width: componentDimension, height: componentDimension))
-            label.tag = number
-            label.font = UIFont.boldSystemFont(ofSize: 32.0)
-            label.text = "⚫️"
-            label.textAlignment = .center
-            label.textColor = componentInactiveColor
-            self.addSubview(label)
-            labels.append(label)
-            tags.append(tag)
-             coordinate += 48
-            
-            
+        sliderGreyBackground.backgroundColor = UIColor.darkGray
+        sliderGreyBackground.layer.cornerRadius = 22
+        self.addSubview(sliderGreyBackground)
+        CustomControl.blackCircle.backgroundColor = .black
+        CustomControl.blackCircle.layer.cornerRadius = 15
+        sliderGreyBackground.addSubview(CustomControl.blackCircle)
+       
     }
-    }
-  
-
     
-    override var intrinsicContentSize: CGSize {
-        let componentsWidth = CGFloat(componentCount) * componentDimension
-        let componentsSpacing = CGFloat(componentCount + 5) * 8.0
-        let width = componentsWidth + componentsSpacing
-        return CGSize(width: width, height: componentDimension)
-    }
+    func updateValue(at touch: UITouch) {
+        let touchPoint = touch.location(in: self)
+        if sliderGreyBackground.bounds.contains(touchPoint) {
+            CustomControl.value = touchPoint.x
+            sendActions(for: [.valueChanged])
+            CustomControl.blackCircle.center.x = touchPoint.x
+        } else {
+           // CustomControl.blackCircle.frame = CGRect(x: 7, y: 7, width: 37, height: 37)
+            sendActions(for: [.valueChanged])
+        }
+        sendActions(for: [.valueChanged])
+        }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) { // if sliderGreyBackground.bounds.contains(touchPoint)
         updateValue(at: touch)
         sendActions(for: [.touchDown, .valueChanged])
         return true
+        }
+            return false
+        
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint =  touch.location(in: self)
-        if bounds.contains(touchPoint){
-            self.updateValue(at: touch)
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            updateValue(at: touch)
             sendActions(for: [.touchDragInside, .valueChanged])
         } else {
             sendActions(for: [.touchDragOutside])
@@ -85,9 +63,11 @@ class CustomControl: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        guard let touchPoint =  touch?.location(in: self) else {return}
-        if bounds.contains(touchPoint){
-            self.updateValue(at: touch!)
+        defer { super.endTracking(touch, with: event) }
+        guard let touch = touch else { return }
+        let touchPoint = touch.location(in: self)
+        if bounds.contains(touchPoint) {
+            updateValue(at: touch)
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
             sendActions(for: [.touchUpOutside])
@@ -95,33 +75,7 @@ class CustomControl: UIControl {
     }
     
     override func cancelTracking(with event: UIEvent?) {
-        sendActions(for: .touchCancel)
         super.cancelTracking(with: event)
+        sendActions(for: [.touchCancel])
     }
-    
-    func updateValue(at touch: UITouch ) {
-        for label in labels {
-            let touchPoint = touch.location(in: label)
-            if bounds.contains(touchPoint) {
-                CustomControl.value = label.tag
-                label.textColor = componentActiveColor
-                label.performFlare()
-                sendActions(for: [.valueChanged])
-            }
-            }
-        }
-    }
-
-    extension UIView {
-        // "Flare view" animation sequence
-        func performFlare() {
-            func flare()   { transform = CGAffineTransform(translationX: 234, y: 9) }
-            func unflare() { transform = .identity }
-            
-            UIView.animate(withDuration: 0.3,
-                           animations: { flare() },
-                           completion: { _ in UIView.animate(withDuration: 0.5) { unflare() }})
-        }
-    }
-    
-
+}

@@ -18,36 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-lB-Afj" userLabel="Rounded" customClass="Radius" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-lB-Afj" userLabel="Rounded" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-Ka-7C3">
-                                        <rect key="frame" x="20" y="30" width="240" height="187"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JW6-PN-gNv" customClass="CustomControl" customModule="UIControl" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="232" width="264" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <connections>
-                                            <action selector="Unlock:" destination="BYZ-38-t0r" eventType="valueChanged" id="KCM-7c-Tb6"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="4up-3m-Cy8"/>
                                     <constraint firstAttribute="width" constant="280" id="ATl-0f-Pb9"/>
                                     <constraint firstAttribute="height" constant="280" id="Aow-lz-suc"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" id="sxw-Ap-nAf"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="rounded:" destination="BYZ-38-t0r" eventType="valueChanged" id="m8i-4A-cwA"/>
+                                    <action selector="CoustomView:" destination="BYZ-38-t0r" eventType="valueChanged" id="Cgs-DR-TLC"/>
                                 </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-KK-Yru">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="200"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5k5-KK-Yru" firstAttribute="top" secondItem="tkr-lB-Afj" secondAttribute="top" constant="20" id="JND-kA-IsH"/>
+                            <constraint firstItem="tkr-lB-Afj" firstAttribute="trailing" secondItem="5k5-KK-Yru" secondAttribute="trailing" constant="20" id="aDL-w8-gtX"/>
+                            <constraint firstItem="5k5-KK-Yru" firstAttribute="leading" secondItem="tkr-lB-Afj" secondAttribute="leading" constant="20" id="fpp-An-b5g"/>
+                            <constraint firstItem="tkr-lB-Afj" firstAttribute="bottom" secondItem="5k5-KK-Yru" secondAttribute="bottom" constant="60" id="nbV-LH-UAS"/>
                             <constraint firstItem="tkr-lB-Afj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oVy-nw-YTQ"/>
                             <constraint firstItem="tkr-lB-Afj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wGc-aF-EVZ"/>
                         </constraints>
@@ -56,13 +47,14 @@
                     <navigationItem key="navigationItem" id="8uJ-K2-NU5">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Xua-17-Sg6">
                             <connections>
-                                <action selector="reset:" destination="BYZ-38-t0r" id="LHM-Gf-tET"/>
+                                <action selector="resetButton:" destination="BYZ-38-t0r" id="CBA-lD-SbK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="lockunlockImage" destination="XYH-Ka-7C3" id="t0C-XF-Vyi"/>
-                        <outlet property="resetBarButton" destination="Xua-17-Sg6" id="bA3-Nv-hPj"/>
+                        <outlet property="lockUnlockImageView" destination="5k5-KK-Yru" id="ANX-WZ-5Mg"/>
+                        <outlet property="mainBackraundView" destination="tkr-lB-Afj" id="lqw-rX-KC7"/>
+                        <outlet property="resetButtonOutlet" destination="Xua-17-Sg6" id="ehd-sF-Rsa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,7 +80,4 @@
             <point key="canvasLocation" x="161" y="535"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Locked" width="440" height="586"/>
-    </resources>
 </document>

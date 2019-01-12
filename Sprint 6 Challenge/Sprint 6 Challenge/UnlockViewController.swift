@@ -8,20 +8,20 @@
 
 import UIKit
 
-class UnlockViewController: UIViewController {
+class UnlockViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     @IBAction func reset(_ sender: UIButton) {
+        transitioningDelegate = self
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func slider(_ sender: CustomControl) {
-        // TODO
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animator
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let animator = Animator()
     
+    @IBOutlet weak var sliderUnlockImage: UIImageView!
     @IBOutlet weak var resetLock: UIButton!
     @IBOutlet weak var sliderUnlock: CustomControl!
 }

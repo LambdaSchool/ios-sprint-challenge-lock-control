@@ -18,43 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="EfI-Gd-7Xk">
-                                <rect key="frame" x="67" y="185" width="241" height="296"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-2G-G9J">
-                                        <rect key="frame" x="20.5" y="0.0" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="6Oz-4h-c7Y"/>
-                                            <constraint firstAttribute="width" constant="200" id="TEF-xp-aSX"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-8y-IPH" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="246" width="241" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="hOU-lv-mEJ"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-2G-G9J">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="a4b-Go-h2s"/>
+                                    <constraint firstAttribute="width" constant="200" id="nOS-nf-BQr"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLx-8y-IPH" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="67" y="474.5" width="241" height="50.5"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.25882352941176467" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50.5" id="eB2-81-x1u"/>
+                                    <constraint firstAttribute="width" constant="241" id="g9C-SB-kNn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfI-Gd-7Xk" secondAttribute="trailing" constant="67" id="K3E-9P-6cv"/>
-                            <constraint firstItem="EfI-Gd-7Xk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="Y7W-Uv-PxR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EfI-Gd-7Xk" secondAttribute="bottom" constant="186" id="ybR-rA-Xmx"/>
-                            <constraint firstItem="EfI-Gd-7Xk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="zkY-vC-qOL"/>
+                            <constraint firstItem="BLx-8y-IPH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="0d9-Fy-A4N"/>
+                            <constraint firstItem="iAf-2G-G9J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BjR-P9-3xu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BLx-8y-IPH" secondAttribute="trailing" constant="67" id="HAp-Yr-zKr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BLx-8y-IPH" secondAttribute="bottom" constant="142" id="VHQ-5M-JGw"/>
+                            <constraint firstItem="BLx-8y-IPH" firstAttribute="top" secondItem="iAf-2G-G9J" secondAttribute="bottom" constant="41" id="dIj-FL-qXP"/>
+                            <constraint firstItem="iAf-2G-G9J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xaV-B9-avh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="y9w-su-sIo"/>
                     <connections>
-                        <outlet property="sliderLock" destination="BLx-8y-IPH" id="fOO-u6-F5U"/>
+                        <outlet property="sliderLock" destination="BLx-8y-IPH" id="dep-j1-XYY"/>
+                        <outlet property="sliderLockImage" destination="iAf-2G-G9J" id="yqC-3s-Izf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.200000000000003" y="-579.76011994002999"/>
+            <point key="canvasLocation" x="129" y="-581"/>
         </scene>
         <!--Unlock-->
         <scene sceneID="Xms-gW-BGZ">
@@ -64,29 +63,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-sD-wLy">
-                                <rect key="frame" x="67" y="186" width="241" height="295"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-K2-CsM">
-                                        <rect key="frame" x="20.5" y="0.0" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="rFT-u6-Yv4"/>
-                                            <constraint firstAttribute="width" constant="200" id="tzC-9r-Tqf"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-6z-Awx" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="245" width="241" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="slider:" destination="JRm-aP-gKV" eventType="valueChanged" id="1Ra-kB-8UB"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="ZLB-K2-CsM">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstItem="SbC-6z-Awx" firstAttribute="centerX" secondItem="JSV-sD-wLy" secondAttribute="centerX" id="ExH-Ek-jiA"/>
-                                    <constraint firstItem="SbC-6z-Awx" firstAttribute="leading" secondItem="JSV-sD-wLy" secondAttribute="leading" id="GQd-g4-jf3"/>
+                                    <constraint firstAttribute="width" constant="200" id="CuO-Bm-laD"/>
+                                    <constraint firstAttribute="height" constant="200" id="u2Z-0a-1it"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBa-zD-1jw">
                                 <rect key="frame" x="317" y="29" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
@@ -94,15 +77,29 @@
                                     <action selector="reset:" destination="JRm-aP-gKV" eventType="touchUpInside" id="E6g-Vf-PV3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-6z-Awx" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="67" y="474.5" width="241" height="50"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.25882352941176467" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WaV-GR-MNb"/>
+                                    <constraint firstAttribute="width" constant="241" id="hOk-s1-4D1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slider:" destination="JRm-aP-gKV" eventType="valueChanged" id="1Ra-kB-8UB"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JSV-sD-wLy" firstAttribute="centerY" secondItem="xfN-hn-1io" secondAttribute="centerY" id="IIT-d2-LBK"/>
-                            <constraint firstItem="JSV-sD-wLy" firstAttribute="leading" secondItem="jHx-WF-IYz" secondAttribute="leading" constant="67" id="Xes-0u-djq"/>
+                            <constraint firstItem="SbC-6z-Awx" firstAttribute="centerX" secondItem="xfN-hn-1io" secondAttribute="centerX" id="7jj-38-GcX"/>
+                            <constraint firstItem="jHx-WF-IYz" firstAttribute="bottom" secondItem="SbC-6z-Awx" secondAttribute="bottom" constant="142.5" id="E4M-2x-XWE"/>
+                            <constraint firstItem="ZLB-K2-CsM" firstAttribute="centerX" secondItem="xfN-hn-1io" secondAttribute="centerX" id="YbS-WA-qbr"/>
                             <constraint firstItem="jHx-WF-IYz" firstAttribute="trailing" secondItem="JBa-zD-1jw" secondAttribute="trailing" constant="19" id="YoH-hg-Tj6"/>
                             <constraint firstItem="jHx-WF-IYz" firstAttribute="bottom" secondItem="JBa-zD-1jw" secondAttribute="bottom" constant="608" id="mDQ-pr-Tuc"/>
-                            <constraint firstItem="jHx-WF-IYz" firstAttribute="trailing" secondItem="JSV-sD-wLy" secondAttribute="trailing" constant="67" id="njP-yJ-zeE"/>
-                            <constraint firstItem="jHx-WF-IYz" firstAttribute="bottom" secondItem="JSV-sD-wLy" secondAttribute="bottom" constant="186" id="yrL-YA-x8Q"/>
+                            <constraint firstItem="SbC-6z-Awx" firstAttribute="leading" secondItem="jHx-WF-IYz" secondAttribute="leading" constant="67" id="nrY-vl-Hok"/>
+                            <constraint firstItem="SbC-6z-Awx" firstAttribute="top" secondItem="ZLB-K2-CsM" secondAttribute="bottom" constant="41" id="q2C-rR-ak7"/>
+                            <constraint firstItem="ZLB-K2-CsM" firstAttribute="centerY" secondItem="xfN-hn-1io" secondAttribute="centerY" id="r39-dJ-M3p"/>
+                            <constraint firstItem="jHx-WF-IYz" firstAttribute="trailing" secondItem="SbC-6z-Awx" secondAttribute="trailing" constant="67" id="t9p-s7-AKA"/>
                             <constraint firstItem="JBa-zD-1jw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jHx-WF-IYz" secondAttribute="leading" symbolic="YES" id="zXQ-cb-9l9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jHx-WF-IYz"/>
@@ -118,19 +115,20 @@
                         <outlet property="reset" destination="Rm6-xw-CFf" id="hzS-9f-8PB"/>
                         <outlet property="resetLock" destination="JBa-zD-1jw" id="nhG-m9-Vki"/>
                         <outlet property="sliderUnlock" destination="SbC-6z-Awx" id="zak-g8-VXn"/>
+                        <outlet property="sliderUnlockImage" destination="ZLB-K2-CsM" id="moG-87-vNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDS-NC-ing" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="647" y="-579"/>
+            <point key="canvasLocation" x="839" y="-582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GhA-gi-Rph">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HoX-qd-5RJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ObO-6b-z3v">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ObO-6b-z3v">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -9,24 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    @IBAction func slider(_ sender: CustomControl) {
-        
-    }
-    
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         segue.destination.transitioningDelegate = self
     }
     
-    let touch = UITouch()
-    let event = UIEvent()
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animator
+    }
     
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animator
+    }
+    
+    @IBOutlet weak var sliderLockImage: UIImageView!
     @IBOutlet weak var sliderLock: CustomControl!
-    
-    
+    private let animator = Animator()
 }
 

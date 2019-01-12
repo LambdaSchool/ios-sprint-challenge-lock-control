@@ -62,13 +62,13 @@
 		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				4992C62E21E90C3600D3A31D /* Appearance.swift */,
 				4992C63221E91B6600D3A31D /* Animator.swift */,
 				4992C63021E913DA00D3A31D /* CustomControl.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				4992C62C21E90BEB00D3A31D /* UnlockViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				4992C62E21E90C3600D3A31D /* Appearance.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,

@@ -27,24 +27,23 @@ class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         toView.frame = unlockViewFrame
         toView.alpha = 0
         
-        let lock = fromVC.sliderLock!
-        let unlock = toVC.sliderUnlock!
-        unlock.alpha = 0
+        let lockImage = fromVC.sliderLockImage!
+        let unlockImage = toVC.sliderUnlockImage!
+        unlockImage.alpha = 0
         
-        let imageInitialFrame = containerView.convert(lock.bounds, from: lock)
+        let imageInitialFrame = containerView.convert(lockImage.bounds, from: lockImage)
         
         let animationImage = UIImageView()
         animationImage.frame = imageInitialFrame
-        
         containerView.addSubview(animationImage)
         
         toView.layoutIfNeeded()
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            animationImage.frame = containerView.convert(unlock.bounds, from: unlock)
+            animationImage.frame = containerView.convert(unlockImage.bounds, from: unlockImage)
             toView.alpha = 1
             
         }) { (success) in
-            unlock.alpha = 1
+            unlockImage.alpha = 1
             animationImage.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }

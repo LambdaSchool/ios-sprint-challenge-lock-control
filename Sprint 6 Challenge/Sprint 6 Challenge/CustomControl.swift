@@ -10,8 +10,12 @@ import UIKit
 
 class CustomControl: UIControl {
     
+    var imageView: UIImageView!
     var sliderLock: ViewController?
     var sliderUnlock: UnlockViewController?
+    
+    private let lockedImage = UIImage(named: "Locked")
+    private let unlockedImage = UIImage(named: "Unlocked")
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -25,10 +29,9 @@ class CustomControl: UIControl {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         print("Begin Tracking \(touchPoint)")
-
-        // TODO
+//        guard let image = imageView else { return false }
+//        image.image = lockedImage
         sendActions(for: [.touchDown, .valueChanged])
-        
         return true
     }
     
@@ -36,9 +39,9 @@ class CustomControl: UIControl {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             print("Continue Tracking \(touchPoint)")
-            
-            // TODO
-            sendActions(for: [.valueChanged, .touchDragInside])
+//            guard let image = imageView else { return false }
+//            image.image = lockedImage
+            sendActions(for: [.touchDragInside, .valueChanged])
         } else {
             sendActions(for: [.touchDragOutside])
         }
@@ -52,9 +55,10 @@ class CustomControl: UIControl {
         
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
-            print("Finish Tracking \(touchPoint)")
-            
-            // TODO
+            print("Finished Tracking \(touchPoint)")
+            guard let image = imageView else { return }
+            image.image = unlockedImage
+            self.isUserInteractionEnabled = false
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
             sendActions(for: [.touchUpOutside])
@@ -63,6 +67,12 @@ class CustomControl: UIControl {
     
     override func cancelTracking(with event: UIEvent?) {
         super.cancelTracking(with: event)
+    }
+    
+    private func update(for location: CGPoint) {
+        let left = CGPoint(x: bounds.minX, y: bounds.minX)
+        let _ = location.x - left.x
+        
     }
     
 }

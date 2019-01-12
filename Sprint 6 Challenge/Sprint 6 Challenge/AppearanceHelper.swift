@@ -1,10 +1,4 @@
-//
-//  AppearanceHelper.swift
-//  UIAppearanceAndAnimation
-//
-//  Created by Spencer Curtis on 8/21/18.
-//  Copyright © 2018 Lambda School. All rights reserved.
-//
+
 
 import UIKit
 
@@ -19,7 +13,7 @@ enum AppearanceHelper {
         
         UINavigationBar.appearance().barTintColor = lambdaRed
         UIBarButtonItem.appearance().tintColor = buttonBlack
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 //    static func style(button: UIButton) {
 //

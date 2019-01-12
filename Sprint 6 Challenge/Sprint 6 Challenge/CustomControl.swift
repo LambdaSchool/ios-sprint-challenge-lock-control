@@ -7,8 +7,9 @@ class CustomControl: UIControl {
     let viewController = ViewController()
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
         // Respond to the start of user's touch
-        updateValue(at: touch)
+        //updateValue(at: touch)
         
         return true
     }
@@ -22,19 +23,27 @@ class CustomControl: UIControl {
             sendActions(for: [.touchDragInside, .touchDragOutside])
             
             // Update the value
-            updateValue(at: touch)
+            //updateValue(at: touch)
         }
         
         // Continue tracking the touch event
         return true
     }
     
-    func updateValue(at touch: UITouch) {
-        if bounds.contains(touch.location(in: self)) {
-            viewController.shouldReset = !viewController.shouldReset
-        }
-        
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         
     }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        
+    }
+    
+//    func updateValue(at touch: UITouch) {
+//        if bounds.contains(touch.location(in: self)) {
+//            viewController.shouldReset = !viewController.shouldReset
+//        }
+    
+        
+    //}
     
 }

@@ -20,7 +20,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzt-Lv-fq0" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="61" y="81" width="253" height="344"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.74074663577346023" green="0.74074663577346023" blue="0.74074663577346023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pzt-Lv-fq0" secondAttribute="height" constant="-91" id="RUz-Bw-Xbt"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pzt-Lv-fq0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1cd-xv-Ixd"/>
                             <constraint firstItem="bpB-B4-Kb2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="1if-Hw-EAG"/>

@@ -29,12 +29,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func updateImage(_ sender: Any) {
-        let value = CustomControl.value
-        if value >= 180 {
-            self.padLock.image = UIImage(named: "Unlocked")
-            UIView.animate(withDuration: 3.0) {
-                self.resetButton.title = "Reset"
-                self.resetButton.isEnabled = true
+        if !resetButton.isEnabled {
+            let value = CustomControl.value
+            if value >= 180 {
+                print("Unlocked at value: \(value)")
+                self.padLock.image = UIImage(named: "Unlocked")
+                UIView.animate(withDuration: 3.0) {
+                    self.resetButton.title = "Reset"
+                    self.resetButton.isEnabled = true
+                }
             }
         }
     }

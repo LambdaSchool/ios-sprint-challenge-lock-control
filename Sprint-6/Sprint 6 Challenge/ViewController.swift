@@ -10,41 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var isUnlocked: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        lockControl.slider.layer.cornerRadius = lockControl.slider.frame.height / 2
-//        lockControl.layer.cornerRadius = lockControl.frame.height / 2
-//        view.addSubview(lockControl)
-//        
-//        lockControl.controlSlider()
-//        lockControl.controlFrame()
+        guard let button = resetButton else {return}
+        button.isEnabled = true
+        button.tintColor = .white
     }
 
-    @IBOutlet weak var lockImageView: UIImageView!
     @IBOutlet weak var lockControl: LockControl!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
-    @IBAction func renderControlFrame(_ lockControl: LockControl) {
-        view.backgroundColor = .lightGray
-    }
-    
-    @IBAction func renderControlSlider(_ lockControl: LockControl) {
-        view.backgroundColor = .black
-    }
-    
-    @IBAction func toggleLock(_ sender: Any) {
-        isUnlocked.toggle()
-        
-        switch isUnlocked {
-        case true:
-            let unlocked = "Unlocked"
-            lockImageView.image = UIImage(named: unlocked)
-        case false:
-            let locked = "Locked"
-            lockImageView.image = UIImage(named: locked)
+    @IBAction func resetLock(_ lockButton: LockControl) {
+        lockControl.resetSlider()
+            guard let button = self.resetButton else {return}
+            
+            if self.lockControl.isUnLocked == true {
+                button.isEnabled = true
+                button.tintColor = .white
+                self.lockControl.isUserInteractionEnabled = false
+            } else {
+                button.tintColor = AppearanceHelper.lambdaRed
         }
     }
+    
 }
 

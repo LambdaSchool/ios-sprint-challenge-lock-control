@@ -18,14 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJM-t7-MeG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJM-t7-MeG" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="178.5" width="300" height="310"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="awC-82-k59">
-                                        <rect key="frame" x="47" y="38" width="206" height="178"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310" id="Xtq-Zd-zxe"/>
@@ -43,12 +37,12 @@
                     <navigationItem key="navigationItem" title="Hello!" id="MVJ-zj-4zd">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="WRU-Ji-RgO">
                             <connections>
-                                <action selector="toggleLock:" destination="BYZ-38-t0r" id="jfU-ks-DoN"/>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="jtn-3g-drl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="lockImageView" destination="awC-82-k59" id="Mq2-Kf-5f6"/>
+                        <outlet property="resetButton" destination="WRU-Ji-RgO" id="icd-zc-DLW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,7 +68,4 @@
             <point key="canvasLocation" x="246" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Locked" width="220" height="293"/>
-    </resources>
 </document>

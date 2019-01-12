@@ -11,27 +11,28 @@ import UIKit
 
 class CustomControl: UIControl {
     static var value: CGFloat = 1.0
-    let blackBackground = UIView(frame: CGRect(x: 30, y: 300, width: 210, height: 30))
-    static var thumb = UIView(frame: CGRect(x: 3, y: 6, width: 20, height: 20))
+    let blackBackground = UIView(frame: CGRect(x: 30, y: 300, width: 210, height: 40))
+    static var thumb = UIView(frame: CGRect(x: 4, y: 6, width: 30, height: 30))
     
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
         blackBackground.backgroundColor = .black
-        blackBackground.layer.cornerRadius = 10
+        blackBackground.layer.cornerRadius = 18
         CustomControl.thumb.backgroundColor = AppearanceHelper.darkRed
-        CustomControl.thumb.layer.cornerRadius = 7
+        CustomControl.thumb.layer.cornerRadius = 15
         addSubview(blackBackground)
         blackBackground.addSubview(CustomControl.thumb)
+        CustomControl.thumb.isUserInteractionEnabled = false
     }
     
     
     func updateValue(at touch: UITouch) {
-            let touchPoint = touch.location(in: self)
-            if blackBackground.frame.contains(touchPoint) {
+            let touchPoint = touch.location(in: blackBackground)
+            if bounds.contains(touchPoint) {
                 CustomControl.value = touchPoint.x
                 print(CustomControl.value)
                 sendActions(for: [.valueChanged])
-                if touchPoint.x < 197 {
+                if touchPoint.x < 190 && touchPoint.x > 16 {
                     CustomControl.thumb.center.x = touchPoint.x
                 }
             } else {
@@ -60,22 +61,19 @@ class CustomControl: UIControl {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         defer { super.endTracking(touch, with: event) }
         guard let touch = touch else { return }
-        let touchPoint = touch.location(in: self)
-        if blackBackground.frame.contains(touchPoint) {
+        let touchPoint = touch.location(in: blackBackground)
+        if bounds.contains(touchPoint) {
             updateValue(at: touch)
-            
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
             sendActions(for: [.touchUpOutside])
         }
-        if touchPoint.x < 185 {
+        if touchPoint.x < 160 {
             UIView.animate(withDuration: 1.0) {
-                CustomControl.thumb.frame = CGRect(x: 3, y: 6, width: 20, height: 20)
+                CustomControl.thumb.frame = CGRect(x: 4, y: 6, width: 30, height: 30)
             }
         } else {
-            //UIView.animate(withDuration: 0.1) {
-                CustomControl.thumb.frame = CGRect(x: 188, y: 6, width: 20, height: 20)
-            //}
+            CustomControl.thumb.frame = CGRect(x: 177, y: 6, width: 30, height: 30)
         }
     }
     

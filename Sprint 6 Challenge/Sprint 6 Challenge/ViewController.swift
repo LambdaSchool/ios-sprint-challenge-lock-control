@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var resetBarButton: UIBarButtonItem!
+    @IBOutlet weak var thumbSliderLock: ThumbSliderLock!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        resetBarButton.title = ""
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "red-polka-dots")!)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func revealResetButton(_ sender: ThumbSliderLock) {
+        resetBarButton.title = "Reset"
     }
+    @IBAction func resetButtonWasTapped(_ sender: Any) {
+        thumbSliderLock.reset()
+        resetBarButton.title = ""
+        
+    }
+    
+    
 
-
+//    func unlock() {
+//        lockedUnlockedImage.image = UIImage(named: "Unlock")
+//    }
 }
 

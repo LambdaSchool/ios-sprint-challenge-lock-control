@@ -9,20 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var resetBarButton: UIBarButtonItem!
+    @IBOutlet weak var thumbSliderLock: ThumbSliderLock!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetBarButton.title = ""
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-        // Dispose of any resources that can be recreated.
+    @IBAction func revealResetButton(_ sender: ThumbSliderLock) {
+        resetBarButton.title = "Reset"
     }
-    @IBAction func thumbSliderAction(_ sender: ThumbSliderLock) {
-//        unlock()
+    @IBAction func resetButtonWasTapped(_ sender: Any) {
+        thumbSliderLock.reset()
+        resetBarButton.title = ""
+        
     }
+    
     
 
 //    func unlock() {

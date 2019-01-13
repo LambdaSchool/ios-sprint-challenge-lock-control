@@ -21,13 +21,24 @@
                                 <rect key="frame" x="8" y="177" width="359" height="312"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="revealResetButton:" destination="BYZ-38-t0r" eventType="valueChanged" id="wJt-ZK-UmJ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello" id="ldH-Wc-grG">
-                        <barButtonItem key="rightBarButtonItem" title="Restart" id="Evm-5x-5Zz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Evm-5x-5Zz">
+                            <connections>
+                                <action selector="resetButtonWasTapped:" destination="BYZ-38-t0r" id="bJv-OL-rmN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resetBarButton" destination="Evm-5x-5Zz" id="pjZ-JU-ZzF"/>
+                        <outlet property="thumbSliderLock" destination="JK8-tk-eMx" id="TgJ-Kq-rB6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,7 +47,6 @@
         <!--Navigation Controller-->
         <scene sceneID="J8u-i6-NQR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RpM-4f-wEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sT1-ii-C0M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iww-Bj-VBl">
@@ -48,6 +58,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="abY-3j-c0W"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RpM-4f-wEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-121" y="148"/>
         </scene>

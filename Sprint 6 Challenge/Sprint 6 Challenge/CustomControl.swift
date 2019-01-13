@@ -5,7 +5,7 @@ class CustomControl: UIControl {
     
     static var value: CGFloat = 0.0
     static var blackCircle = UIView(frame: CGRect(x: 7, y: 7, width: 37, height: 37))
-    var sliderGreyBackground = UIView(frame: CGRect(x: 9, y: 223, width: 263, height: 50))
+    var sliderGreyBackground = UIView(frame: CGRect(x: 7, y: 225, width: 263, height: 50))
     
     
     required init?(coder aCoder: NSCoder) {
@@ -28,33 +28,18 @@ class CustomControl: UIControl {
             CustomControl.value = touchPoint.x
             print(touchPoint.x)
             sendActions(for: [.valueChanged])
-             if touchPoint.x > 0.0 && touchPoint.x < 200.00 {
-                UIView.animate(withDuration: 0.3) {
-                  
             CustomControl.blackCircle.center.x = touchPoint.x
-                
-                }
-             
-//
-            
-        } else {
-                UIView.animate(withDuration: 0.2) {
-                
-           CustomControl.blackCircle.frame = CGRect(x: 220, y: 7, width: 37, height: 37)
-                }
             sendActions(for: [.valueChanged])
         }
-        sendActions(for: [.valueChanged])
-        }
-    
     }
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-       
+        let touchPoint = touch.location(in: CustomControl.blackCircle)
+        if CustomControl.blackCircle.bounds.contains(touchPoint) {
         updateValue(at: touch)
         sendActions(for: [.touchDown, .valueChanged])
         return true
-//        }
-//            return false
+      }
+           return false
         
     }
     
@@ -74,9 +59,20 @@ class CustomControl: UIControl {
         guard let touch = touch else { return }
         let touchPoint = touch.location(in: sliderGreyBackground)
         if sliderGreyBackground.bounds.contains(touchPoint) {
-            
-            updateValue(at: touch)
-            sendActions(for: [.touchUpInside, .valueChanged])
+            if touchPoint.x < 210.04 {
+                UIView.animate(withDuration: 0.3) {
+                 CustomControl.blackCircle.frame = CGRect(x: 7, y: 7, width: 37, height: 37)
+                     self.sendActions(for: [.valueChanged])
+                }
+            }
+            if touchPoint.x > 210.04 {
+                UIView.animate(withDuration: 0.3) {
+                    CustomControl.blackCircle.frame = CGRect(x: 220, y: 7, width: 37, height: 37)
+                    self.sendActions(for: [.valueChanged])
+                }
+            }
+           
+            sendActions(for: [.touchUpInside])
            
         } else {
             sendActions(for: [.touchUpOutside])

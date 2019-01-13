@@ -16,9 +16,7 @@ class ViewController: UIViewController {
     }
     @IBAction func CoustomView(_ sender: CustomControl) {
         
-        
-       let value = CustomControl.value
-       if value >= 200 {
+       if CustomControl.value >= 210.04 {
             lockUnlockImageView.image = UIImage(named: "Unlocked")
             UIView.animate(withDuration: 1.0) {
                 self.resetButtonOutlet.title = "Reset"

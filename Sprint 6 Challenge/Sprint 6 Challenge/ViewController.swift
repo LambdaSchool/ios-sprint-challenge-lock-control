@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resetBarButton.title = ""
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "red-polka-dots")!)
     }
     @IBAction func revealResetButton(_ sender: ThumbSliderLock) {
         resetBarButton.title = "Reset"

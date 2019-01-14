@@ -18,7 +18,7 @@ struct AppearanceHelper {
         view.layer.cornerRadius = 30
     }
     
-    static func style(slider: UISlider) {
-        slider.layer.cornerRadius = 20
+    static func style(control: CustomLockSlider) {
+        control.layer.cornerRadius = 20
     }
 }

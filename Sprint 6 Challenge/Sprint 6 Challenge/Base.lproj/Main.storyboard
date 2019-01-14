@@ -43,7 +43,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="dp6-dc-3vv">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="173"/>
                                             </imageView>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r3K-Yc-ZK7">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="227" translatesAutoresizingMaskIntoConstraints="NO" id="r3K-Yc-ZK7" customClass="CustomLockSlider" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                                 <rect key="frame" x="6" y="200" width="228" height="41"/>
                                                 <color key="backgroundColor" red="0.49798417091369629" green="0.49807184934616089" blue="0.49797183275222778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -53,7 +53,7 @@
                                                 <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="controlLock:" destination="BYZ-38-t0r" eventType="valueChanged" id="OuJ-bx-jSc"/>
+                                                    <action selector="lockControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="WpP-wd-Q45"/>
                                                 </connections>
                                             </slider>
                                         </subviews>

@@ -1,24 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ceD-31-FKi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Hello!-->
+        <scene sceneID="lvk-Bs-PKB">
+            <objects>
+                <navigationController title="Hello!" id="ceD-31-FKi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5sS-JW-NUE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JY5-Oc-Az7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJT-rA-Yi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1159" y="109"/>
+        </scene>
+        <!--Hello!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJe-3T-T00">
+                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="t4K-7t-7Dz">
+                                        <rect key="frame" x="5" y="5" width="240" height="240"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="dp6-dc-3vv">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="173"/>
+                                            </imageView>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="227" translatesAutoresizingMaskIntoConstraints="NO" id="r3K-Yc-ZK7" customClass="CustomLockSlider" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                                <rect key="frame" x="6" y="200" width="228" height="41"/>
+                                                <color key="backgroundColor" red="0.49798417091369629" green="0.49807184934616089" blue="0.49797183275222778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="MoI-wn-0vO"/>
+                                                </constraints>
+                                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="lockControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="WpP-wd-Q45"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="r3K-Yc-ZK7" firstAttribute="leading" secondItem="t4K-7t-7Dz" secondAttribute="leading" constant="8" id="Cvz-Zc-QtF"/>
+                                            <constraint firstItem="dp6-dc-3vv" firstAttribute="centerX" secondItem="t4K-7t-7Dz" secondAttribute="centerX" id="NSc-By-2Et"/>
+                                            <constraint firstAttribute="trailing" secondItem="r3K-Yc-ZK7" secondAttribute="trailing" constant="8" id="acH-fU-bB4"/>
+                                            <constraint firstAttribute="width" constant="240" id="qHo-tQ-cEZ"/>
+                                            <constraint firstAttribute="height" constant="240" id="s4z-De-j7q"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Hzo-Kr-Crr"/>
+                                    <constraint firstItem="t4K-7t-7Dz" firstAttribute="leading" secondItem="GJe-3T-T00" secondAttribute="leading" constant="5" id="MVI-R4-5R3"/>
+                                    <constraint firstAttribute="height" constant="250" id="Y6I-ok-AEv"/>
+                                    <constraint firstItem="t4K-7t-7Dz" firstAttribute="top" secondItem="GJe-3T-T00" secondAttribute="top" constant="5" id="cEq-kf-jGM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GJe-3T-T00" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zKM-2N-oJl"/>
+                            <constraint firstItem="GJe-3T-T00" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zuM-v0-ReB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Hello!" id="QaT-CB-q3p">
+                        <barButtonItem key="rightBarButtonItem" id="51T-Nf-6Aj">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="rM9-k4-bWz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="controlContainerView" destination="GJe-3T-T00" id="Fji-tn-YQJ"/>
+                        <outlet property="lockIMageView" destination="dp6-dc-3vv" id="UWj-SG-iYG"/>
+                        <outlet property="lockSlider" destination="r3K-Yc-ZK7" id="4Sz-Hc-pD3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-316" y="109.29535232383809"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+    </resources>
 </document>

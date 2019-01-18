@@ -30,7 +30,6 @@ class RangeSlider: UIControl {
         layer.addSublayer(track)
         
         setupThumb(thumb)
-        
         updateControlFrames()
         
     }
@@ -60,14 +59,15 @@ class RangeSlider: UIControl {
         return true
             
         }
-    }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        <#code#>
+        activeThumb = nil
+        super.endTracking(touch, with: event)
     }
     
     override func cancelTracking(with event: UIEvent?) {
-        <#code#>
+        activeThumb = nil
+        super.cancelTracking(with: event)
     }
     
 

@@ -4,8 +4,8 @@ class RangeSlider: UIControl {
     //properties
     var minimumValue: CGFloat = 0
     var maximumValue: CGFloat = 1
-    var lowerValue: CGFloat = 0.2
-    var upperValue: CGFloat = 0.8
+
+    var isLocked: Bool = false
     var trackColor = UIColor.black
     var customTintColor = UIColor(red: 0, green: 0.45, blue: 9.94, alpha: 1) {
         didSet {
@@ -13,7 +13,7 @@ class RangeSlider: UIControl {
         }
     }
     
-    private let track = RangeSliderTrack()
+    private let track = CALayer()
     private let thumb = UIView()
     private var previousLocation = CGPoint()
     private var activeThumb: UIView?
@@ -25,7 +25,7 @@ class RangeSlider: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        track.rangeSlider = self
+        //track.rangeSlider = self
         track.contentsScale = UIScreen.main.scale
         layer.addSublayer(track)
         
@@ -33,6 +33,9 @@ class RangeSlider: UIControl {
         updateControlFrames()
         
     }
+    //set reset func
+    
+    
     //touch handling
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
@@ -65,6 +68,8 @@ class RangeSlider: UIControl {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         activeThumb = nil
         super.endTracking(touch, with: event)
+        // add isLocked function
+        // add logic for if more than 80
     }
     
     override func cancelTracking(with event: UIEvent?) {
@@ -86,8 +91,6 @@ class RangeSlider: UIControl {
         track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
         track.setNeedsDisplay()
         
-        thumb.frame = thumbFrame(for: lowerValue)
-        thumb.frame = thumbFrame(for: upperValue)
     }
     
     private func thumbFrame(for value: CGFloat) -> CGRect {

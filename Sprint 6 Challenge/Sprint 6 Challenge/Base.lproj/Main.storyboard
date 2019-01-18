@@ -25,7 +25,7 @@
                                         <rect key="frame" x="5" y="61" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-NS-gQG">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-NS-gQG" customClass="RangeSlider" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="10" y="202" width="230" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kI6-7E-GK1"/>

@@ -3,15 +3,11 @@ import UIKit
 class RangeSlider: UIControl {
     //properties
     var minimumValue: CGFloat = 0
-    var maximumValue: CGFloat = 1
+    var maximumValue: CGFloat = 100
 
     var isLocked: Bool = false
-    var trackColor = UIColor.black
-    var customTintColor = UIColor(red: 0, green: 0.45, blue: 9.94, alpha: 1) {
-        didSet {
-            updateControlFrames()
-        }
-    }
+    var trackColor = UIColor.red
+    var customTintColor = UIColor.green
     
     private let track = CALayer()
     private let thumb = UIView()
@@ -52,13 +48,6 @@ class RangeSlider: UIControl {
         
         guard let activeThumb = activeThumb else { return false }
         
-        if activeThumb == thumb {
-            lowerValue = bound(value: (lowerValue + valueChange), to: minimumValue, and: upperValue)
-
-        } else {
-            upperValue = bound(value: (upperValue + valueChange), to: lowerValue, and: maximumValue)
-        }
-        
         updateControlFrames()
         sendActions(for: .valueChanged)
         return true
@@ -68,8 +57,9 @@ class RangeSlider: UIControl {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         activeThumb = nil
         super.endTracking(touch, with: event)
-        // add isLocked function
+        // add isLocked
         // add logic for if more than 80
+        if
     }
     
     override func cancelTracking(with event: UIEvent?) {

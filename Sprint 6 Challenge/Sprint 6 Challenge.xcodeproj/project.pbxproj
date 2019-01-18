@@ -12,7 +12,6 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
-		F8CFCA4921F233250070B0FE /* UnlockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CFCA4821F233250070B0FE /* UnlockedViewController.swift */; };
 		F8CFCA4B21F2352F0070B0FE /* LockSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CFCA4A21F2352F0070B0FE /* LockSlider.swift */; };
 		F8CFCA4D21F236000070B0FE /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CFCA4C21F236000070B0FE /* AppearanceHelper.swift */; };
 		F8CFCA4F21F23C590070B0FE /* LockSliderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CFCA4E21F23C590070B0FE /* LockSliderTrack.swift */; };
@@ -26,7 +25,6 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8CFCA4821F233250070B0FE /* UnlockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedViewController.swift; sourceTree = "<group>"; };
 		F8CFCA4A21F2352F0070B0FE /* LockSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSlider.swift; sourceTree = "<group>"; };
 		F8CFCA4C21F236000070B0FE /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		F8CFCA4E21F23C590070B0FE /* LockSliderTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSliderTrack.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				F8CFCA4C21F236000070B0FE /* AppearanceHelper.swift */,
 				468B89E22137397400E7FF73 /* LockedViewController.swift */,
-				F8CFCA4821F233250070B0FE /* UnlockedViewController.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				F8CFCA4A21F2352F0070B0FE /* LockSlider.swift */,
 				F8CFCA4E21F23C590070B0FE /* LockSliderTrack.swift */,
@@ -149,7 +146,6 @@
 			files = (
 				F8CFCA4B21F2352F0070B0FE /* LockSlider.swift in Sources */,
 				468B89E32137397400E7FF73 /* LockedViewController.swift in Sources */,
-				F8CFCA4921F233250070B0FE /* UnlockedViewController.swift in Sources */,
 				F8CFCA4D21F236000070B0FE /* AppearanceHelper.swift in Sources */,
 				F8CFCA4F21F23C590070B0FE /* LockSliderTrack.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,

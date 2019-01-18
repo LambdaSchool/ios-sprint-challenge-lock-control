@@ -11,9 +11,8 @@ class LockedViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func testButton(_ sender: Any) {
-    }
     
+    @IBAction func resetButton(_ sender: Any) {
+    }
 }
 

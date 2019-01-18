@@ -73,6 +73,11 @@
                     <navigationItem key="navigationItem" title="Unlock Me!" id="EHK-md-Z48">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="0XQ-ct-YhU"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="qFa-vo-WKU" id="egt-1o-x7f"/>
+                        <outlet property="mainView" destination="cp7-ev-SQL" id="4OE-sE-DOJ"/>
+                        <outlet property="sliderView" destination="iCf-oC-pTy" id="WPF-8o-HUq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Sprint 6 Challenge
-//
-//  Created by Spencer Curtis on 8/29/18.
-//  Copyright © 2018 Lambda School. All rights reserved.
-//
 
 import UIKit
 
@@ -12,14 +5,29 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Set navigation title
+        navigationItem.title = "Unlock Me!"
+        
+        // Set view colors
+        mainView.backgroundColor = UIColor.pastelBlue
+        sliderView.backgroundColor = UIColor.almond
+        
+        // Round view corners
+        mainView.layer.cornerRadius = 30
+        sliderView.layer.cornerRadius = 25
+        
+        
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-
+    @IBOutlet weak var mainView: UIView!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var sliderView: UIView!
+    
 }
 

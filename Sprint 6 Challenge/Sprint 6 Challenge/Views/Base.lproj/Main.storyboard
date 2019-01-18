@@ -13,12 +13,12 @@
         <!--Hello!-->
         <scene sceneID="bIa-XL-TpV">
             <objects>
-                <viewController id="0IG-Qz-vuJ" sceneMemberID="viewController">
+                <viewController id="0IG-Qz-vuJ" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="05o-Wr-hi0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAd-RR-KQe">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAd-RR-KQe" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="47" y="104" width="281" height="301.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="6Vf-vN-SBl">
@@ -32,6 +32,9 @@
                                     <constraint firstItem="6Vf-vN-SBl" firstAttribute="width" secondItem="sAd-RR-KQe" secondAttribute="width" id="ZNE-Gf-rJs"/>
                                     <constraint firstItem="6Vf-vN-SBl" firstAttribute="centerX" secondItem="sAd-RR-KQe" secondAttribute="centerX" id="Zke-zX-opD"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="updateImage:" destination="0IG-Qz-vuJ" eventType="valueChanged" id="3aQ-PZ-POx"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,8 +47,17 @@
                         <viewLayoutGuide key="safeArea" id="WNY-eV-B5H"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="46M-zn-w3t">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Cgn-gc-mkK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Cgn-gc-mkK">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="0IG-Qz-vuJ" id="NfV-Tn-Hp7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backgroundView" destination="sAd-RR-KQe" id="n1N-hk-CBK"/>
+                        <outlet property="padlockImage" destination="6Vf-vN-SBl" id="vDL-zq-P05"/>
+                        <outlet property="resetButton" destination="Cgn-gc-mkK" id="soY-Ca-KHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd4-Fo-Evs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

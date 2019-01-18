@@ -12,7 +12,7 @@ import UIKit
     var maximumValue: CGFloat = 1
     
     // Thumb value
-    var thumbValue: CGFloat = 0.0
+    var thumbValue: CGFloat = 0.1
     
     // Colors
     var trackColor = UIColor.gray
@@ -48,17 +48,10 @@ import UIKit
         
         layer.addSublayer(track)
         
-        setupThumbs(thumbView)
+        setupThumb(thumbView)
         
         updateControlFrames()
         
-        // Customize thumb view
-        
-//        clipsToBounds = true
-//        let radius = frame.width / 2.0
-//        layer.cornerRadius = radius
-//        layer.borderWidth = 1.0
-//        layer.borderColor = UIColor.white.cgColor
     }
     
     
@@ -66,23 +59,25 @@ import UIKit
     
     // MARK: - Touch Tracking
     
-//    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-//
-//        // Get location of touch
-//        let touchPoint = touch.location(in: self)
-//
-//        if thumbView.frame.contains(previousLocation) {
-//
-//        }
-//
-////        if bounds.contains(touchPoint) {
-////            return true
-////        }
-//    }
-//
-//    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-//        let location = touch.location(in: self)
-//
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+
+        // Get location of touch
+        let touchPoint = touch.location(in: self)
+
+        if thumbView.frame.contains(touchPoint) {
+            sendActions(for: [.touchDown, .valueChanged])
+        } else {
+            return false
+        }
+
+        return true
+    }
+
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let location = touch.location(in: self)
+
+        //let newThumbPosition = position(for: location)
+        
 //        let locationChange = location.x - previousLocation.x
 //
 //        // Calculate how far the touch is moving
@@ -90,28 +85,28 @@ import UIKit
 //        let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
 //
 //        previousLocation = location
-//
-//        updateControlFrames()
-//
-//        sendActions(for: .valueChanged)
-//
-//        return true
-//    }
-//
-//    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-//        super.endTracking(touch, with: event)
-//    }
-//
-//    override func cancelTracking(with event: UIEvent?) {
-//        super.cancelTracking(with: event)
-//    }
+
+        updateControlFrames()
+
+        sendActions(for: .valueChanged)
+
+        return true
+    }
+
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        super.endTracking(touch, with: event)
+    }
+
+    override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
+    }
     
     
     
     // MARK: - Utility Methods
     
     // Set up the thumbs
-    private func setupThumbs( _ thumb: UIView) {
+    private func setupThumb( _ thumb: UIView) {
         
         // Give initial frame
         let thumbFrame = CGRect(x: 0, y: 0, width: thumbWidth, height: thumbWidth)

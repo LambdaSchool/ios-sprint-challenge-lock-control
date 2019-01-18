@@ -26,8 +26,18 @@ import UIKit
         ctx.setFillColor(slider.trackTintColor.cgColor)
         
         // Make a rectangle
-        // We need to know what the lower position is
-        //let lowerValuePosition = slider.position(for: slider.thumbValue)
+        // Get the width by subtracting the lower position from the upper position
+        let lowerValuePosition = slider.position(for: slider.minimumValue)
+        let upperValuePosition = slider.position(for: slider.maximumValue)
+        let width = upperValuePosition - lowerValuePosition
+        
+        // Make the rectangle
+        let rect = CGRect(x: lowerValuePosition, y: 0, width: width, height: bounds.height)
+        
+        // Tell the context to fill the rectangle
+        ctx.fill(rect)
+        
+        
         
         
         

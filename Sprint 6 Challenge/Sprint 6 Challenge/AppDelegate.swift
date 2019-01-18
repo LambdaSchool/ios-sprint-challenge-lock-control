@@ -1,3 +1,6 @@
+// #completed
+// Connected to appearance helper.
+
 import UIKit
 
 @UIApplicationMain

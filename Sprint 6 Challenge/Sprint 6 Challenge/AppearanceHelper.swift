@@ -1,3 +1,7 @@
+// 2/3rds complete.
+// Maybe I will change the color of the bar button item (barb) in the IB.
+
+
 import UIKit
 
 struct AppearanceHelper {
@@ -8,12 +12,11 @@ struct AppearanceHelper {
         UINavigationBar.appearance().barTintColor = .red
         
         //TODO: Check bar button item 'text' color
+        // Set to blue on purpose
         UIBarButtonItem.appearance().tintColor = .blue
 
-        //TODO: Refactor whatever affects the title text, if possible.
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
-        
+        // navbar text color
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
 }

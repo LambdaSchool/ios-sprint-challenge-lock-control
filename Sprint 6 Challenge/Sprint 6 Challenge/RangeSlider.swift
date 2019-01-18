@@ -1,7 +1,7 @@
 import UIKit
 
 class RangeSlider: UIControl {
-    
+    //properties
     var minimumValue: CGFloat = 0
     var maximumValue: CGFloat = 1
     var lowerValue: CGFloat = 0.2
@@ -34,7 +34,28 @@ class RangeSlider: UIControl {
         updateControlFrames()
         
     }
+    //touch handling
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        previousLocation = touch.location(in: self)
+        
+        if thumb.frame.contains(previousLocation) {
+            activeThumb = thumb
+        } else {
+            return activeThumb != nil
+        }
+    }
     
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        <#code#>
+    }
     
 
 }

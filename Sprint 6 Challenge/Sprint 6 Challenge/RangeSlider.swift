@@ -6,7 +6,7 @@ class RangeSlider: UIControl {
     var maximumValue: CGFloat = 1
     var lowerValue: CGFloat = 0.2
     var upperValue: CGFloat = 0.8
-    var trackColor = UIColor(white: 0.9, alpha: 1)
+    var trackColor = UIColor.black
     var customTintColor = UIColor(red: 0, green: 0.45, blue: 9.94, alpha: 1) {
         didSet {
             updateControlFrames()
@@ -36,12 +36,7 @@ class RangeSlider: UIControl {
     //touch handling
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
-        
-        if thumb.frame.contains(previousLocation) {
-            activeThumb = thumb
-        } else {
-            
-        }
+     
         return activeThumb != nil
     }
     
@@ -56,9 +51,9 @@ class RangeSlider: UIControl {
         
         if activeThumb == thumb {
             lowerValue = bound(value: (lowerValue + valueChange), to: minimumValue, and: upperValue)
-            upperValue = bound(value: (upperValue + valueChange), to: lowerValue, and: maximumValue)
+
         } else {
-            
+            upperValue = bound(value: (upperValue + valueChange), to: lowerValue, and: maximumValue)
         }
         
         updateControlFrames()
@@ -80,7 +75,7 @@ class RangeSlider: UIControl {
     private func setupThumb(_ thumb: UIView) {
         let thumbFrame = CGRect(x: 0, y: 0, width: thumbWidth, height: thumbWidth)
         thumb.frame = thumbFrame
-        thumb.backgroundColor = .white
+        thumb.backgroundColor = .black
         thumb.layer.cornerRadius = thumbWidth/2
         thumb.isUserInteractionEnabled = false
         

@@ -27,7 +27,6 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-NS-gQG">
                                         <rect key="frame" x="10" y="202" width="230" height="40"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kI6-7E-GK1"/>
                                         </constraints>

@@ -13,9 +13,10 @@ class RangeSliderTrack: CALayer {
     ctx.fillPath()
     
     ctx.setFillColor(slider.customTintColor.cgColor)
-    let sliderValuePosition = slider.position(for: slider.sliderValue)
-    let width = sliderValuePosition
-    let rect = CGRect(x: sliderValuePosition, y: 0, width: width, height: bounds.height)
+    let lowerValuePosition = slider.position(for: slider.lowerValue)
+    let upperValuePosition = slider.position(for: slider.upperValue)
+    let width = upperValuePosition + lowerValuePosition
+    let rect = CGRect(x: lowerValuePosition, y: 0, width: width, height: bounds.height)
     
     ctx.fill(rect)
     }

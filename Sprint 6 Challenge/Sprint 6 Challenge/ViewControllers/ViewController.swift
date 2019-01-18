@@ -9,12 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     // Outlets
     @IBOutlet weak var padlockImage: UIImageView!
     @IBOutlet weak var resetButton: UIBarButtonItem!
-    @IBOutlet weak var backgroundView: UIView!
-    
+    @IBOutlet weak var controlOutlet: CustomControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         super.viewDidLoad()
@@ -27,21 +25,16 @@ class ViewController: UIViewController {
         self.padlockImage.image = UIImage(named: "Locked")
         resetButton.title = ""
         resetButton.isEnabled = false
-        CustomControl.thumb.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        CustomControl.thumbEnable = true
+        controlOutlet.reset()
     }
     
     @IBAction func updateImage(_ sender: CustomControl) {
-        if !resetButton.isEnabled {
-            let number = CustomControl.value
-            if number > 224 {
-                self.padlockImage.image = UIImage(named: "Unlocked")
-                UIView.animate(withDuration: 3.0) {
-                    self.resetButton.title = "Reset"
-                    self.resetButton.isEnabled = true
-                    CustomControl.thumbEnable = false
-                    CustomControl.value = 0
-                }
+        if !resetButton.isEnabled && controlOutlet.unlockedImage {
+            self.padlockImage.image = UIImage(named: "Unlocked")
+            UIView.animate(withDuration: 3.0) {
+                self.resetButton.title = "Reset"
+                self.resetButton.isEnabled = true
+                CustomControl.thumbEnable = false
             }
         }
     }

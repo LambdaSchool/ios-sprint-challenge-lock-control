@@ -54,7 +54,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backgroundView" destination="sAd-RR-KQe" id="n1N-hk-CBK"/>
+                        <outlet property="controlOutlet" destination="sAd-RR-KQe" id="0mr-fH-rMZ"/>
                         <outlet property="padlockImage" destination="6Vf-vN-SBl" id="vDL-zq-P05"/>
                         <outlet property="resetButton" destination="Cgn-gc-mkK" id="soY-Ca-KHI"/>
                     </connections>

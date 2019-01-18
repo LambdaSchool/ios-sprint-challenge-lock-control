@@ -14,6 +14,8 @@ class CustomControl: UIControl {
     let slider = UIView(frame: CGRect(x: 15, y: 320, width: 280, height: 40))
     static var thumb = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
     static var thumbEnable = true
+    var unlockedImage = false
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -73,6 +75,7 @@ class CustomControl: UIControl {
                     UIView.animate(withDuration: 0.2) {
                         CustomControl.thumb.center.x = self.slider.frame.width - CustomControl.thumb.frame.width / 2
                         CustomControl.value = 240
+                        self.unlockedImage = true
                         self.updateThumbValue()
                     }
                 }
@@ -100,5 +103,12 @@ class CustomControl: UIControl {
     func updateThumbValue() {
         CustomControl.value = CustomControl.thumb.center.x
         sendActions(for: [.valueChanged])
+    }
+    
+    func reset() {
+        CustomControl.thumb.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        CustomControl.thumbEnable = true
+        unlockedImage = false
+        CustomControl.value = 0
     }
 }

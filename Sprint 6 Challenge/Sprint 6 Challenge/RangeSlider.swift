@@ -40,8 +40,9 @@ class RangeSlider: UIControl {
         if thumb.frame.contains(previousLocation) {
             activeThumb = thumb
         } else {
-            return activeThumb != nil
+            
         }
+        return activeThumb != nil
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -52,7 +53,13 @@ class RangeSlider: UIControl {
         previousLocation = location
         
         guard let activeThumb = activeThumb else { return false }
-        let activeThumb = bound(value:(lowerValue + valueChange), to: minimumValue, and: upperValue)
+        
+        if activeThumb == thumb {
+            lowerValue = bound(value: (lowerValue + valueChange), to: minimumValue, and: upperValue)
+            upperValue = bound(value: (upperValue + valueChange), to: lowerValue, and: maximumValue)
+        } else {
+            
+        }
         
         updateControlFrames()
         sendActions(for: .valueChanged)

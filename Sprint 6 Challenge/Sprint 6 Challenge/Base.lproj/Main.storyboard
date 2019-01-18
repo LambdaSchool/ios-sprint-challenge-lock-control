@@ -27,7 +27,7 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-NS-gQG">
                                         <rect key="frame" x="10" y="202" width="230" height="40"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kI6-7E-GK1"/>
                                         </constraints>
@@ -51,8 +51,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="4rS-hv-wG4">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="59H-NB-Cg0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="59H-NB-Cg0">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="QK9-l1-GN2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="grayView" destination="IpU-V3-oXe" id="Rwv-ie-v7h"/>
+                        <outlet property="lockedView" destination="We0-t1-5nr" id="8TF-dg-xvu"/>
+                        <outlet property="rangeSlider" destination="aoO-NS-gQG" id="37I-U2-F0g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

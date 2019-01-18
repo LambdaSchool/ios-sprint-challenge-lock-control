@@ -45,7 +45,7 @@ class RangeSlider: UIControl {
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        if location = touch.locaiton(in: self)
+        let location = touch.location(in: self)
         let locationChange = location.x - previousLocation.x
         let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
         
@@ -71,7 +71,7 @@ class RangeSlider: UIControl {
     }
     
     private func setupThumb(_ thumb: UIView) {
-        let thumbFrame = CGRect(x: 0, y: 0, width: thumbWidth, height: thumbWidt)
+        let thumbFrame = CGRect(x: 0, y: 0, width: thumbWidth, height: thumbWidth)
         thumb.frame = thumbFrame
         thumb.backgroundColor = .white
         thumb.layer.cornerRadius = thumbWidth/2
@@ -84,7 +84,21 @@ class RangeSlider: UIControl {
         track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
         track.setNeedsDisplay()
         
-        thumb.frame = thumbFrame(for: lowerValue, upperValue)
+        thumb.frame = thumbFrame(for: lowerValue)
+        thumb.frame = thumbFrame(for: upperValue)
     }
-
+    
+    private func thumbFrame(for value: CGFloat) -> CGRect {
+        let x = position(for: value) - thumbWidth/2
+        let y = (bounds.height - thumbWidth)/2
+        return CGRect(x: x, y: y, width: thumbWidth, height: thumbWidth)
+    }
+    
+    func position(for value: CGFloat) -> CGFloat {
+        return bounds.width * value
+    }
+    
+    private func bound(value: CGFloat, to lowerValue: CGFloat, and upperValue: CGFloat) -> CGFloat {
+        return min(max(value, lowerValue), upperValue)
+    }
 }

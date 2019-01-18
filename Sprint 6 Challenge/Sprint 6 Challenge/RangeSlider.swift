@@ -5,7 +5,11 @@ class RangeSlider: UIControl {
     var minimumValue: CGFloat = 0
     var maximumValue: CGFloat = 100
 
-    var isLocked: Bool = false
+    var isLocked: Bool = true
+    var lockImage = UIImageView()
+    var lockedImage = UIImage(named: "Locked")
+    var unlockedImage = UIImage(named: "Unlocked")
+    
     var trackColor = UIColor.red
     var customTintColor = UIColor.green
     
@@ -13,7 +17,6 @@ class RangeSlider: UIControl {
     private let thumb = UIView()
     private var previousLocation = CGPoint()
     private var activeThumb: UIView?
-    
     private var thumbWidth: CGFloat {
         return frame.height * 0.8
     }
@@ -59,7 +62,7 @@ class RangeSlider: UIControl {
         super.endTracking(touch, with: event)
         // add isLocked
         // add logic for if more than 80
-        if
+
     }
     
     override func cancelTracking(with event: UIEvent?) {

@@ -5,24 +5,20 @@ import UIKit
     
     // MARK: - Properties
     
-    // Minimum value
+    // Minimum value of slider
     var minimumValue: CGFloat = 0
     
-    // Maximinum value
+    // Maximinum value of slider
     var maximumValue: CGFloat = 1
     
-    // Thumb value
+    // Thumb value's starting point
     var thumbValue: CGFloat = 0.1
     
     // Colors
     var trackColor = UIColor.gray
-    var trackTintColor = UIColor.pastelBlue {
-        didSet {
-            updateControlFrames()
-        }
-    }
-   
-    
+    var trackTintColor = UIColor.pastelBlue
+
+
     
     
     // MARK: - Views
@@ -35,7 +31,7 @@ import UIKit
     
     private var previousLocation = CGPoint()
     
-    // However high the slider is, I want it to be 80% of that
+    // Sets thumb to be 80% of the height of the Slider View
     private var thumbWidth: CGFloat {
         return frame.height * 0.8
     }
@@ -61,30 +57,40 @@ import UIKit
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
 
+        // Begin tracking if user touches the thumb
+        
         // Get location of touch
-        let touchPoint = touch.location(in: self)
+        previousLocation = touch.location(in: self)
 
-        if thumbView.frame.contains(touchPoint) {
+        // Check to see if the touch is inside the thumbView
+        if thumbView.frame.contains(previousLocation) {
+            
+            // Tapping down, dragging around
             sendActions(for: [.touchDown, .valueChanged])
+            
         } else {
             return false
         }
 
+        // Continue tracking
         return true
     }
 
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let location = touch.location(in: self)
-
-        //let newThumbPosition = position(for: location)
         
-//        let locationChange = location.x - previousLocation.x
-//
-//        // Calculate how far the touch is moving
-//        // How much has the location changed divided by the overall width
-//        let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
-//
-//        previousLocation = location
+        let location = touch.location(in: self)
+        
+        let locationChange = location.x - previousLocation.x
+
+        // Calculate how far the touch is moving
+        // How much has the location changed divided by the overall width
+        let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
+        
+        // Reset current location
+        previousLocation = location
+        
+        // Update the thumbValue
+        thumbValue = bound(value: thumbValue + valueChange, to: maximumValue)
 
         updateControlFrames()
 
@@ -105,7 +111,7 @@ import UIKit
     
     // MARK: - Utility Methods
     
-    // Set up the thumbs
+    // Set up the thumb
     private func setupThumb( _ thumb: UIView) {
         
         // Give initial frame
@@ -127,8 +133,18 @@ import UIKit
     
 //    private func updateValue(at touch: UITouch) {
 //
+//        // Assign the touch point to the current location
+//        let touchPoint = touch.location(in: self)
+//
 //        // Stores the value previously held before movement changes
-//        let oldValue = value
+//        let oldValue = thumbValue
+//
+//        // Detect whether each touch's location is contained in the thumbView
+//        if thumbView.frame.contains(touch.location(in: self)) {
+//
+//            // set the thumb control's value to the value on slider
+//            thumbValue = touchPoint
+//        }
 //
 //    }
     
@@ -159,6 +175,11 @@ import UIKit
         return bounds.width * value
     }
     
-    //private func bound(value: CGFloat, to )
+    // Make sure that the thumb can't go any lower than the minimum value or higher than the maximum value
+    private func bound(value: CGFloat, to thumbValue: CGFloat) -> CGFloat {
+        
+        // Get the minimum between the value and thumbValue
+        return min(value, thumbValue)
+    }
     
 }

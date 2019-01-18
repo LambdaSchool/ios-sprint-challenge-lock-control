@@ -37,15 +37,17 @@ class RangeSlider: UIControl {
     
     //touch handling
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        previousLocation = touch.location(in: self)
-     
-        return activeThumb != nil
+        let location = touch.location(in: self)
+        if thumb.bounds.contains(location) {
+            sendActions(for: .touchDown)
+            return true
+        }
+        return false
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let location = touch.location(in: self)
         let locationChange = location.x - previousLocation.x
-        let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
         
         previousLocation = location
         

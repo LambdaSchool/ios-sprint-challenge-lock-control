@@ -28,17 +28,20 @@ class ViewController: UIViewController {
         resetButton.title = ""
         resetButton.isEnabled = false
         CustomControl.thumb.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        CustomControl.thumbEnable = true
     }
     
     @IBAction func updateImage(_ sender: CustomControl) {
         if !resetButton.isEnabled {
             let number = CustomControl.value
-            if number >= 192 {
+            if number >= 160 {
                 print("Unlocked at value: \(number)")
                 self.padlockImage.image = UIImage(named: "Unlocked")
                 UIView.animate(withDuration: 3.0) {
                     self.resetButton.title = "Reset"
                     self.resetButton.isEnabled = true
+                    CustomControl.thumbEnable = false
+                    CustomControl.value = 0
                 }
             }
         }

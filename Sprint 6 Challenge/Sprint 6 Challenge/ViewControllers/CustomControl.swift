@@ -35,48 +35,58 @@ class CustomControl: UIControl {
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: CustomControl.thumb)
-        if slider.bounds.contains(touchPoint) {
-            print("Began Tracking\nX:\(touchPoint.x)\nY:\(touchPoint.y)\n")
-            updateValue(at: touch)
-            sendActions(for: [.touchDown, .valueChanged])
-            return true
+        if CustomControl.thumbEnable{
+            let touchPoint = touch.location(in: CustomControl.thumb)
+            if slider.bounds.contains(touchPoint) {
+                print("Began Tracking\nX:\(touchPoint.x)\nY:\(touchPoint.y)\n")
+                updateValue(at: touch)
+                sendActions(for: [.touchDown, .valueChanged])
+                return true
+            }
         }
         return false
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: CustomControl.thumb)
-        if slider.bounds.contains(touchPoint) {
-            updateValue(at: touch)
-            sendActions(for: [.touchDragInside, .valueChanged])
-        } else {
-            print("The touch went outside the bounds of the view")
-            print("X:\(touchPoint.x)\nY:\(touchPoint.y)\n")
+        if CustomControl.thumbEnable{
+            let touchPoint = touch.location(in: CustomControl.thumb)
+            if slider.bounds.contains(touchPoint) {
+                updateValue(at: touch)
+                sendActions(for: [.touchDragInside, .valueChanged])
+            } else {
+                print("The touch went outside the bounds of the view")
+                print("X:\(touchPoint.x)\nY:\(touchPoint.y)\n")
+            }
+            return true
         }
-        return true
+        return false
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        defer { super.endTracking(touch, with: event) }
-        guard let touch = touch else { return }
-        let touchPoint = touch.location(in: CustomControl.thumb)
-        print("Ended Tracking")
-        print("X:\(touchPoint.x)\nY:\(touchPoint.y)\n")
-        if slider.bounds.contains(touchPoint) {
-            sendActions(for: [.touchUpInside, .valueChanged])
-            if touchPoint.x <= 192 {
-                UIView.animate(withDuration: 1.0) {
-                    CustomControl.thumb.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-                    CustomControl.value = 0
+        if CustomControl.thumbEnable{
+            defer { super.endTracking(touch, with: event) }
+            guard let touch = touch else { return }
+            let touchPoint = touch.location(in: CustomControl.thumb)
+            if slider.bounds.contains(touchPoint) {
+                print("Ended Tracking")
+                print("X:\(touchPoint.x)\nY:\(touchPoint.y)\n")
+                sendActions(for: [.touchUpInside, .valueChanged])
+                if CustomControl.thumb.center.x <= 200 {
+                    UIView.animate(withDuration: 1.5) {
+                        CustomControl.thumb.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+                        CustomControl.value = 0
+                        self.updateThumbValue()
+                    }
+                } else {
+                    UIView.animate(withDuration: 0.2) {
+                        CustomControl.thumb.frame = CGRect(x: 240, y: 0, width: 40, height: 40)
+                        CustomControl.value = 240
+                        self.updateThumbValue()
+                    }
                 }
             } else {
-                CustomControl.thumb.frame = CGRect(x: 240, y: 0, width: 40, height: 40)
-                CustomControl.value = 240
+                sendActions(for: [.touchUpOutside])
             }
-            updateThumbValue(at: touch)
-        } else {
-            sendActions(for: [.touchUpOutside])
         }
         
     }
@@ -97,15 +107,14 @@ class CustomControl: UIControl {
         }
     }
     
-    func updateThumbValue(at touch: UITouch) {
-        let touchPoint = touch.location(in: CustomControl.thumb)
-        if slider.bounds.contains(touchPoint) {
-            if touchPoint.x < 240 && touchPoint.x > 20 {
-                CustomControl.value = touchPoint.x
-                print(CustomControl.value)
+    func updateThumbValue() {
+        //let touchPoint = touch.location(in: CustomControl.thumb)
+        //if slider.bounds.contains(touchPoint) {
+            //touchPoint.x < 240 && touchPoint.x > 20 {
+                CustomControl.value = CustomControl.thumb.center.x
                 sendActions(for: [.valueChanged])
                 //CustomControl.thumb.center.x = touchPoint.x
-            }
-        }
+            //}
+        //}
     }
 }

@@ -25,11 +25,21 @@
                                         <rect key="frame" x="5" y="61" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoO-NS-gQG">
+                                        <rect key="frame" x="10" y="202" width="230" height="40"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="kI6-7E-GK1"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="aoO-NS-gQG" firstAttribute="leading" secondItem="IpU-V3-oXe" secondAttribute="leading" constant="10" id="9Lw-A0-kKo"/>
+                                    <constraint firstAttribute="trailing" secondItem="aoO-NS-gQG" secondAttribute="trailing" constant="10" id="BgO-kk-bUE"/>
                                     <constraint firstAttribute="height" constant="250" id="KOg-1Q-NyZ"/>
                                     <constraint firstAttribute="width" constant="250" id="qgf-JK-PQ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="aoO-NS-gQG" secondAttribute="bottom" constant="8" id="yUF-Fi-fOR"/>
                                 </constraints>
                             </view>
                         </subviews>

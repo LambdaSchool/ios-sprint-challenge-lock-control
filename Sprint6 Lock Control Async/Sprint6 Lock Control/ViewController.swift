@@ -10,11 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var resetButtonOutlet: UIBarButtonItem!
+    @IBOutlet weak var lockUnlockImage: UIImageView!
+    @IBOutlet weak var customViewOutlet: CustomControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
- 
+    @IBAction func customViewAction(_ sender: CustomControl) {
+        
+        
+        
+        
+    }
+    
+    @IBAction func resetButtonAction(_ sender: Any) {
+        
+        
+    }
+    
+    
 
 }
 

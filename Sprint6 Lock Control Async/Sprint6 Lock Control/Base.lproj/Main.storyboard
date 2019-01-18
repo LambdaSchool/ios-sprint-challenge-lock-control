@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPl-Pt-soz" userLabel="Rounded" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPl-Pt-soz" userLabel="CustomView" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-Jz-79S">
@@ -36,6 +36,9 @@
                                     <constraint firstItem="UVC-Jz-79S" firstAttribute="leading" secondItem="ZPl-Pt-soz" secondAttribute="leading" constant="30" id="sFV-VR-K7F"/>
                                     <constraint firstAttribute="width" constant="280" id="zPl-Zk-cw0"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="customViewAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="o6F-H4-Jh0"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,8 +49,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="9NT-DU-gRW">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="k3A-1P-jzD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="k3A-1P-jzD">
+                            <connections>
+                                <action selector="resetButtonAction:" destination="BYZ-38-t0r" id="LVc-NO-gh4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="customViewOutlet" destination="ZPl-Pt-soz" id="fDZ-Zw-nkL"/>
+                        <outlet property="lockUnlockImage" destination="UVC-Jz-79S" id="epq-JA-2eE"/>
+                        <outlet property="resetButtonOutlet" destination="k3A-1P-jzD" id="x3s-Vv-xL3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

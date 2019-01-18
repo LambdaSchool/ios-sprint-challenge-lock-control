@@ -70,5 +70,14 @@ class RangeSlider: UIControl {
         super.cancelTracking(with: event)
     }
     
+    private func setupThumb(_ thumb: UIView) {
+        let thumbFrame = CGRect(x: 0, y: 0, width: thumbWidth, height: thumbWidt)
+        thumb.frame = thumbFrame
+        thumb.backgroundColor = .white
+        thumb.layer.cornerRadius = thumbWidth/2
+        thumb.isUserInteractionEnabled = false
+        
+        addSubview(thumb)
+    }
 
 }

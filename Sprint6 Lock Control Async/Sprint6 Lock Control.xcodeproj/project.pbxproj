@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
-		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
-		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
-		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
-		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
-		A5B540D421E8F9E900286EDC /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B540D321E8F9E900286EDC /* CustomControl.swift */; };
-		A5B540D821E90BBA00286EDC /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B540D721E90BBA00286EDC /* AppearanceHelper.swift */; };
+		A5BBB9A221F231D1003056E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBB9A121F231D1003056E3 /* AppDelegate.swift */; };
+		A5BBB9A421F231D1003056E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBB9A321F231D1003056E3 /* ViewController.swift */; };
+		A5BBB9A721F231D1003056E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BBB9A521F231D1003056E3 /* Main.storyboard */; };
+		A5BBB9A921F231D2003056E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BBB9A821F231D2003056E3 /* Assets.xcassets */; };
+		A5BBB9AC21F231D2003056E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BBB9AA21F231D2003056E3 /* LaunchScreen.storyboard */; };
+		A5BBB9B421F2355F003056E3 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBB9B321F2355F003056E3 /* CustomControl.swift */; };
+		A5BBB9B621F23800003056E3 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBB9B521F23800003056E3 /* AppearanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5B540D321E8F9E900286EDC /* CustomControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
-		A5B540D721E90BBA00286EDC /* AppearanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		A5BBB99E21F231D1003056E3 /* Sprint6 Lock Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint6 Lock Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BBB9A121F231D1003056E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5BBB9A321F231D1003056E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5BBB9A621F231D1003056E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5BBB9A821F231D2003056E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5BBB9AB21F231D2003056E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5BBB9AD21F231D2003056E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5BBB9B321F2355F003056E3 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		A5BBB9B521F23800003056E3 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		468B89DA2137397400E7FF73 /* Frameworks */ = {
+		A5BBB99B21F231D1003056E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,74 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		468B89D42137397400E7FF73 = {
+		A5BBB99521F231D1003056E3 = {
 			isa = PBXGroup;
 			children = (
-				468B89DF2137397400E7FF73 /* Sprint 6 Challenge */,
-				468B89DE2137397400E7FF73 /* Products */,
+				A5BBB9A021F231D1003056E3 /* Sprint6 Lock Control */,
+				A5BBB99F21F231D1003056E3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		468B89DE2137397400E7FF73 /* Products */ = {
+		A5BBB99F21F231D1003056E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */,
+				A5BBB99E21F231D1003056E3 /* Sprint6 Lock Control.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
+		A5BBB9A021F231D1003056E3 /* Sprint6 Lock Control */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				A5B540D321E8F9E900286EDC /* CustomControl.swift */,
-				A5B540D721E90BBA00286EDC /* AppearanceHelper.swift */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
-				468B89EC2137397500E7FF73 /* Info.plist */,
+				A5BBB9A121F231D1003056E3 /* AppDelegate.swift */,
+				A5BBB9A321F231D1003056E3 /* ViewController.swift */,
+				A5BBB9B321F2355F003056E3 /* CustomControl.swift */,
+				A5BBB9B521F23800003056E3 /* AppearanceHelper.swift */,
+				A5BBB9A521F231D1003056E3 /* Main.storyboard */,
+				A5BBB9A821F231D2003056E3 /* Assets.xcassets */,
+				A5BBB9AA21F231D2003056E3 /* LaunchScreen.storyboard */,
+				A5BBB9AD21F231D2003056E3 /* Info.plist */,
 			);
-			path = "Sprint 6 Challenge";
+			path = "Sprint6 Lock Control";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		468B89DC2137397400E7FF73 /* Sprint 6 Challenge */ = {
+		A5BBB99D21F231D1003056E3 /* Sprint6 Lock Control */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 6 Challenge" */;
+			buildConfigurationList = A5BBB9B021F231D2003056E3 /* Build configuration list for PBXNativeTarget "Sprint6 Lock Control" */;
 			buildPhases = (
-				468B89D92137397400E7FF73 /* Sources */,
-				468B89DA2137397400E7FF73 /* Frameworks */,
-				468B89DB2137397400E7FF73 /* Resources */,
+				A5BBB99A21F231D1003056E3 /* Sources */,
+				A5BBB99B21F231D1003056E3 /* Frameworks */,
+				A5BBB99C21F231D1003056E3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Sprint 6 Challenge";
-			productName = "Sprint 6 Challenge";
-			productReference = 468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */;
+			name = "Sprint6 Lock Control";
+			productName = "Sprint6 Lock Control";
+			productReference = A5BBB99E21F231D1003056E3 /* Sprint6 Lock Control.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		468B89D52137397400E7FF73 /* Project object */ = {
+		A5BBB99621F231D1003056E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Lambda School";
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Sergey Osipyan";
 				TargetAttributes = {
-					468B89DC2137397400E7FF73 = {
-						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1010;
+					A5BBB99D21F231D1003056E3 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = 468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 6 Challenge" */;
+			buildConfigurationList = A5BBB99921F231D1003056E3 /* Build configuration list for PBXProject "Sprint6 Lock Control" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,56 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 468B89D42137397400E7FF73;
-			productRefGroup = 468B89DE2137397400E7FF73 /* Products */;
+			mainGroup = A5BBB99521F231D1003056E3;
+			productRefGroup = A5BBB99F21F231D1003056E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				468B89DC2137397400E7FF73 /* Sprint 6 Challenge */,
+				A5BBB99D21F231D1003056E3 /* Sprint6 Lock Control */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		468B89DB2137397400E7FF73 /* Resources */ = {
+		A5BBB99C21F231D1003056E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
-				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
-				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
+				A5BBB9AC21F231D2003056E3 /* LaunchScreen.storyboard in Resources */,
+				A5BBB9A921F231D2003056E3 /* Assets.xcassets in Resources */,
+				A5BBB9A721F231D1003056E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		468B89D92137397400E7FF73 /* Sources */ = {
+		A5BBB99A21F231D1003056E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
-				A5B540D421E8F9E900286EDC /* CustomControl.swift in Sources */,
-				A5B540D821E90BBA00286EDC /* AppearanceHelper.swift in Sources */,
-				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				A5BBB9A421F231D1003056E3 /* ViewController.swift in Sources */,
+				A5BBB9B621F23800003056E3 /* AppearanceHelper.swift in Sources */,
+				A5BBB9B421F2355F003056E3 /* CustomControl.swift in Sources */,
+				A5BBB9A221F231D1003056E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		468B89E42137397400E7FF73 /* Main.storyboard */ = {
+		A5BBB9A521F231D1003056E3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				468B89E52137397400E7FF73 /* Base */,
+				A5BBB9A621F231D1003056E3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		468B89E92137397500E7FF73 /* LaunchScreen.storyboard */ = {
+		A5BBB9AA21F231D2003056E3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				468B89EA2137397500E7FF73 /* Base */,
+				A5BBB9AB21F231D2003056E3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -171,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		468B89ED2137397500E7FF73 /* Debug */ = {
+		A5BBB9AE21F231D2003056E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,8 +221,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -231,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		468B89EE2137397500E7FF73 /* Release */ = {
+		A5BBB9AF21F231D2003056E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,8 +276,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -285,34 +286,36 @@
 			};
 			name = Release;
 		};
-		468B89F02137397500E7FF73 /* Debug */ = {
+		A5BBB9B121F231D2003056E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = KF4QEGAU36;
+				INFOPLIST_FILE = "Sprint6 Lock Control/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-6-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sergey.Sprint6-Lock-Control";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		468B89F12137397500E7FF73 /* Release */ = {
+		A5BBB9B221F231D2003056E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = KF4QEGAU36;
+				INFOPLIST_FILE = "Sprint6 Lock Control/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-6-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sergey.Sprint6-Lock-Control";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 6 Challenge" */ = {
+		A5BBB99921F231D1003056E3 /* Build configuration list for PBXProject "Sprint6 Lock Control" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				468B89ED2137397500E7FF73 /* Debug */,
-				468B89EE2137397500E7FF73 /* Release */,
+				A5BBB9AE21F231D2003056E3 /* Debug */,
+				A5BBB9AF21F231D2003056E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 6 Challenge" */ = {
+		A5BBB9B021F231D2003056E3 /* Build configuration list for PBXNativeTarget "Sprint6 Lock Control" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				468B89F02137397500E7FF73 /* Debug */,
-				468B89F12137397500E7FF73 /* Release */,
+				A5BBB9B121F231D2003056E3 /* Debug */,
+				A5BBB9B221F231D2003056E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 468B89D52137397400E7FF73 /* Project object */;
+	rootObject = A5BBB99621F231D1003056E3 /* Project object */;
 }

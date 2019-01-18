@@ -35,7 +35,7 @@ class CustomControl: UIControl {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         if CustomControl.thumbEnable{
             let touchPoint = touch.location(in: CustomControl.thumb)
-            if slider.bounds.contains(touchPoint) {
+            if CustomControl.thumb.bounds.contains(touchPoint) {
                 updateValue(at: touch)
                 sendActions(for: [.touchDown, .valueChanged])
                 return true
@@ -46,7 +46,7 @@ class CustomControl: UIControl {
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         if CustomControl.thumbEnable{
-            let touchPoint = touch.location(in: CustomControl.thumb)
+            let touchPoint = touch.location(in: slider)
             if slider.bounds.contains(touchPoint) {
                 updateValue(at: touch)
                 sendActions(for: [.touchDragInside, .valueChanged])
@@ -60,7 +60,7 @@ class CustomControl: UIControl {
         if CustomControl.thumbEnable{
             defer { super.endTracking(touch, with: event) }
             guard let touch = touch else { return }
-            let touchPoint = touch.location(in: CustomControl.thumb)
+            let touchPoint = touch.location(in: slider)
             if slider.bounds.contains(touchPoint) {
                 sendActions(for: [.touchUpInside, .valueChanged])
                 if CustomControl.thumb.center.x <= 200 {
@@ -88,7 +88,7 @@ class CustomControl: UIControl {
     }
     
     func updateValue(at touch: UITouch) {
-        let touchPoint = touch.location(in: CustomControl.thumb)
+        let touchPoint = touch.location(in: slider)
         if slider.bounds.contains(touchPoint) {
             if touchPoint.x < 260 && touchPoint.x > 20 {
                 sendActions(for: [.valueChanged])
@@ -100,6 +100,5 @@ class CustomControl: UIControl {
     func updateThumbValue() {
         CustomControl.value = CustomControl.thumb.center.x
         sendActions(for: [.valueChanged])
-
     }
 }

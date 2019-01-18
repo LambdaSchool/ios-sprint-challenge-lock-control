@@ -164,6 +164,6 @@ import UIKit
         return bounds.width * value
     }
     
-    
+    //private func bound(value: CGFloat, to )
     
 }

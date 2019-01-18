@@ -15,4 +15,3 @@ class LockedViewController: UIViewController {
     @IBAction func resetButton(_ sender: Any) {
     }
 }
-

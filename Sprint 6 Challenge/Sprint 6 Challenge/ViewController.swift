@@ -12,14 +12,40 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        guard let button = self.navigationItem.rightBarButtonItems?.first else { return }
+        
+        button.isEnabled = false
+
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func changeButton(_ unlockCustomControl: UnlockCustomControl) {
+        guard let button = self.navigationItem.rightBarButtonItems?.first else { return }
+        button.isEnabled = false
+        
+        if unlockCustomControl.percentComplete > 0.8 {
+            button.isEnabled = true
+            button.tintColor = UIColor.black
+            unlockCustomControl.isUserInteractionEnabled = false
+        }
     }
+    
+    
+    
+    @IBOutlet weak var unlockCustomControl: UnlockCustomControl!
+    
+    
+    @IBAction func resetLock(_ sender: Any) {
+        unlockCustomControl.isUserInteractionEnabled = true
+        unlockCustomControl.lockImageView.image = UIImage(named: "Locked")
+        unlockCustomControl.percentComplete = 0.0
+        unlockCustomControl.layoutSubviews()
+        guard let button = self.navigationItem.rightBarButtonItems?.first else { return }
+        button.isEnabled = false
+    }
+    
 
-
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    
 }
 

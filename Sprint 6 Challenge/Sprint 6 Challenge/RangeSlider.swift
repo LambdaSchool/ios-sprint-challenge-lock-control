@@ -22,5 +22,19 @@ class RangeSlider: UIControl {
         return frame.height * 0.8
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        track.rangeSlider = self
+        track.contentsScale = UIScreen.main.scale
+        layer.addSublayer(track)
+        
+        setupThumb(thumb)
+        
+        updateControlFrames()
+        
+    }
+    
+    
 
 }

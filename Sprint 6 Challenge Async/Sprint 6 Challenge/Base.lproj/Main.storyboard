@@ -46,10 +46,23 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCf-oC-pTy">
                                         <rect key="frame" x="8" y="234.5" width="279" height="52.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTj-BW-Ghc" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                                <rect key="frame" x="-41" y="0.0" width="240" height="52.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pTj-BW-Ghc" secondAttribute="height" id="vv9-Q3-2oM"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93222557109035531" green="0.84684126875495702" blue="0.79301736652352095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="pTj-BW-Ghc" secondAttribute="bottom" id="QFW-8R-YA3"/>
+                                            <constraint firstItem="pTj-BW-Ghc" firstAttribute="top" secondItem="iCf-oC-pTy" secondAttribute="top" id="qab-Gn-kfo"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.56177394578222373" green="0.78354817799486298" blue="0.81147792868984769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="iCf-oC-pTy" secondAttribute="bottom" constant="8" id="8vN-jb-brH"/>
                                     <constraint firstItem="qFa-vo-WKU" firstAttribute="centerX" secondItem="cp7-ev-SQL" secondAttribute="centerX" id="VxG-WR-pOb"/>

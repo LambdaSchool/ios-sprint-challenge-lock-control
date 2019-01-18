@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+@IBDesignable class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,9 +16,6 @@ class ViewController: UIViewController {
         // Round view corners
         mainView.layer.cornerRadius = 30
         sliderView.layer.cornerRadius = 25
-        
-        
-        
         
     }
 

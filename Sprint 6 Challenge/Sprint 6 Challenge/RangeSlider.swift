@@ -79,5 +79,12 @@ class RangeSlider: UIControl {
         
         addSubview(thumb)
     }
+    
+    private func updateControlFrames() {
+        track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
+        track.setNeedsDisplay()
+        
+        thumb.frame = thumbFrame(for: lowerValue, upperValue)
+    }
 
 }

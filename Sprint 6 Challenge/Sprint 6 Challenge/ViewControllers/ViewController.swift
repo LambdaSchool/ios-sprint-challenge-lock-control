@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var padlockImage: UIImageView!
     @IBOutlet weak var resetButton: UIBarButtonItem!
     @IBOutlet weak var controlOutlet: CustomControl!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
         super.viewDidLoad()
         resetButton.title = ""
         resetButton.isEnabled = false

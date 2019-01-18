@@ -52,6 +52,11 @@ class CustomControl: UIControl {
             if slider.bounds.contains(touchPoint) {
                 updateValue(at: touch)
                 sendActions(for: [.touchDragInside, .valueChanged])
+            } else {
+                UIView.animate(withDuration: 1.5) {
+                    CustomControl.thumb.center.x = 0 + CustomControl.thumb.frame.width / 2
+                    CustomControl.value = 0
+                }
             }
             return true
         }

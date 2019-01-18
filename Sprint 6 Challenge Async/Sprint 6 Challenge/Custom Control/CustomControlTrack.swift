@@ -22,6 +22,13 @@ import UIKit
         // Fill it
         ctx.fillPath()
         
+        // Change the fill color
+        ctx.setFillColor(slider.trackTintColor.cgColor)
+        
+        // Make a rectangle
+        // We need to know what the lower position is
+        //let lowerValuePosition = slider.position(for: slider.thumbValue)
+        
         
         
     }

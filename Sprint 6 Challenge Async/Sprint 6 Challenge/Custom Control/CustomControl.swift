@@ -139,8 +139,30 @@ import UIKit
     
     private func updateControlFrames() {
         
+        // Set to 1/3 of this height and in the middle
+        track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
+        track.setNeedsLayout()
+        
+        // Set the position of the thumb
+        thumbView.frame = thumbFrame(for: thumbValue)
+        
     }
     
+    // Called when we need to update the position of the thumb and it gives the frame we need to put it in based on a value.
+    private func thumbFrame(for value: CGFloat) -> CGRect {
+        
+        // This gives us the center of the slider to be where the value is
+        let x = position(for: value) - thumbWidth/2
+        
+        let y = (bounds.height - thumbWidth)/2
+        
+        return CGRect(x: x, y: y, width: thumbWidth, height: thumbWidth)
+    }
+    
+    // Gives the position based on the value
+    func position(for value: CGFloat) -> CGFloat {
+        return bounds.width * value
+    }
     
     
     

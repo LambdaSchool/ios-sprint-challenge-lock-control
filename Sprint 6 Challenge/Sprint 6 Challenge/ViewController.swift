@@ -16,12 +16,14 @@ class ViewController: UIViewController {
     }
     @IBAction func CoustomView(_ sender: CustomControl) {
         
-       if CustomControl.value >= 210.04 {
+       if CustomControl.value > 210.04 {
             lockUnlockImageView.image = UIImage(named: "Unlocked")
             UIView.animate(withDuration: 1.0) {
                 self.resetButtonOutlet.title = "Reset"
                 self.resetButtonOutlet.isEnabled = true
    }
+       } else {
+        lockUnlockImageView.image = UIImage(named: "Locked")
         }
     }
     @IBAction func resetButton(_ sender: Any) {

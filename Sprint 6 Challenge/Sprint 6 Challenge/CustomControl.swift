@@ -6,10 +6,15 @@ class CustomControl: UIControl {
     static var value: CGFloat = 0.0
     static var blackCircle = UIView(frame: CGRect(x: 7, y: 7, width: 37, height: 37))
     var sliderGreyBackground = UIView(frame: CGRect(x: 7, y: 225, width: 263, height: 50))
-    
+   // var lockUnlockImage = UIImageView(frame: CGRect(x: 7, y: 7, width: 200, height: 200))
+    let lockedImage = UIImage(named: "Locked")
     
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
+//        lockedImage?.draw(in: CGRect(x: 77.5, y: 213.5, width: 200, height: 200))
+//        lockUnlockImage = UIImageView(image: lockedImage)
+//        lockUnlockImage.contentMode = .scaleAspectFit
+//        self.addSubview(lockUnlockImage)
         
         sliderGreyBackground.backgroundColor = UIColor.darkGray
         sliderGreyBackground.layer.cornerRadius = 22
@@ -17,7 +22,6 @@ class CustomControl: UIControl {
         CustomControl.blackCircle.backgroundColor = .black
         CustomControl.blackCircle.layer.cornerRadius = 15
         sliderGreyBackground.addSubview(CustomControl.blackCircle)
-        CustomControl.blackCircle.isUserInteractionEnabled = false
         sliderGreyBackground.isUserInteractionEnabled = false
         
     }
@@ -28,8 +32,10 @@ class CustomControl: UIControl {
             CustomControl.value = touchPoint.x
             print(touchPoint.x)
             sendActions(for: [.valueChanged])
+            if touchPoint.x > 23 && touchPoint.x < 220 {
             CustomControl.blackCircle.center.x = touchPoint.x
             sendActions(for: [.valueChanged])
+            }
         }
     }
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {

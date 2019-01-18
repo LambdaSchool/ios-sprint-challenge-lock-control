@@ -34,8 +34,7 @@ class ViewController: UIViewController {
     @IBAction func updateImage(_ sender: CustomControl) {
         if !resetButton.isEnabled {
             let number = CustomControl.value
-            if number >= 160 {
-                print("Unlocked at value: \(number)")
+            if number > 224 {
                 self.padlockImage.image = UIImage(named: "Unlocked")
                 UIView.animate(withDuration: 3.0) {
                     self.resetButton.title = "Reset"

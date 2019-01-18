@@ -71,7 +71,7 @@ import UIKit
         } else {
             return false
         }
-
+        
         // Continue tracking
         return true
     }
@@ -89,8 +89,9 @@ import UIKit
         // Reset current location
         previousLocation = location
         
-        // Update the thumbValue
-        thumbValue = bound(value: thumbValue + valueChange, to: maximumValue)
+        // Update the thumbValue so it can't go lower or higher than the min and max
+        thumbValue = maxBound(value: thumbValue + valueChange, to: maximumValue)
+        //thumbValue = minBound(value: thumbValue + valueChange, to: minimumValue)
 
         updateControlFrames()
 
@@ -100,7 +101,19 @@ import UIKit
     }
 
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        super.endTracking(touch, with: event)
+        
+        // Call super before the function ends
+        defer { super.endTracking(touch, with: event) }
+        
+        // Touch is optional because you may or may not get a touch
+        guard let touch = touch else { return }
+        
+        // Get current location
+        previousLocation = touch.location(in: self)
+        
+        if bounds.contains(previousLocation) {
+            sendActions(for: [.touchUpInside, .valueChanged])
+        }
     }
 
     override func cancelTracking(with event: UIEvent?) {
@@ -175,11 +188,18 @@ import UIKit
         return bounds.width * value
     }
     
-    // Make sure that the thumb can't go any lower than the minimum value or higher than the maximum value
-    private func bound(value: CGFloat, to thumbValue: CGFloat) -> CGFloat {
+    // Make sure that the thumb can't go any higher than the maximum value
+    private func maxBound(value: CGFloat, to thumbValue: CGFloat) -> CGFloat {
         
         // Get the minimum between the value and thumbValue
         return min(value, thumbValue)
+    }
+    
+    // Make sure that the thumb can't go any lower than the minimum value
+    private func minBound(value: CGFloat, to thumbValue: CGFloat) -> CGFloat {
+        
+        // Get the maximum between the value and thumbValue
+        return max(value, thumbValue)
     }
     
 }

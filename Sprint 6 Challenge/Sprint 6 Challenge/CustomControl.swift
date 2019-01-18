@@ -6,15 +6,17 @@ class CustomControl: UIControl {
     static var value: CGFloat = 0.0
     static var blackCircle = UIView(frame: CGRect(x: 7, y: 7, width: 37, height: 37))
     var sliderGreyBackground = UIView(frame: CGRect(x: 7, y: 225, width: 263, height: 50))
-   // var lockUnlockImage = UIImageView(frame: CGRect(x: 7, y: 7, width: 200, height: 200))
-    let lockedImage = UIImage(named: "Locked")
+    var lockUnlockImage = UIImageView()
+   let lockedImage = UIImage(named: "Locked")
+   let unlockedImage = UIImage(named: "Unlocked")
     
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
-//        lockedImage?.draw(in: CGRect(x: 77.5, y: 213.5, width: 200, height: 200))
-//        lockUnlockImage = UIImageView(image: lockedImage)
+       // lockedImage?.draw(in: CGRect(x: 77.5, y: 213.5, width: 200, height: 200))
+//        lockUnlockImage.frame(forAlignmentRect: CGRect(x: 35, y: 8, width: (frame.width - 70), height: 260))
 //        lockUnlockImage.contentMode = .scaleAspectFit
-//        self.addSubview(lockUnlockImage)
+//        lockUnlockImage = UIImageView(image: lockedImage)
+//        addSubview(lockUnlockImage)
         
         sliderGreyBackground.backgroundColor = UIColor.darkGray
         sliderGreyBackground.layer.cornerRadius = 22

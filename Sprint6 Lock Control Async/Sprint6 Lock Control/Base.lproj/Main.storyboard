@@ -22,18 +22,18 @@
                                 <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-Jz-79S">
-                                        <rect key="frame" x="30" y="20" width="220" height="205"/>
+                                        <rect key="frame" x="35" y="20" width="210" height="203"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="2zd-iL-rG3"/>
-                                    <constraint firstAttribute="trailing" secondItem="UVC-Jz-79S" secondAttribute="trailing" constant="30" id="IP2-dH-7tX"/>
+                                    <constraint firstAttribute="trailing" secondItem="UVC-Jz-79S" secondAttribute="trailing" constant="35" id="IP2-dH-7tX"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" id="O17-M2-Vva"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="Swx-eq-Xau"/>
-                                    <constraint firstAttribute="bottom" secondItem="UVC-Jz-79S" secondAttribute="bottom" constant="55" id="YJY-kC-Ndz"/>
+                                    <constraint firstAttribute="bottom" secondItem="UVC-Jz-79S" secondAttribute="bottom" constant="57" id="YJY-kC-Ndz"/>
                                     <constraint firstItem="UVC-Jz-79S" firstAttribute="top" secondItem="ZPl-Pt-soz" secondAttribute="top" constant="20" id="h9O-jA-EnV"/>
-                                    <constraint firstItem="UVC-Jz-79S" firstAttribute="leading" secondItem="ZPl-Pt-soz" secondAttribute="leading" constant="30" id="sFV-VR-K7F"/>
+                                    <constraint firstItem="UVC-Jz-79S" firstAttribute="leading" secondItem="ZPl-Pt-soz" secondAttribute="leading" constant="35" id="sFV-VR-K7F"/>
                                     <constraint firstAttribute="width" constant="280" id="zPl-Zk-cw0"/>
                                 </constraints>
                                 <connections>

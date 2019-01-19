@@ -73,7 +73,7 @@ class RangeSlider: UIControl {
     }
     
     override func cancelTracking(with event: UIEvent?) {
-        activeThumb = nil
+        sendActions(for: [.touchCancel])
         super.cancelTracking(with: event)
     }
     

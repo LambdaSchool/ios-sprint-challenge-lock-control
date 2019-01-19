@@ -16,7 +16,7 @@ class RangeSlider: UIControl {
     private let track = CALayer()
     private let thumb = UIView()
     private var previousLocation = CGPoint()
-    private var activeThumb: UIView?
+    //private var activeThumb: UIView?
     private var thumbWidth: CGFloat {
         return frame.height * 0.8
     }
@@ -47,24 +47,29 @@ class RangeSlider: UIControl {
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let location = touch.location(in: self)
-        let locationChange = location.x - previousLocation.x
         
-        previousLocation = location
-        
-        guard let activeThumb = activeThumb else { return false }
-        
-        updateControlFrames()
-        sendActions(for: .valueChanged)
+        if thumb.bounds.contains(location) {
+            sendActions(for: [.valueChanged, .touchDragInside])
+            updateControlFrames()
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
         return true
-            
+        
         }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        activeThumb = nil
         super.endTracking(touch, with: event)
         // add isLocked
         // add logic for if more than 80
-
+        guard let touch = touch else { return }
+        
+        let location = touch.location(in: self)
+        if thumb.bounds.contains(location) {
+            sendActions(for: [.touchUpInside, .valueChanged])
+        } else {
+            sendActions(for: [.touchUpOutside])
+        }
     }
     
     override func cancelTracking(with event: UIEvent?) {

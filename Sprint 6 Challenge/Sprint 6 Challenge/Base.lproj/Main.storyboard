@@ -51,11 +51,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lockSliderControl" destination="aMv-ka-xp2" id="cNq-kp-oOh"/>
+                        <outlet property="resetButtonText" destination="i9Q-5C-EVu" id="HbF-vr-Ik2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882" y="134"/>
+            <point key="canvasLocation" x="961" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8PP-0j-Mzd">

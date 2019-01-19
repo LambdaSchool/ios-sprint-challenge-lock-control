@@ -11,8 +11,8 @@ struct AppearanceHelper {
         UINavigationBar.appearance().barTintColor = .red
         
         //TODO: Check bar button item 'text' color
-        // Set to blue on purpose
-        UIBarButtonItem.appearance().tintColor = .black
+        // Set it to red to blend in, and then change it to black to animate it.
+        UIBarButtonItem.appearance().tintColor = .red
 
         // navbar text color
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

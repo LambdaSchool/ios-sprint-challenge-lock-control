@@ -61,8 +61,8 @@
 				F86FC99521F2996000F57394 /* Resources */,
 				F8CFCA4C21F236000070B0FE /* AppearanceHelper.swift */,
 				468B89E22137397400E7FF73 /* LockViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
 				F8CFCA4A21F2352F0070B0FE /* LockSlider.swift */,
+				468B89E42137397400E7FF73 /* Main.storyboard */,
 			);
 			path = "Sprint 6 Challenge";
 			sourceTree = "<group>";

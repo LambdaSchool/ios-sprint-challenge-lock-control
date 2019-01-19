@@ -4,9 +4,7 @@ import UIKit
 @IBDesignable class CustomControl: UIControl {
     
     // MARK: - Properties
-    
-    //let viewController = ViewController()
-    
+        
     // Minimum value of slider
     var minimumValue: CGFloat = 0
     
@@ -17,16 +15,11 @@ import UIKit
     var thumbValue: CGFloat = 0.0
     
     // Colors
-    var trackColor = UIColor.gray
     var trackTintColor = UIColor.pastelBlue
 
     var isUnlocked: Bool = false
-    
-    
+
     // MARK: - Views
-    
-    // Layer to hold the track
-    //private let track = CustomControlTrack()
     
     // Thumb view
     private var thumbView = UIView()
@@ -41,11 +34,6 @@ import UIKit
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        //track.customControl = self
-        //track.contentsScale = UIScreen.main.scale
-        
-        //layer.addSublayer(track)
-        
         setupThumb(thumbView)
         
         updateControlFrames()
@@ -54,7 +42,7 @@ import UIKit
     
     func reset() {
         // Move the thumb back
-        thumbValue = 0
+        thumbView.frame = thumbFrame(for: 0.0)
         
     }
     
@@ -118,32 +106,29 @@ import UIKit
         // If so, set is Unlocked and sendActions(for: .valueChanged)
         
         if thumbValue > 0.8 {
-            sendActions(for: [.touchUpInside, .valueChanged])
-            isUnlocked = true
             thumbValue = 1
+            
+            isUnlocked = true
+            
+            sendActions(for: [.touchUpInside, .valueChanged])
+
             
         } else {
             sendActions(for: [.touchUpInside, .valueChanged])
             isUnlocked = false
+            thumbValue = 0
             
             UIView.animate(withDuration: 2.0) {
-                
+                //self.thumbValue = 0
+                //self.thumbFrame(for: 0.0)
+                //self.thumbView.frame = CGRect(x: (self.bounds.width - self.thumbWidth) * 0, y: (self.bounds.height - self.thumbWidth)/2, width: self.thumbWidth, height: self.thumbWidth)
+                self.thumbView.frame = self.thumbFrame(for: 0.0)
 
-                self.thumbView.frame = CGRect(x: (self.bounds.width - self.thumbWidth) * 0, y: (self.bounds.height - self.thumbWidth)/2, width: self.thumbWidth, height: self.thumbWidth)
-                //self.thumbView.frame = self.thumbFrame(for: 0.0)
             }
-            
-            //thumbFrame(for: 0.0)
-            //thumbValue = 0
         }
         
         updateControlFrames()
-        
-//        let previousLocationPosition = position(for: <#T##CGFloat#>)
-//
-//        if previousLocation > position(for: 0.8) {
-//
-//        }
+
     }
 
     override func cancelTracking(with event: UIEvent?) {
@@ -212,19 +197,4 @@ import UIKit
 
 
 
-//    private func updateValue(at touch: UITouch) {
-//
-//        // Assign the touch point to the current location
-//        let touchPoint = touch.location(in: self)
-//
-//        // Stores the value previously held before movement changes
-//        let oldValue = thumbValue
-//
-//        // Detect whether each touch's location is contained in the thumbView
-//        if thumbView.frame.contains(touch.location(in: self)) {
-//
-//            // set the thumb control's value to the value on slider
-//            thumbValue = touchPoint
-//        }
-//
-//    }
+

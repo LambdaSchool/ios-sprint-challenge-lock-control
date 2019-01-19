@@ -18,7 +18,7 @@ struct Appearance {
         
         // Navigation Bar
         UINavigationBar.appearance().barTintColor = .lavender
-        UIBarButtonItem.appearance().tintColor = .wenge
+        //UIBarButtonItem.appearance().tintColor = .wenge
         
         let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.almond, NSAttributedStringKey.font: customFont]
         

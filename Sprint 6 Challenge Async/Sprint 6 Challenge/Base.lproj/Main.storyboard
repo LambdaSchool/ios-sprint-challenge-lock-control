@@ -47,6 +47,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCf-oC-pTy" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="234.5" width="279" height="52.5"/>
                                         <color key="backgroundColor" red="0.93222557109035531" green="0.84684126875495702" blue="0.79301736652352095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="s6R-0r-Bbf"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.56177394578222373" green="0.78354817799486298" blue="0.81147792868984769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

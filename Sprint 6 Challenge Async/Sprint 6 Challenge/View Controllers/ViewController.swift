@@ -10,6 +10,11 @@ import UIKit
 
         // Set navigation title
         navigationItem.title = "Unlock Me!"
+
+        navigationItem.rightBarButtonItem?.tintColor = .clear
+        
+        // Set locked image
+        imageView.image = UIImage(named: "Locked")
         
         // Set view colors
         mainView.backgroundColor = UIColor.pastelBlue
@@ -21,6 +26,18 @@ import UIKit
         
     }
 
+    
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        
+        if customControl.isUnlocked == true {
+            
+            navigationItem.rightBarButtonItem?.tintColor = .wenge
+            
+            imageView.image = UIImage(named: "Unlocked")
+        }
+    }
+
+
     @IBAction func reset(_ sender: Any) {
         
         // When reset is tapped, button disappears
@@ -28,7 +45,6 @@ import UIKit
         
         // Value of slider goes back to 0
         customControl.reset()
-        //customControl.thumbValue = 0
         
         // Image changes to locked image
         imageView.image = UIImage(named: "Locked")

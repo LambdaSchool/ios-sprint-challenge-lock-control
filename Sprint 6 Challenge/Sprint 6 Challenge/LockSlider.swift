@@ -43,6 +43,8 @@ import UIKit
         
         thumbProgress = bound(value: thumbProgress + valueChange, to: maximumValue)
         
+        updateControlFrames()
+        
         sendActions(for: .valueChanged)
         
         return true
@@ -153,7 +155,7 @@ import UIKit
         track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
         track.setNeedsLayout()
         
-        thumbProgress.frame = thumbFrame
+        keyThumb.frame = thumbFrame(for: thumbProgress)
     }
     
     private func thumbFrame(for value: CGFloat) -> CGRect {

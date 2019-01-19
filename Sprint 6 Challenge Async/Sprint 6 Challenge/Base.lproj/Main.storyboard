@@ -81,6 +81,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="customControl" destination="iCf-oC-pTy" id="SWR-0Q-Q7W"/>
                         <outlet property="imageView" destination="qFa-vo-WKU" id="egt-1o-x7f"/>
                         <outlet property="mainView" destination="cp7-ev-SQL" id="4OE-sE-DOJ"/>
                         <outlet property="resetOutlet" destination="0XQ-ct-YhU" id="ssM-Rs-CUL"/>

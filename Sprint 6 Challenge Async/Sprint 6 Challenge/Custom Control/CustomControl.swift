@@ -41,8 +41,17 @@ import UIKit
     }
     
     func reset() {
-        // Move the thumb back
-        thumbView.frame = thumbFrame(for: 0.0)
+        
+        // Update thumbValue
+        thumbValue = 0.0
+        
+        updateControlFrames()
+        
+        // Reset isUnlocked
+        isUnlocked = false
+        
+        // Enable user interaction
+        self.isUserInteractionEnabled = true
         
     }
     
@@ -112,6 +121,7 @@ import UIKit
             UIView.animate(withDuration: 1.0) {
                 self.thumbView.frame = self.thumbFrame(for: 1.0)
             }
+            
 
         } else {
             sendActions(for: [.touchUpInside, .valueChanged])

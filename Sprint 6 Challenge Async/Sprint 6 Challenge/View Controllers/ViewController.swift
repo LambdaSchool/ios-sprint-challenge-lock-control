@@ -3,7 +3,7 @@ import UIKit
 
 @IBDesignable class ViewController: UIViewController {
 
-    let customControl = CustomControl()
+    //let customControl = CustomControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,9 @@ import UIKit
             navigationItem.rightBarButtonItem?.tintColor = .wenge
             
             imageView.image = UIImage(named: "Unlocked")
+            
+            // Disable user interaction once unlocked
+            customControl.isUserInteractionEnabled = false
         }
     }
 
@@ -50,6 +53,9 @@ import UIKit
         imageView.image = UIImage(named: "Locked")
         
     }
+    
+    @IBOutlet weak var customControl: CustomControl!
+    
     
     @IBOutlet weak var resetOutlet: UIBarButtonItem!
     

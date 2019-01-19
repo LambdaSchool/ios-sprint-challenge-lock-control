@@ -16,6 +16,8 @@ import UIKit
      - Ability to move the slider must be disabled at some point
      - The ability to move the slider must be re-enabled at some point
      
+ Bonus Todo List
+     - Change the navigation title based on the lock state
 */
     
     

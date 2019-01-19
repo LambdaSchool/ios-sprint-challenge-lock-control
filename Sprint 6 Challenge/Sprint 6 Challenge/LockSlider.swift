@@ -121,7 +121,12 @@ import UIKit
         
         setupThumb(keyThumb)
         
-   //     updateControlFrames()
+        // Track implementation
+        track.lockSlider = self
+        track.contentsScale = UIScreen.main.scale
+        layer.addSublayer(track)
+        
+        updateControlFrames()
         
     }
     
@@ -145,6 +150,10 @@ import UIKit
     private func updateControlFrames() {
         // No long needed since we're not using a custom track
         // Edit, it's needed since it's not visible.
+        track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
+        track.setNeedsLayout()
+        
+        thumbProgress.frame = thumbFrame
     }
     
     private func thumbFrame(for value: CGFloat) -> CGRect {
@@ -160,6 +169,10 @@ import UIKit
     private func bound(value: CGFloat, to lowerValue: CGFloat) -> CGFloat {
         return max(value, lowerValue)
     }
+    
+    // Add in the track properties
+    
+    let track = LockSliderTrack()
     
 }
 

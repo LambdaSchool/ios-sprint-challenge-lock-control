@@ -27,7 +27,8 @@ import UIKit
         resetOutlet.tintColor = UIColor.clear
         
         // Value of slider goes back to 0
-        customControl.thumbValue = 0
+        customControl.reset()
+        //customControl.thumbValue = 0
         
         // Image changes to locked image
         imageView.image = UIImage(named: "Locked")

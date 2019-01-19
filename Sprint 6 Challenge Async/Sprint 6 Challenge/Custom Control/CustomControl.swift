@@ -5,6 +5,8 @@ import UIKit
     
     // MARK: - Properties
     
+    //let viewController = ViewController()
+    
     // Minimum value of slider
     var minimumValue: CGFloat = 0
     
@@ -12,22 +14,22 @@ import UIKit
     var maximumValue: CGFloat = 1
     
     // Thumb value's starting point
-    var thumbValue: CGFloat = 0.1
+    var thumbValue: CGFloat = 0.0
     
     // Colors
     var trackColor = UIColor.gray
     var trackTintColor = UIColor.pastelBlue
 
-
+    var isUnlocked: Bool = false
     
     
     // MARK: - Views
     
     // Layer to hold the track
-    private let track = CustomControlTrack()
+    //private let track = CustomControlTrack()
     
     // Thumb view
-    private let thumbView = UIView()
+    private var thumbView = UIView()
     
     private var previousLocation = CGPoint()
     
@@ -39,10 +41,10 @@ import UIKit
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        track.customControl = self
-        track.contentsScale = UIScreen.main.scale
+        //track.customControl = self
+        //track.contentsScale = UIScreen.main.scale
         
-        layer.addSublayer(track)
+        //layer.addSublayer(track)
         
         setupThumb(thumbView)
         
@@ -50,7 +52,11 @@ import UIKit
         
     }
     
-    
+    func reset() {
+        // Move the thumb back
+        thumbValue = 0
+        
+    }
     
     
     // MARK: - Touch Tracking
@@ -90,12 +96,9 @@ import UIKit
         previousLocation = location
         
         // Update the thumbValue so it can't go lower or higher than the min and max
-        thumbValue = maxBound(value: thumbValue + valueChange, to: maximumValue)
-        //thumbValue = minBound(value: thumbValue + valueChange, to: minimumValue)
+        thumbValue = min(max((thumbValue + valueChange), minimumValue), maximumValue)
 
         updateControlFrames()
-
-        sendActions(for: .valueChanged)
 
         return true
     }
@@ -111,9 +114,36 @@ import UIKit
         // Get current location
         previousLocation = touch.location(in: self)
         
-        if bounds.contains(previousLocation) {
+        // Write some logic to see if the user has slid far enough
+        // If so, set is Unlocked and sendActions(for: .valueChanged)
+        
+        if thumbValue > 0.8 {
             sendActions(for: [.touchUpInside, .valueChanged])
+            isUnlocked = true
+            thumbValue = 1
+            
+        } else {
+            sendActions(for: [.touchUpInside, .valueChanged])
+            isUnlocked = false
+            
+            UIView.animate(withDuration: 2.0) {
+                
+
+                self.thumbView.frame = CGRect(x: (self.bounds.width - self.thumbWidth) * 0, y: (self.bounds.height - self.thumbWidth)/2, width: self.thumbWidth, height: self.thumbWidth)
+                //self.thumbView.frame = self.thumbFrame(for: 0.0)
+            }
+            
+            //thumbFrame(for: 0.0)
+            //thumbValue = 0
         }
+        
+        updateControlFrames()
+        
+//        let previousLocationPosition = position(for: <#T##CGFloat#>)
+//
+//        if previousLocation > position(for: 0.8) {
+//
+//        }
     }
 
     override func cancelTracking(with event: UIEvent?) {
@@ -144,6 +174,44 @@ import UIKit
         addSubview(thumb)
     }
     
+
+    private func updateControlFrames() {
+        
+        // Set the position of the thumb
+        thumbView.frame = thumbFrame(for: thumbValue)
+    }
+    
+    
+    // Called when we need to update the position of the thumb and it gives the frame we need to put it in based on a value.
+    private func thumbFrame(for value: CGFloat) -> CGRect {
+        
+        // This gives us the center of the slider to be where the value is
+        // Offset it by 6 pixels in from the leading
+        let x = position(for: value) + 6
+        
+        let y = (bounds.height - thumbWidth)/2
+        
+        return CGRect(x: x, y: y, width: thumbWidth, height: thumbWidth)
+    }
+    
+    
+    // Gives the position based on the value
+    func position(for value: CGFloat) -> CGFloat {
+        // Put the thumb in a position in the view based on the value I'm giving it from 0 to 1
+        // Reduce it by the width of the thumb, and an extra 12 pixels of padding
+        return (bounds.width - thumbWidth - 12) * value
+    }
+
+}
+
+
+
+
+
+
+
+
+
 //    private func updateValue(at touch: UITouch) {
 //
 //        // Assign the touch point to the current location
@@ -160,46 +228,3 @@ import UIKit
 //        }
 //
 //    }
-    
-    private func updateControlFrames() {
-        
-        // Set to 1/3 of this height and in the middle
-        track.frame = bounds.insetBy(dx: 0, dy: bounds.height/3)
-        track.setNeedsLayout()
-        
-        // Set the position of the thumb
-        thumbView.frame = thumbFrame(for: thumbValue)
-        
-    }
-    
-    // Called when we need to update the position of the thumb and it gives the frame we need to put it in based on a value.
-    private func thumbFrame(for value: CGFloat) -> CGRect {
-        
-        // This gives us the center of the slider to be where the value is
-        let x = position(for: value) - thumbWidth/2
-        
-        let y = (bounds.height - thumbWidth)/2
-        
-        return CGRect(x: x, y: y, width: thumbWidth, height: thumbWidth)
-    }
-    
-    // Gives the position based on the value
-    func position(for value: CGFloat) -> CGFloat {
-        return bounds.width * value
-    }
-    
-    // Make sure that the thumb can't go any higher than the maximum value
-    private func maxBound(value: CGFloat, to thumbValue: CGFloat) -> CGFloat {
-        
-        // Get the minimum between the value and thumbValue
-        return min(value, thumbValue)
-    }
-    
-    // Make sure that the thumb can't go any lower than the minimum value
-    private func minBound(value: CGFloat, to thumbValue: CGFloat) -> CGFloat {
-        
-        // Get the maximum between the value and thumbValue
-        return max(value, thumbValue)
-    }
-    
-}

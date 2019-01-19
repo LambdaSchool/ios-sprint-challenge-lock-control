@@ -69,6 +69,7 @@
 				843A4D2621F23EAF0001A992 /* View Controllers */,
 				843A4D2921F23EF00001A992 /* Custom Control */,
 				843A4D2521F23EA10001A992 /* Helpers */,
+				843A4D2E21F2A06C0001A992 /* Old Files */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				843A4D2321F239630001A992 /* NORTHWEST-Rough.otf */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
@@ -98,9 +99,16 @@
 			isa = PBXGroup;
 			children = (
 				843A4D2721F23ECF0001A992 /* CustomControl.swift */,
-				843A4D2C21F247190001A992 /* CustomControlTrack.swift */,
 			);
 			path = "Custom Control";
+			sourceTree = "<group>";
+		};
+		843A4D2E21F2A06C0001A992 /* Old Files */ = {
+			isa = PBXGroup;
+			children = (
+				843A4D2C21F247190001A992 /* CustomControlTrack.swift */,
+			);
+			path = "Old Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

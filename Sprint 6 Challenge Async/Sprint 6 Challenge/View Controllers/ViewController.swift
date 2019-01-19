@@ -27,7 +27,7 @@ import UIKit
     }
 
     
-    @IBAction func sliderValueChanged(_ sender: Any) {
+    @IBAction func sliderValueChanged(_ sender: CustomControl) {
         
         if customControl.isUnlocked == true {
             

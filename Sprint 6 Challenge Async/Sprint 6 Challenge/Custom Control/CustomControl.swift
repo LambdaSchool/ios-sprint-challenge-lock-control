@@ -102,28 +102,24 @@ import UIKit
         // Get current location
         previousLocation = touch.location(in: self)
         
-        // Write some logic to see if the user has slid far enough
-        // If so, set is Unlocked and sendActions(for: .valueChanged)
-        
+
+        // If so, set is Unlocked and sendActions(for: .valueChanged)        
         if thumbValue > 0.8 {
             thumbValue = 1
-            
             isUnlocked = true
-            
             sendActions(for: [.touchUpInside, .valueChanged])
-
             
+            UIView.animate(withDuration: 1.0) {
+                self.thumbView.frame = self.thumbFrame(for: 1.0)
+            }
+
         } else {
             sendActions(for: [.touchUpInside, .valueChanged])
             isUnlocked = false
             thumbValue = 0
             
             UIView.animate(withDuration: 2.0) {
-                //self.thumbValue = 0
-                //self.thumbFrame(for: 0.0)
-                //self.thumbView.frame = CGRect(x: (self.bounds.width - self.thumbWidth) * 0, y: (self.bounds.height - self.thumbWidth)/2, width: self.thumbWidth, height: self.thumbWidth)
                 self.thumbView.frame = self.thumbFrame(for: 0.0)
-
             }
         }
         

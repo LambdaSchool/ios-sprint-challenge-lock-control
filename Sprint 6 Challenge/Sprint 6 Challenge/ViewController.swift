@@ -9,17 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var customControl: CustomControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        lockedImage.layer.cornerRadius = 40
+        swipeControl.layer.cornerRadius = 40
+        swipeControl.backgroundColor = .gray
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func resetButtonTapped(_ sender: Any) {
+        guard let custom = customControl else { return }
+        custom.dot.isUserInteractionEnabled = true
+        resetButton.setTitle("Reset", for: .normal)
     }
-
+    
+    @IBOutlet weak var resetButton: UIButton!
+    //@IBOutlet weak var backView: UIView!
+    @IBOutlet weak var lockedImage: UIImageView!
+    @IBOutlet weak var swipeControl: UIView!
 
 }
 

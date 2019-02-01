@@ -13,6 +13,8 @@
 		F834D9BD2204AA3900D65C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F834D9BC2204AA3900D65C06 /* Assets.xcassets */; };
 		F834D9C02204AA3900D65C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */; };
 		F834D9C82204AA8F00D65C06 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */; };
+		F834D9CA2204AFAA00D65C06 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9C92204AFAA00D65C06 /* CustomControl.swift */; };
+		F834D9CC2204B20700D65C06 /* LockStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9CB2204B20700D65C06 /* LockStateControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F834D9BF2204AA3900D65C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F834D9C12204AA3900D65C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		F834D9C92204AFAA00D65C06 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		F834D9CB2204B20700D65C06 /* LockStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockStateControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,11 @@
 			children = (
 				F834D9B52204AA3800D65C06 /* AppDelegate.swift */,
 				F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */,
+				F834D9CB2204B20700D65C06 /* LockStateControl.swift */,
 				F834D9B72204AA3800D65C06 /* ViewController.swift */,
 				F834D9B92204AA3800D65C06 /* Main.storyboard */,
 				F834D9BC2204AA3900D65C06 /* Assets.xcassets */,
+				F834D9C92204AFAA00D65C06 /* CustomControl.swift */,
 				F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */,
 				F834D9C12204AA3900D65C06 /* Info.plist */,
 			);
@@ -140,6 +146,8 @@
 			files = (
 				F834D9B82204AA3800D65C06 /* ViewController.swift in Sources */,
 				F834D9B62204AA3800D65C06 /* AppDelegate.swift in Sources */,
+				F834D9CC2204B20700D65C06 /* LockStateControl.swift in Sources */,
+				F834D9CA2204AFAA00D65C06 /* CustomControl.swift in Sources */,
 				F834D9C82204AA8F00D65C06 /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

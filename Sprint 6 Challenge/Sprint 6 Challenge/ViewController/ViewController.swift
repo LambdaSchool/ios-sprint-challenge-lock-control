@@ -22,7 +22,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func locking(_ sender: Slider) {
-        circle.center.x = sender.xPosition
+        
+        UIView.animate(withDuration: 0.2) {
+            self.circle.center.x = sender.xPosition
+        }
         updateViews()
     }
     

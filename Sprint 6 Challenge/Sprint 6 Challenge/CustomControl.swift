@@ -49,20 +49,60 @@ import UIKit
         self.isUserInteractionEnabled = true
     }
     
+    // MARK: - Touch handling methods
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        previousLocation = touch.location(in: self)
+        
+        if ballView.frame.contains(previousLocation) {
+            sendActions(for: [.touchDown, .valueChanged])
+        } else {
+            return false
+        }
+        return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        let location = touch.location(in: self)
+        
+        let locationChange = location.x - previousLocation.x
+        let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
+        previousLocation = location
+        ballValue = min(max((ballValue + valueChange), minimumValue), maximumValue)
+        
+        updateFrames()
+        
+        return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        <#code#>
+        defer { super.endTracking(touch, with: event) }
+        
+        guard let touch = touch else { return }
+        
+        previousLocation = touch.location(in: self)
+        
+        if ballValue >= 0.8 {
+            ballValue = 1
+            isUnlocked = true
+            sendActions(for: [.touchUpInside, .valueChanged])
+            
+            UIView.animate(withDuration: 1.0) {
+                self.ballView.frame = self.ballFrame(for: 1.0)
+            }
+        }   else {
+            sendActions(for: [.touchUpInside, .valueChanged])
+            isUnlocked = false
+            ballValue = 0
+            
+            UIView.animate(withDuration: 2.0) {
+                self.ballView.frame = self.ballFrame(for: 0.0)
+            }
+        }
+        updateFrames()
     }
     
     override func cancelTracking(with event: UIEvent?) {
-        <#code#>
+        super.cancelTracking(with: event)
     }
     
         // MARK: - Properties

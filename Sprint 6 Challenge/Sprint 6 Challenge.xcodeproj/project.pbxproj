@@ -12,6 +12,8 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		481FAC342204A652004C7337 /* Championship.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 481FAC332204A652004C7337 /* Championship.ttf */; };
+		481FAC362204A68A004C7337 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FAC352204A68A004C7337 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481FAC332204A652004C7337 /* Championship.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Championship.ttf; sourceTree = "<group>"; };
+		481FAC352204A68A004C7337 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				481FAC352204A68A004C7337 /* File.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+				481FAC332204A652004C7337 /* Championship.ttf */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = "Sprint 6 Challenge";
@@ -125,6 +131,7 @@
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
+				481FAC342204A652004C7337 /* Championship.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				481FAC362204A68A004C7337 /* File.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

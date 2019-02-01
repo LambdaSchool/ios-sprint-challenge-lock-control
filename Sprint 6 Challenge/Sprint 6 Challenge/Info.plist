@@ -37,6 +37,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Championship.ttf</string>
+		<string>Robotronica.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

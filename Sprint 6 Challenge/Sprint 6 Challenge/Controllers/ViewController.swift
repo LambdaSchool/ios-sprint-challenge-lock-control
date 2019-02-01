@@ -9,20 +9,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderView: UIView!
     
     @IBAction func reset(_ sender: Any) {
+        lockView.image = UIImage(named: "Locked")
         
     }
     
     @IBAction func sliderValueChanged(_ sender: Any) {
+        lockView.image = UIImage(named: "Unlocked")
+        navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
-    
+    //MARK: - Override funcs
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = "Unlock"
+        //navigationController?.title = "Unlock"
         
         view.backgroundColor = .darkOrange
     }
-
-
 }
 

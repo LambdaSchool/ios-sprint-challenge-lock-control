@@ -16,11 +16,14 @@ class ViewController: UIViewController {
         // Main View background is gray now
         self.backgroundView.backgroundColor = UIColor.gray
         
+        // Round the corners of the slider track
+        sliderTrack.layer.cornerRadius = 20
+        
 //        lockImage.image = CustomControl.lockStateImage
 //
 //        if CustomControl.thresholdValue >= 8 {
 //            resetResetButton.tintColor = .black
-        }
+        // }
         
         
     }

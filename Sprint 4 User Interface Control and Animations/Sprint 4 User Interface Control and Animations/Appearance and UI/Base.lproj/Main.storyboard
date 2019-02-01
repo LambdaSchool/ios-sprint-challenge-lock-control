@@ -30,6 +30,9 @@
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-Zw-fOY" customClass="CustomControl" customModule="Sprint_4_User_Interface_Control_and_Animations" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="293" width="335" height="46"/>
                                         <color key="backgroundColor" red="0.10933206970000001" green="1" blue="0.98606600509999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="sliderLockKey:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sc5-kg-y3E"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -52,8 +55,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="z6R-f8-cwI" id="Oza-Gi-REQ"/>
+                        <outlet property="control" destination="8tH-Zw-fOY" id="oWt-vJ-fhW"/>
                         <outlet property="lockImage" destination="yr5-jb-K3X" id="v5S-Ki-gMA"/>
                         <outlet property="resetResetButton" destination="W5h-ZE-mbo" id="s5Y-sI-oot"/>
+                        <outlet property="sliderTrack" destination="8tH-Zw-fOY" id="9Vm-d2-3d9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomControl: UIControl {
+@IBDesignable class CustomControl: UIControl {
     var value: Int = 1
     
     // private constants

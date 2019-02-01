@@ -62,18 +62,34 @@
 		F834D9B42204AA3800D65C06 /* Sprint 4 User Interface Control and Animations */ = {
 			isa = PBXGroup;
 			children = (
-				F834D9B52204AA3800D65C06 /* AppDelegate.swift */,
-				F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */,
-				F834D9CB2204B20700D65C06 /* LockStateControl.swift */,
+				F8E157AF220502610060B2D7 /* Appearance and UI */,
+				F8E157B0220502850060B2D7 /* Custom Controls */,
 				F834D9B72204AA3800D65C06 /* ViewController.swift */,
-				F834D9B92204AA3800D65C06 /* Main.storyboard */,
-				F834D9BC2204AA3900D65C06 /* Assets.xcassets */,
-				F834D9C92204AFAA00D65C06 /* CustomControl.swift */,
-				F834D9CD2204BB2000D65C06 /* LockState.swift */,
 				F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */,
 				F834D9C12204AA3900D65C06 /* Info.plist */,
 			);
 			path = "Sprint 4 User Interface Control and Animations";
+			sourceTree = "<group>";
+		};
+		F8E157AF220502610060B2D7 /* Appearance and UI */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9B52204AA3800D65C06 /* AppDelegate.swift */,
+				F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */,
+				F834D9B92204AA3800D65C06 /* Main.storyboard */,
+				F834D9BC2204AA3900D65C06 /* Assets.xcassets */,
+			);
+			path = "Appearance and UI";
+			sourceTree = "<group>";
+		};
+		F8E157B0220502850060B2D7 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9CB2204B20700D65C06 /* LockStateControl.swift */,
+				F834D9C92204AFAA00D65C06 /* CustomControl.swift */,
+				F834D9CD2204BB2000D65C06 /* LockState.swift */,
+			);
+			path = "Custom Controls";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

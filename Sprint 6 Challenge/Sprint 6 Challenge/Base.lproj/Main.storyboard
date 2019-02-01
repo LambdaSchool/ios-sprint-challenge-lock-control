@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zdn-eh-jNU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Unlocked-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76Y-jT-ZLd">
+                                <rect key="frame" x="20" y="224" width="335" height="335"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwg-cI-0M4" customClass="Slider" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="247" width="319" height="80"/>
+                                        <subviews>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTY-Zh-21W">
+                                                <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.82842576400000001" blue="0.38911424280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vTY-Zh-21W" secondAttribute="height" multiplier="1:1" id="cs8-Nt-KYY"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="vTY-Zh-21W" secondAttribute="bottom" constant="10" id="D0N-Ka-dxf"/>
+                                            <constraint firstItem="vTY-Zh-21W" firstAttribute="top" secondItem="Vwg-cI-0M4" secondAttribute="top" constant="10" id="ZFa-Bj-Uep"/>
+                                            <constraint firstItem="vTY-Zh-21W" firstAttribute="leading" secondItem="Vwg-cI-0M4" secondAttribute="leading" constant="10" id="iKN-zi-Zc4"/>
+                                            <constraint firstAttribute="height" constant="80" id="tz2-Mk-ESv"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="locking:" destination="BYZ-38-t0r" eventType="valueChanged" id="cRD-0p-rLh"/>
+                                        </connections>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-kY-GVQ">
+                                        <rect key="frame" x="80" y="52" width="175" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Rex-kY-GVQ" secondAttribute="height" multiplier="1:1" id="Q9q-co-tD4"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81450353019999999" green="0.85126979469999997" blue="0.91443924489999995" alpha="0.89873180649999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Vwg-cI-0M4" firstAttribute="leading" secondItem="76Y-jT-ZLd" secondAttribute="leading" constant="8" id="KI9-9c-zvd"/>
+                                    <constraint firstItem="Rex-kY-GVQ" firstAttribute="leading" secondItem="76Y-jT-ZLd" secondAttribute="leading" constant="80" id="Nig-0A-SF3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vwg-cI-0M4" secondAttribute="trailing" constant="8" id="OLR-9o-iYK"/>
+                                    <constraint firstAttribute="width" secondItem="76Y-jT-ZLd" secondAttribute="height" multiplier="1:1" id="a3Q-co-hRy"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vwg-cI-0M4" secondAttribute="bottom" constant="8" id="hIi-ne-JaS"/>
+                                    <constraint firstItem="Vwg-cI-0M4" firstAttribute="top" secondItem="Rex-kY-GVQ" secondAttribute="bottom" constant="20" id="iqj-nY-JUc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rex-kY-GVQ" secondAttribute="trailing" constant="80" id="qts-va-9Qf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="76Y-jT-ZLd" secondAttribute="trailing" constant="20" id="FKd-va-i9J"/>
+                            <constraint firstItem="76Y-jT-ZLd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IYW-4P-mLE"/>
+                            <constraint firstItem="76Y-jT-ZLd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Xdo-VZ-t6e"/>
+                            <constraint firstItem="76Y-jT-ZLd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="YSw-Gb-GGg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Unlocked" id="0FR-MX-W3X">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="tXs-Yc-8hG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="circle" destination="vTY-Zh-21W" id="Kzy-cO-ncf"/>
+                        <outlet property="lockContainer" destination="76Y-jT-ZLd" id="Fd2-Gb-uhk"/>
+                        <outlet property="lockImage" destination="Rex-kY-GVQ" id="xnt-BP-wpG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="887" y="-672"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fKp-xP-ilm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zdn-eh-jNU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="uvx-Bu-irt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ik9-vl-u6z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcp-Iq-vdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-671.51424287856082"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unlocked" width="440" height="586"/>
+    </resources>
 </document>

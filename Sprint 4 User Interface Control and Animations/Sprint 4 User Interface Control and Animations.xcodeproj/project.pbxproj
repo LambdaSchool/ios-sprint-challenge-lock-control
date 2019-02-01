@@ -65,8 +65,7 @@
 				F8E157AF220502610060B2D7 /* Appearance and UI */,
 				F8E157B0220502850060B2D7 /* Custom Controls */,
 				F834D9B72204AA3800D65C06 /* ViewController.swift */,
-				F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */,
-				F834D9C12204AA3900D65C06 /* Info.plist */,
+				F8E157B322050EAB0060B2D7 /* Unmodified */,
 			);
 			path = "Sprint 4 User Interface Control and Animations";
 			sourceTree = "<group>";
@@ -90,6 +89,15 @@
 				F834D9CD2204BB2000D65C06 /* LockState.swift */,
 			);
 			path = "Custom Controls";
+			sourceTree = "<group>";
+		};
+		F8E157B322050EAB0060B2D7 /* Unmodified */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */,
+				F834D9C12204AA3900D65C06 /* Info.plist */,
+			);
+			path = Unmodified;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y6994DAGM;
-				INFOPLIST_FILE = "Sprint 4 User Interface Control and Animations/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 User Interface Control and Animations/Unmodified/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y6994DAGM;
-				INFOPLIST_FILE = "Sprint 4 User Interface Control and Animations/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 User Interface Control and Animations/Unmodified/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -12,11 +12,13 @@ enum AppearanceHelper {
     static var lambdaRed = UIColor(red: 212.0/255.0, green: 87.0/255.0, blue: 80.0/255.0, alpha: 1.0)
     static var backgroundGray = UIColor(red: 45.0/255.0, green: 45.0/255.0, blue: 45.0/255.0, alpha: 1.0)
     
-  
+    
     
     static func setAppearance() {
         UINavigationBar.appearance().barTintColor = lambdaRed
-        UIBarButtonItem.appearance().tintColor = backgroundGray.withAlphaComponent(0)
+        
+        
+        UIBarButtonItem.appearance().tintColor = backgroundGray.withAlphaComponent(1)
         
         let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         

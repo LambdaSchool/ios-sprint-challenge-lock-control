@@ -16,7 +16,6 @@ import UIKit
         updateFrames()
     }
     
-    
     private func setupBall(_ ball: UIView) {
         let ballFrame = CGRect(x: 0, y: 0, width: ballWidth, height: ballWidth)
         ball.frame = ballFrame
@@ -31,8 +30,6 @@ import UIKit
     func position(for value: CGFloat) -> CGFloat {
         return (bounds.width - ballWidth - 10) * value
     }
-    
-    
     
     private func ballFrame(for value:CGFloat) -> CGRect {
         let x = position(for: value) + 6
@@ -50,15 +47,23 @@ import UIKit
         updateFrames()
         
         self.isUserInteractionEnabled = true
-        
     }
     
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
     
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
     
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        <#code#>
+    }
     
-    
-    
-    
+    override func cancelTracking(with event: UIEvent?) {
+        <#code#>
+    }
     
         // MARK: - Properties
         var minimumValue: CGFloat = 0

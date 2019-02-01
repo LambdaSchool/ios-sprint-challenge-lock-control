@@ -13,8 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backgroundView.backgroundColor = UIColor.gray
+        lockImage.image = CustomControl.lockStateImage
     }
 
     @IBOutlet var backgroundView: UIView!
+    
+    @IBOutlet weak var lockImage: UIImageView!
+
 }
 

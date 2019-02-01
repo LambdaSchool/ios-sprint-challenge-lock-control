@@ -44,11 +44,16 @@
                         <viewLayoutGuide key="safeArea" id="1GP-lh-apy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="5T8-52-hB6">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="W5h-ZE-mbo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="W5h-ZE-mbo">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="rL3-80-Uyg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="z6R-f8-cwI" id="Oza-Gi-REQ"/>
                         <outlet property="lockImage" destination="yr5-jb-K3X" id="v5S-Ki-gMA"/>
+                        <outlet property="resetResetButton" destination="W5h-ZE-mbo" id="s5Y-sI-oot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

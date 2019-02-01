@@ -12,11 +12,13 @@ class CustomControl: UIControl {
     // static variables
     var lockState: Bool = true
     static var lockStateImage: UIImage = UIImage(named: "Locked")!
+    static var thresholdValue = 0
 
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
         setup()
         changeImage()
+        reset()
     }
     
     var labelArray: [UILabel] = []
@@ -58,6 +60,12 @@ class CustomControl: UIControl {
                 star.textColor = componentInactiveColor
             } else {
                 star.textColor = componentActiveColor
+            }
+            
+            if value < 8 {
+                CustomControl.lockStateImage = LockState.lockedImage
+            } else if value >= 8 {
+                CustomControl.lockStateImage = LockState.unlockedImage
             }
    
         }
@@ -111,6 +119,7 @@ class CustomControl: UIControl {
             let touchPoint = touch.location(in: star)
             if bounds.contains(touchPoint) {
                 value = star.tag
+                CustomControl.thresholdValue = value
                 // print(value)
                 star.textColor = componentActiveColor
                 sendActions(for: .valueChanged)
@@ -126,6 +135,12 @@ class CustomControl: UIControl {
             CustomControl.lockStateImage = LockState.lockedImage
         } else if value >= 8 {
             CustomControl.lockStateImage = LockState.unlockedImage
+        }
+    }
+    
+    func reset() {
+        for star in labelArray {
+            star.textColor = componentInactiveColor
         }
     }
     

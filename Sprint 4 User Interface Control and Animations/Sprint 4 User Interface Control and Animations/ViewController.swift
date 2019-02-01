@@ -14,11 +14,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.backgroundView.backgroundColor = UIColor.gray
         lockImage.image = CustomControl.lockStateImage
+        
+        if CustomControl.thresholdValue >= 8 {
+            resetResetButton.tintColor = .black
+        }
+        
     }
 
     @IBOutlet var backgroundView: UIView!
     
     @IBOutlet weak var lockImage: UIImageView!
-
+    
+    @IBAction func reset(_ sender: Any) {
+        CustomControl.reset()
+    }
+    
+    @IBOutlet weak var resetResetButton: UIBarButtonItem!
+    
 }
 

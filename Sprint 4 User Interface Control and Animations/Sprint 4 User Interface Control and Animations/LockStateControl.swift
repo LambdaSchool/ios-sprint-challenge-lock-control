@@ -6,6 +6,8 @@
 //  Copyright © 2019 Jaspal Suri. All rights reserved.
 //
 
+// Not used.
+
 import UIKit
 
 class LockStateControl: UIControl {

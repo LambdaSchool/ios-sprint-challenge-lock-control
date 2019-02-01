@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomControl: UIControl {
+@IBDesignable class CustomControl: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -18,27 +18,38 @@ class CustomControl: UIControl {
     
     
     private func setupBall(_ ball: UIView) {
+        let ballFrame = CGRect(x: 0, y: 0, width: ballWidth, height: ballWidth)
+        ball.frame = ballFrame
+        ball.backgroundColor = .black
+        ball.layer.cornerRadius = ballWidth / 2
         
+        addSubview(ball)
         
+        ball.isUserInteractionEnabled = false
     }
     
-    func position(for value: CGFloat) -> CGRect {
-        
-        
+    func position(for value: CGFloat) -> CGFloat {
+        return (bounds.width - ballWidth - 10) * value
     }
     
     
     
-    private func ballFrame(for vlaue:CGFloat) -> CGRect {
-        
+    private func ballFrame(for value:CGFloat) -> CGRect {
+        let x = position(for: value) + 6
+        let y = (bounds.height - ballWidth) / 2
+        return CGRect(x: x, y: y, width: ballWidth, height: ballWidth)
     }
     
     private func updateFrames() {
-    
-    
+        ballView.frame = ballFrame(for: ballValue)
     }
     
     func reset() {
+        ballValue = 0.0
+        isUnlocked = false
+        updateFrames()
+        
+        self.isUserInteractionEnabled = true
         
     }
     

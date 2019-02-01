@@ -24,9 +24,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hNY-3L-abG">
                                         <rect key="frame" x="65" y="65" width="120" height="120"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-Is-reR">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-Is-reR" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="193" width="234" height="49"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="ballValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ds6-QL-QYJ"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,8 +56,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Slide To Unlock" id="BZX-tL-pLV">
-                        <barButtonItem key="rightBarButtonItem" title="Lock" id="u3y-qY-LxU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Lock" id="u3y-qY-LxU">
+                            <connections>
+                                <action selector="lock:" destination="BYZ-38-t0r" id="TPX-8Z-gWU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="customControl" destination="0H6-Is-reR" id="PRw-5O-Ris"/>
+                        <outlet property="imageView" destination="hNY-3L-abG" id="uMV-iv-LKf"/>
+                        <outlet property="lockButton" destination="u3y-qY-LxU" id="3d4-lG-THN"/>
+                        <outlet property="overallView" destination="ULG-ek-Wj0" id="N49-jP-QhU"/>
+                        <outlet property="sliderView" destination="0H6-Is-reR" id="ZoI-1n-VWu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

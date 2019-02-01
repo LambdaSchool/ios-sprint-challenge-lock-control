@@ -20,6 +20,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    @IBAction func ballValueChanged(_ sender: CustomControl) {
+    }
+    
+    @IBAction func lock(_ sender: UIBarButtonItem) {
+    }
+    
+    
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var overallView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var sliderView: UIView!
+    @IBOutlet weak var customControl: CustomControl!
+    @IBOutlet weak var lockButton: UIBarButtonItem!
+    
 }
 

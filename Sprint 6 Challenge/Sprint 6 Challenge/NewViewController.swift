@@ -16,13 +16,10 @@ class NewViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        if isHidden == true {
-            UIBarButtonItem.appearance().tintColor = UIColor.darkGray.withAlphaComponent(0)
-        } else {
-            UIBarButtonItem.appearance().tintColor = UIColor.darkGray.withAlphaComponent(1)
-        }
+        resetButton.tintColor = UIColor.darkGray.withAlphaComponent(0)
     }
-    var isHidden = true
+    
+  
     
     var lockedImage = UIImage(named: "Locked")
     var unlockedImage = UIImage(named: "Unlocked")
@@ -30,15 +27,12 @@ class NewViewController: UIViewController {
     @IBAction func updateValueImage(_ sender: TrackControl) {
         if sender.value >= 192 {
             lockImageView.image = unlockedImage
-            isHidden = false
-            UIBarButtonItem.appearance().tintColor = UIColor.darkGray.withAlphaComponent(1)
-            self.viewDidLoad()
+            resetButton.tintColor = UIColor.darkGray.withAlphaComponent(1)
             
         } else {
-            UIBarButtonItem.appearance().tintColor = UIColor.darkGray.withAlphaComponent(0)
+            resetButton.tintColor = UIColor.darkGray.withAlphaComponent(0)
             lockImageView.image = lockedImage
-            isHidden = true
-            self.viewDidLoad()
+           
         }
         print("Value Changed")
     }
@@ -58,6 +52,7 @@ class NewViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
 
     
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     
     @IBAction func resetTapped(_ sender: UIBarButtonItem) {

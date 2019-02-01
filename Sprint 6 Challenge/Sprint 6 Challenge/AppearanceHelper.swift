@@ -18,7 +18,7 @@ enum AppearanceHelper {
         UINavigationBar.appearance().barTintColor = lambdaRed
         
         
-        UIBarButtonItem.appearance().tintColor = backgroundGray.withAlphaComponent(1)
+      //  UIBarButtonItem.appearance().tintColor = backgroundGray.withAlphaComponent(1)
         
         let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         

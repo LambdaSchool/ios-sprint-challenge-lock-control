@@ -51,6 +51,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="c3n-EV-dOE" id="pRq-ig-fPS"/>
                         <outlet property="lockImageView" destination="HzS-gO-jhe" id="BRt-p4-ss8"/>
+                        <outlet property="resetButton" destination="OoY-Li-ZPq" id="4cd-4C-H0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

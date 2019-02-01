@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderView: UIView!
     
     @IBAction func reset(_ sender: Any) {
+        reset.tintColor = UIColor.clear
         lockView.image = UIImage(named: "Locked")
         customControl.reset()
         
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBAction func sliderValueChanged(_ sender: Any) {
         if customControl.isUnlocked == true {
+        navigationItem.rightBarButtonItem?.tintColor = .darkOrange
         lockView.image = UIImage(named: "Unlocked")
         customControl.isUserInteractionEnabled = false
         }
@@ -27,6 +29,8 @@ class ViewController: UIViewController {
         sliderView.backgroundColor = UIColor.hayYellow.withAlphaComponent(0.15)
         sliderView.layer.cornerRadius = 15
         view.backgroundColor = .darkOrange
+        
+        lockView.image = UIImage(named: "Locked")
     }
 }
 

@@ -65,11 +65,36 @@ class CustomControl: UIControl {
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        let location = touch.location(in: self)
+        let locationChange = location.x - pLocation.x
+        let valueChange = (maximumValue - minimumValue) * locationChange / bounds.width
+        pLocation = location
+        thumbValue = min(max((thumbValue + valueChange), minimumValue), maximumValue)
+        updateControlFrames()
+        return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        <#code#>
+        defer { super.endTracking(touch, with: event) }
+        guard let touch = touch else { return }
+        pLocation = touch.location(in: self)
+        
+        if thumbValue > 0.8 {
+            thumbValue = 1
+            isUnlocked = true
+            sendActions(for: [.touchUpInside, .valueChanged])
+            UIView.animate(withDuration: 1.0) {
+                self.thumb.frame = self.thumbFrame(for: 1.0)
+            }
+        } else {
+            thumbValue = 0
+            isUnlocked = false
+            sendActions(for: [.touchUpInside, .valueChanged])
+            UIView.animate(withDuration: 2.0) {
+                self.thumb.frame = self.thumbFrame(for: 0.0)
+            }
+        }
+        updateControlFrames()
     }
     
     override func cancelTracking(with event: UIEvent?) {

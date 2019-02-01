@@ -19,7 +19,7 @@ class CustomControl: UIControl {
     private func setupThumb(_ thumb: UIView) {
         let thumbFrame = CGRect(x: 0, y: 0, width: thumbWidth, height: thumbWidth)
         thumb.frame = thumbFrame
-        thumb.backgroundColor = .cheetos
+        thumb.backgroundColor = .darkOrange
         thumb.layer.cornerRadius = thumbWidth/2
         thumb.isUserInteractionEnabled = false
         

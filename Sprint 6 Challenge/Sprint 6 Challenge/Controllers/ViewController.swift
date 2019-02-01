@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBAction func sliderValueChanged(_ sender: Any) {
         if customControl.isUnlocked == true {
-        navigationItem.rightBarButtonItem?.tintColor = .darkOrange
+            navigationItem.rightBarButtonItem?.tintColor = .darkOrange
         lockView.image = UIImage(named: "Unlocked")
         customControl.isUserInteractionEnabled = false
         }

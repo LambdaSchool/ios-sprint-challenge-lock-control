@@ -14,6 +14,8 @@ enum Appearance {
         
         //bar button item
         UIBarButtonItem.appearance().tintColor = .darkOrange
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Robotronica", size: 14)!, NSAttributedStringKey.foregroundColor: UIColor.darkOrange], for: .normal)
+//        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Robotronica", size: 14)!, NSAttributedStringKey.foregroundColor: UIColor.darkOrange], for: .normal)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Robotronica", size: 14)!], for: .normal)
     }
 }

@@ -19,12 +19,8 @@ class ViewController: UIViewController {
         // Round the corners of the slider track
         sliderTrack.layer.cornerRadius = 20
         
-//        lockImage.image = CustomControl.lockStateImage
-//
-//        if CustomControl.thresholdValue >= 8 {
-//            resetResetButton.tintColor = .black
-        // }
-        
+        // Start with locked image
+        lockImage.image = UIImage(named: "Locked")
         
     }
 
@@ -36,7 +32,12 @@ class ViewController: UIViewController {
     
     // to change the image and appearance of the reset button
     @IBAction func reset(_ sender: Any) {
-        // CustomControl.reset()
+        // Blends in with nav bar, but should be an animation that has it fade away
+        resetResetButton.tintColor = .red
+        // Trigger the reset function in the Custom Control class.
+        control.reset()
+        // No need for an if-statement
+        lockImage.image = UIImage(named: "Locked")
     }
     
     // to store visual properties of the reset button
@@ -44,10 +45,12 @@ class ViewController: UIViewController {
     
     // Custom Control Connections
     
+    // access the CustomControl class this way
     @IBOutlet weak var control: CustomControl!
     
+    // respond to movements of the thumb key
     @IBAction func sliderLockKey(_ sender: Any) {
-        
+        // Complete after fixing/completing CustomControl
     }
     
     @IBOutlet weak var sliderTrack: UIView!

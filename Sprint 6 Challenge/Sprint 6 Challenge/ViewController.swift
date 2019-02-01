@@ -19,7 +19,25 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    var lockedImage = UIImage(named: "Locked")
+    var unlockedImage = UIImage(named: "Unlocked")
+    
+    
+    @IBAction func updateLockValue(_ sender: CustomControl) {
+        if sender.isLocked == true {
+            let imageView = UIImageView(image: lockedImage)
+            imageView.frame = CGRect(x: 67, y: 200, width: 100, height: 200)
+            sender.addSubview(imageView)
+        }
+    }
+    
+    @IBAction func resetTapped(_ sender: UIBarButtonItem) {
+        let imageView = UIImageView(image: lockedImage)
+        imageView.frame = CGRect(x: 67, y: 200, width: 100, height: 200)
+        view.addSubview(imageView)
+    }
+    
 
 }
 

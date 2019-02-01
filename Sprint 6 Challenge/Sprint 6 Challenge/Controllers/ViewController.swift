@@ -24,7 +24,8 @@ class ViewController: UIViewController {
     //MARK: - Override funcs
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        sliderView.backgroundColor = UIColor.hayYellow.withAlphaComponent(0.15)
+        sliderView.layer.cornerRadius = 15
         view.backgroundColor = .darkOrange
     }
 }

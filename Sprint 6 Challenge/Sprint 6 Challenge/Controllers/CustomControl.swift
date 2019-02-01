@@ -52,4 +52,27 @@ class CustomControl: UIControl {
         isUnlocked = false
         self.isUserInteractionEnabled = true
     }
+    
+    //MARK: - Touch Handling
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        pLocation = touch.location(in: self)
+        if thumb.frame.contains(pLocation) {
+            sendActions(for: [.touchDown, .valueChanged])
+        } else {
+            return false
+        }
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        <#code#>
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        <#code#>
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
+    }
 }

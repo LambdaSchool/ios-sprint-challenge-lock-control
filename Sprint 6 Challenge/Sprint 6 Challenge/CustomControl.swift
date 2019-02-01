@@ -64,9 +64,9 @@ class CustomControl: UIControl {
         // color = what the color is supposed to be based onthe touch point's location
        // isLocked = self.lockControl(for: touchPoint)
         
-         UIView.animate(withDuration: 1) {
-            if touchPoint.x >= 210 {
-                self.ballLabel.frame.origin.x = 210
+         UIView.animate(withDuration: 0) {
+            if touchPoint.x >= 190 {
+                self.ballLabel.frame.origin.x = 190
                 self.isLocked = self.lockControl(for: touchPoint)
                 print(touchPoint.x)
                 print(self.isLocked)
@@ -92,9 +92,9 @@ class CustomControl: UIControl {
            // isLocked = self.lockControl(for: touchPoint)
             
             
-            UIView.animate(withDuration: 1) {
-                if touchPoint.x >= 210 {
-                    self.ballLabel.frame.origin.x = 210
+            UIView.animate(withDuration: 0) {
+                if touchPoint.x >= 190 {
+                    self.ballLabel.frame.origin.x = 190
                     self.isLocked = self.lockControl(for: touchPoint)
                     print(touchPoint.x)
                     print(self.isLocked)
@@ -136,7 +136,7 @@ class CustomControl: UIControl {
     
     
     private func lockControl(for location: CGPoint) -> Bool {
-        if location.x >= 200 {
+        if location.x >= 190 {
             return false
         } else {
             return true

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		39C9571A2204AD9700454A00 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C957192204AD9700454A00 /* Lock.swift */; };
 		39C9571C2204B60A00454A00 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9571B2204B60A00454A00 /* Slider.swift */; };
+		39C957212204DA5200454A00 /* Jackpot Demo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39C957202204DA5200454A00 /* Jackpot Demo.ttf */; };
+		39C957232204DB3E00454A00 /* AppearranceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C957222204DB3E00454A00 /* AppearranceHelper.swift */; };
+		39C957262204E2D500454A00 /* jabjai_heavy.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 39C957252204E2D500454A00 /* jabjai_heavy.TTF */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		39C957192204AD9700454A00 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		39C9571B2204B60A00454A00 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		39C957202204DA5200454A00 /* Jackpot Demo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jackpot Demo.ttf"; sourceTree = "<group>"; };
+		39C957222204DB3E00454A00 /* AppearranceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearranceHelper.swift; sourceTree = "<group>"; };
+		39C957252204E2D500454A00 /* jabjai_heavy.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = jabjai_heavy.TTF; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		39C957242204DB4300454A00 /* Appearrance */ = {
+			isa = PBXGroup;
+			children = (
+				39C957222204DB3E00454A00 /* AppearranceHelper.swift */,
+			);
+			path = Appearrance;
+			sourceTree = "<group>";
+		};
 		468B89D42137397400E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -85,9 +99,12 @@
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				39C9571D2204B9E900454A00 /* Model */,
 				39C9571E2204B9F500454A00 /* Controller */,
+				39C957242204DB4300454A00 /* Appearrance */,
 				39C9571F2204BA0200454A00 /* ViewController */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
+				39C957202204DA5200454A00 /* Jackpot Demo.ttf */,
+				39C957252204E2D500454A00 /* jabjai_heavy.TTF */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
@@ -153,7 +170,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C957262204E2D500454A00 /* jabjai_heavy.TTF in Resources */,
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
+				39C957212204DA5200454A00 /* Jackpot Demo.ttf in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
 			);
@@ -169,6 +188,7 @@
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				39C9571A2204AD9700454A00 /* Lock.swift in Sources */,
 				39C9571C2204B60A00454A00 /* Slider.swift in Sources */,
+				39C957232204DB3E00454A00 /* AppearranceHelper.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

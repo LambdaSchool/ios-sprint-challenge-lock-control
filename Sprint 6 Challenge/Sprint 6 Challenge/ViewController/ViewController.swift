@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = nil
+        themeSetup()
     }
 
     @IBAction func reset(_ sender: Any) {
@@ -33,17 +34,31 @@ class ViewController: UIViewController {
         
         if sliderView.xPosition > (sliderView.bounds.maxX / 10) * 7 {
             lock.isLocked = true
-            title = "Locked"
+            title = "LOCKED"
             lock.image = UIImage(named: "Locked")
             self.navigationItem.rightBarButtonItem = resetButton
         } else {
             lock.isLocked = false
-            title = "Unlocked"
+            title = "UNLOCKED"
             lock.image = UIImage(named: "Unlocked")
             self.navigationItem.rightBarButtonItem = nil
         }
         
         lockImage.image = lock.image
+    }
+    
+    private func themeSetup() {
+        title = "UNLOCKED"
+        view.backgroundColor = AppearanceHelper.backgroundBlue
+        
+        lockContainer.backgroundColor = AppearanceHelper.lockGreen
+        lockContainer.layer.cornerRadius = lockContainer.bounds.width / 8
+        
+        circle.backgroundColor = AppearanceHelper.circleYellow
+        circle.layer.cornerRadius = circle.bounds.width / 2
+        
+        sliderView.backgroundColor = AppearanceHelper.backgroundBlue
+        sliderView.layer.cornerRadius = sliderView.bounds.width / 8
     }
 
     // MARK: - Properties

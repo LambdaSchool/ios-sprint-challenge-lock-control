@@ -46,7 +46,7 @@ class Slider: UIControl {
         
         if bounds.contains(touchPoint) {
             
-            if touchPoint.x > (self.bounds.maxX / 10) * 7 {
+            if touchPoint.x >= (self.bounds.maxX / 10) * 7 {
             xPosition = self.bounds.maxX - 38
             } else {
             xPosition = self.bounds.minX + 38

@@ -13,7 +13,8 @@
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		481FAC342204A652004C7337 /* Championship.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 481FAC332204A652004C7337 /* Championship.ttf */; };
-		481FAC362204A68A004C7337 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FAC352204A68A004C7337 /* File.swift */; };
+		481FAC362204A68A004C7337 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FAC352204A68A004C7337 /* Appearance.swift */; };
+		481FAC382204A7D3004C7337 /* ColorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FAC372204A7D3004C7337 /* ColorConvenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		481FAC332204A652004C7337 /* Championship.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Championship.ttf; sourceTree = "<group>"; };
-		481FAC352204A68A004C7337 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		481FAC352204A68A004C7337 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		481FAC372204A7D3004C7337 /* ColorConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConvenience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				481FAC352204A68A004C7337 /* File.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
+				481FAC392204A7E0004C7337 /* Helpers */,
+				481FAC3A2204A7F3004C7337 /* Controllers */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
@@ -68,6 +70,23 @@
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = "Sprint 6 Challenge";
+			sourceTree = "<group>";
+		};
+		481FAC392204A7E0004C7337 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				481FAC352204A68A004C7337 /* Appearance.swift */,
+				481FAC372204A7D3004C7337 /* ColorConvenience.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		481FAC3A2204A7F3004C7337 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
-				481FAC362204A68A004C7337 /* File.swift in Sources */,
+				481FAC382204A7D3004C7337 /* ColorConvenience.swift in Sources */,
+				481FAC362204A68A004C7337 /* Appearance.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

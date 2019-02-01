@@ -28,9 +28,15 @@
                                             <constraint firstAttribute="height" constant="150" id="Nvs-mz-pkJ"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsr-ef-K7F">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsr-ef-K7F" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="234.5" width="279" height="52.5"/>
                                         <color key="backgroundColor" red="0.91681631321171275" green="0.91788500547409058" blue="0.8535775971865035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52.5" id="2Rn-9v-3Zd"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="customControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="NPc-S5-jt6"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.5578903828431695" green="0.74723906968682108" blue="0.8061257004737854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -38,10 +44,13 @@
                                     <constraint firstItem="Akw-JG-9jo" firstAttribute="centerX" secondItem="1sk-c0-PB1" secondAttribute="centerX" id="C44-72-3aI"/>
                                     <constraint firstAttribute="trailing" secondItem="xsr-ef-K7F" secondAttribute="trailing" constant="8" id="L7H-Cf-pgu"/>
                                     <constraint firstItem="Akw-JG-9jo" firstAttribute="centerY" secondItem="1sk-c0-PB1" secondAttribute="centerY" id="Yzg-dJ-HTK"/>
+                                    <constraint firstAttribute="height" constant="295" id="aBe-6b-wdm"/>
                                     <constraint firstItem="xsr-ef-K7F" firstAttribute="leading" secondItem="1sk-c0-PB1" secondAttribute="leading" constant="8" id="aFe-32-hti"/>
+                                    <constraint firstItem="Akw-JG-9jo" firstAttribute="top" secondItem="1sk-c0-PB1" secondAttribute="top" constant="72.5" id="bYF-Zx-PaI"/>
                                     <constraint firstAttribute="width" secondItem="1sk-c0-PB1" secondAttribute="height" multiplier="1:1" id="iTT-H8-O2U"/>
                                     <constraint firstItem="xsr-ef-K7F" firstAttribute="top" secondItem="Akw-JG-9jo" secondAttribute="bottom" constant="12" id="l4U-U2-e9J"/>
                                     <constraint firstAttribute="bottom" secondItem="xsr-ef-K7F" secondAttribute="bottom" constant="8" id="uDC-r6-H3v"/>
+                                    <constraint firstItem="Akw-JG-9jo" firstAttribute="leading" secondItem="1sk-c0-PB1" secondAttribute="leading" constant="72.5" id="wyh-kf-0kZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -55,10 +64,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Unlock Me!" id="MyC-1G-Fvl"/>
+                    <navigationItem key="navigationItem" title="Unlock Me!" id="MyC-1G-Fvl">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="c4h-fH-fL5">
+                            <connections>
+                                <action selector="resetBarButtonItemPressed:" destination="BYZ-38-t0r" id="wsB-xM-GOf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="customControl" destination="xsr-ef-K7F" id="Qmw-aq-Bvj"/>
                         <outlet property="lockImageView" destination="Akw-JG-9jo" id="Scq-hC-lnj"/>
                         <outlet property="mainView" destination="1sk-c0-PB1" id="5DK-uG-rof"/>
+                        <outlet property="resetBarButtonItem" destination="c4h-fH-fL5" id="HPR-dy-3yS"/>
                         <outlet property="sliderView" destination="xsr-ef-K7F" id="ceX-D9-IPB"/>
                     </connections>
                 </viewController>

@@ -9,13 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = nil
         themeSetup()
     }
-
+    
     @IBAction func reset(_ sender: Any) {
         sliderView.xPosition = sliderView.bounds.minX + 38
         circle.center.x = sliderView.xPosition
@@ -23,21 +23,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func locking(_ sender: Slider) {
-        
         UIView.animate(withDuration: 0.2) {
-            self.circle.center.x = sender.xPosition
+            self.updateViews()
         }
-        updateViews()
     }
     
     private func updateViews() {
         
         if sliderView.xPosition > (sliderView.bounds.maxX / 10) * 7 {
+            circle.center.x = sliderView.bounds.maxX - 38
             lock.isLocked = true
             title = "LOCKED"
             lock.image = UIImage(named: "Locked")
             self.navigationItem.rightBarButtonItem = resetButton
         } else {
+            circle.center.x = sliderView.bounds.minX + 38
             lock.isLocked = false
             title = "UNLOCKED"
             lock.image = UIImage(named: "Unlocked")
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         sliderView.backgroundColor = AppearanceHelper.backgroundBlue
         sliderView.layer.cornerRadius = sliderView.bounds.width / 8
     }
-
+    
     // MARK: - Properties
     
     var lock = Lock()

@@ -18,7 +18,6 @@ class Slider: UIControl {
         if touchPoint.x > self.bounds.minX + 38 && touchPoint.x < self.bounds.maxX - 38 {
             xPosition = touchPoint.x
         }
-        
         return true
     }
     
@@ -31,7 +30,7 @@ class Slider: UIControl {
                 xPosition = touchPoint.x
             }
             
-            sendActions(for: [.touchDragInside, .touchDragExit, .valueChanged])
+            sendActions(for: [.touchDragInside, .valueChanged])
         } else {
             sendActions(for: [.touchDragOutside])
         }

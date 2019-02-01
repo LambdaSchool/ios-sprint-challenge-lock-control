@@ -16,7 +16,7 @@ enum AppearanceHelper {
     
     static func setAppearance() {
         UINavigationBar.appearance().barTintColor = lambdaRed
-        UIBarButtonItem.appearance().tintColor = backgroundGray
+        UIBarButtonItem.appearance().tintColor = backgroundGray.withAlphaComponent(0)
         
         let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
@@ -28,12 +28,9 @@ enum AppearanceHelper {
         
     }
     
-  /*  static func style(button: UIButton) {
-        button.titleLabel?.font = typerighterFont(with: .callout, pointSize: 30)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = lambdaRed
-        button.layer.cornerRadius = 8
+   static func changeAlpha() {
+        UIBarButtonItem.appearance().tintColor = backgroundGray.withAlphaComponent(1)
     }
-    */
+    
     
 }

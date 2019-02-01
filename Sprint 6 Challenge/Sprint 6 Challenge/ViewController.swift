@@ -22,20 +22,20 @@ class ViewController: UIViewController {
     
     var lockedImage = UIImage(named: "Locked")
     var unlockedImage = UIImage(named: "Unlocked")
+    var resetLock: Bool = false
     
     
     @IBAction func updateLockValue(_ sender: CustomControl) {
         if sender.isLocked == true {
-            let imageView = UIImageView(image: lockedImage)
-            imageView.frame = CGRect(x: 67, y: 200, width: 100, height: 200)
-            sender.addSubview(imageView)
+            sender.imageView = UIImageView(image: lockedImage)
+        } else {
+            sender.imageView = UIImageView(image: unlockedImage)
+            AppearanceHelper.changeAlpha()
         }
     }
     
     @IBAction func resetTapped(_ sender: UIBarButtonItem) {
-        let imageView = UIImageView(image: lockedImage)
-        imageView.frame = CGRect(x: 67, y: 200, width: 100, height: 200)
-        view.addSubview(imageView)
+        resetLock = true
     }
     
 

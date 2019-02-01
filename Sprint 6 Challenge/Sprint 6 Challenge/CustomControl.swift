@@ -63,17 +63,21 @@ class CustomControl: UIControl {
         count += 1
         // color = what the color is supposed to be based onthe touch point's location
        // isLocked = self.lockControl(for: touchPoint)
-        sendActions(for: [.touchDown, .valueChanged])
         
-        if touchPoint.x >= 210 {
-            self.ballLabel.frame.origin.x = 210
-            self.isLocked = self.lockControl(for: touchPoint)
-            print(touchPoint.x)
-        } else {
-            self.ballLabel.frame.origin.x = touchPoint.x
-            print(touchPoint.x)
+         UIView.animate(withDuration: 1) {
+            if touchPoint.x >= 210 {
+                self.ballLabel.frame.origin.x = 210
+                self.isLocked = self.lockControl(for: touchPoint)
+                print(touchPoint.x)
+                print(self.isLocked)
+                self.sendActions(for: [.touchDown, .valueChanged])
+            } else {
+                self.ballLabel.frame.origin.x = touchPoint.x
+                print(touchPoint.x)
+                print(self.isLocked)
+                self.sendActions(for: [.touchDown, .valueChanged])
+            }
         }
-        
         
         //print("Begin tracking touches")
         return true
@@ -86,16 +90,20 @@ class CustomControl: UIControl {
             // color = what the color is supposed to be based on the touch point's location
          
            // isLocked = self.lockControl(for: touchPoint)
-            sendActions(for: [.valueChanged, .touchDragInside])
             
-            UIView.animate(withDuration: TimeInterval(count)) {
+            
+            UIView.animate(withDuration: 1) {
                 if touchPoint.x >= 210 {
                     self.ballLabel.frame.origin.x = 210
                     self.isLocked = self.lockControl(for: touchPoint)
                     print(touchPoint.x)
+                    print(self.isLocked)
+                    self.sendActions(for: [.valueChanged, .touchDragInside])
                 } else {
                     self.ballLabel.frame.origin.x = touchPoint.x
                     print(touchPoint.x)
+                    print(self.isLocked)
+                    self.sendActions(for: [.valueChanged, .touchDragInside])
                 }
             }
         } else {

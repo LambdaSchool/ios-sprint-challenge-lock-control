@@ -10,18 +10,20 @@ class ViewController: UIViewController {
     
     @IBAction func reset(_ sender: Any) {
         lockView.image = UIImage(named: "Locked")
+        customControl.reset()
         
     }
     
     @IBAction func sliderValueChanged(_ sender: Any) {
+        if customControl.isUnlocked == true {
         lockView.image = UIImage(named: "Unlocked")
-        navigationItem.rightBarButtonItem?.tintColor = .black
+        customControl.isUserInteractionEnabled = false
+        }
     }
     
     //MARK: - Override funcs
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.title = "Unlock"
         
         view.backgroundColor = .darkOrange
     }

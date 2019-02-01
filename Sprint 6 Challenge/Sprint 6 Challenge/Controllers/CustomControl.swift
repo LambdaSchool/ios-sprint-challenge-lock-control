@@ -45,4 +45,11 @@ class CustomControl: UIControl {
         setupThumb(thumb)
         updateControlFrames()
     }
+    
+    func reset() {
+        thumbValue = 0.0
+        updateControlFrames()
+        isUnlocked = false
+        self.isUserInteractionEnabled = true
+    }
 }

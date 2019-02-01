@@ -23,6 +23,7 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "Unlocked")
             customControl.isUserInteractionEnabled = true
             lockButton.title = "Lock"
+            navigationItem.title = "Unlocked!"
         }
     }
     
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
         customControl.reset()
         imageView.image = UIImage(named: "Locked")
         lockButton.title = ""
+        navigationItem.title = "Slide To Unlock"
     }
     
     func setAppearance() {

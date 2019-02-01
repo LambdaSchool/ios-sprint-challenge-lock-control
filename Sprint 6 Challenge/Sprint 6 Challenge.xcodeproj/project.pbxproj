@@ -12,6 +12,10 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		7A54617622046CAA00C8A7A4 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A54617522046CAA00C8A7A4 /* CustomControl.swift */; };
+		7A54617822046D7000C8A7A4 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A54617722046D7000C8A7A4 /* CustomColors.swift */; };
+		7A54617C2204726800C8A7A4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A54617B2204726800C8A7A4 /* AppearanceHelper.swift */; };
+		7A54617E2204729600C8A7A4 /* carbon bl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A54617D2204729600C8A7A4 /* carbon bl.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A54617522046CAA00C8A7A4 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		7A54617722046D7000C8A7A4 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		7A54617B2204726800C8A7A4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		7A54617D2204729600C8A7A4 /* carbon bl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "carbon bl.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
+				7A54617F2204772800C8A7A4 /* View Controllers */,
+				7A54617922046FE100C8A7A4 /* Custom Control */,
+				7A54617A22046FEE00C8A7A4 /* Helper Files */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+				7A54617D2204729600C8A7A4 /* carbon bl.ttf */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = "Sprint 6 Challenge";
+			sourceTree = "<group>";
+		};
+		7A54617922046FE100C8A7A4 /* Custom Control */ = {
+			isa = PBXGroup;
+			children = (
+				7A54617522046CAA00C8A7A4 /* CustomControl.swift */,
+			);
+			path = "Custom Control";
+			sourceTree = "<group>";
+		};
+		7A54617A22046FEE00C8A7A4 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A54617722046D7000C8A7A4 /* CustomColors.swift */,
+				7A54617B2204726800C8A7A4 /* AppearanceHelper.swift */,
+			);
+			path = "Helper Files";
+			sourceTree = "<group>";
+		};
+		7A54617F2204772800C8A7A4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A54617E2204729600C8A7A4 /* carbon bl.ttf in Resources */,
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
@@ -136,6 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				7A54617622046CAA00C8A7A4 /* CustomControl.swift in Sources */,
+				7A54617822046D7000C8A7A4 /* CustomColors.swift in Sources */,
+				7A54617C2204726800C8A7A4 /* AppearanceHelper.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

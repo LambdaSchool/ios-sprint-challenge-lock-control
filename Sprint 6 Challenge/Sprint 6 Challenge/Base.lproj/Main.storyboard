@@ -40,7 +40,7 @@
                                             <constraint firstAttribute="height" constant="80" id="tz2-Mk-ESv"/>
                                         </constraints>
                                         <connections>
-                                            <action selector="locking:" destination="BYZ-38-t0r" eventType="valueChanged" id="cRD-0p-rLh"/>
+                                            <action selector="locking:" destination="BYZ-38-t0r" eventType="valueChanged" id="dMV-Qj-6Zy"/>
                                         </connections>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlocked" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-kY-GVQ">
@@ -72,12 +72,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Unlocked" id="0FR-MX-W3X">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="tXs-Yc-8hG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="tXs-Yc-8hG">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="Gfa-mR-jtn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="circle" destination="vTY-Zh-21W" id="Kzy-cO-ncf"/>
                         <outlet property="lockContainer" destination="76Y-jT-ZLd" id="Fd2-Gb-uhk"/>
                         <outlet property="lockImage" destination="Rex-kY-GVQ" id="xnt-BP-wpG"/>
+                        <outlet property="resetButton" destination="tXs-Yc-8hG" id="erP-GV-fj6"/>
+                        <outlet property="sliderView" destination="Vwg-cI-0M4" id="sEy-Wg-YWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

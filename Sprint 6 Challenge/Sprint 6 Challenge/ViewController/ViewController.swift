@@ -36,12 +36,14 @@ class ViewController: UIViewController {
             title = "LOCKED"
             lock.image = UIImage(named: "Locked")
             self.navigationItem.rightBarButtonItem = resetButton
+            sliderView.isUserInteractionEnabled = false
         } else {
             circle.center.x = sliderView.bounds.minX + 38
             lock.isLocked = false
             title = "UNLOCKED"
             lock.image = UIImage(named: "Unlocked")
             self.navigationItem.rightBarButtonItem = nil
+            sliderView.isUserInteractionEnabled = true
         }
         
         lockImage.image = lock.image

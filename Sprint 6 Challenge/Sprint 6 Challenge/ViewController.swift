@@ -10,16 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var customControl: CustomControl!
+    @IBOutlet weak var reset: UIBarButtonItem!
+    
+    @IBAction func customControl(_ sender: Any) {
+        if customControl.isUnlocked {
+            // reset button invisible
+            reset.isEnabled = true
+            reset.tintColor = UIColor.white
+        } else {
+            // reset button visible
+            reset.isEnabled = false
+            reset.tintColor = UIColor.clear
+        }
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        customControl.reset()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.title = "Hello!"
+        reset.tintColor = UIColor.clear
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

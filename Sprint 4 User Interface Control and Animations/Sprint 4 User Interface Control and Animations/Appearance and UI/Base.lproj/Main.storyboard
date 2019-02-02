@@ -14,22 +14,27 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_4_User_Interface_Control_and_Animations" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z6R-f8-cwI">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="z6R-f8-cwI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J2s-pw-4nB">
-                                <rect key="frame" x="20" y="164" width="335" height="339"/>
+                                <rect key="frame" x="20" y="164" width="220" height="339"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yr5-jb-K3X">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="293"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="293"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="293" id="GYv-y0-76S"/>
+                                            <constraint firstAttribute="width" constant="220" id="sfB-cp-18J"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8tH-Zw-fOY" customClass="CustomControl" customModule="Sprint_4_User_Interface_Control_and_Animations" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="293" width="335" height="46"/>
+                                        <rect key="frame" x="0.0" y="293" width="220" height="46"/>
                                         <color key="backgroundColor" red="0.10933206970000001" green="1" blue="0.98606600509999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="OND-ne-7ts"/>
+                                            <constraint firstAttribute="height" constant="46" id="TGU-3t-fjj"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="sliderLockKey:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sc5-kg-y3E"/>
                                         </connections>

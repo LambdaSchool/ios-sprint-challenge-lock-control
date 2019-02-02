@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3n-EV-dOE">
-                                <rect key="frame" x="67" y="213" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3n-EV-dOE">
+                                <rect key="frame" x="67" y="213" width="241" height="241"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-zg-cOE" customClass="TrackControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="195" width="240" height="40"/>
@@ -30,15 +29,24 @@
                                             <action selector="updateValueImage:" destination="BYZ-38-t0r" eventType="valueChanged" id="fCy-Ju-jGK"/>
                                         </connections>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="HzS-gO-jhe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="HzS-gO-jhe">
                                         <rect key="frame" x="30" y="33" width="180" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8397958297" green="0.84578368800000003" blue="0.86374726290000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="241" id="7hR-9h-bfa"/>
+                                    <constraint firstAttribute="width" secondItem="c3n-EV-dOE" secondAttribute="height" multiplier="1:1" id="H2j-5l-zGx"/>
+                                    <constraint firstAttribute="width" constant="241" id="jta-jD-K4j"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c3n-EV-dOE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0O2-Mb-RWO"/>
+                            <constraint firstItem="c3n-EV-dOE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wbf-QS-AJn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="q7c-Wb-gvq">
@@ -52,6 +60,7 @@
                         <outlet property="backgroundView" destination="c3n-EV-dOE" id="pRq-ig-fPS"/>
                         <outlet property="lockImageView" destination="HzS-gO-jhe" id="BRt-p4-ss8"/>
                         <outlet property="resetButton" destination="OoY-Li-ZPq" id="4cd-4C-H0g"/>
+                        <outlet property="trackView" destination="lJy-zg-cOE" id="3xd-Vt-dhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

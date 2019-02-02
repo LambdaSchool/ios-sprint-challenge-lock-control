@@ -46,7 +46,7 @@ class NewViewController: UIViewController {
     @IBOutlet weak var lockImageView: UIImageView!
     
     
-   // var trackControl = TrackControl()
+   
     
     
     @IBOutlet weak var backgroundView: UIView!
@@ -55,14 +55,15 @@ class NewViewController: UIViewController {
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
     
+    
+    @IBOutlet weak var trackView: TrackControl!
+    
     @IBAction func resetTapped(_ sender: UIBarButtonItem) {
         UIBarButtonItem.appearance().tintColor = UIColor.darkGray.withAlphaComponent(0)
         lockImageView.image = lockedImage
-       // trackControl.moveBall()
-        
+        trackView.ballLabel.center.x = 20
         
     }
-    
     
     
 }

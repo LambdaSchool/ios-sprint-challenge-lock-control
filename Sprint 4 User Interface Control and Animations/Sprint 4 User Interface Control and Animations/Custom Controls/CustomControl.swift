@@ -54,13 +54,19 @@ import UIKit
         }
     }
     
+    func updateControlFrames() {
+        key.frame = keyFrame(for: startingPoint)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         keySetup(key)
+        updateControlFrames()
     }
     
     func reset() {
         startingPoint = 0.0
+        updateControlFrames()
         lockState = true
     }
     

@@ -43,14 +43,17 @@ class ViewController: UIViewController {
     // to store visual properties of the reset button
     @IBOutlet weak var resetResetButton: UIBarButtonItem!
     
-    // Custom Control Connections
+    // MARK: - Custom Control Connections
     
     // access the CustomControl class this way
     @IBOutlet weak var control: CustomControl!
     
     // respond to movements of the thumb key
     @IBAction func sliderLockKey(_ sender: Any) {
-        // Complete after fixing/completing CustomControl
+        if control.lockState == false {
+            resetResetButton.tintColor = .black
+            lockImage.image = UIImage(named: "Unlocked")
+        }
     }
     
     @IBOutlet weak var sliderTrack: UIView!

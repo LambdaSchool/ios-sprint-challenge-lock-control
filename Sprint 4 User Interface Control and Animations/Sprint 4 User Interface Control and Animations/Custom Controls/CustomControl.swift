@@ -67,6 +67,7 @@ import UIKit
         currentKeyPosition = 0.0
         updateControlFrames()
         lockState = true
+        self.isUserInteractionEnabled = true
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {

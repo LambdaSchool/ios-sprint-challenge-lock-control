@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         if control.lockState == false {
             resetResetButton.tintColor = .black
             lockImage.image = UIImage(named: "Unlocked")
+            control.isUserInteractionEnabled = false
         }
     }
     

@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // To alter the shape of the track
     @IBOutlet weak var sliderTrack: UIView!
     
     

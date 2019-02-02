@@ -76,13 +76,11 @@ import UIKit
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
         let position = touch.location(in: self)
-        let keyPositionDelta = position.x - keyPosition.x
-        let positionValueDelta = (rhs - lhs) * keyPositionDelta / bounds.width
+        let keyDisplacement = position.x - keyPosition.x
+        let positionValueDelta = (rhs - lhs) * keyDisplacement / bounds.width
         
         keyPosition = position
-        
         currentKeyPosition = min(max((currentKeyPosition + positionValueDelta), lhs), rhs)
-        
         updateControlFrames()
         
         return true
@@ -103,7 +101,7 @@ import UIKit
             
             sendActions(for: [.touchUpInside, .valueChanged])
             
-            UIView.animate(withDuration: 1.5) {
+            UIView.animate(withDuration: 1.0) {
                 self.key.frame = self.keyFrame(for: 1.0)
             }
         
@@ -115,11 +113,15 @@ import UIKit
             
             sendActions(for: [.touchUpInside, .valueChanged])
             
-            UIView.animate(withDuration: 1.5) {
-                self.key.frame = self.keyFrame(for: 1.0)
+            UIView.animate(withDuration: 1.0) {
+                self.key.frame = self.keyFrame(for: 0.0)
             }
         }
         updateControlFrames()
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
     }
     
 }

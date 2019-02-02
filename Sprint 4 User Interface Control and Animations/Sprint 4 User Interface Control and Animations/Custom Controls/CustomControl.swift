@@ -6,7 +6,7 @@ import UIKit
     
     // Slider Track and Lock Key Properties
     var lhs: CGFloat = 0.0
-    var rhs: CGFloat = 0.0
+    var rhs: CGFloat = 1.0
     
     var currentKeyPosition: CGFloat = 0.0
     

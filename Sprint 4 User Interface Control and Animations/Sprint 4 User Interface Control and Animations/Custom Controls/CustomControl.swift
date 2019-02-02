@@ -42,16 +42,6 @@ import UIKit
     // Variables for triggering and reseting the lock state
     var keyPosition = CGPoint()
     var lockState: Bool = true
-    static var lockStateImage: UIImage = UIImage(named: "Locked")!
-    static var thresholdValue = 0
-    
-    func changeImage() {
-        if Int(currentKeyPosition) < CustomControl.thresholdValue {
-            CustomControl.lockStateImage = LockState.lockedImage
-        } else if Int(currentKeyPosition) >= CustomControl.thresholdValue {
-            CustomControl.lockStateImage = LockState.unlockedImage
-        }
-    }
     
     func updateControlFrames() {
         key.frame = keyFrame(for: currentKeyPosition)

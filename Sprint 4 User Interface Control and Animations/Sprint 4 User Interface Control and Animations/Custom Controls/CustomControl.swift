@@ -8,7 +8,7 @@ import UIKit
     var lhs: CGFloat = 0.0
     var rhs: CGFloat = 0.0
     
-    var startingPoint: CGFloat = 0.0
+    var curretKeyPosition: CGFloat = 0.0
     
     // Draw materialize the key
     var key = UIView()
@@ -47,15 +47,15 @@ import UIKit
     
     
     func changeImage() {
-        if Int(startingPoint) < CustomControl.thresholdValue {
+        if Int(curretKeyPosition) < CustomControl.thresholdValue {
             CustomControl.lockStateImage = LockState.lockedImage
-        } else if Int(startingPoint) >= CustomControl.thresholdValue {
+        } else if Int(curretKeyPosition) >= CustomControl.thresholdValue {
             CustomControl.lockStateImage = LockState.unlockedImage
         }
     }
     
     func updateControlFrames() {
-        key.frame = keyFrame(for: startingPoint)
+        key.frame = keyFrame(for: curretKeyPosition)
     }
     
     override func layoutSubviews() {
@@ -65,7 +65,7 @@ import UIKit
     }
     
     func reset() {
-        startingPoint = 0.0
+        curretKeyPosition = 0.0
         updateControlFrames()
         lockState = true
     }

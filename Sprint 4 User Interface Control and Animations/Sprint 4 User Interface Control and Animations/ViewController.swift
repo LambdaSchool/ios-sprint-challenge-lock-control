@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     // to change the image and appearance of the reset button
     @IBAction func reset(_ sender: Any) {
         // Blends in with nav bar, but should be an animation that has it fade away
-        resetResetButton.tintColor = .red
+        resetResetButton.tintColor = .orange
         // Trigger the reset function in the Custom Control class.
         control.reset()
         // No need for an if-statement

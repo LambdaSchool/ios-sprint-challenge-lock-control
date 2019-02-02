@@ -23,7 +23,7 @@ import UIKit
         key.backgroundColor = .green
         key.layer.cornerRadius = keyDimensions/2
         key.layer.borderColor = UIColor.yellow.cgColor
-        key.layer.borderWidth = 10
+        key.layer.borderWidth = 1
         key.isUserInteractionEnabled = false
         addSubview(key)
     }

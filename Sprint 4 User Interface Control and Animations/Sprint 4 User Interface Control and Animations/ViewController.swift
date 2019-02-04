@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     // respond to movements of the thumb key
     @IBAction func sliderLockKey(_ sender: Any) {
-        if control.lockState == false {
+        if control.lockState == .unlocked {
             resetResetButton.tintColor = .black
             lockImage.image = UIImage(named: "Unlocked")
             control.isUserInteractionEnabled = false

@@ -41,7 +41,12 @@ import UIKit
     
     // Variables for triggering and reseting the lock state
     var keyPosition = CGPoint()
-    var lockState: Bool = true
+    
+    enum LockState {
+        case locked
+        case unlocked
+    }
+    var lockState: LockState = .locked
     
     func updateControlFrames() {
         key.frame = keyFrame(for: currentKeyPosition)
@@ -56,7 +61,7 @@ import UIKit
     func reset() {
         currentKeyPosition = 0.0
         updateControlFrames()
-        lockState = true
+        lockState = .locked
         self.isUserInteractionEnabled = true
     }
     
@@ -97,7 +102,7 @@ import UIKit
             
             currentKeyPosition = 1
             
-            lockState = false
+            lockState = .unlocked
             
             sendActions(for: [.touchUpInside, .valueChanged])
             
@@ -109,7 +114,7 @@ import UIKit
             
             currentKeyPosition = 0
             
-            lockState = true
+            lockState = .locked
             
             sendActions(for: [.touchUpInside, .valueChanged])
             

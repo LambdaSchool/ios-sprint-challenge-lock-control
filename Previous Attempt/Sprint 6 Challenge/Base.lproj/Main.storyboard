@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaO-WJ-mSa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hello!-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LockViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKW-vU-3s0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Hello!" id="3Kb-GB-eZC"/>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-ka-xp2">
+                                <rect key="frame" x="67" y="187" width="220" height="293"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="D6T-TS-VAW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="293" id="EOm-Fk-Bxn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DKW-vU-3s0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Buh-fO-NPP"/>
+                            <constraint firstItem="DKW-vU-3s0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kgN-Lj-23Q"/>
+                            <constraint firstItem="aMv-ka-xp2" firstAttribute="centerX" secondItem="DKW-vU-3s0" secondAttribute="centerX" id="oeM-bG-c0Z"/>
+                            <constraint firstItem="aMv-ka-xp2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xou-FV-Gke"/>
+                            <constraint firstItem="aMv-ka-xp2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ygE-FT-P4Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hello!" id="dtk-2h-G9F">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="i9Q-5C-EVu">
+                            <connections>
+                                <action selector="resetButton:" destination="BYZ-38-t0r" id="DbG-e0-PuF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lockSliderControl" destination="aMv-ka-xp2" id="cNq-kp-oOh"/>
+                        <outlet property="resetButtonText" destination="i9Q-5C-EVu" id="HbF-vr-Ik2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8PP-0j-Mzd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VaO-WJ-mSa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FRO-sz-6el">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="x35-aR-OoU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSk-Ka-scF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+    </resources>
+</document>

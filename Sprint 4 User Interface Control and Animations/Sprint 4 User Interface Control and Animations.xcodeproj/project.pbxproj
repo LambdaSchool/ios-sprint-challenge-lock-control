@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F834D9B62204AA3800D65C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9B52204AA3800D65C06 /* AppDelegate.swift */; };
+		F834D9B82204AA3800D65C06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9B72204AA3800D65C06 /* ViewController.swift */; };
+		F834D9BB2204AA3800D65C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D9B92204AA3800D65C06 /* Main.storyboard */; };
+		F834D9BD2204AA3900D65C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F834D9BC2204AA3900D65C06 /* Assets.xcassets */; };
+		F834D9C02204AA3900D65C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */; };
+		F834D9C82204AA8F00D65C06 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */; };
+		F834D9CA2204AFAA00D65C06 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834D9C92204AFAA00D65C06 /* CustomControl.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F834D9B22204AA3800D65C06 /* Sprint 4 User Interface Control and Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 4 User Interface Control and Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F834D9B52204AA3800D65C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F834D9B72204AA3800D65C06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F834D9BA2204AA3800D65C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F834D9BC2204AA3900D65C06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F834D9BF2204AA3900D65C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F834D9C12204AA3900D65C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		F834D9C92204AFAA00D65C06 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F834D9AF2204AA3800D65C06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F834D9A92204AA3800D65C06 = {
+			isa = PBXGroup;
+			children = (
+				F834D9B42204AA3800D65C06 /* Sprint 4 User Interface Control and Animations */,
+				F834D9B32204AA3800D65C06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F834D9B32204AA3800D65C06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9B22204AA3800D65C06 /* Sprint 4 User Interface Control and Animations.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F834D9B42204AA3800D65C06 /* Sprint 4 User Interface Control and Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F8E157AF220502610060B2D7 /* Appearance and UI */,
+				F8E157B0220502850060B2D7 /* Custom Controls */,
+				F834D9B72204AA3800D65C06 /* ViewController.swift */,
+				F8E157B322050EAB0060B2D7 /* Unmodified */,
+			);
+			path = "Sprint 4 User Interface Control and Animations";
+			sourceTree = "<group>";
+		};
+		F8E157AF220502610060B2D7 /* Appearance and UI */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9B52204AA3800D65C06 /* AppDelegate.swift */,
+				F834D9C72204AA8F00D65C06 /* AppearanceHelper.swift */,
+				F834D9B92204AA3800D65C06 /* Main.storyboard */,
+				F834D9BC2204AA3900D65C06 /* Assets.xcassets */,
+			);
+			path = "Appearance and UI";
+			sourceTree = "<group>";
+		};
+		F8E157B0220502850060B2D7 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9C92204AFAA00D65C06 /* CustomControl.swift */,
+			);
+			path = "Custom Controls";
+			sourceTree = "<group>";
+		};
+		F8E157B322050EAB0060B2D7 /* Unmodified */ = {
+			isa = PBXGroup;
+			children = (
+				F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */,
+				F834D9C12204AA3900D65C06 /* Info.plist */,
+			);
+			path = Unmodified;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F834D9B12204AA3800D65C06 /* Sprint 4 User Interface Control and Animations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F834D9C42204AA3900D65C06 /* Build configuration list for PBXNativeTarget "Sprint 4 User Interface Control and Animations" */;
+			buildPhases = (
+				F834D9AE2204AA3800D65C06 /* Sources */,
+				F834D9AF2204AA3800D65C06 /* Frameworks */,
+				F834D9B02204AA3800D65C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sprint 4 User Interface Control and Animations";
+			productName = "Sprint 4 User Interface Control and Animations";
+			productReference = F834D9B22204AA3800D65C06 /* Sprint 4 User Interface Control and Animations.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F834D9AA2204AA3800D65C06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Jaspal Suri";
+				TargetAttributes = {
+					F834D9B12204AA3800D65C06 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = F834D9AD2204AA3800D65C06 /* Build configuration list for PBXProject "Sprint 4 User Interface Control and Animations" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F834D9A92204AA3800D65C06;
+			productRefGroup = F834D9B32204AA3800D65C06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F834D9B12204AA3800D65C06 /* Sprint 4 User Interface Control and Animations */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F834D9B02204AA3800D65C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F834D9C02204AA3900D65C06 /* LaunchScreen.storyboard in Resources */,
+				F834D9BD2204AA3900D65C06 /* Assets.xcassets in Resources */,
+				F834D9BB2204AA3800D65C06 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F834D9AE2204AA3800D65C06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F834D9B82204AA3800D65C06 /* ViewController.swift in Sources */,
+				F834D9B62204AA3800D65C06 /* AppDelegate.swift in Sources */,
+				F834D9CA2204AFAA00D65C06 /* CustomControl.swift in Sources */,
+				F834D9C82204AA8F00D65C06 /* AppearanceHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F834D9B92204AA3800D65C06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F834D9BA2204AA3800D65C06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F834D9BE2204AA3900D65C06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F834D9BF2204AA3900D65C06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F834D9C22204AA3900D65C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F834D9C32204AA3900D65C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F834D9C52204AA3900D65C06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Y6994DAGM;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 User Interface Control and Animations/Unmodified/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JaspalSuri.Sprint-4-User-Interface-Control-and-Animations";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F834D9C62204AA3900D65C06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Y6994DAGM;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 User Interface Control and Animations/Unmodified/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JaspalSuri.Sprint-4-User-Interface-Control-and-Animations";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F834D9AD2204AA3800D65C06 /* Build configuration list for PBXProject "Sprint 4 User Interface Control and Animations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F834D9C22204AA3900D65C06 /* Debug */,
+				F834D9C32204AA3900D65C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F834D9C42204AA3900D65C06 /* Build configuration list for PBXNativeTarget "Sprint 4 User Interface Control and Animations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F834D9C52204AA3900D65C06 /* Debug */,
+				F834D9C62204AA3900D65C06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F834D9AA2204AA3800D65C06 /* Project object */;
+}

@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGe-Gw-vbG">
                                 <rect key="frame" x="67" y="173" width="240" height="320"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-DW-GjF">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Toa-DW-GjF">
                                         <rect key="frame" x="8" y="8" width="224" height="224"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Toa-DW-GjF" secondAttribute="height" multiplier="1:1" id="YF0-Z8-bXu"/>

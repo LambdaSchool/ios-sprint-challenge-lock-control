@@ -15,13 +15,14 @@ class ViewController: UIViewController {
     
     @IBAction func customControl(_ sender: Any) {
         if customControl.isUnlocked {
+            // reset button invisible
             reset.isEnabled = true
             reset.tintColor = UIColor.white
         } else {
+            // reset button visible
             reset.isEnabled = false
             reset.tintColor = UIColor.clear
         }
-        
     }
     
     @IBAction func reset(_ sender: Any) {
@@ -32,7 +33,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Hello!"
+        reset.tintColor = UIColor.clear
     }
-
 }
-

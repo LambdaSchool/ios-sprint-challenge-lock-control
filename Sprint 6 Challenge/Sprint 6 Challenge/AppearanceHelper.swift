@@ -11,6 +11,7 @@ import UIKit
 enum AppearanceHelper {
     
     static func setupNavigationAppearance() {
+        
         let gradient = CAGradientLayer()
         let bounds = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 1.0)
         gradient.frame = bounds
@@ -23,11 +24,12 @@ enum AppearanceHelper {
         }
         
         UIBarButtonItem.appearance().tintColor = .white
+        
     }
     
     // Gradient Image
     static func getImageFrom(gradientLayer: CAGradientLayer) -> UIImage? {
-        var gradientImage: UIImage?
+        var gradientImage:UIImage?
         UIGraphicsBeginImageContext(gradientLayer.frame.size)
         if let context = UIGraphicsGetCurrentContext() {
             gradientLayer.render(in: context)
@@ -36,4 +38,5 @@ enum AppearanceHelper {
         UIGraphicsEndImageContext()
         return gradientImage
     }
+    
 }

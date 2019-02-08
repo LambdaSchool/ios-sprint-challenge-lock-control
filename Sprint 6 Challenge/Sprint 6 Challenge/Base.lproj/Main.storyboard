@@ -38,7 +38,7 @@
                                 <rect key="frame" x="50" y="196" width="275" height="275"/>
                                 <color key="backgroundColor" red="0.63137254901960782" green="0.77254901960784317" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="customControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="utz-qJ-5Nn"/>
+                                    <action selector="customControl:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="oMN-U7-ymE"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -52,13 +52,13 @@
                     <navigationItem key="navigationItem" title="Title" id="m88-x7-4sB">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="vCc-hh-9Z7">
                             <connections>
-                                <action selector="reset:" destination="BYZ-38-t0r" id="Dnb-Pd-07g"/>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="2nO-N5-ghu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="customControl" destination="OMr-bP-20e" id="3BH-uW-iRQ"/>
-                        <outlet property="reset" destination="vCc-hh-9Z7" id="mfV-CR-1bx"/>
+                        <outlet property="reset" destination="vCc-hh-9Z7" id="fmk-vc-WeP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

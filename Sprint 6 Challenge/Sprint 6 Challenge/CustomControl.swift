@@ -11,11 +11,9 @@ import UIKit
 class CustomControl: UIControl {
     var isUnlocked = false
     
-    // Properties for the views in the control
     var circleView: UIView!
     var imageView: UIImageView!
-    
-    // This method tells Auto Layout how big your custom control should be
+
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 280, height: 280)
     }
@@ -27,7 +25,7 @@ class CustomControl: UIControl {
     }
     
     private func setup() {
-        
+
         clipsToBounds = true
         self.layer.cornerRadius = 50
         
@@ -39,7 +37,8 @@ class CustomControl: UIControl {
         
         let imageWidthConstraint = NSLayoutConstraint(item: imageView,
                                                       attribute: .width,
-                                                      relatedBy: .equal, toItem: nil,
+                                                      relatedBy: .equal,
+                                                      toItem: nil,
                                                       attribute: .notAnAttribute,
                                                       multiplier: 1.0,
                                                       constant: 150.0)
@@ -81,6 +80,7 @@ class CustomControl: UIControl {
         circleView.backgroundColor = UIColor(red: 98.0/255.0, green: 119.0/255.0, blue: 155.0/255.0, alpha: 1.0)
         circleView.isUserInteractionEnabled = false
         self.addSubview(circleView)
+        
     }
     
     func reset() {
@@ -90,7 +90,7 @@ class CustomControl: UIControl {
         
         isUnlocked = false
         imageView.image = #imageLiteral(resourceName: "Locked")
-        sendActions(for : .primaryActionTriggered)
+        sendActions(for: .primaryActionTriggered)
     }
     
     // MARK: - Touch handlers
@@ -121,6 +121,7 @@ class CustomControl: UIControl {
             isUnlocked = true
             imageView.image = #imageLiteral(resourceName: "Unlocked")
             sendActions(for: .primaryActionTriggered)
+            
             
             UIView.animate(withDuration: 0.3) {
                 self.circleView.frame = CGRect(x: self.intrinsicContentSize.width - 60 - 20, y: self.intrinsicContentSize.height - 60 - 20, width: 60, height: 60)

@@ -36,7 +36,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMr-bP-20e" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="50" y="196" width="275" height="275"/>
-                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.63137254901960782" green="0.77254901960784317" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="customControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="utz-qJ-5Nn"/>
                                 </connections>

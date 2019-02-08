@@ -14,18 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var reset: UIBarButtonItem!
     
     @IBAction func customControl(_ sender: Any) {
+        if customControl.isUnlocked {
+            reset.isEnabled = true
+            reset.tintColor = UIColor.white
+        } else {
+            reset.isEnabled = false
+            reset.tintColor = UIColor.clear
+        }
+        
     }
     
     @IBAction func reset(_ sender: Any) {
+        customControl.reset()
     }
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Hello!"
-        
     }
 
 }

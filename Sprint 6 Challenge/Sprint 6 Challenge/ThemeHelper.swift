@@ -18,7 +18,8 @@ class ThemeHelper {
     
     static func setTheme(){
     
-        UIBarButtonItem.appearance().tintColor = purple
+        UIBarButtonItem.appearance().tintColor = white
+        
         
         let textAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: white]
         UINavigationBar.appearance().titleTextAttributes = textAttributes

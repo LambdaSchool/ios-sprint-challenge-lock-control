@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     func unlockAnimation() {
         
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.25) {
             self.lockImage.image = UIImage(named: "Unlocked")
             self.view.backgroundColor = AppearanceHelper.vividTangerine
             self.outerContainer.backgroundColor = AppearanceHelper.linen
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     func lockAnimation() {
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.25) {
             self.lockImage.image = UIImage(named: "Locked")
             self.view.backgroundColor = AppearanceHelper.carminePink
             self.outerContainer.backgroundColor = AppearanceHelper.vividTangerine

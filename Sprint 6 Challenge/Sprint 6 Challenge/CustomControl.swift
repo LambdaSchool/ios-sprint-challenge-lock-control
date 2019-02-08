@@ -83,6 +83,16 @@ class CustomControl: UIControl {
         self.addSubview(circleView)
     }
     
+    func reset() {
+        UIView.animate(withDuration: 0.3) {
+            self.circleView.frame = CGRect(x: 20, y: self.intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
+        }
+        
+        isUnlocked = false
+        imageView.image = #imageLiteral(resourceName: "Locked")
+        sendActions(for : .primaryActionTriggered)
+    }
+    
 
    
     

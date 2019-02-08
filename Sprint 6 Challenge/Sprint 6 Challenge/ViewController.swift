@@ -19,6 +19,13 @@ class ViewController: UIViewController {
     @IBAction func lockDraggedOrTapped(_ sender: LockControl) {
         sender.maxValue = sliderContainer.frame.width - slider.frame.width
         sliderLeadingConstraint.constant = sender.value
+        
+        if sender.value >= (sliderContainer.frame.width * 0.8 - slider.frame.width) {
+            unlockAnimation()
+        } else if sender.value <= (sliderContainer.frame.width * 0.05) && sender.value != 0 {
+            lockAnimation()
+        }
+        
     }
     
     func setAppearance() {
@@ -34,10 +41,28 @@ class ViewController: UIViewController {
     
     func unlockAnimation() {
         
+        UIView.animate(withDuration: 1.0) {
+            self.lockImage.image = UIImage(named: "Unlocked")
+            self.view.backgroundColor = AppearanceHelper.vividTangerine
+            self.outerContainer.backgroundColor = AppearanceHelper.linen
+            self.slider.backgroundColor = AppearanceHelper.vividTangerine
+            self.sliderLeadingConstraint.constant = self.sliderContainer.frame.width - self.slider.frame.width
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
     func lockAnimation() {
         
+        UIView.animate(withDuration: 0.5) {
+            self.lockImage.image = UIImage(named: "Locked")
+            self.view.backgroundColor = AppearanceHelper.carminePink
+            self.outerContainer.backgroundColor = AppearanceHelper.vividTangerine
+            self.slider.backgroundColor = AppearanceHelper.linen
+            self.sliderLeadingConstraint.constant = 0
+            
+            self.view.layoutIfNeeded()
+        }
     }
     
     

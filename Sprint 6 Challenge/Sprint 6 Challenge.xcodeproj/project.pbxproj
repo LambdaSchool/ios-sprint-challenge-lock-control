@@ -11,7 +11,9 @@
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
-		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		4B13595C220DE81F009F6A12 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13595B220DE81F009F6A12 /* AppearanceHelper.swift */; };
+		4B13595E220DEF15009F6A12 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13595D220DEF15009F6A12 /* CustomControl.swift */; };
+		4B135960220DFF67009F6A12 /* DragAndDropLaunchScreen in Resources */ = {isa = PBXBuildFile; fileRef = 4B13595F220DFF67009F6A12 /* DragAndDropLaunchScreen */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +22,10 @@
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B13595B220DE81F009F6A12 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		4B13595D220DEF15009F6A12 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		4B13595F220DFF67009F6A12 /* DragAndDropLaunchScreen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DragAndDropLaunchScreen; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
+				4B13595B220DE81F009F6A12 /* AppearanceHelper.swift */,
+				4B13595D220DEF15009F6A12 /* CustomControl.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+				4B13595F220DFF67009F6A12 /* DragAndDropLaunchScreen */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
 			);
 			path = "Sprint 6 Challenge";
@@ -122,7 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
+				4B135960220DFF67009F6A12 /* DragAndDropLaunchScreen in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
 			);
@@ -137,6 +143,8 @@
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				4B13595E220DEF15009F6A12 /* CustomControl.swift in Sources */,
+				4B13595C220DE81F009F6A12 /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,14 +157,6 @@
 				468B89E52137397400E7FF73 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		468B89E92137397500E7FF73 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				468B89EA2137397500E7FF73 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

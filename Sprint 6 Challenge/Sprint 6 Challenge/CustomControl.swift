@@ -11,8 +11,8 @@ import UIKit
 
 class CustomControl: UIControl {
 
-
     var Xvalue = 0.0
+    
 
     required init?(coder aCoder: NSCoder) {
         super.init(coder: aCoder)
@@ -26,18 +26,7 @@ class CustomControl: UIControl {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
 
         return true
     }
@@ -74,6 +63,6 @@ class CustomControl: UIControl {
         sendActions(for: .touchCancel)
     }
 
-    
+
 
 }

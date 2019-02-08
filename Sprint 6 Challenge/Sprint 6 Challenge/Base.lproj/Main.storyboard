@@ -18,16 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-8E-08o">
-                                <rect key="frame" x="67" y="269" width="241" height="129"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWe-dn-OcX" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="67" y="269" width="240" height="129"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rBa-8E-08o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4W2-3P-D2E"/>
-                            <constraint firstItem="rBa-8E-08o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="ECC-eX-vtI"/>
-                            <constraint firstItem="rBa-8E-08o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="H6T-Kg-q58"/>
-                            <constraint firstItem="rBa-8E-08o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J97-S2-eWi"/>
+                            <constraint firstItem="QWe-dn-OcX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="746-fC-7x1"/>
+                            <constraint firstItem="QWe-dn-OcX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Ocu-ye-h6u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QWe-dn-OcX" secondAttribute="trailing" constant="68" id="UEK-zA-nc3"/>
+                            <constraint firstItem="QWe-dn-OcX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="hKR-7j-01G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

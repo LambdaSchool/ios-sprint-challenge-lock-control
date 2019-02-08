@@ -12,7 +12,18 @@ import UIKit
 class CustomControl: UIControl {
 
 
-    
+    var Xvalue = 0.0
+
+    required init?(coder aCoder: NSCoder) {
+        super.init(coder: aCoder)
+    }
+
+    func updateValue(at touch: UITouch) {
+        let touchPoint = touch.location(in: self)
+        let x = touchPoint.x / bounds.width
+        Xvalue = Double(x)
+        sendActions(for: [.valueChanged])
+    }
 
 
 
@@ -63,9 +74,6 @@ class CustomControl: UIControl {
         sendActions(for: .touchCancel)
     }
 
-    func updateValue(at touch: UITouch) {
-
-    }
-
     
+
 }

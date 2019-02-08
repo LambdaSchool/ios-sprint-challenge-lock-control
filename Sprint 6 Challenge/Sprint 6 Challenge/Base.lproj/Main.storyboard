@@ -29,7 +29,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C45-qo-6Qo" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="278" width="240" height="41"/>
+                                        <rect key="frame" x="18" y="276" width="240" height="41"/>
                                         <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="xEg-sf-smn"/>
@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="319" id="HkY-5Y-35h"/>
                                     <constraint firstItem="N06-UY-wRq" firstAttribute="leading" secondItem="HMF-4n-eAR" secondAttribute="leading" constant="18" id="XIn-PN-FVp"/>
                                     <constraint firstItem="N06-UY-wRq" firstAttribute="top" secondItem="HMF-4n-eAR" secondAttribute="top" constant="30" id="npp-hs-1Ol"/>
-                                    <constraint firstItem="C45-qo-6Qo" firstAttribute="top" secondItem="N06-UY-wRq" secondAttribute="bottom" constant="8" id="ovr-Nk-75k"/>
+                                    <constraint firstItem="C45-qo-6Qo" firstAttribute="top" secondItem="N06-UY-wRq" secondAttribute="bottom" constant="6" id="ovr-Nk-75k"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -58,9 +58,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hello!" id="olb-6v-uAx"/>
+                    <navigationItem key="navigationItem" title="Hello!" id="olb-6v-uAx">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="LGc-cZ-mml"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="customProperties" destination="C45-qo-6Qo" id="i4O-in-sc9"/>
                         <outlet property="lockImage" destination="N06-UY-wRq" id="NsE-Ya-0rW"/>
+                        <outlet property="resetButton" destination="LGc-cZ-mml" id="HOS-jn-AAj"/>
+                        <outlet property="view" destination="HMF-4n-eAR" id="2Hv-ck-MTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

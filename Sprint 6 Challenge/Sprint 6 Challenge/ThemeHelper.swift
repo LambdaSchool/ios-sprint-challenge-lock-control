@@ -13,11 +13,16 @@ class ThemeHelper {
     
     //set the theme for the navigationBarItems
     
-    static var badgerRed = UIColor(red: 255, green: 27, blue: 0, alpha: 1)
-    static var badgerWhite = UIColor(red: 247, green: 255, blue: 245, alpha: 1)
+    static var purple = UIColor(red: 174/255, green: 14/255, blue: 814/255, alpha: 1)
+    static var white = UIColor(red: 255/255, green:255/255, blue: 255/255, alpha: 1)
     
     static func setTheme(){
     
-        UIBarButtonItem.appearance().tintColor = badgerRed
+        UIBarButtonItem.appearance().tintColor = purple
+        
+        let textAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: white]
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
+        UINavigationBar.appearance().barTintColor = purple
     }
 }

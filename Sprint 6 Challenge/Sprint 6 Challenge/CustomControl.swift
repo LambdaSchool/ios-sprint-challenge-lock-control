@@ -93,7 +93,47 @@ class CustomControl: UIControl {
         sendActions(for : .primaryActionTriggered)
     }
     
-
-   
+    // MARK: - Touch handlers
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if circleView.frame.contains(touchPoint) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        
+        guard touchPoint.x > 0 && touchPoint.x < bounds.width - circleView.frame.width else { return true }
+        
+        circleView.frame = CGRect(x: touchPoint.x, y: intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        defer { super.endTracking(touch, with: event)}
+        
+        guard let touchPoint = touch?.location(in: self) else { return }
+        if touchPoint.x > (0.80 * (bounds.width - circleView.frame.width)) {
+            isUnlocked = true
+            imageView.image = #imageLiteral(resourceName: "Unlocked")
+            sendActions(for: .primaryActionTriggered)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.circleView.frame = CGRect(x: self.intrinsicContentSize.width - 60 - 20, y: self.intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
+            }
+        } else {
+            reset()
+        }
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
+        
+        reset()
+    }
     
 }

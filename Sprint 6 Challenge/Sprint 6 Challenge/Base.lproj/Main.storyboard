@@ -27,10 +27,10 @@
                                             <constraint firstAttribute="width" secondItem="Toa-DW-GjF" secondAttribute="height" multiplier="1:1" id="YF0-Z8-bXu"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTH-gO-YWQ">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTH-gO-YWQ" customClass="LockControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="240" width="224" height="72"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feo-Hu-oFB">
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feo-Hu-oFB">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -46,6 +46,9 @@
                                             <constraint firstItem="Feo-Hu-oFB" firstAttribute="leading" secondItem="gTH-gO-YWQ" secondAttribute="leading" id="YLt-Qc-4kE"/>
                                             <constraint firstAttribute="width" constant="224" id="iDK-S4-pyR"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="lockDraggedOrTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="59L-09-ayB"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,6 +77,8 @@
                     <connections>
                         <outlet property="lockImage" destination="Toa-DW-GjF" id="KjN-66-aBs"/>
                         <outlet property="outerContainer" destination="yGe-Gw-vbG" id="vFF-Wc-vQb"/>
+                        <outlet property="slider" destination="Feo-Hu-oFB" id="1ks-vw-f83"/>
+                        <outlet property="sliderContainer" destination="gTH-gO-YWQ" id="y9u-Ab-NuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

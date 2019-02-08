@@ -14,8 +14,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func lockDraggedOrTapped(_ sender: LockControl) {
+        
+    }
+    
+    
     @IBOutlet weak var lockImage: UIImageView!
     @IBOutlet weak var outerContainer: UIView!
+    @IBOutlet weak var slider: UIView!
+    @IBOutlet weak var sliderContainer: LockControl!
     
 }
 

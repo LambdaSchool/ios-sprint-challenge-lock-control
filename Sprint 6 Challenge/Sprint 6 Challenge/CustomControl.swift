@@ -69,6 +69,18 @@ class CustomControl: UIControl {
                                                     constant: 20.0)
         
         NSLayoutConstraint.activate([imageWidthConstraint, imageHeightConstraint, imageCenterXConstraint, imageTopConstraint])
+        
+        let sliderView = UIView(frame: CGRect(x: 10, y: intrinsicContentSize.height - 80 - 10, width: intrinsicContentSize.width - 20, height: 80))
+        sliderView.layer.cornerRadius = 40
+        sliderView.backgroundColor = UIColor(red: 134.0/255.0, green: 163.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        sliderView.isUserInteractionEnabled = false
+        self.addSubview(sliderView)
+        
+        circleView = UIView(frame: CGRect(x: 20, y: intrinsicContentSize.height - 60 - 20, width: 60, height: 60))
+        circleView.layer.cornerRadius = 30
+        circleView.backgroundColor = UIColor(red: 98.0/255.0, green: 119.0/255.0, blue: 155.0/255.0, alpha: 1.0)
+        circleView.isUserInteractionEnabled = false
+        self.addSubview(circleView)
     }
     
 

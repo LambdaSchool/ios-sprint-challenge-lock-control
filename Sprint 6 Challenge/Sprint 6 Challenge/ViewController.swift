@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var customControl: CustomControl!
+    @IBOutlet weak var reset: UIBarButtonItem!
+    
+    @IBAction func customControl(_ sender: Any) {
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.title = "Hello!"
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

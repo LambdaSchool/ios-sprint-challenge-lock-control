@@ -12,10 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliderLeadingConstraint.constant = 0
     }
     
     @IBAction func lockDraggedOrTapped(_ sender: LockControl) {
-        
+        sender.maxValue = sliderContainer.frame.width - slider.frame.width
+        sliderLeadingConstraint.constant = sender.value
     }
     
     
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var outerContainer: UIView!
     @IBOutlet weak var slider: UIView!
     @IBOutlet weak var sliderContainer: LockControl!
+    @IBOutlet weak var sliderLeadingConstraint: NSLayoutConstraint!
     
 }
 

@@ -31,7 +31,7 @@
                                         <rect key="frame" x="8" y="240" width="224" height="72"/>
                                         <subviews>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feo-Hu-oFB">
-                                                <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                <rect key="frame" x="10" y="0.0" width="72" height="72"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="72" id="Sag-yQ-OkW"/>
@@ -43,7 +43,7 @@
                                         <constraints>
                                             <constraint firstItem="Feo-Hu-oFB" firstAttribute="centerY" secondItem="gTH-gO-YWQ" secondAttribute="centerY" id="15d-Tn-bGi"/>
                                             <constraint firstAttribute="height" constant="72" id="Afv-Sq-eN1"/>
-                                            <constraint firstItem="Feo-Hu-oFB" firstAttribute="leading" secondItem="gTH-gO-YWQ" secondAttribute="leading" id="YLt-Qc-4kE"/>
+                                            <constraint firstItem="Feo-Hu-oFB" firstAttribute="leading" secondItem="gTH-gO-YWQ" secondAttribute="leading" constant="10" id="U73-Tk-gtU"/>
                                             <constraint firstAttribute="width" constant="224" id="iDK-S4-pyR"/>
                                         </constraints>
                                         <connections>
@@ -79,6 +79,7 @@
                         <outlet property="outerContainer" destination="yGe-Gw-vbG" id="vFF-Wc-vQb"/>
                         <outlet property="slider" destination="Feo-Hu-oFB" id="1ks-vw-f83"/>
                         <outlet property="sliderContainer" destination="gTH-gO-YWQ" id="y9u-Ab-NuO"/>
+                        <outlet property="sliderLeadingConstraint" destination="U73-Tk-gtU" id="fOd-Mg-PcT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

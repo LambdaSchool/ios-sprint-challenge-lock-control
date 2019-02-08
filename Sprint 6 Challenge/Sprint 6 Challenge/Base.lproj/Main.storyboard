@@ -72,11 +72,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fOp-AM-cRh">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="UWd-Jm-ci4"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="UWd-Jm-ci4">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="Qv2-H9-s6W"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="lockImage" destination="Toa-DW-GjF" id="KjN-66-aBs"/>
                         <outlet property="outerContainer" destination="yGe-Gw-vbG" id="vFF-Wc-vQb"/>
+                        <outlet property="resetButton" destination="UWd-Jm-ci4" id="ga0-dy-g6e"/>
                         <outlet property="slider" destination="Feo-Hu-oFB" id="1ks-vw-f83"/>
                         <outlet property="sliderContainer" destination="gTH-gO-YWQ" id="y9u-Ab-NuO"/>
                         <outlet property="sliderLeadingConstraint" destination="U73-Tk-gtU" id="fOd-Mg-PcT"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BFBC549220DE012008727DE /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFBC548220DE012008727DE /* ThemeHelper.swift */; };
+		1BFBC54B220DE41B008727DE /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFBC54A220DE41B008727DE /* CustomControl.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		1BFBC548220DE012008727DE /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
+		1BFBC54A220DE41B008727DE /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				468B89E42137397400E7FF73 /* Main.storyboard */,
+				1BFBC54A220DE41B008727DE /* CustomControl.swift */,
 				1BFBC548220DE012008727DE /* ThemeHelper.swift */,
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
@@ -140,6 +143,7 @@
 			files = (
 				1BFBC549220DE012008727DE /* ThemeHelper.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				1BFBC54B220DE41B008727DE /* CustomControl.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

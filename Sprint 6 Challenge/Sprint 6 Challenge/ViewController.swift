@@ -11,13 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var lockImage: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBAction func sliderValue(_ sender: Any) {
+    @IBAction func customView(_ sender: CustomControl) {
     }
-    
-}
 
+}

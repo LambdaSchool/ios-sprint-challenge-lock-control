@@ -12,13 +12,37 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+
+        resetButton.title = nil
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
+         imageView.image = UIImage(named: "Locked")
     }
+
+    @IBAction func resetButtonTapped(_ sender: UIBarButtonItem) {
+    }
+
+    @IBAction func lockSwiper(_ sender: CustomControl) {
+        if CustomControl.Xvalue > 0.80 {
+            imageView.image = UIImage(named: "Unlocked")
+            resetButton.title = "Reset"
+            CustomControl.Xvalue = 1.0
+        } else {
+            CustomControl.Xvalue = 0.0
+            resetButton.title = nil
+            imageView.image = UIImage(named: "Locked")
+        }
+    }
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+
+
+
 
 
 }

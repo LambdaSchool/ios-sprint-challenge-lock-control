@@ -33,8 +33,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="4tJ-Aw-Xi0">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="OhT-iQ-dYe"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="OhT-iQ-dYe">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="5QG-H9-zcO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="QWe-dn-OcX" id="MY6-LA-5VI"/>
+                        <outlet property="resetButton" destination="OhT-iQ-dYe" id="chj-64-Nak"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,6 +12,8 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		A11DFE9A2167B9750098EC9A /* LockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11DFE992167B9750098EC9A /* LockControl.swift */; };
+		A11DFE9C2167BAC50098EC9A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11DFE9B2167BAC50098EC9A /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A11DFE992167B9750098EC9A /* LockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockControl.swift; sourceTree = "<group>"; };
+		A11DFE9B2167BAC50098EC9A /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				A11DFE9B2167BAC50098EC9A /* Appearance.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
+				A11DFE992167B9750098EC9A /* LockControl.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				A11DFE9A2167B9750098EC9A /* LockControl.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				A11DFE9C2167BAC50098EC9A /* Appearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7WH6XTF8JG;
 				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7WH6XTF8JG;
 				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

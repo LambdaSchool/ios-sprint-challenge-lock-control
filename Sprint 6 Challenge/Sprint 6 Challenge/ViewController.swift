@@ -11,71 +11,46 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK :- Properties
-
-    let lockedImage = UIImage(named: "Locked")!
-    let unlockedImage = UIImage(named: "Unlocked")!
     
-    let lockImageView = UIImageView()
+    let rangeSlider = SwipeUnlocker(frame: CGRect.zero)
+    let imageView = UIImageView(image: UIImage(named: "Locked")!)
     
-    @IBOutlet weak var swipeContainerView: UIView!
-    
-    var isUnlocked: Bool = false
-    
-    @IBOutlet weak var resetButton: UIBarButtonItem!
-    
-    // MARK :- Functions
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        swipeContainerView.removeFromSuperview()
-        setupLockScreen()
         
+        rangeSlider.backgroundColor = UIColor.lightGray
+        
+        view.addSubview(rangeSlider)
+        
+        self.view.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 64),
+            imageView.heightAnchor.constraint(equalToConstant: 64),
+//            imageView.topAnchor.constraintEqualToSystemSpacingBelow(view.safeAreaLayoutGuide.topAnchor, multiplier: 1.0),
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100.0),
+//            imageView.leftAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutXAxisAnchor>#>, constant: <#T##CGFloat#>)
+            imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            ])
+        imageView.contentMode = .center
+        
+        rangeSlider.addTarget(self, action: #selector(self.rangeSliderValueChanged(rangeSlider:)), for: .touchUpInside)
+//        rangeSlider.addTarget(self, action: #selector("rangeSliderValueChanged"), for: .valueChanged)
+//        rangeSlider.addTarget(self, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
     }
     
-    private func setupLockScreen(){
-        
-        
-        lockImageView.image = lockedImage
-        
-        let containerViewFrame = CGRect(x: 0, y: 0, width: 350, height: 350.0)
-        let containerView = UIView(frame: containerViewFrame)
-        containerView.center.x = view.center.x
-        containerView.center.y = view.center.y
-        containerView.backgroundColor = .gray
-        
-        let imageViewFrame = CGRect(x: 0, y: 0, width: lockedImage.size.width, height: lockedImage.size.height)
-        lockImageView.frame = imageViewFrame
-        lockImageView.center.x = containerView.frame.width / 2
-        lockImageView.layoutIfNeeded()
-        
-        //setup swipe Container
-        swipeContainerView.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
-        
-        let swipeContainerViewFrame = CGRect(x: 10, y: 300, width: lockImageView.bounds.width + 100, height: 38)
-        swipeContainerView.frame = swipeContainerViewFrame
-        swipeContainerView.center.x = containerView.frame.width / 2
-        swipeContainerView.layer.cornerRadius = 15
-        
-        containerView.addSubview(lockImageView)
-        containerView.addSubview(swipeContainerView)
-        containerView.layer.cornerRadius = 50
-        view.addSubview(containerView)
-        
-    }
-
-    @IBAction func swipedToUnlock(_ swiper: SwipeControl) {
-        
-        if swiper.trackingBall.frame.maxX == 200 {
-            lockImageView.image = unlockedImage
-        }
-        
+    override func viewDidLayoutSubviews() {
+        let margin: CGFloat = 20.0
+        let width = view.bounds.width - 2.0 * margin
+        rangeSlider.frame = CGRect(x: margin, y: margin + view.frame.width,
+                                   width: width, height: 31.0)
     }
     
-    
-    
-    
-    @IBAction func resetLock(_ sender: Any) {
+    @objc func rangeSliderValueChanged(rangeSlider: SwipeUnlocker){
+        print("Range slider value changed: (\(rangeSlider.lowerValue))")
     }
-    
 }
+
+
+
 

@@ -12,7 +12,7 @@ import QuartzCore
 class SwipeUnlocker: UIControl {
 
     var previousLocation = CGPoint()
-    
+    var isUnlocked: Bool = false
     var minimumValue = 0.0
     var maximumValue = 100.0
     var lowerValue = 0.0 {
@@ -44,22 +44,18 @@ class SwipeUnlocker: UIControl {
         trackLayer.contents =
         layer.addSublayer(trackLayer)
         
-//        lowerThumbLayer.contents = UIImage(named: "Locked")?.cgImage
-//        lowerThumbLayer.backgroundColor = UIColor.black.cgColor
         let radius = CGFloat(15.0)
         lowerThumbLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * radius, height: 2.0 * radius), cornerRadius: radius).cgPath
-        lowerThumbLayer.position = CGPoint(x: self.frame.midX - radius, y: self.frame.midY - radius)
+        
+//        lowerThumbLayer.position = CGPoint(x: self.frame.midX - radius, y: self.frame.midY + radius)
+//        lowerThumbLayer.position
         lowerThumbLayer.fillColor = UIColor.black.cgColor
-//        lowerThumbLayer.cornerRadius = lowerThumbLayer.bounds.height / 2
         
         
         
         layer.addSublayer(lowerThumbLayer)
-        
+        lowerThumbLayer.frame = lowerThumbLayer.frame.offsetBy(dx: 0.0, dy: 10.0)
         lowerThumbLayer.rangeSlider = self
-        
-//        upperThumbLayer.backgroundColor = UIColor.greenColor().CGColor
-//        layer.addSublayer(upperThumbLayer)
         
         updateLayerFrames()
     }
@@ -77,11 +73,6 @@ class SwipeUnlocker: UIControl {
         lowerThumbLayer.frame = CGRect(x: lowerThumbCenter - thumbWidth / 2.0, y: 0.0,
                                        width: thumbWidth, height: thumbWidth)
         lowerThumbLayer.setNeedsDisplay()
-//
-//        let upperThumbCenter = CGFloat(positionForValue(upperValue))
-//        upperThumbLayer.frame = CGRect(x: upperThumbCenter - thumbWidth / 2.0, y: 0.0,
-//                                       width: thumbWidth, height: thumbWidth)
-//        upperThumbLayer.setNeedsDisplay()
     }
     
     func positionForValue(value: Double) -> Double {
@@ -135,7 +126,29 @@ class SwipeUnlocker: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        if lowerValue >= 80.0 {
+            unlock()
+        } else {
+            goBack()
+        }
+        
         lowerThumbLayer.highlighted = false
+    }
+    
+    func goBack(){
+        UIView.animate(withDuration: 2.0) {
+            self.lowerValue = 0.0
+            self.updateLayerFrames()
+        }
+        isUnlocked = false
+    }
+    
+    func unlock(){
+        UIView.animate(withDuration: 2.0) {
+            self.lowerValue = 100.0
+            self.updateLayerFrames()
+        }
+        isUnlocked = true
     }
 
 

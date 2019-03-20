@@ -20,8 +20,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Swipe to Unlock" id="cRU-7J-vpS">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="gpV-9M-0wR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="gpV-9M-0wR">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="f0v-Ox-Q0D"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resetButton" destination="gpV-9M-0wR" id="hdV-6m-ELR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

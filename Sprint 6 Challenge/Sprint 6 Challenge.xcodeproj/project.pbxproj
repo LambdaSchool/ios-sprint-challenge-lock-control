@@ -14,10 +14,8 @@
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		D8948AF0224152FE00D294F0 /* SwipeUnlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8948AEF224152FE00D294F0 /* SwipeUnlocker.swift */; };
 		D8948AF2224157E000D294F0 /* RangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8948AF1224157E000D294F0 /* RangeSliderThumbLayer.swift */; };
-		D8948AF42241ACB000D294F0 /* RangeSliderTrackerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8948AF32241ACB000D294F0 /* RangeSliderTrackerLayer.swift */; };
 		D8AE41DE2167BCF10087D910 /* Appearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE41DD2167BCF10087D910 /* Appearence.swift */; };
 		D8AE41E02167C0070087D910 /* JennaSue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8AE41DF2167C0070087D910 /* JennaSue.ttf */; };
-		D8AE41E22167CF610087D910 /* SwipeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE41E12167CF610087D910 /* SwipeControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +28,8 @@
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8948AEF224152FE00D294F0 /* SwipeUnlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeUnlocker.swift; sourceTree = "<group>"; };
 		D8948AF1224157E000D294F0 /* RangeSliderThumbLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderThumbLayer.swift; sourceTree = "<group>"; };
-		D8948AF32241ACB000D294F0 /* RangeSliderTrackerLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackerLayer.swift; sourceTree = "<group>"; };
 		D8AE41DD2167BCF10087D910 /* Appearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearence.swift; sourceTree = "<group>"; };
 		D8AE41DF2167C0070087D910 /* JennaSue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JennaSue.ttf; sourceTree = "<group>"; };
-		D8AE41E12167CF610087D910 /* SwipeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +65,7 @@
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				D8948AEF224152FE00D294F0 /* SwipeUnlocker.swift */,
-				D8948AF32241ACB000D294F0 /* RangeSliderTrackerLayer.swift */,
 				D8948AF1224157E000D294F0 /* RangeSliderThumbLayer.swift */,
-				D8AE41E12167CF610087D910 /* SwipeControl.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				D8AE41DD2167BCF10087D910 /* Appearence.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
@@ -157,8 +151,6 @@
 				D8AE41DE2167BCF10087D910 /* Appearence.swift in Sources */,
 				D8948AF0224152FE00D294F0 /* SwipeUnlocker.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
-				D8948AF42241ACB000D294F0 /* RangeSliderTrackerLayer.swift in Sources */,
-				D8AE41E22167CF610087D910 /* SwipeControl.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 				D8948AF2224157E000D294F0 /* RangeSliderThumbLayer.swift in Sources */,
 			);

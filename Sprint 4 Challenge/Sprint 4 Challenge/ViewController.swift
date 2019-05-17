@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
 	@IBOutlet var resetButton: UIBarButtonItem!
+	@IBOutlet var slideToUnlockPad: SlideToUnlockPadlock!
 
+	@IBOutlet var tempslide: SlideToUnlock!
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,10 +24,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-	@IBAction func sliderSlid(_ sender: SlideToUnlock) {
+	@IBAction func sliderSlid(_ sender: SlideToUnlockPadlock) {
 		print(sender.value)
 	}
-	@IBAction func sliderUnlocked(_ sender: SlideToUnlock) {
+
+	@IBAction func sliderUnlocked(_ sender: SlideToUnlockPadlock) {
 		sender.isEnabled = false
+	}
+
+	@IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
+		slideToUnlockPad.locked = true
+
+		tempslide.isEnabled.toggle()
 	}
 }

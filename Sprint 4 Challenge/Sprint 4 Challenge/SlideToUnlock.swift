@@ -17,7 +17,7 @@ class SlideToUnlock: UIControl {
 	private var maxValue: CGFloat = 0
 	var value: CGFloat = 0
 	var textLabel = UILabel()
-	var completionValue: CGFloat = 0.8
+	var completionThreshold: CGFloat = 0.8
 
 	// MARK: - Initializer stuff
 	required init?(coder aDecoder: NSCoder) {
@@ -100,7 +100,7 @@ class SlideToUnlock: UIControl {
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
 		if let touch = touch {
 			updateValue(at: touch)
-			if value >= completionValue {
+			if value >= completionThreshold {
 				sendActions(for: .primaryActionTriggered)
 			}
 			resetSlider()

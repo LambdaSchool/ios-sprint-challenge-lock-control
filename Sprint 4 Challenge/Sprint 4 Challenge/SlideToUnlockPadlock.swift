@@ -13,9 +13,28 @@ class SlideToUnlockPadlock: UIControl {
 	private let lockImageView = UIImageView()
 	private let slider: SlideToUnlock
 
+	var completionThreshold: CGFloat {
+		get {
+			return slider.completionThreshold
+		}
+		set {
+			slider.completionThreshold = newValue
+		}
+	}
+
+	var value: CGFloat {
+		get {
+			return slider.value
+		}
+		set {
+			slider.value = newValue
+		}
+	}
+
 	var locked = true {
 		didSet {
 			setLockImage()
+			isEnabled = locked
 		}
 	}
 
@@ -30,6 +49,7 @@ class SlideToUnlockPadlock: UIControl {
 		if lockImageView.superview == nil {
 			addSubview(lockImageView)
 			lockImageView.contentMode = .scaleAspectFit
+			lockImageView.isUserInteractionEnabled = false
 			lockImageView.translatesAutoresizingMaskIntoConstraints = false
 			lockImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
 			lockImageView.heightAnchor.constraint(equalTo: lockImageView.widthAnchor).isActive = true
@@ -96,9 +116,7 @@ class SlideToUnlockPadlock: UIControl {
 	}
 
 	@objc func primaryActionTriggered(_ sender: SlideToUnlock) {
+		locked = false
 		sendActions(for: .primaryActionTriggered)
 	}
-
-
-
 }

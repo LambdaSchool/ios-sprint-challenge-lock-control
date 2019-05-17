@@ -22,8 +22,8 @@ enum AppearanceHelper {
 	
 	static func setTheme () {
 		
-		UINavigationBar.appearance().barTintColor = .red
-		UIBarButtonItem.appearance().tintColor = .red
+		UINavigationBar.appearance().barTintColor = backGroundColor
+//		UIBarButtonItem.appearance().tintColor = .red
 		
 		let font = fbsbltcFont(with: .caption1, pointSize: 18)
 		let textAttributes = [NSAttributedString.Key.font: font]

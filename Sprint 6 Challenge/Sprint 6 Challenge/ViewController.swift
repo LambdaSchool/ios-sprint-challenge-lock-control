@@ -19,8 +19,6 @@ class ViewController: UIViewController {
 		title = "Hello!"
 		originCenter = sliderControlOuutLet.center.x
 		
-		AppearanceHelper.setTheme()
-		
 		mainView.backgroundColor = AppearanceHelper.backGroundColor
 		mainView.layer.cornerRadius = 22
 		
@@ -34,7 +32,7 @@ class ViewController: UIViewController {
 	
 	private func resetSetup() {
 		resetButtonOutlet.isEnabled = false
-		resetButtonOutlet.tintColor = .white
+		resetButtonOutlet.tintColor = AppearanceHelper.backGroundColor
 	}
 	
 	@IBAction func unlockedWithSlider(_ sender: UIControl) {

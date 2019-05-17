@@ -58,16 +58,48 @@
 		468B89DF2137397400E7FF73 /* Sprint 6 Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
-				468B89EC2137397500E7FF73 /* Info.plist */,
-				EC6C678D228F15C20050223B /* CustomControl.swift */,
-				EC6C678F228F389E0050223B /* AppearenceHelper.swift */,
+				EC6C6794228F3FC40050223B /* Hellpers */,
+				EC6C6793228F3FAF0050223B /* View Controller */,
+				EC6C6792228F3FA20050223B /* Storyboards */,
+				EC6C6791228F3F870050223B /* Resources */,
 			);
 			path = "Sprint 6 Challenge";
+			sourceTree = "<group>";
+		};
+		EC6C6791228F3F870050223B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				468B89E72137397500E7FF73 /* Assets.xcassets */,
+				468B89EC2137397500E7FF73 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EC6C6792228F3FA20050223B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E42137397400E7FF73 /* Main.storyboard */,
+				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EC6C6793228F3FAF0050223B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+				EC6C678D228F15C20050223B /* CustomControl.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		EC6C6794228F3FC40050223B /* Hellpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C678F228F389E0050223B /* AppearenceHelper.swift */,
+			);
+			path = Hellpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 6 Challenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Sprint 6 Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 6 Challenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

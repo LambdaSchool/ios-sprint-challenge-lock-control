@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Swipe to unlock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_6_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateLock:" destination="BYZ-38-t0r" eventType="valueChanged" id="ayd-I6-JnM"/>
@@ -67,7 +66,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MRQ-3G-a6g">
+                    <navigationItem key="navigationItem" title="Swipe to unlock" id="MRQ-3G-a6g">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Jsq-h1-IGw">
                             <connections>
                                 <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="1ep-oY-PyG"/>

@@ -9,6 +9,7 @@
 import UIKit
 
 class CustomControl: UIControl {
+    
     var value: CGFloat = 0.0
     var shouldUnlock = false
     
@@ -21,16 +22,15 @@ class CustomControl: UIControl {
     
     private var thumbView = UIView()
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.clipsToBounds = true
-        
         setup()
     }
     
     func reset() {
+        
         thumbView.frame = startingPosition
         shouldUnlock = false
     }
@@ -50,7 +50,6 @@ class CustomControl: UIControl {
     private func updateValue(at touch: UITouch) {
         
         let touchPoint = touch.location(in: self)
-        
         value = touchPoint.x / bounds.width
         
         if touchPoint.x <= 290 {
@@ -112,13 +111,5 @@ class CustomControl: UIControl {
         
         sendActions(for: .touchCancel)
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lockImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,7 +24,10 @@ class ViewController: UIViewController {
 
 
     @IBAction func updateLock(_ slider: CustomControl) {
-        print(slider.value)
+        
+        if slider.shouldUnlock {
+            lockImageView.image = #imageLiteral(resourceName: "Unlocked")
+        }
     }
 }
 

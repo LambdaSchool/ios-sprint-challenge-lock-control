@@ -10,12 +10,14 @@ import UIKit
 
 class CustomControl: UIControl {
     var value: CGFloat = 0.0
+    var shouldUnlock = false
     
     private let thumbViewSize: CGFloat = 60
     private let cornerRadius: CGFloat = 30
     private let thumbViewColor = UIColor.black
     
     private let startingPosition = CGRect(x: 8, y: 7, width: 60, height: 60)
+    private let finishPosition = CGRect(x:  290, y: 7, width: 60, height: 60)
     
     private var thumbView = UIView()
     
@@ -28,7 +30,10 @@ class CustomControl: UIControl {
         setup()
     }
     
-    
+    func reset() {
+        thumbView.frame = startingPosition
+        shouldUnlock = false
+    }
     
     // MARK: - Private Functions
     
@@ -43,14 +48,27 @@ class CustomControl: UIControl {
     }
     
     private func updateValue(at touch: UITouch) {
-        print("Touched view")
+        
         let touchPoint = touch.location(in: self)
         
         value = touchPoint.x / bounds.width
         
-        thumbView.frame = CGRect(x: touchPoint.x, y: 7, width: thumbViewSize, height: thumbViewSize)
+        if touchPoint.x <= 290 {
+            thumbView.frame = CGRect(x: touchPoint.x, y: 7, width: thumbViewSize, height: thumbViewSize)
+        }
         
         sendActions(for: .valueChanged)
+    }
+    
+    private func isUnlocked () {
+
+        if value < 0.6 {
+            thumbView.frame = startingPosition
+        } else {
+            thumbView.frame = finishPosition
+            shouldUnlock = true
+            sendActions(for: .valueChanged)
+        }
     }
     
     // MARK: - Touch Handlers
@@ -69,6 +87,7 @@ class CustomControl: UIControl {
             sendActions(for: .touchUpInside)
         } else {
             sendActions(for: .touchUpOutside)
+            updateValue(at: touch)
         }
         
         return true
@@ -81,6 +100,7 @@ class CustomControl: UIControl {
         
         if bounds.contains(touchPoint) {
             updateValue(at: touch)
+            isUnlocked()
             sendActions(for: .touchUpInside)
         } else {
             sendActions(for: .touchUpOutside)

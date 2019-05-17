@@ -21,5 +21,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func updateLock(_ slider: CustomControl) {
+        print(slider.value)
+    }
 }
 

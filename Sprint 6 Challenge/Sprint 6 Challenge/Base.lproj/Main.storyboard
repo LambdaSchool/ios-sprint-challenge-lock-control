@@ -21,33 +21,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-A7-FzK">
                                 <rect key="frame" x="20.5" y="261.5" width="373" height="373"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuu-fE-ezQ">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuu-fE-ezQ" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="290.5" width="357" height="74.5"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8l-C6-J41">
-                                                <rect key="frame" x="8" y="7" width="60" height="60"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="O8l-C6-J41" secondAttribute="height" id="9mM-ZA-Gzb"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="30"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="O8l-C6-J41" firstAttribute="centerY" secondItem="xuu-fE-ezQ" secondAttribute="centerY" id="JRQ-gq-bhy"/>
-                                            <constraint firstItem="O8l-C6-J41" firstAttribute="leading" secondItem="xuu-fE-ezQ" secondAttribute="leading" constant="8" id="Tdv-Mz-7lR"/>
-                                            <constraint firstItem="O8l-C6-J41" firstAttribute="height" secondItem="xuu-fE-ezQ" secondAttribute="height" multiplier="0.8" id="ypw-ba-IUL"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="updateLock:" destination="BYZ-38-t0r" eventType="valueChanged" id="ayd-I6-JnM"/>
+                                        </connections>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-mU-j31">
                                         <rect key="frame" x="118" y="61.5" width="137" height="199.5"/>

@@ -67,9 +67,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MRQ-3G-a6g"/>
+                    <navigationItem key="navigationItem" id="MRQ-3G-a6g">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Jsq-h1-IGw">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="1ep-oY-PyG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="customControl" destination="xuu-fE-ezQ" id="hs1-YJ-Jdo"/>
                         <outlet property="lockImageView" destination="6cK-mU-j31" id="PoA-PN-lf1"/>
+                        <outlet property="resetButton" destination="Jsq-h1-IGw" id="mTF-GK-LEq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

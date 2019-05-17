@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B8AA8CB228F057900915308 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8AA8CA228F057900915308 /* CustomControl.swift */; };
+		1B8AA8CD228F148D00915308 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8AA8CC228F148D00915308 /* ThemeHelper.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		1B8AA8CA228F057900915308 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		1B8AA8CC228F148D00915308 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 6 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 6 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				1B8AA8CA228F057900915308 /* CustomControl.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
+				1B8AA8CC228F148D00915308 /* ThemeHelper.swift */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
@@ -141,6 +144,7 @@
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				1B8AA8CB228F057900915308 /* CustomControl.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				1B8AA8CD228F148D00915308 /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

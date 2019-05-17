@@ -12,7 +12,16 @@ class ViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var lockControl: LockControl!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
+    // MARK: - View Loading
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if isViewLoaded {
+            resetButton.title = ""
+        }
+    }
     // MARK: - Actions
     @IBAction func resetLock(_ sender: Any) {
         

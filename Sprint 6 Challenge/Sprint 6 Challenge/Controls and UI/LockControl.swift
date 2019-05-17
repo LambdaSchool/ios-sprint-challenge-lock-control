@@ -9,6 +9,46 @@
 import UIKit
 
 class LockControl: UIControl {
+    
+    // MARK: - Properties
+    private let lockedImage = UIImage(named: "Locked")
+    private let unlockedImage = UIImage(named: "Unlocked")
+    private var image: UIImageView!
+    
+    // MARK: - View Loading
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: - Setup
+    
+    func createSlider() {
+        
+    }
+    
+    func createImage() {
+        let width = self.frame.width/2
+        let x = width/2
+        let y = width/2
+        let frame = CGRect(x: x, y: y, width: width, height: width)
+        let image = UIImageView(frame: frame)
+        
+        image.isUserInteractionEnabled = false
+        image.image = lockedImage
+        image.contentMode = .scaleAspectFit
+        addSubview(image)
+        self.image = image
+    }
+    
+    func setup() {
+        self.isUserInteractionEnabled = true
+        self.layer.cornerRadius = 16
+        self.clipsToBounds = true
+        
+        createSlider()
+        createImage()
+    }
 
     // MARK: - Touch Handling
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {

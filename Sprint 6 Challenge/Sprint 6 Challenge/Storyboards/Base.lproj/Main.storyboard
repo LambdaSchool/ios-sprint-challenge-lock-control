@@ -44,6 +44,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lockControl" destination="D2h-0q-4Ds" id="JJo-d8-yE1"/>
+                        <outlet property="resetButton" destination="ER4-EW-TGT" id="v9C-b8-Web"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -24,11 +24,23 @@ class ViewController: UIViewController {
     @IBAction func customLockTriggered(_ sender: CustomLock) {
         
         if sender.isLocked {
-            resetButton.isEnabled = false
-            resetButton.tintColor = .clear
+            hideResetButton()
         } else {
-            resetButton.isEnabled = true
-            resetButton.tintColor = AppearanceHelper.navBarTextColor
+            showResetButton()
+        }
+    }
+    
+    private func hideResetButton() {
+        UIView.animate(withDuration: 0.5) {
+            self.resetButton.isEnabled = false
+            self.resetButton.tintColor = .clear
+        }
+    }
+    
+    private func showResetButton() {
+        UIView.animate(withDuration: 0.5) {
+            self.resetButton.isEnabled = true
+            self.resetButton.tintColor = AppearanceHelper.navBarTextColor
         }
     }
 }

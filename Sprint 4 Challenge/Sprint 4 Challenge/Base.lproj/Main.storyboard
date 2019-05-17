@@ -18,11 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh7-Dj-5BS" customClass="SlideToUnlock" customModule="Sprint_4_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="87" y="432" width="240" height="32"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh7-Dj-5BS" customClass="SlideToUnlockPadlock" customModule="Sprint_4_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.70407626300000004" green="0.1491468826" blue="0.11407509020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="CSw-qo-VUa"/>
-                                    <constraint firstAttribute="height" constant="32" id="eKB-yl-UzE"/>
+                                    <constraint firstAttribute="height" constant="240" id="eKB-yl-UzE"/>
                                 </constraints>
                                 <connections>
                                     <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="US1-nc-W0l"/>

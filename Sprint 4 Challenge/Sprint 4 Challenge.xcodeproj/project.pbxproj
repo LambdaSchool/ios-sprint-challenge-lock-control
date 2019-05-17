@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33A5D96F228F0B91007467EF /* SlideToUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D96E228F0B91007467EF /* SlideToUnlock.swift */; };
+		33A5D971228F1CD3007467EF /* SlideToUnlockPadlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A5D970228F1CD3007467EF /* SlideToUnlockPadlock.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		33A5D96E228F0B91007467EF /* SlideToUnlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideToUnlock.swift; sourceTree = "<group>"; };
+		33A5D970228F1CD3007467EF /* SlideToUnlockPadlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideToUnlockPadlock.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 4 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				33A5D96E228F0B91007467EF /* SlideToUnlock.swift */,
+				33A5D970228F1CD3007467EF /* SlideToUnlockPadlock.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				33A5D96F228F0B91007467EF /* SlideToUnlock.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				33A5D971228F1CD3007467EF /* SlideToUnlockPadlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

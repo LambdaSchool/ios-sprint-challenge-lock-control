@@ -26,6 +26,12 @@ class SlideToUnlock: UIControl {
 		setup()
 	}
 
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		textLabel.text = "Slide to unlock"
+		setup()
+	}
+
 	private func setup() {
 		backgroundColor = .gray
 		let radius = bounds.size.height * 0.4

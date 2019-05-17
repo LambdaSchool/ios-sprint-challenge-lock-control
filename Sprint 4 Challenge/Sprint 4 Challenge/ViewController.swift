@@ -40,6 +40,8 @@ class ViewController: UIViewController {
         
         view.backgroundColor = AppearanceHelper.navItemBrown
         grayBackgoundView.layer.backgroundColor = AppearanceHelper.barelyBrown.cgColor
+        grayBackgoundView.layer.borderWidth = 1.0
+        grayBackgoundView.layer.borderColor = AppearanceHelper.navbarBrown.cgColor
         unlockSliderView.layer.backgroundColor = AppearanceHelper.navbarBrown.cgColor
         
         rightBarButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action:#selector(self.resetButtonClicked(_:)))

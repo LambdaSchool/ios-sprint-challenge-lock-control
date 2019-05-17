@@ -38,11 +38,13 @@ class CustomLock: UIControl {
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
+        // Only begin tracking if locked
         guard isLocked else { return false }
         
         let touchPoint = touch.location(in: self)
         
         if slider.frame.contains(touchPoint) {
+            sendActions(for: .touchDown)
             return true
         } else {
             return false
@@ -56,6 +58,7 @@ class CustomLock: UIControl {
         guard touchPoint.x > 0 && touchPoint.x < bounds.width - slider.frame.width else { return true }
         
         slider.frame.origin = CGPoint(x: touchPoint.x, y: sliderYPosition)
+        sendActions(for: .touchDragInside)
         return true
     }
     
@@ -63,8 +66,14 @@ class CustomLock: UIControl {
         
         defer { super.endTracking(touch, with: event) }
         
-        guard let touchPoint = touch?.location(in: self) else { return }
+        guard let touchPoint = touch?.location(in: self) else {
+            sendActions(for: .touchUpOutside)
+            return
+        }
         
+        sendActions(for: .touchUpInside)
+        
+        // Unlock if slider is > 80% of the way
         if touchPoint.x > (0.80 * (bounds.width - slider.frame.width)) {
             unlock()
         } else {
@@ -75,6 +84,8 @@ class CustomLock: UIControl {
     override func cancelTracking(with event: UIEvent?) {
         
         super.cancelTracking(with: event)
+        
+        sendActions(for: .touchCancel)
         
         reset()
     }

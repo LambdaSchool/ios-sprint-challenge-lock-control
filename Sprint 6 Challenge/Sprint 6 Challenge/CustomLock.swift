@@ -56,7 +56,7 @@ class CustomLock: UIControl {
         let touchPoint = touch.location(in: self)
         
         // Keep the slider inside the sliderView
-        guard touchPoint.x > 0 && touchPoint.x < bounds.width - slider.frame.width else { return true }
+        guard touchPoint.x > 15 && touchPoint.x < bounds.width - slider.frame.width - 15 else { return true }
         
         slider.frame.origin = CGPoint(x: touchPoint.x, y: sliderYPosition)
         sendActions(for: .touchDragInside)

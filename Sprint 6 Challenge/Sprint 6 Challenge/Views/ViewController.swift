@@ -41,21 +41,35 @@ class ViewController: UIViewController {
     }
     
     func setUpViews() {
-        setUpSliderContainer()
         setUpContainer()
+        setUpSliderContainer()
         setUpSlider()
+        resetButton?.title = isUnlocked ? "Reset" : ""
+        imageView?.image = isUnlocked ? UIImage(named: "Unlocked") : UIImage(named: "Locked")
     }
     
     func setUpSliderContainer() {
-        
+        sliderContainer.backgroundColor = .gray
+        sliderContainer.layer.cornerRadius = sliderContainer.bounds.height / 2
+        sliderContainer.clipsToBounds = true
+        stackView.addSubview(sliderContainer)
     }
     
     func setUpContainer() {
-        
+        container.layer.cornerRadius = sliderContainer.bounds.height / 5
+        container.center.x = view.frame.width / 2
+        container.center.y = view.frame.height / 2
+        container.clipsToBounds = true
     }
     
     func setUpSlider() {
-        
+        slider.backgroundColor = .black
+        slider.frame = CGRect(x: sliderContainer.frame.origin.x + 5, y: sliderContainer.frame.origin.y + 5, width: 50.0, height: 50.0)
+        slider.layer.cornerRadius = max(slider.bounds.height, slider.bounds.width) / 2
+        slider.clipsToBounds = true
+        sliderContainer.addSubview(slider)
+        stackView.addSubview(slider)
+        stackView.sendSubview(toBack: slider)
     }
 }
 

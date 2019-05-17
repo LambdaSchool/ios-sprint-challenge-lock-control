@@ -9,27 +9,52 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var rightBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        //self.navigationItem.rightBarButtonItem = rightBarButton
+
         
         setup()
         
     }
 
     @IBAction func unlockSliderControl(_ unLockSlider: LockControl) {
-        if (unLockSlider.value >= 192) {
+        if (unLockSlider.value > 192) {
             lockImageView.image = UIImage(named: "Unlocked")
-        } else {
             
+            rightBarButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action:#selector(self.resetButtonClicked(_:)))
+            navigationItem.rightBarButtonItems = [rightBarButton]
+        } else {
+
         }
     }
     
-    
-    @IBAction func resetButtonTapped(_ sender: Any) {
+    @objc func resetButtonClicked(_ rightBarButton:UIBarButtonItem) {
+        lockImageView.image = UIImage(named: "Locked")
+        lockImageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                UIView.animate(withDuration: 3.0,
+                               delay: 0,
+                               usingSpringWithDamping: 0.3,
+                               initialSpringVelocity: 0,
+                               options: [],
+                               animations: {
+                              //  self.label.transform = .identity
+                },
+                               completion: nil)
     }
     
     private func setup() {
+        
+        rightBarButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action:#selector(self.resetButtonClicked(_:)))
+        
+        self.navigationItem.rightBarButtonItem = nil
+        
         grayBackgoundView.layer.cornerRadius = 22
     //    unlockSliderView.layer.cornerRadius = 22
         self.navigationItem.title = "Hello!"

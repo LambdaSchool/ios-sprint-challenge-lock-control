@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 enum AppearanceHelper {
 	
@@ -15,7 +16,7 @@ enum AppearanceHelper {
 	static var sliderBackGroundColoer = UIColor.lightGray
 	
 	static func fbsbltcFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont{
-		let font = UIFont(name: "fbsbltc", size: pointSize)!
+		let font = UIFont(name: "Fatboy Slim BLTC BRK", size: pointSize)!
 		return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
 	}
 	
@@ -23,6 +24,9 @@ enum AppearanceHelper {
 		
 		UINavigationBar.appearance().barTintColor = backGroundColor
 		
+		let font = fbsbltcFont(with: .caption1, pointSize: 18)
+		let textAttributes = [NSAttributedString.Key.font: font]
+		UINavigationBar.appearance().titleTextAttributes = textAttributes
 	}
 	
 }

@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Hello!"
+        setup()
+    }
+	
+	private func setup() {
+		title = "Hello!"
+		
+		AppearanceHelper.setTheme()
+		
+		mainView.backgroundColor = .red
+		sliderContainerView.backgroundColor = .gray
+		
+		
 		
 		originCenter = sliderControlOuutLet.center.x
 		print(originCenter)
@@ -20,9 +31,13 @@ class ViewController: UIViewController {
 		sliderContainerView.layer.cornerRadius = 28
 		mainView.layer.cornerRadius = 22
 		
+		resetSetup()
+	}
+	
+	private func resetSetup() {
 		resetButtonOutlet.isEnabled = false
 		resetButtonOutlet.tintColor = .white
-    }
+	}
 	
 	@IBAction func unlockedWithSlider(_ sender: UIControl) {
 		print("unlock")
@@ -31,7 +46,6 @@ class ViewController: UIViewController {
 		
 		UIView.animate(withDuration: 0.2) {
 			self.resetButtonOutlet.tintColor = .black
-			
 		}
 	}
 	

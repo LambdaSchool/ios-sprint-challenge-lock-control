@@ -16,7 +16,7 @@ class SliderControl: UIControl {
 	
 	override func layoutSubviews() {
 		frameOrigin = frame
-		backgroundColor = .red
+		backgroundColor = AppearanceHelper.sliderBackGroundColoer
 		clipsToBounds = true
 		layer.cornerRadius = frame.size.width / 2
 	}

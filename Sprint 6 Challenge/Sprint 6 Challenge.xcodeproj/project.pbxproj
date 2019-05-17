@@ -10,10 +10,11 @@
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
-		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		E885E8B4228F097300A8A553 /* SliderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885E8B3228F097300A8A553 /* SliderControl.swift */; };
 		E885E8B6228F1ED400A8A553 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885E8B5228F1ED400A8A553 /* AppearanceHelper.swift */; };
+		E885E8B8228F230E00A8A553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E885E8B7228F230E00A8A553 /* Assets.xcassets */; };
+		E885E8BA228F232600A8A553 /* fbsbltc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E885E8B9228F232600A8A553 /* fbsbltc.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +22,12 @@
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E885E8B3228F097300A8A553 /* SliderControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderControl.swift; sourceTree = "<group>"; };
 		E885E8B5228F1ED400A8A553 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		E885E8B7228F230E00A8A553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E885E8B9228F232600A8A553 /* fbsbltc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fbsbltc.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +65,10 @@
 				E885E8B3228F097300A8A553 /* SliderControl.swift */,
 				E885E8B5228F1ED400A8A553 /* AppearanceHelper.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
+				E885E8B7228F230E00A8A553 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
+				E885E8B9228F232600A8A553 /* fbsbltc.ttf */,
 			);
 			path = "Sprint 6 Challenge";
 			sourceTree = "<group>";
@@ -130,8 +133,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
-				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
+				E885E8B8228F230E00A8A553 /* Assets.xcassets in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
+				E885E8BA228F232600A8A553 /* fbsbltc.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

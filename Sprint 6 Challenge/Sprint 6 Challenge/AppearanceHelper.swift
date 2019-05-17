@@ -14,6 +14,11 @@ enum AppearanceHelper {
 	static var lockBackGrounColor = UIColor.gray
 	static var sliderBackGroundColoer = UIColor.lightGray
 	
+	static func fbsbltcFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont{
+		let font = UIFont(name: "fbsbltc", size: pointSize)!
+		return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
+	}
+	
 	static func setTheme () {
 		
 		UINavigationBar.appearance().barTintColor = backGroundColor

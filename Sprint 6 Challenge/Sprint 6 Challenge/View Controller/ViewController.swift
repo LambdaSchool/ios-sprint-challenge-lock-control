@@ -25,11 +25,6 @@ class ViewController: UIViewController {
     // MARK: - Actions
     @IBAction func resetLock(_ sender: Any) {
         resetButton.title = ""
-        lockControl.reset()
-    }
-    
-    @IBAction func unlock(_ lockControl: LockControl) {
-        resetButton.title = "Reset"
     }
 }
 

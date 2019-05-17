@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Unlockinator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_4_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +26,6 @@
                                     <constraint firstAttribute="height" constant="240" id="eKB-yl-UzE"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="US1-nc-W0l"/>
                                     <action selector="sliderUnlocked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HIB-lo-cos"/>
                                 </connections>
                             </view>
@@ -38,8 +37,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iRk-SI-Uqi">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="P7C-8r-RbV">
+                    <navigationItem key="navigationItem" title="Unlockinator" id="iRk-SI-Uqi">
+                        <barButtonItem key="rightBarButtonItem" id="P7C-8r-RbV">
                             <connections>
                                 <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="oEj-zx-gQD"/>
                             </connections>

@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         title = "Hello!"
 		
+		originCenter = sliderControlOuutLet.center.x
+		print(originCenter)
+		
 		sliderContainerView.layer.cornerRadius = 28
 		mainView.layer.cornerRadius = 22
 		
@@ -33,9 +36,17 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func resetBarButton(_ sender: Any) {
-		resetButtonOutlet.isEnabled = true
-
-		print("reset")
+		
+		UIView.animate(withDuration: 0.1, animations: {
+			self.sliderControlOuutLet.center.x = self.originCenter
+			
+		}) { _ in
+			DispatchQueue.main.async {
+				self.lockImageView.image = UIImage(named: "Locked")
+				
+			}
+			
+		}
 	}
 	
 	
@@ -44,6 +55,6 @@ class ViewController: UIViewController {
 	@IBOutlet var lockImageView: UIImageView!
 	@IBOutlet var sliderContainerView: UIView!
 	@IBOutlet var mainView: UIView!
-
+	var originCenter: CGFloat = 0
 }
 

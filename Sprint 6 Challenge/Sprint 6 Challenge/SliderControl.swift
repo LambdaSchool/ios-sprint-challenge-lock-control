@@ -16,7 +16,6 @@ class SliderControl: UIControl {
 	
 	override func layoutSubviews() {
 		frameOrigin = frame
-		print(frame.midX)
 		backgroundColor = .red
 		clipsToBounds = true
 		layer.cornerRadius = frame.size.width / 2
@@ -73,8 +72,6 @@ class SliderControl: UIControl {
 			}
 			
 		}
-		
-//		print(frame.midX)
 	}
 	
 	override func cancelTracking(with event: UIEvent?) {

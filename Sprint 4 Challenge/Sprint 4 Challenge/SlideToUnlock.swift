@@ -12,8 +12,8 @@ class SlideToUnlock: UIControl {
 
 	private var padding: CGFloat = 0
 
-	private let slider = UIView()
-	private let bgView = UIView()
+	private let knob = UIView()
+//	private let bgView = UIView()
 	private var minValue: CGFloat = 0
 	private var maxValue: CGFloat = 0
 	var value: CGFloat = 0
@@ -25,22 +25,23 @@ class SlideToUnlock: UIControl {
 	}
 
 	private func setup() {
-		bgView.frame = bounds
-		bgView.backgroundColor = .gray
-		insertSubview(bgView, aboveSubview: self)
+//		bgView.frame = bounds
+		backgroundColor = .gray
+//		insertSubview(bgView, aboveSubview: self)
 		let radius = bounds.size.height * 0.4
 		padding = bounds.size.height * 0.1
 
 		minValue = padding + radius
 		maxValue = bounds.maxX - (padding + radius)
 
-		slider.frame = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
-		slider.center = CGPoint(x: minValue, y: bounds.midY)
-		slider.backgroundColor = .darkGray
-		insertSubview(slider, aboveSubview: bgView)
+		knob.frame = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
+		knob.center = CGPoint(x: minValue, y: bounds.midY)
+		knob.backgroundColor = .darkGray
+		knob.isUserInteractionEnabled = false
+		insertSubview(knob, aboveSubview: self)
 
-		bgView.layer.cornerRadius = bgView.bounds.size.height / 2
-		slider.layer.cornerRadius = slider.bounds.size.height / 2
+		layer.cornerRadius = bounds.size.height / 2
+		knob.layer.cornerRadius = knob.bounds.size.height / 2
 	}
 
 	override func layoutSubviews() {
@@ -50,9 +51,15 @@ class SlideToUnlock: UIControl {
 
 	// MARK: - Touch Handlers
 	override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-		updateValue(at: touch)
-		sendActions(for: [.touchDown])
-		return true
+		let location = touch.location(in: self)
+		if knob.frame.contains(location) {
+			knob.layer.removeAllAnimations()
+			updateValue(at: touch)
+			sendActions(for: [.touchDown])
+			return true
+		} else {
+			return false
+		}
 	}
 
 	override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -69,9 +76,11 @@ class SlideToUnlock: UIControl {
 
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
 		if let touch = touch {
+			updateValue(at: touch)
+			resetSlider()
+
 			let location = touch.location(in: self)
 			if bounds.contains(location) {
-				updateValue(at: touch)
 				sendActions(for: [.touchUpInside])
 			} else {
 				sendActions(for: [.touchUpOutside])
@@ -80,19 +89,30 @@ class SlideToUnlock: UIControl {
 	}
 
 	override func cancelTracking(with event: UIEvent?) {
+		resetSlider()
 		sendActions(for: [.touchCancel])
 	}
 
 	private func updateValue(at touch: UITouch) {
+		let location = touch.location(in: self)
+		knob.center.x = location.x
+		checkSliderBounds()
 
 	}
 
-	private func checkSliderBounds() {
-		if slider.center.x < minValue {
-			slider.center.x = minValue
+	private func resetSlider() {
+		UIView.animate(withDuration: 0.2) { [weak self] in
+			guard let self = self else { return }
+			self.knob.center.x = self.minValue
 		}
-		if slider.center.x > maxValue {
-			slider.center.x = maxValue
+	}
+
+	private func checkSliderBounds() {
+		if knob.center.x < minValue {
+			knob.center.x = minValue
+		}
+		if knob.center.x > maxValue {
+			knob.center.x = maxValue
 		}
 	}
 }

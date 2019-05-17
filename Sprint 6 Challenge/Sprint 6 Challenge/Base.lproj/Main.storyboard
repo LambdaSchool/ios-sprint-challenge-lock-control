@@ -17,14 +17,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qoj-vc-4ab">
+                                <rect key="frame" x="20" y="188" width="374" height="390"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="GOo-h9-qZD">
+                                        <rect key="frame" x="62.5" y="55" width="249" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="GOo-h9-qZD" secondAttribute="height" multiplier="261:236" id="M10-2J-tFz"/>
+                                            <constraint firstAttribute="height" constant="225" id="bKv-xj-UUB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qoj-vc-4ab" secondAttribute="height" multiplier="187:195" id="1BY-0f-cFw"/>
+                                    <constraint firstItem="GOo-h9-qZD" firstAttribute="centerX" secondItem="Qoj-vc-4ab" secondAttribute="centerX" id="Oxl-90-EkO"/>
+                                    <constraint firstItem="GOo-h9-qZD" firstAttribute="top" secondItem="Qoj-vc-4ab" secondAttribute="top" constant="55" id="Rqe-GZ-t5i"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcM-dm-jAg">
+                                <rect key="frame" x="29" y="486" width="356" height="67"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkv-Eu-zck">
+                                        <rect key="frame" x="8" y="8" width="48" height="51"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bkv-Eu-zck" secondAttribute="height" multiplier="16:17" id="cGx-OL-9Td"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bkv-Eu-zck" firstAttribute="top" secondItem="BcM-dm-jAg" secondAttribute="top" constant="8" id="1xz-qT-Cw7"/>
+                                    <constraint firstAttribute="width" secondItem="BcM-dm-jAg" secondAttribute="height" multiplier="117:22" id="Gpu-Ob-631"/>
+                                    <constraint firstAttribute="height" constant="67" id="VBb-Hi-wdw"/>
+                                    <constraint firstAttribute="bottom" secondItem="bkv-Eu-zck" secondAttribute="bottom" constant="8" id="Zrg-4w-rtb"/>
+                                    <constraint firstItem="bkv-Eu-zck" firstAttribute="leading" secondItem="BcM-dm-jAg" secondAttribute="leading" constant="8" id="aXc-Ld-a4g"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qoj-vc-4ab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LZR-am-ELm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qoj-vc-4ab" secondAttribute="trailing" constant="20" id="MRs-2i-qq0"/>
+                            <constraint firstItem="BcM-dm-jAg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mg6-wx-1Eu"/>
+                            <constraint firstItem="Qoj-vc-4ab" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="XE5-ii-zlC"/>
+                            <constraint firstItem="Qoj-vc-4ab" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="auR-mM-UCy"/>
+                            <constraint firstItem="BcM-dm-jAg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="398" id="uXc-ic-dig"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="0XJ-bz-Lf8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="779"/>
+            <point key="canvasLocation" x="1286.9565217391305" y="778.79464285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GDW-BD-eE4">
@@ -45,4 +93,7 @@
             <point key="canvasLocation" x="385.50724637681162" y="783.48214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="220" height="293"/>
+    </resources>
 </document>

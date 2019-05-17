@@ -9,5 +9,10 @@
 import UIKit
 
 enum Appearance {
-    
+    static func setUpAppearance() {
+        UINavigationBar.appearance().barTintColor = UIColor.purple
+        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        UIBarButtonItem.appearance().tintColor = UIColor.white
+    }
 }

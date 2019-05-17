@@ -8,18 +8,13 @@
 
 import UIKit
 
-
-
-
-
 class SliderControl: UIControl {
+	let unLockState = CGFloat(260)
 	let maxOrigin = 327 // 32 is min x
 	let minOrigin = 32 //327 is max X
 	var frameOrigin: CGRect?
 	
 	override func layoutSubviews() {
-		
-		
 		frameOrigin = frame
 		print(frame.midX)
 		backgroundColor = .red
@@ -27,9 +22,7 @@ class SliderControl: UIControl {
 		layer.cornerRadius = frame.size.width / 2
 	}
 
-	
 	override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-		
 		return true
 	}
 	
@@ -48,7 +41,8 @@ class SliderControl: UIControl {
 			} else {
 				center.x += 1
 			}
-		} else if frame.midX > 260 {
+			
+		} else if frame.midX > unLockState {
 			UIView.animate(withDuration: 0.1, animations: {
 				self.center.x = CGFloat(self.maxOrigin)
 			})
@@ -59,7 +53,7 @@ class SliderControl: UIControl {
 	}
 	
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-		if frame.midX < 260 {
+		if frame.midX < unLockState {
 			
 			UIView.animate(withDuration: 0.1) {
 				self.frame = self.frameOrigin!
@@ -76,10 +70,9 @@ class SliderControl: UIControl {
 		}
 		
 //		print(frame.midX)
-		
 	}
 	
 	override func cancelTracking(with event: UIEvent?) {
-		
+		sendActions(for: [.touchCancel])
 	}
 }

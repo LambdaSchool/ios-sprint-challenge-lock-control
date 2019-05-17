@@ -13,10 +13,11 @@ class ViewController: UIViewController {
 	@IBOutlet var resetButton: UIBarButtonItem!
 	@IBOutlet var slideToUnlockPad: SlideToUnlockPadlock!
 
-	@IBOutlet var tempslide: SlideToUnlock!
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+		slideToUnlockPad.tintColor = .green
+		slideToUnlockPad.backgroundColor = .blue
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +35,5 @@ class ViewController: UIViewController {
 
 	@IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
 		slideToUnlockPad.locked = true
-
-		tempslide.isEnabled.toggle()
 	}
 }

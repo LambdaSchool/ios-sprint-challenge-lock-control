@@ -19,6 +19,12 @@ class SlideToUnlock: UIControl {
 	var textLabel = UILabel()
 	var completionThreshold: CGFloat = 0.8
 
+	override var tintColor: UIColor! {
+		didSet {
+			knob.backgroundColor = tintColor
+		}
+	}
+
 	// MARK: - Initializer stuff
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -33,7 +39,6 @@ class SlideToUnlock: UIControl {
 	}
 
 	private func setup() {
-		backgroundColor = .gray
 		let radius = bounds.size.height * 0.4
 		padding = bounds.size.height * 0.1
 
@@ -59,7 +64,7 @@ class SlideToUnlock: UIControl {
 
 		knob.frame = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
 		knob.center = CGPoint(x: minValue, y: bounds.midY)
-		knob.backgroundColor = .darkGray
+		knob.backgroundColor = tintColor
 		knob.isUserInteractionEnabled = false
 		insertSubview(knob, aboveSubview: textLabel)
 

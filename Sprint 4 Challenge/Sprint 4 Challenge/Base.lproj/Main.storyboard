@@ -30,19 +30,9 @@
                                     <action selector="sliderUnlocked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HIB-lo-cos"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-py-JKt" customClass="SlideToUnlock" customModule="Sprint_4_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="20" y="588" width="374" height="71"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="Due-bF-dR0"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SyE-py-JKt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EOk-Vi-wjF"/>
-                            <constraint firstItem="SyE-py-JKt" firstAttribute="top" secondItem="lh7-Dj-5BS" secondAttribute="bottom" constant="20" id="UQU-5M-Jlo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SyE-py-JKt" secondAttribute="trailing" constant="20" id="Vlf-vv-9Es"/>
                             <constraint firstItem="lh7-Dj-5BS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZCz-8Z-iVM"/>
                             <constraint firstItem="lh7-Dj-5BS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wlV-bE-Rzg"/>
                         </constraints>
@@ -58,7 +48,6 @@
                     <connections>
                         <outlet property="resetButton" destination="P7C-8r-RbV" id="XAn-z0-OfZ"/>
                         <outlet property="slideToUnlockPad" destination="lh7-Dj-5BS" id="pOF-tI-7Jf"/>
-                        <outlet property="tempslide" destination="SyE-py-JKt" id="bcL-8e-PB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,6 +13,29 @@ class SlideToUnlockPadlock: UIControl {
 	private let lockImageView = UIImageView()
 	private let slider: SlideToUnlock
 
+	var unlockPrompt = "Slide to unlock"
+	var willUnlockPrompt = "Release to unlock"
+	var didUnlockPrompt = "Unlocked"
+
+	override var tintColor: UIColor! {
+		didSet {
+			slider.tintColor = tintColor
+		}
+	}
+
+	override var backgroundColor: UIColor? {
+		didSet {
+			guard let bgColor = backgroundColor else { return }
+			var hue: CGFloat = 0
+			var sat: CGFloat = 0
+			var bright: CGFloat = 0
+			var alpha: CGFloat = 0
+			bgColor.getHue(&hue, saturation: &sat, brightness: &bright, alpha: &alpha)
+			bright = max(0, bright - 0.3)
+			slider.backgroundColor = UIColor(hue: hue, saturation: sat, brightness: bright, alpha: alpha)
+		}
+	}
+
 	var completionThreshold: CGFloat {
 		get {
 			return slider.completionThreshold
@@ -34,6 +57,7 @@ class SlideToUnlockPadlock: UIControl {
 	var locked = true {
 		didSet {
 			setLockImage()
+			slider.textLabel.text = locked ? unlockPrompt : didUnlockPrompt
 			isEnabled = locked
 		}
 	}
@@ -88,6 +112,11 @@ class SlideToUnlockPadlock: UIControl {
 
 	// MARK: - Controls
 	@objc func valueChanged(_ sender: SlideToUnlock) {
+		if sender.value > completionThreshold {
+			sender.textLabel.text = willUnlockPrompt
+		} else {
+			sender.textLabel.text = unlockPrompt
+		}
 		sendActions(for: .valueChanged)
 	}
 
@@ -117,6 +146,7 @@ class SlideToUnlockPadlock: UIControl {
 
 	@objc func primaryActionTriggered(_ sender: SlideToUnlock) {
 		locked = false
+		sender.textLabel.text = didUnlockPrompt
 		sendActions(for: .primaryActionTriggered)
 	}
 }

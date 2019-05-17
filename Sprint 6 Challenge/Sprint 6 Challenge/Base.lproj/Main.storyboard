@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-Ej-zsb">
-                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-Ej-zsb" customClass="CustomLock" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="50" y="291" width="314" height="314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WsK-Ej-zsb" secondAttribute="height" multiplier="1:1" id="gLe-DJ-yOu"/>
@@ -30,7 +30,7 @@
                         <constraints>
                             <constraint firstItem="WsK-Ej-zsb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7xW-DP-CDk"/>
                             <constraint firstItem="WsK-Ej-zsb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UV8-Ay-vOy"/>
-                            <constraint firstItem="WsK-Ej-zsb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m5c-t6-6yT"/>
+                            <constraint firstItem="WsK-Ej-zsb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="m5c-t6-6yT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

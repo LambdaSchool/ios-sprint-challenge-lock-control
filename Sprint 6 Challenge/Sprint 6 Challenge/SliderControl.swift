@@ -23,7 +23,10 @@ class SliderControl: UIControl {
 	override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
 		let touch = touch.location(in: self)
 		
-//		print(touch)
+		if bounds.contains(touch) {
+			center.x += 1
+		}
+		
 		return true
 	}
 	

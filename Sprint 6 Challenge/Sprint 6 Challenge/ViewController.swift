@@ -19,6 +19,10 @@ class ViewController: UIViewController {
 		
     }
 	
+	@IBAction func unlockedWithSlider(_ sender: UIControl) {
+		print("unlock")
+	
+	}
 	
 	@IBAction func resetBarButton(_ sender: Any) {
 	}

@@ -45,6 +45,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bkv-Eu-zck" secondAttribute="height" multiplier="16:17" id="cGx-OL-9Td"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="unlockedWithSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="mfH-lK-NfZ"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1176470588" green="0.28235294119999998" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>

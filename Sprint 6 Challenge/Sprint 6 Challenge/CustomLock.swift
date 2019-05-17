@@ -29,6 +29,51 @@ class CustomLock: UIControl {
         setup()
     }
     
+    // MARK: - Touch Handlers
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
+        let touchPoint = touch.location(in: self)
+        
+        if slider.frame.contains(touchPoint) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
+        let touchPoint = touch.location(in: self)
+        
+        guard touchPoint.x > 0 && touchPoint.x < bounds.width - slider.frame.width else { return true }
+        
+        slider.frame.origin = CGPoint(x: touchPoint.x, y: intrinsicContentSize.height - 60 - 20)
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        
+        defer { super.endTracking(touch, with: event) }
+        
+        guard let touchPoint = touch?.location(in: self) else { return }
+        
+        if touchPoint.x > (0.80 * (bounds.width - slider.frame.width)) {
+            unlock()
+        } else {
+            reset()
+        }
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        
+        super.cancelTracking(with: event)
+        
+        reset()
+    }
+    
+    // MARK: - Private Methods
+    
     private func setup() {
         
         // Setup UIView aspects (self)
@@ -84,6 +129,28 @@ class CustomLock: UIControl {
         let imageCenterYConstraint = NSLayoutConstraint(item: imageView!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: -30)
         
         NSLayoutConstraint.activate([imageWidthContraint, imageHeightContraint, imageCenterXConstraint, imageCenterYConstraint])
+    }
+    
+    private func reset() {
+        
+        isLocked = true
+        sendActions(for: .primaryActionTriggered)
+        
+        UIView.animate(withDuration: 1) {
+            self.slider.frame.origin = CGPoint(x: 20, y: self.intrinsicContentSize.height - 60 - 20)
+            self.imageView.image = #imageLiteral(resourceName: "Locked")
+        }
+    }
+    
+    private func unlock() {
+        
+        isLocked = false
+        sendActions(for: .primaryActionTriggered)
+        
+        UIView.animate(withDuration: 1) {
+            self.slider.frame.origin = CGPoint(x: self.intrinsicContentSize.width - 60 - 20, y: self.intrinsicContentSize.height - 60 - 20)
+            self.imageView.image = #imageLiteral(resourceName: "Unlocked")
+        }
     }
 
     /*

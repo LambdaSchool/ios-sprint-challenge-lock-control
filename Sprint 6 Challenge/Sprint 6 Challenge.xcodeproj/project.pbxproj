@@ -13,6 +13,7 @@
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		73CB649B228F0B4900BC1C95 /* CustomLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB649A228F0B4900BC1C95 /* CustomLock.swift */; };
+		73CB649D228F1E8800BC1C95 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB649C228F1E8800BC1C95 /* AppearanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CB649A228F0B4900BC1C95 /* CustomLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLock.swift; sourceTree = "<group>"; };
+		73CB649C228F1E8800BC1C95 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
+				73CB649C228F1E8800BC1C95 /* AppearanceHelper.swift */,
 				73CB649A228F0B4900BC1C95 /* CustomLock.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73CB649B228F0B4900BC1C95 /* CustomLock.swift in Sources */,
+				73CB649D228F1E8800BC1C95 /* AppearanceHelper.swift in Sources */,
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);

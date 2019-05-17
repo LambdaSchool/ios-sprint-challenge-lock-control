@@ -23,14 +23,12 @@ class ViewController: UIViewController {
     
     @IBAction func customLockTriggered(_ sender: CustomLock) {
         
-        NSLog("customLockTriggered")
-        
         if sender.isLocked {
             resetButton.isEnabled = false
             resetButton.tintColor = .clear
         } else {
             resetButton.isEnabled = true
-            resetButton.tintColor = .white
+            resetButton.tintColor = AppearanceHelper.navBarTextColor
         }
     }
 }

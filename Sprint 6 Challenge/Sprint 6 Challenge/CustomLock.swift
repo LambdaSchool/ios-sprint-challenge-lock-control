@@ -33,6 +33,8 @@ class CustomLock: UIControl {
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
+        guard isLocked else { return false }
+        
         let touchPoint = touch.location(in: self)
         
         if slider.frame.contains(touchPoint) {

@@ -15,14 +15,20 @@ class CustomControl: UIControl {
     private let cornerRadius: CGFloat = 30
     private let thumbViewColor = UIColor.black
     
+    private let startingPosition = CGRect(x: 8, y: 7, width: 60, height: 60)
+    
     private var thumbView = UIView()
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        self.clipsToBounds = true
+        
         setup()
     }
+    
+    
     
     // MARK: - Private Functions
     
@@ -40,6 +46,7 @@ class CustomControl: UIControl {
         print("Touched view")
         let touchPoint = touch.location(in: self)
         
+        value = touchPoint.x / bounds.width
         
         thumbView.frame = CGRect(x: touchPoint.x, y: 7, width: thumbViewSize, height: thumbViewSize)
         

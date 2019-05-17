@@ -131,7 +131,7 @@ class CustomLock: UIControl {
         NSLayoutConstraint.activate([imageWidthContraint, imageHeightContraint, imageCenterXConstraint, imageCenterYConstraint])
     }
     
-    private func reset() {
+    func reset() {
         
         isLocked = true
         sendActions(for: .primaryActionTriggered)

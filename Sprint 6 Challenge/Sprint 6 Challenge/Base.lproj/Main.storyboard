@@ -18,9 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-Ej-zsb" customClass="CustomLock" customModule="Sprint_6_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="50" y="291" width="314" height="314"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-Ej-zsb" customClass="CustomLock" customModule="Sprint_6_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="67" y="308" width="280" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="Gz5-eF-lzY"/>
+                                    <constraint firstAttribute="width" constant="280" id="pNo-W3-RjQ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="customLockTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7ql-74-5ZT"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -31,12 +38,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="0Vs-Ly-X6p">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Zgd-kB-DDm">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Reset" id="Zgd-kB-DDm">
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="NXk-s8-aJ9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="customLock" destination="WsK-Ej-zsb" id="rRD-98-qjB"/>
+                        <outlet property="resetButton" destination="Zgd-kB-DDm" id="Tlv-rv-qjn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

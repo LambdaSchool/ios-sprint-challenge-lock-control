@@ -17,6 +17,8 @@ class LockControl: UIControl {
     private var slider: UIView!
     private var sliderBar: UIView!
     private var sliderBarUpperBounds: CGRect!
+    private var sliderBarBounds: CGRect!
+    private var sliderBounds: CGRect!
     
     private(set) var isLocked: Bool = true
     
@@ -41,7 +43,6 @@ class LockControl: UIControl {
         sliderBar.layer.backgroundColor = UIColor.gray.cgColor
         sliderBar.clipsToBounds = true
         addSubview(sliderBar)
-        self.sliderBar = sliderBar
         
         // Create slider
         let radius = sliderBar.frame.height - 6
@@ -52,12 +53,19 @@ class LockControl: UIControl {
         slider.layer.backgroundColor = UIColor.black.cgColor
         slider.clipsToBounds = true
         sliderBar.addSubview(slider)
-        self.slider = slider
         
         // 80%
         let sliderBarWidth = sliderBar.frame.width
         let upperBounds = CGRect(x: sliderBar.frame.origin.x + sliderBarWidth/5*4, y: sliderBar.frame.origin.y, width: sliderBarWidth/5, height: sliderBar.frame.height)
         sliderBarUpperBounds = upperBounds
+        
+        // create bounds
+        let sliderBarFrame = self.convert(sliderBar.bounds, from: sliderBar)
+        sliderBarBounds = CGRect(x: sliderBarFrame.origin.x + radius, y: sliderBar.frame.origin.y, width: sliderBarFrame.width - radius*2, height: sliderBarFrame.height)
+        sliderBounds = self.convert(slider.bounds, from: slider)
+        
+        self.sliderBar = sliderBar
+        self.slider = slider
     }
     
     func createImage() {
@@ -93,8 +101,7 @@ class LockControl: UIControl {
     // MARK: - Touch Handling
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
-        if slider.frame.contains(touchPoint) {
-            
+        if sliderBounds.contains(touchPoint) {
             sendActions(for: [.touchDown, .valueChanged])
         } else {
             sendActions(for: [.touchDragOutside])
@@ -105,9 +112,9 @@ class LockControl: UIControl {
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
-        if sliderBar.frame.contains(touchPoint) {
+        if sliderBarBounds.contains(touchPoint) {
             let sliderBarFrame = sliderBar.frame
-            let frame = CGRect(x: touchPoint.x-slider.frame.width/2, y: sliderBarFrame.origin.y, width: sliderBarFrame.width, height: sliderBarFrame.height)
+            let frame = CGRect(x: touchPoint.x - slider.frame.width/2, y: sliderBarFrame.origin.y, width: sliderBarFrame.width, height: sliderBarFrame.height)
             slider.frame = frame
             
             if sliderBarUpperBounds.contains(touchPoint) {
@@ -126,14 +133,14 @@ class LockControl: UIControl {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         defer { super.endTracking(touch, with: event) }
         
-        guard let touch = touch else { return }
+        guard let touch = touch, let sliderBarUpperBounds = sliderBarUpperBounds else { return }
         let touchPoint = touch.location(in: self)
         if sliderBarUpperBounds.contains(touchPoint) {
             image.image = unlockedImage
             isLocked = false
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
-            slider.frame = self.convert(slider.frame, to: sliderBar)
+            slider.frame = self.convert(sliderBounds, to: sliderBar)
             sendActions(for: [.touchUpOutside])
         }
     }

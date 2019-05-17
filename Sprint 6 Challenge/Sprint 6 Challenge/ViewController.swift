@@ -17,19 +17,17 @@ class ViewController: UIViewController {
 	
 	private func setup() {
 		title = "Hello!"
+		originCenter = sliderControlOuutLet.center.x
 		
 		AppearanceHelper.setTheme()
 		
-		mainView.backgroundColor = .red
-		sliderContainerView.backgroundColor = .gray
-		
-		
-		
-		originCenter = sliderControlOuutLet.center.x
-		print(originCenter)
-		
-		sliderContainerView.layer.cornerRadius = 28
+		mainView.backgroundColor = AppearanceHelper.backGroundColor
 		mainView.layer.cornerRadius = 22
+		
+		sliderContainerView.backgroundColor = AppearanceHelper.lockBackGrounColor
+		sliderContainerView.layer.cornerRadius = 28
+		
+		
 		
 		resetSetup()
 	}
@@ -40,7 +38,6 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func unlockedWithSlider(_ sender: UIControl) {
-		print("unlock")
 		lockImageView.image = UIImage(named: "Unlocked")
 		resetButtonOutlet.isEnabled = true
 		

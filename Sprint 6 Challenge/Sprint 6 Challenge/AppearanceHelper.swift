@@ -11,9 +11,9 @@ import Foundation
 
 enum AppearanceHelper {
 	
-	static var backGroundColor = UIColor(red: 212.0/255.0, green: 87.0/225.0, blue: 80.0/255.0, alpha: 1.0)
-	static var lockBackGrounColor = UIColor.gray
-	static var sliderBackGroundColoer = UIColor.lightGray
+	static var backGroundColor = UIColor(red: 160/255.0, green: 160/225.0, blue: 128/255.0, alpha: 0.5)
+	static var lockBackGrounColor = UIColor(red: 160/255.0, green: 160/225.0, blue: 128/255.0, alpha: 1)
+	static var sliderBackGroundColoer = UIColor(red: 160/255.0, green: 190/225.0, blue: 128/255.0, alpha: 0.5)
 	
 	static func fbsbltcFont(with textStyle: UIFont.TextStyle, pointSize: CGFloat) -> UIFont{
 		let font = UIFont(name: "Fatboy Slim BLTC BRK", size: pointSize)!
@@ -22,11 +22,13 @@ enum AppearanceHelper {
 	
 	static func setTheme () {
 		
-		UINavigationBar.appearance().barTintColor = backGroundColor
+		UINavigationBar.appearance().barTintColor = .red
+		UIBarButtonItem.appearance().tintColor = .red
 		
 		let font = fbsbltcFont(with: .caption1, pointSize: 18)
 		let textAttributes = [NSAttributedString.Key.font: font]
 		UINavigationBar.appearance().titleTextAttributes = textAttributes
+		UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
 	}
 	
 }

@@ -45,6 +45,15 @@ class SlideToUnlockPadlock: UIControl {
 			slider.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
 			slider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
 		}
+
+		slider.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+		slider.addTarget(self, action: #selector(touchDown), for: .touchDown)
+		slider.addTarget(self, action: #selector(touchUpOutside), for: .touchUpOutside)
+		slider.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
+		slider.addTarget(self, action: #selector(touchDragInside), for: .touchDragInside)
+		slider.addTarget(self, action: #selector(touchDragOutside), for: .touchDragOutside)
+		slider.addTarget(self, action: #selector(touchCancel), for: .touchCancel)
+		slider.addTarget(self, action: #selector(primaryActionTriggered), for: .primaryActionTriggered)
 		backgroundColor = .lightGray
 		layer.cornerRadius = min(20, bounds.size.height / 2)
 	}
@@ -56,4 +65,40 @@ class SlideToUnlockPadlock: UIControl {
 			lockImageView.image = #imageLiteral(resourceName: "Unlocked")
 		}
 	}
+
+	// MARK: - Controls
+	@objc func valueChanged(_ sender: SlideToUnlock) {
+		sendActions(for: .valueChanged)
+	}
+
+	@objc func touchDown(_ sender: SlideToUnlock) {
+		sendActions(for: .touchDown)
+	}
+
+	@objc func touchUpOutside(_ sender: SlideToUnlock) {
+		sendActions(for: .touchUpOutside)
+	}
+
+	@objc func touchUpInside(_ sender: SlideToUnlock) {
+		sendActions(for: .touchUpInside)
+	}
+
+	@objc func touchDragInside(_ sender: SlideToUnlock) {
+		sendActions(for: .touchDragInside)
+	}
+
+	@objc func touchDragOutside(_ sender: SlideToUnlock) {
+		sendActions(for: .touchDragOutside)
+	}
+
+	@objc func touchCancel(_ sender: SlideToUnlock) {
+		sendActions(for: .touchCancel)
+	}
+
+	@objc func primaryActionTriggered(_ sender: SlideToUnlock) {
+		sendActions(for: .primaryActionTriggered)
+	}
+
+
+
 }

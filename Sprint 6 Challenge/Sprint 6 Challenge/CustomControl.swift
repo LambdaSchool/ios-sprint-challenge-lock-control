@@ -9,13 +9,13 @@
 import UIKit
 
 class CustomControl: UIControl {
-    var value = 0.0
+    var value: CGFloat = 0.0
     
     private let thumbViewSize: CGFloat = 60
     private let cornerRadius: CGFloat = 30
     private let thumbViewColor = UIColor.black
     
-    private var thumbView: UIView?
+    private var thumbView = UIView()
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,28 +28,62 @@ class CustomControl: UIControl {
     
     private func setup() {
         
-        thumbView = UIView(frame: CGRect(x: 8, y: 7, width: thumbViewSize, height: thumbViewSize))
-        thumbView?.layer.cornerRadius = cornerRadius
-        thumbView?.backgroundColor = thumbViewColor
+        thumbView.frame = CGRect(x: 8, y: 7, width: thumbViewSize, height: thumbViewSize)
+        thumbView.layer.cornerRadius = cornerRadius
+        thumbView.backgroundColor = thumbViewColor
+        thumbView.isUserInteractionEnabled = false
         
-        addSubview(thumbView!)
+        addSubview(thumbView)
+    }
+    
+    private func updateValue(at touch: UITouch) {
+        print("Touched view")
+        let touchPoint = touch.location(in: self)
+        
+        
+        thumbView.frame = CGRect(x: touchPoint.x, y: 7, width: thumbViewSize, height: thumbViewSize)
+        
+        sendActions(for: .valueChanged)
     }
     
     // MARK: - Touch Handlers
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        updateValue(at: touch)
         return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
+        let touchPoint = touch.location(in: self)
+        
+        if bounds.contains(touchPoint) {
+            updateValue(at: touch)
+            sendActions(for: .touchUpInside)
+        } else {
+            sendActions(for: .touchUpOutside)
+        }
+        
         return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        
+        guard let touch = touch else { return }
+        let touchPoint = touch.location(in: self)
+        
+        if bounds.contains(touchPoint) {
+            updateValue(at: touch)
+            sendActions(for: .touchUpInside)
+        } else {
+            sendActions(for: .touchUpOutside)
+        }
+        
     }
     
     override func cancelTracking(with event: UIEvent?) {
-
+        
+        sendActions(for: .touchCancel)
     }
     
     /*

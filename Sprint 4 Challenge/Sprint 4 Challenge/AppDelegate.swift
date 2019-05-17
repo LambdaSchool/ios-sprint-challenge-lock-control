@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Sprint 6 Challenge
+//  Sprint 4 Challenge
 //
 //  Created by Spencer Curtis on 8/29/18.
 //  Copyright © 2018 Lambda School. All rights reserved.
@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+		AppearanceHelper.setLockedAppearance()
         return true
     }
 

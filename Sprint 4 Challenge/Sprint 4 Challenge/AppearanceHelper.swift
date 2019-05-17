@@ -20,7 +20,7 @@ enum AppearanceHelper {
 		UINavigationBar.appearance().backgroundColor = backgroundLockedColor
 		UIBarButtonItem.appearance().tintColor = accentLockedColor
 
-		let textAttributes = [NSAttributedString.Key.foregroundColor: accentLockedColor]
+		let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 		UINavigationBar.appearance().titleTextAttributes = textAttributes
 		UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
 

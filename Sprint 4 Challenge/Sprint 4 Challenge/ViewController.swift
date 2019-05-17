@@ -41,6 +41,7 @@ class ViewController: UIViewController {
 
 		slideToUnlockPad.tintColor = AppearanceHelper.accentUnlockedColor
 		slideToUnlockPad.backgroundColor = AppearanceHelper.backgroundUnlockedColor
+		navigationController?.navigationBar.barTintColor = AppearanceHelper.backgroundUnlockedColor
 	}
 
 	func animateResetButtonVisible() {
@@ -61,6 +62,6 @@ class ViewController: UIViewController {
 		slideToUnlockPad.locked = true
 		slideToUnlockPad.tintColor = AppearanceHelper.accentLockedColor
 		slideToUnlockPad.backgroundColor = AppearanceHelper.backgroundLockedColor
-
+		navigationController?.navigationBar.barTintColor = AppearanceHelper.backgroundLockedColor
 	}
 }

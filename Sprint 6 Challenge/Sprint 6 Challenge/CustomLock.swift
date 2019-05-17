@@ -50,7 +50,7 @@ class CustomLock: UIControl {
         
         guard touchPoint.x > 0 && touchPoint.x < bounds.width - slider.frame.width else { return true }
         
-        slider.frame.origin = CGPoint(x: touchPoint.x, y: intrinsicContentSize.height - 60 - 20)
+        slider.frame.origin = CGPoint(x: touchPoint.x, y: intrinsicContentSize.height - 40 - 20)
         return true
     }
     
@@ -100,7 +100,7 @@ class CustomLock: UIControl {
     private func setupSlider() {
         
         slider = UIView()
-        slider.frame = CGRect(x: 20, y: intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
+        slider.frame = CGRect(x: 20, y: intrinsicContentSize.height - 40 - 20, width: 40, height: 40)
         slider.layer.cornerRadius = slider.frame.width / 2
         slider.backgroundColor = sliderColor
         slider.isUserInteractionEnabled = false
@@ -110,7 +110,7 @@ class CustomLock: UIControl {
     private func setupSliderView() {
         
         let sliderView = UIView()
-        sliderView.frame = CGRect(x: 10, y: intrinsicContentSize.height - 80 - 10, width: intrinsicContentSize.width - 20, height: 80)
+        sliderView.frame = CGRect(x: 10, y: intrinsicContentSize.height - 60 - 10, width: intrinsicContentSize.width - 20, height: 60)
         sliderView.layer.cornerRadius = sliderView.frame.height / 2
         sliderView.backgroundColor = sliderBgColor
         sliderView.isUserInteractionEnabled = false
@@ -139,7 +139,7 @@ class CustomLock: UIControl {
         sendActions(for: .primaryActionTriggered)
         
         UIView.animate(withDuration: 1) {
-            self.slider.frame.origin = CGPoint(x: 20, y: self.intrinsicContentSize.height - 60 - 20)
+            self.slider.frame.origin = CGPoint(x: 20, y: self.intrinsicContentSize.height - 40 - 20)
             self.imageView.image = #imageLiteral(resourceName: "Locked")
         }
     }
@@ -150,17 +150,8 @@ class CustomLock: UIControl {
         sendActions(for: .primaryActionTriggered)
         
         UIView.animate(withDuration: 1) {
-            self.slider.frame.origin = CGPoint(x: self.intrinsicContentSize.width - 60 - 20, y: self.intrinsicContentSize.height - 60 - 20)
+            self.slider.frame.origin = CGPoint(x: self.intrinsicContentSize.width - 40 - 20, y: self.intrinsicContentSize.height - 40 - 20)
             self.imageView.image = #imageLiteral(resourceName: "Unlocked")
         }
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

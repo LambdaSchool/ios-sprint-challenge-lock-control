@@ -25,6 +25,27 @@ class LockControl: UIControl {
     
     func createSlider() {
         
+        // Create slider bar
+        let width = self.frame.width - 16*2
+        let height = self.frame.height/6
+        let y = self.frame.height - height - 10
+        let frame = CGRect(x: 16, y: y, width: width, height: height)
+        let sliderBar = UIView(frame: frame)
+        sliderBar.isUserInteractionEnabled = false
+        sliderBar.layer.cornerRadius = height/2
+        sliderBar.layer.backgroundColor = UIColor.gray.cgColor
+        sliderBar.clipsToBounds = true
+        addSubview(sliderBar)
+        
+        // Create slider
+        let radius = sliderBar.frame.height - 6
+        let sliderFrame = CGRect(x: 5, y: 5/2, width: radius, height: radius)
+        let slider = UIView(frame: sliderFrame)
+        slider.isUserInteractionEnabled = false
+        slider.layer.cornerRadius = radius/2
+        slider.layer.backgroundColor = UIColor.black.cgColor
+        slider.clipsToBounds = true
+        sliderBar.addSubview(slider)
     }
     
     func createImage() {

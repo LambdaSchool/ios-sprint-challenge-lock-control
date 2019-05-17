@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 
 enum Theme {
+    //properties
     static var red = UIColor.red
     static var white = UIColor.white
     
+    //sets up nav bar and nav bar items 
     static func setupViews() {
         UINavigationBar.appearance().tintColor = white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : white]

@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //Properties
     @IBOutlet weak var resetButton: UIBarButtonItem!
     @IBOutlet weak var sliderContainer: Slider!
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
-    
     var isUnlocked = false
     var slider = UIView()
 
@@ -24,8 +24,9 @@ class ViewController: UIViewController {
         sliderContainer.addTarget(self, action: #selector(self.didDrag), for: .touchUpInside)
     }
     
-    
+    //logic for user interaction on drag
     @objc func didDrag(swipeControl: Slider) {
+        //determines location of the slider position
         if swipeControl.xPercentagePosition < 0.7 {
             UIView.animate(withDuration: 0.5) {
                 self.slider.frame.origin.x = self.sliderContainer.frame.origin.x + 5
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //sets up views inside container
     func setUpViews() {
         setUpContainer()
         setUpSliderContainer()
@@ -74,7 +76,8 @@ class ViewController: UIViewController {
     }
     
    
-    @IBAction func sliderChanged(_ sender: Any) {
+    @IBAction func sliderChanged(_ swipeControl: Slider) {
+        slider.frame.origin.x = swipeControl.xPosition - 20
     }
     
     

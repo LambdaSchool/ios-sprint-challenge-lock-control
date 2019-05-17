@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
+//custom control
 @IBDesignable class Slider: UIControl {
     
+    //fixed starting position
     var xPosition: CGFloat = 0.0
-    
     var xPercentagePosition: CGFloat = 0.0
     
+    //function to update the touch location
     func updateValue(for touch: UITouch) {
         let touchPoint = touch.location(in: self)
         xPercentagePosition = touchPoint.x / bounds.width
@@ -21,12 +23,14 @@ import UIKit
         sendActions(for: .valueChanged)
     }
     
+    //tracks user event and updates value
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         updateValue(for: touch)
         sendActions(for: [.touchDown])
         return true
     }
     
+    //tracking user event
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
@@ -38,6 +42,7 @@ import UIKit
         return true
     }
     
+    //ends tracking of user event
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         guard let touch = touch else { return }
         

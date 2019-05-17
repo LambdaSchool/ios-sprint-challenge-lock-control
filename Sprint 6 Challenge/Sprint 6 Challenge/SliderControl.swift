@@ -37,15 +37,15 @@ class SliderControl: UIControl {
 		if bounds.contains(touch) && frame.midX < 280 {
 //			center.x += 1
 			let midX = frame.midX
-			
-			if midX > 60 {
+			if midX > 45 {
+				center.x += 2
+			} else if midX > 60 {
 				center.x += 3
 			} else if midX > 100 {
 				center.x += 6
 			} else {
 				center.x += 1
 			}
-			
 		}
 		
 		return true

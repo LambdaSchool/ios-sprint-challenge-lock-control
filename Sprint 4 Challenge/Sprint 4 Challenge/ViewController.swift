@@ -15,7 +15,6 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-		AppearanceHelper.setLockedAppearance()
         // Do any additional setup after loading the view, typically from a nib.
 		slideToUnlockPad.tintColor = AppearanceHelper.accentLockedColor
 		slideToUnlockPad.backgroundColor = AppearanceHelper.backgroundLockedColor

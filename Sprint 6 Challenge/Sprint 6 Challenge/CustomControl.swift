@@ -45,11 +45,11 @@ import UIKit
     func newSliderPosition(for location: CGPoint) -> CGRect {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let dx = location.x - center.x
-        let frame = slider.frame
-        
+        var frame = slider.frame
+        frame.origin.x = dx
         return frame
     }
     
-    var slider: UIView!
+    @IBOutlet var slider: UIView!
     
 }

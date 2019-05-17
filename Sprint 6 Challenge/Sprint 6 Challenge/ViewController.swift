@@ -22,6 +22,8 @@ class ViewController: UIViewController {
                 self.lockImageView.image = UIImage(named: "Locked")
             }
         }
+        
+        isLocked = !isLocked
     }
 
     var isLocked: Bool = true

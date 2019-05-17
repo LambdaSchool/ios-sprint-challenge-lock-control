@@ -41,13 +41,13 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkv-Eu-zck">
                                         <rect key="frame" x="8" y="8" width="48" height="51"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bkv-Eu-zck" secondAttribute="height" multiplier="16:17" id="cGx-OL-9Td"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.28235294119999998" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="bkv-Eu-zck" firstAttribute="top" secondItem="BcM-dm-jAg" secondAttribute="top" constant="8" id="1xz-qT-Cw7"/>
                                     <constraint firstAttribute="width" secondItem="BcM-dm-jAg" secondAttribute="height" multiplier="117:22" id="Gpu-Ob-631"/>
@@ -68,7 +68,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0XJ-bz-Lf8"/>
+                    <navigationItem key="navigationItem" id="0XJ-bz-Lf8">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="S8M-i3-mMQ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

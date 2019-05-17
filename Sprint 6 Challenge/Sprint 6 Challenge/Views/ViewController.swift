@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        sliderContainer.addTarget(self, action: #selector(self.didDrag), for: .touchUpInside)
     }
     
     
@@ -70,6 +71,18 @@ class ViewController: UIViewController {
         sliderContainer.addSubview(slider)
         stackView.addSubview(slider)
         stackView.sendSubview(toBack: slider)
+    }
+    
+   
+    @IBAction func sliderChanged(_ sender: Any) {
+    }
+    
+    
+    @IBAction func reset(_ swipeControl: Slider) {
+        isUnlocked = false
+        UIView.animate(withDuration: 0.5) {
+            self.setUpViews()
+        }
     }
 }
 

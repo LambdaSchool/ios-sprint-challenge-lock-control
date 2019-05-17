@@ -98,6 +98,9 @@ class SlideToUnlock: UIControl {
 		knob.center.x = location.x
 		checkSliderBounds()
 
+		let distance = maxValue - minValue
+		value = (knob.center.x - minValue) / distance
+		sendActions(for: .valueChanged)
 	}
 
 	private func resetSlider() {

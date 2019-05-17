@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 				
 				
 				UIView.animate(withDuration: 0.2, animations: {
-					self.resetButtonOutlet.tintColor = .white
+					self.resetButtonOutlet.tintColor = AppearanceHelper.backGroundColor
 				})
 			}
 			

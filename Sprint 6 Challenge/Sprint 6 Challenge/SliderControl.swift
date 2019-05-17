@@ -13,9 +13,9 @@ class SliderControl: UIControl {
 	let minOrigin = 32
 	var frameOrigin: CGRect?
 	
-	
-	
 	override func layoutSubviews() {
+		
+		
 		frameOrigin = frame
 		print(frame.midX)
 		backgroundColor = .red
@@ -63,7 +63,7 @@ class SliderControl: UIControl {
 			UIView.animate(withDuration: 0.2, animations: {
 				self.center.x = CGFloat(self.maxOrigin)
 			}) { _ in
-				
+				self.sendActions(for: [.valueChanged])
 			}
 			
 		}

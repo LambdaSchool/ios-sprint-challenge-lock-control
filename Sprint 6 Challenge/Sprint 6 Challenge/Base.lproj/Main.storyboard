@@ -81,7 +81,9 @@
                     <connections>
                         <outlet property="lockImageView" destination="GOo-h9-qZD" id="rV3-MR-bSc"/>
                         <outlet property="mainView" destination="Qoj-vc-4ab" id="80e-XE-E9S"/>
+                        <outlet property="resetButtonOutlet" destination="S8M-i3-mMQ" id="umT-7n-oIZ"/>
                         <outlet property="sliderContainerView" destination="BcM-dm-jAg" id="qd4-qF-4WC"/>
+                        <outlet property="sliderControlOuutLet" destination="bkv-Eu-zck" id="X55-nB-CbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

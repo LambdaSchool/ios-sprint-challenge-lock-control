@@ -17,17 +17,30 @@ class ViewController: UIViewController {
 		sliderContainerView.layer.cornerRadius = 28
 		mainView.layer.cornerRadius = 22
 		
+		resetButtonOutlet.isEnabled = false
+		resetButtonOutlet.tintColor = .white
     }
 	
 	@IBAction func unlockedWithSlider(_ sender: UIControl) {
 		print("unlock")
 		lockImageView.image = UIImage(named: "Unlocked")
+		resetButtonOutlet.isEnabled = true
+		
+		UIView.animate(withDuration: 0.1) {
+			self.resetButtonOutlet.tintColor = .black
+			
+		}
 	}
 	
 	@IBAction func resetBarButton(_ sender: Any) {
+		resetButtonOutlet.isEnabled = true
+
+		print("reset")
 	}
 	
 	
+	@IBOutlet var sliderControlOuutLet: SliderControl!
+	@IBOutlet var resetButtonOutlet: UIBarButtonItem!
 	@IBOutlet var lockImageView: UIImageView!
 	@IBOutlet var sliderContainerView: UIView!
 	@IBOutlet var mainView: UIView!

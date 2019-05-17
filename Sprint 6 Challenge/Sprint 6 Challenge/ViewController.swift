@@ -21,12 +21,14 @@ class ViewController: UIViewController {
 	
 	@IBAction func unlockedWithSlider(_ sender: UIControl) {
 		print("unlock")
-	
+		lockImageView.image = UIImage(named: "Unlocked")
 	}
 	
 	@IBAction func resetBarButton(_ sender: Any) {
 	}
 	
+	
+	@IBOutlet var lockImageView: UIImageView!
 	@IBOutlet var sliderContainerView: UIView!
 	@IBOutlet var mainView: UIView!
 

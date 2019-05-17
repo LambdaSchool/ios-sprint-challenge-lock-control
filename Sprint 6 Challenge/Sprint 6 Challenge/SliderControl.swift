@@ -53,6 +53,11 @@ class SliderControl: UIControl {
 	}
 	
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+		defer {
+			super.endTracking(touch, with: event)
+		}
+		
+		
 		if frame.midX < unLockState {
 			
 			UIView.animate(withDuration: 0.1) {

@@ -79,6 +79,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lockImageView" destination="GOo-h9-qZD" id="rV3-MR-bSc"/>
                         <outlet property="mainView" destination="Qoj-vc-4ab" id="80e-XE-E9S"/>
                         <outlet property="sliderContainerView" destination="BcM-dm-jAg" id="qd4-qF-4WC"/>
                     </connections>

@@ -8,6 +8,25 @@
 import Foundation
 import UIKit
 
-class slider: UISlider {
+@IBDesignable class Slider: UIControl {
+    
+    var xPosition: CGFloat = 0.0
+    
+    var xPercentagePosition: CGFloat = 0.0
+    
+    func updateValue(for touch: UITouch) {
+        let touchPoint = touch.location(in: self)
+        xPercentagePosition = touchPoint.x / bounds.width
+        xPosition = touchPoint.x
+        sendActions(for: .valueChanged)
+    }
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        updateValue(for: touch)
+        sendActions(for: [.touchDown])
+        return true
+    }
+    
+    
     
 }

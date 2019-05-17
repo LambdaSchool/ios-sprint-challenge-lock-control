@@ -8,9 +8,13 @@
 
 import UIKit
 
+
+
+
+
 class SliderControl: UIControl {
-	let maxOrigin = 327
-	let minOrigin = 32
+	let maxOrigin = 327 // 32 is min x
+	let minOrigin = 32 //327 is max X
 	var frameOrigin: CGRect?
 	
 	override func layoutSubviews() {
@@ -23,8 +27,6 @@ class SliderControl: UIControl {
 		layer.cornerRadius = frame.size.width / 2
 	}
 
-	// 32 is min x
-	//327 is max X
 	
 	override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
 		
@@ -35,8 +37,8 @@ class SliderControl: UIControl {
 		let touch = touch.location(in: self)
 		
 		if bounds.contains(touch) && frame.midX < 280 {
-//			center.x += 1
 			let midX = frame.midX
+			
 			if midX > 45 {
 				center.x += 2
 			} else if midX > 60 {
@@ -46,21 +48,26 @@ class SliderControl: UIControl {
 			} else {
 				center.x += 1
 			}
+		} else if frame.midX > 260 {
+			UIView.animate(withDuration: 0.1, animations: {
+				self.center.x = CGFloat(self.maxOrigin)
+			})
 		}
+		
 		
 		return true
 	}
 	
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-		//let touch = touch!.location(in: self)
-		
-		if frame.midX < 270 {
-			print(frame.midX)
-			UIView.animate(withDuration: 0.2) {
+		if frame.midX < 260 {
+			
+			UIView.animate(withDuration: 0.1) {
 				self.frame = self.frameOrigin!
 			}
+			
 		} else {
-			UIView.animate(withDuration: 0.2, animations: {
+			
+			UIView.animate(withDuration: 0.1, animations: {
 				self.center.x = CGFloat(self.maxOrigin)
 			}) { _ in
 				self.sendActions(for: [.valueChanged])
@@ -68,7 +75,7 @@ class SliderControl: UIControl {
 			
 		}
 		
-		print(frame.midX)
+//		print(frame.midX)
 		
 	}
 	

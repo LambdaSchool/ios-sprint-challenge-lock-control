@@ -12,8 +12,9 @@ class ThemeHelper {
     
     //set the theme for the navigationBarItems
     
-    static var purple = UIColor(red: 174/255, green: 14/255, blue: 814/255, alpha: 1)
+    static var black = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
     static var white = UIColor(red: 255/255, green:255/255, blue: 255/255, alpha: 1)
+    
     
     static func setTheme(){
         
@@ -23,7 +24,7 @@ class ThemeHelper {
         let textAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: white]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
-        UINavigationBar.appearance().barTintColor = purple
+        UINavigationBar.appearance().barTintColor = black
         
     }
 }

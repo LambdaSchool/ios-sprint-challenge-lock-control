@@ -23,12 +23,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setViews()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func customControlValueChanged(_ sender: CustomControl) {
         print(sender.xValue)
         thumbNailXConstraint.constant = CGFloat(sender.xValue * 275.89)
@@ -43,7 +37,7 @@ class ViewController: UIViewController {
         print("button tapped")
         self.imageView.image = UIImage(named: "Locked")
         self.view.backgroundColor = .black
-        self.resetProperties.tintColor = ThemeHelper.purple
+        self.resetProperties.tintColor = ThemeHelper.black
         resetProperties.title = ""
         thumbNailXConstraint.constant = 8
         customControlProperties.isEnabled = true
@@ -51,7 +45,7 @@ class ViewController: UIViewController {
     
     func setViews(){
         //hide the reset button
-        resetProperties.tintColor = ThemeHelper.purple
+        resetProperties.tintColor = ThemeHelper.black
         resetProperties.title = ""
         thumbnailProperties.backgroundColor = .black
         thumbnailProperties.layer.cornerRadius = 28
@@ -63,24 +57,18 @@ class ViewController: UIViewController {
         customControlProperties.layer.cornerRadius = 28
         customControlProperties.clipsToBounds = true
         
+        wrapperView.layer.cornerRadius = 28
+        wrapperView.clipsToBounds = true
+        
     }
     
     func triggerUnlockAnimation(){
-//        customControlProperties.xValue = 0.0
-        
-        UIView.animate(withDuration: 1) {
-            
-        }
-        
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 2){
             self.imageView.image = UIImage(named: "Unlocked")
             self.view.backgroundColor = .yellow
             self.resetProperties.tintColor = .white
             self.resetProperties.title = "RESET"
-        }) { (_) in
-//            self.thumbNailXConstraint.constant = 0.0
         }
     }
-    
 }
 

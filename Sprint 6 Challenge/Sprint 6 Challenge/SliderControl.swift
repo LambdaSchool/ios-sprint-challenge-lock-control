@@ -34,9 +34,9 @@ class SliderControl: UIControl {
 			if midX > 45 {
 				center.x += 2
 			} else if midX > 60 {
-				center.x += 3
+				center.x += 5
 			} else if midX > 100 {
-				center.x += 6
+				center.x += 10
 			} else {
 				center.x += 1
 			}
@@ -69,6 +69,7 @@ class SliderControl: UIControl {
 				self.center.x = CGFloat(self.maxOrigin)
 			}) { _ in
 				self.sendActions(for: [.valueChanged])
+				
 			}
 			
 		}

@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 		lockImageView.image = UIImage(named: "Unlocked")
 		resetButtonOutlet.isEnabled = true
 		
-		UIView.animate(withDuration: 0.1) {
+		UIView.animate(withDuration: 0.2) {
 			self.resetButtonOutlet.tintColor = .black
 			
 		}
@@ -43,7 +43,12 @@ class ViewController: UIViewController {
 		}) { _ in
 			DispatchQueue.main.async {
 				self.lockImageView.image = UIImage(named: "Locked")
+				self.resetButtonOutlet.isEnabled = false
 				
+				
+				UIView.animate(withDuration: 0.2, animations: {
+					self.resetButtonOutlet.tintColor = .white
+				})
 			}
 			
 		}

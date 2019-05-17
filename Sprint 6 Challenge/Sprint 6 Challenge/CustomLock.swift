@@ -15,18 +15,9 @@ class CustomLock: UIControl {
     var sliderBgColor = #colorLiteral(red: 0.6549019814, green: 0.6588235497, blue: 0.6549019814, alpha: 1)
     
     var imageView: UIImageView!
-//    var sliderView: UIView!
-//    var slider: UIView
+    var slider: UIView!
     
     var isLocked = true
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        clipsToBounds = true
-        layer.cornerRadius = 50
-        layer.backgroundColor = bgColor.cgColor
-    }
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 280, height: 280)
@@ -40,17 +31,33 @@ class CustomLock: UIControl {
     
     private func setup() {
         
-        // Add UIImageView
+        // Setup UIView aspects (self)
+        
+        clipsToBounds = true
+        layer.cornerRadius = 50
+        layer.backgroundColor = bgColor.cgColor
+        
+        // Add UIImageView (imageView)
         
         setupImageView()
         
-        // Add UIView (sliderbg)
+        // Add UIView (sliderView)
         
         setupSliderView()
         
         // Add UIView (slider)
         
+        setupSlider()
+    }
+    
+    private func setupSlider() {
         
+        slider = UIView()
+        slider.frame = CGRect(x: 20, y: intrinsicContentSize.height - 60 - 20, width: 60, height: 60)
+        slider.layer.cornerRadius = slider.frame.width / 2
+        slider.backgroundColor = sliderColor
+        slider.isUserInteractionEnabled = false
+        self.addSubview(slider)
     }
     
     private func setupSliderView() {

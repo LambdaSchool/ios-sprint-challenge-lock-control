@@ -15,7 +15,12 @@ class CustomLock: UIControl {
     var sliderBgColor = #colorLiteral(red: 0.6549019814, green: 0.6588235497, blue: 0.6549019814, alpha: 1)
     
     var imageView: UIImageView!
+    
     var slider: UIView!
+    var sliderWidth: CGFloat = 40
+    var sliderYPosition: CGFloat {
+        return intrinsicContentSize.height - sliderWidth - 20
+    }
     
     var isLocked = true
     
@@ -50,7 +55,7 @@ class CustomLock: UIControl {
         
         guard touchPoint.x > 0 && touchPoint.x < bounds.width - slider.frame.width else { return true }
         
-        slider.frame.origin = CGPoint(x: touchPoint.x, y: intrinsicContentSize.height - 40 - 20)
+        slider.frame.origin = CGPoint(x: touchPoint.x, y: sliderYPosition)
         return true
     }
     
@@ -100,7 +105,7 @@ class CustomLock: UIControl {
     private func setupSlider() {
         
         slider = UIView()
-        slider.frame = CGRect(x: 20, y: intrinsicContentSize.height - 40 - 20, width: 40, height: 40)
+        slider.frame = CGRect(x: 20, y: sliderYPosition, width: sliderWidth, height: sliderWidth)
         slider.layer.cornerRadius = slider.frame.width / 2
         slider.backgroundColor = sliderColor
         slider.isUserInteractionEnabled = false
@@ -109,8 +114,9 @@ class CustomLock: UIControl {
     
     private func setupSliderView() {
         
+        let sliderViewHeight: CGFloat = 60
         let sliderView = UIView()
-        sliderView.frame = CGRect(x: 10, y: intrinsicContentSize.height - 60 - 10, width: intrinsicContentSize.width - 20, height: 60)
+        sliderView.frame = CGRect(x: 10, y: intrinsicContentSize.height - sliderViewHeight - 10, width: intrinsicContentSize.width - 20, height: sliderViewHeight)
         sliderView.layer.cornerRadius = sliderView.frame.height / 2
         sliderView.backgroundColor = sliderBgColor
         sliderView.isUserInteractionEnabled = false
@@ -139,7 +145,7 @@ class CustomLock: UIControl {
         sendActions(for: .primaryActionTriggered)
         
         UIView.animate(withDuration: 1) {
-            self.slider.frame.origin = CGPoint(x: 20, y: self.intrinsicContentSize.height - 40 - 20)
+            self.slider.frame.origin = CGPoint(x: 20, y: self.sliderYPosition)
             self.imageView.image = #imageLiteral(resourceName: "Locked")
         }
     }
@@ -150,7 +156,7 @@ class CustomLock: UIControl {
         sendActions(for: .primaryActionTriggered)
         
         UIView.animate(withDuration: 1) {
-            self.slider.frame.origin = CGPoint(x: self.intrinsicContentSize.width - 40 - 20, y: self.intrinsicContentSize.height - 40 - 20)
+            self.slider.frame.origin = CGPoint(x: self.intrinsicContentSize.width - 40 - 20, y: self.sliderYPosition)
             self.imageView.image = #imageLiteral(resourceName: "Unlocked")
         }
     }

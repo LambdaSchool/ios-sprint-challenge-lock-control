@@ -39,7 +39,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcM-dm-jAg">
                                 <rect key="frame" x="29" y="486" width="356" height="67"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkv-Eu-zck">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkv-Eu-zck" customClass="SliderControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="48" height="51"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -69,8 +69,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="0XJ-bz-Lf8">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="S8M-i3-mMQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="S8M-i3-mMQ">
+                            <connections>
+                                <action selector="resetBarButton:" destination="BYZ-38-t0r" id="RY5-VX-Sku"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainView" destination="Qoj-vc-4ab" id="80e-XE-E9S"/>
+                        <outlet property="sliderContainerView" destination="BcM-dm-jAg" id="qd4-qF-4WC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var wrapperView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var customControlProperties: CustomControl!
+    @IBOutlet weak var resetProperties: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,6 +23,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func customControlValueChanged(_ sender: CustomControl) {
+    }
+    
+    @IBAction func resetTheView(_ sender: UIBarButtonItem) {
+    }
 }
 

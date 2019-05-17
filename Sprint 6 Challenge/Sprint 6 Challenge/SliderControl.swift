@@ -9,21 +9,27 @@
 import UIKit
 
 class SliderControl: UIControl {
+	var frameOrigin: CGRect?
 	
 	override func layoutSubviews() {
+		frameOrigin = frame
 		backgroundColor = .red
 		clipsToBounds = true
 		layer.cornerRadius = frame.size.width / 2
 	}
 
+	// 08 is min x
+	//308 is max X
+	
 	override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+		
 		return true
 	}
 	
 	override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
 		let touch = touch.location(in: self)
 		
-		if bounds.contains(touch) {
+		if bounds.contains(touch) && frame.midX < 280 {
 			center.x += 1
 		}
 		
@@ -33,7 +39,14 @@ class SliderControl: UIControl {
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
 		let touch = touch!.location(in: self)
 		
-		print(touch)
+		UIView.animate(withDuration: 0.2) {
+			self.frame = self.frameOrigin!
+		}
+		
+		
+		
+//		print(touch)
+		print(frame)
 	}
 	
 	override func cancelTracking(with event: UIEvent?) {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		37E3564A228F32F60037296D /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E35649228F32F60037296D /* AppearanceHelper.swift */; };
 		37E3564C228F35FC0037296D /* LockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3564B228F35FC0037296D /* LockControl.swift */; };
-		37E3564E228F51630037296D /* RightBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3564D228F51630037296D /* RightBarButton.swift */; };
 		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
 		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		37E35649228F32F60037296D /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		37E3564B228F35FC0037296D /* LockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockControl.swift; sourceTree = "<group>"; };
-		37E3564D228F51630037296D /* RightBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightBarButton.swift; sourceTree = "<group>"; };
 		468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 4 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 				468B89E02137397400E7FF73 /* AppDelegate.swift */,
 				37E35649228F32F60037296D /* AppearanceHelper.swift */,
 				37E3564B228F35FC0037296D /* LockControl.swift */,
-				37E3564D228F51630037296D /* RightBarButton.swift */,
 				468B89E22137397400E7FF73 /* ViewController.swift */,
 				468B89E42137397400E7FF73 /* Main.storyboard */,
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
@@ -169,7 +166,6 @@
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 				37E3564C228F35FC0037296D /* LockControl.swift in Sources */,
-				37E3564E228F51630037296D /* RightBarButton.swift in Sources */,
 				37E3564A228F32F60037296D /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

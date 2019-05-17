@@ -10,7 +10,31 @@ import UIKit
 
 class LockControl: UIControl {
     
-    var blackDot = "⚫️"
+    var sliderThumbImage = UIImage(named: "blackDot")
+    private let thumbLayer = CALayer()
+    let thumbImageView = UIImageView()
+    
+    required init?(coder aCoder: NSCoder) {
+        super.init(coder: aCoder)
+        
+        layer.addSublayer(thumbLayer)
+        thumbImageView.image  = sliderThumbImage
+        addSubview(thumbImageView)
+    }
+    
+//    required override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        
+//        layer.addSublayer(thumbLayer)
+//        thumbImageView.image  = sliderThumbImage
+//        addSubview(thumbImageView)
+//    }
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+    //var blackDot = "⚫️"
     var value = 0
  //   private let upperThumbImageView = UIImageView()
     
@@ -20,6 +44,7 @@ class LockControl: UIControl {
         clipsToBounds = true
         let radius: CGFloat = 22
         layer.cornerRadius = radius
+        
 //        layer.borderWidth = 5
 //        layer.borderColor = UIColor.red.cgColor
     }

@@ -58,6 +58,13 @@
                     <navigationItem key="navigationItem" title="Lock Screen" id="Ka9-DU-uqm">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Iw0-pq-GIq"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="container" destination="YgU-ZO-cMO" id="BoO-zy-W5A"/>
+                        <outlet property="imageView" destination="Qa9-MQ-bFg" id="Hjj-wR-gys"/>
+                        <outlet property="resetButton" destination="Iw0-pq-GIq" id="MQy-7q-oVE"/>
+                        <outlet property="sliderContainer" destination="WQO-6e-M7Q" id="jq1-CD-0F1"/>
+                        <outlet property="stackView" destination="vqc-Sc-oPu" id="B3i-ei-g3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

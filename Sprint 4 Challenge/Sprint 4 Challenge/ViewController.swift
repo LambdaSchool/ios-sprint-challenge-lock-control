@@ -25,4 +25,7 @@ class ViewController: UIViewController {
 	@IBAction func sliderSlid(_ sender: SlideToUnlock) {
 		print(sender.value)
 	}
+	@IBAction func sliderUnlocked(_ sender: SlideToUnlock) {
+		sender.isEnabled = false
+	}
 }

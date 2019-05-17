@@ -26,6 +26,7 @@
                                 </constraints>
                                 <connections>
                                     <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="US1-nc-W0l"/>
+                                    <action selector="sliderUnlocked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HIB-lo-cos"/>
                                 </connections>
                             </view>
                         </subviews>

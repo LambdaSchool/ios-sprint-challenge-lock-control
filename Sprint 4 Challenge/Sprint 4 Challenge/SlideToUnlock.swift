@@ -13,23 +13,40 @@ class SlideToUnlock: UIControl {
 	private var padding: CGFloat = 0
 
 	private let knob = UIView()
-//	private let bgView = UIView()
 	private var minValue: CGFloat = 0
 	private var maxValue: CGFloat = 0
 	var value: CGFloat = 0
+	var textLabel = UILabel()
+	var completionValue: CGFloat = 0.8
 
 	// MARK: - Initializer stuff
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		textLabel.text = "Slide to unlock"
 		setup()
 	}
 
 	private func setup() {
-//		bgView.frame = bounds
 		backgroundColor = .gray
-//		insertSubview(bgView, aboveSubview: self)
 		let radius = bounds.size.height * 0.4
 		padding = bounds.size.height * 0.1
+
+		if textLabel.superview == nil {
+			insertSubview(textLabel, aboveSubview: self)
+			textLabel.translatesAutoresizingMaskIntoConstraints = false
+			textLabel.textAlignment = .center
+			textLabel.textColor = .white
+			textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
+			textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
+			textLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4).isActive = true
+			textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4).isActive = true
+			textLabel.adjustsFontSizeToFitWidth = true
+			textLabel.minimumScaleFactor = 0.25
+			textLabel.layer.shadowColor = UIColor.black.cgColor
+			textLabel.layer.shadowOffset = CGSize(width: 3, height: 3)
+			textLabel.layer.shadowRadius = 5
+			textLabel.layer.shadowOpacity = 0.5
+		}
 
 		minValue = padding + radius
 		maxValue = bounds.maxX - (padding + radius)
@@ -38,7 +55,7 @@ class SlideToUnlock: UIControl {
 		knob.center = CGPoint(x: minValue, y: bounds.midY)
 		knob.backgroundColor = .darkGray
 		knob.isUserInteractionEnabled = false
-		insertSubview(knob, aboveSubview: self)
+		insertSubview(knob, aboveSubview: textLabel)
 
 		layer.cornerRadius = bounds.size.height / 2
 		knob.layer.cornerRadius = knob.bounds.size.height / 2
@@ -77,6 +94,9 @@ class SlideToUnlock: UIControl {
 	override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
 		if let touch = touch {
 			updateValue(at: touch)
+			if value >= completionValue {
+				sendActions(for: .primaryActionTriggered)
+			}
 			resetSlider()
 
 			let location = touch.location(in: self)
@@ -99,8 +119,11 @@ class SlideToUnlock: UIControl {
 		checkSliderBounds()
 
 		let distance = maxValue - minValue
+		let oldValue = value
 		value = (knob.center.x - minValue) / distance
-		sendActions(for: .valueChanged)
+		if oldValue != value {
+			sendActions(for: .valueChanged)
+		}
 	}
 
 	private func resetSlider() {

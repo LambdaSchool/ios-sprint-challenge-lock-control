@@ -11,7 +11,14 @@ import UIKit
 class CustomControl: UIControl {
 
     //we want to set the value of the x position equal to that of the control's value changed value
-    var xValue = 0.0
+    var xValue: Double = 0.0
+    
+    func updateValue(for touch: UITouch){
+        let touchPoint = touch.location(in: self)
+        let xRange = touchPoint.x / bounds.width
+        xValue = Double(xRange)
+        sendActions(for: [.valueChanged])
+    }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
        updateValue(for: touch)
@@ -27,6 +34,7 @@ class CustomControl: UIControl {
             sendActions(for: [.touchDragInside])
         } else {
             sendActions(for: [.touchDragOutside])
+            xValue = 0.0
         }
         
         return true
@@ -41,17 +49,11 @@ class CustomControl: UIControl {
             sendActions(for: [.touchUpInside])
         } else {
             sendActions(for: [.touchUpOutside])
+            xValue = 0.0
         }
     }
     
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: [.touchCancel])
-    }
-    
-    func updateValue(for touch: UITouch){
-        let touch = touch.location(in: self)
-        let xRange = touch.x / bounds.width
-        xValue = Double(xRange)
-        sendActions(for: .valueChanged)
     }
 }

@@ -30,7 +30,22 @@
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96I-4A-cSr" customClass="CustomControl" customModule="Sprint_6_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="295" width="358" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUm-ma-m4L">
+                                                <rect key="frame" x="3" y="4" width="57" height="52"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="57" id="SRA-rz-hhO"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="MUm-ma-m4L" secondAttribute="bottom" constant="4" id="711-Qv-5aQ"/>
+                                            <constraint firstItem="MUm-ma-m4L" firstAttribute="leading" secondItem="96I-4A-cSr" secondAttribute="leading" constant="3" id="PHX-Gp-nqv"/>
+                                            <constraint firstItem="MUm-ma-m4L" firstAttribute="top" secondItem="96I-4A-cSr" secondAttribute="top" constant="4" id="uuR-6W-gVe"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="customControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NdG-SS-NBL"/>
                                         </connections>
@@ -67,6 +82,8 @@
                         <outlet property="customControlProperties" destination="96I-4A-cSr" id="7ak-vb-ghw"/>
                         <outlet property="imageView" destination="PAA-dU-uEI" id="Omh-T8-3uP"/>
                         <outlet property="resetProperties" destination="7rL-9m-VBh" id="Op1-J1-iX8"/>
+                        <outlet property="thumbNailXConstraint" destination="PHX-Gp-nqv" id="0gf-rk-LQa"/>
+                        <outlet property="thumbnailProperties" destination="MUm-ma-m4L" id="e85-jD-M0f"/>
                         <outlet property="wrapperView" destination="wDp-jq-5Us" id="Qua-5x-eTx"/>
                     </connections>
                 </viewController>

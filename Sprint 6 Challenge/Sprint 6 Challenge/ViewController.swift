@@ -4,7 +4,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
         AppearanceHelper.style(view: controlContainerView) // set container theme
         AppearanceHelper.style(control: lockSlider) // set custom lockSlider theme
         lockSlider.setValue(6.0, animated: false) // set start position of thumbRect
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var controlContainerView: UIView!
     
-    @IBOutlet weak var lockIMageView: UIImageView!
+    @IBOutlet weak var lockImageView: UIImageView!
     
     @IBOutlet weak var lockSlider: CustomLockSlider!
     
@@ -26,10 +26,9 @@ class ViewController: UIViewController {
     // handles case when user lets go of the slider before it is fully unlocked. Fired
     // when CustomLockSlider sends .touchUpInside
     @objc func snapBackToMin(customControl: CustomLockSlider) {
-        //print("user interaction ended")
         if customControl.value < 185.0 {
             customControl.setValue(6.0, animated: true)
-            lockIMageView.image = UIImage(named: "Locked")
+            lockImageView.image = UIImage(named: "Locked")
             navigationItem.rightBarButtonItem?.title = ""
             customControl.isUserInteractionEnabled = true
         }else {
@@ -41,14 +40,13 @@ class ViewController: UIViewController {
         
         switch customControl.value {
         case 0.0..<185.0:
-            lockIMageView.image = UIImage(named: "Locked")
+            lockImageView.image = UIImage(named: "Locked")
             navigationItem.rightBarButtonItem?.title = ""
             customControl.isUserInteractionEnabled = true
             
         case 185.001..<227.0:
-            //print("unlocked")
             isUnlocked = true
-            lockIMageView.image = UIImage(named: "Unlocked")
+            lockImageView.image = UIImage(named: "Unlocked")
             navigationItem.rightBarButtonItem?.title = "Reset"
             customControl.setValue(222.0, animated: true)
             customControl.isUserInteractionEnabled = false
@@ -59,10 +57,10 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func resetLock(_ sender: CustomLockSlider) {
+    @IBAction func resetLock(_ customControl: CustomLockSlider) {
         lockSlider.setValue(6.0, animated: true)
         if lockSlider.value < 185.0 {
-            lockIMageView.image = UIImage(named: "Locked")
+            lockImageView.image = UIImage(named: "Locked")
             navigationItem.rightBarButtonItem?.title = ""
             isUnlocked = false
             lockSlider.isUserInteractionEnabled = true

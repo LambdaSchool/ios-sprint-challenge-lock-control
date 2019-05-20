@@ -12,6 +12,7 @@ struct AppearanceHelper {
         
         UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
         UINavigationBar.appearance().titleTextAttributes = textAttributes
+        
     }
     
     static func style(view: UIView) {

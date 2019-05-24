@@ -29,7 +29,7 @@ class CustomLock: UIControl {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
             updateX(at: touchPoint)
-            sendActions(for: [.valueChanged])
+            sendActions(for: [.valueChanged, .touchDragInside])
         }
         return true
     }

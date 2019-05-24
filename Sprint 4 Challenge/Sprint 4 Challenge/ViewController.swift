@@ -39,7 +39,19 @@ class ViewController: UIViewController {
         sliderView.layer.cornerRadius = sliderView.frame.width / 2
     }
     
-
+    @IBAction func sliderMoved(_ sender: CustomLock) {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.sliderView.center.x = CGFloat(-sender.xValue)
+            print(self.sliderView.center.x)
+        }
+        if abs(sliderView.center.x) >= abs(customLock.frame.width * 0.80) {
+            unlock()
+        } else {
+            lock()
+        }
+        
+    }
     
     @IBAction func resetLock(_ sender: Any) {
         lock()

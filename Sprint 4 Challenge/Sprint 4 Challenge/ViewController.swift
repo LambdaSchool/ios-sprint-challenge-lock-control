@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var customLock: CustomLock!
     @IBOutlet weak var sliderView: UIView!
     
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     
     
@@ -23,19 +24,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 233 / 255, green: 235 / 255, blue: 135 / 255, alpha: 1.0)
         lockImageView.image = UIImage(named: "Locked")
+        resetButton.isEnabled = false
+        customLock.maxX = Int(customLock.frame.width - (sliderView.frame.width / 2))
+        customLock.minX = Int(sliderView.center.x)
         setAppearance()
+        print(sliderView.frame.width)
+        print(customLock.frame.width)
 
     }
 
     func setAppearance() {
-        
         lockView.layer.cornerRadius = sliderView.frame.width / 2
         customLock.layer.cornerRadius = sliderView.frame.width / 2
         sliderView.layer.cornerRadius = sliderView.frame.width / 2
+    }
+    
+    @IBAction func sliderMoved(_ sender: Any) {
+    }
+    
+    @IBAction func resetLock(_ sender: Any) {
+    }
+    
+    func unlock() {
         
+        resetButton.isEnabled = true
+    }
+    
+    func lock() {
         
+        resetButton.isEnabled = false
     }
     
     
-
 }

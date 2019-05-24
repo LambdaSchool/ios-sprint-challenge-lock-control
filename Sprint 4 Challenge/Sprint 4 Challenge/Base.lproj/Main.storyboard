@@ -45,6 +45,9 @@
                                                     <constraint firstItem="T0h-zm-x9F" firstAttribute="centerY" secondItem="WDQ-fB-wOb" secondAttribute="centerY" id="QPF-74-bYo"/>
                                                     <constraint firstItem="T0h-zm-x9F" firstAttribute="leading" secondItem="WDQ-fB-wOb" secondAttribute="leading" constant="8" id="WTJ-YV-BTp"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="KdL-ZB-JrU"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -69,12 +72,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="54I-IM-BLt">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="UdZ-Ip-6kL"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="UdZ-Ip-6kL">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="WwC-Yv-piN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="customLock" destination="WDQ-fB-wOb" id="WDl-f6-jAM"/>
                         <outlet property="lockImageView" destination="9tL-du-Ht8" id="BWm-Bt-s8N"/>
                         <outlet property="lockView" destination="Ym5-bB-XFg" id="XsL-zs-ivo"/>
+                        <outlet property="resetButton" destination="UdZ-Ip-6kL" id="Yf4-nA-NbR"/>
                         <outlet property="sliderView" destination="T0h-zm-x9F" id="KSD-0n-XIn"/>
                     </connections>
                 </viewController>

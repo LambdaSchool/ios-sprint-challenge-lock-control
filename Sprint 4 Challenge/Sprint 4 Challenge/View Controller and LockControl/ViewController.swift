@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func resetLock(_ sender: Any) {
-        
+        lockControl.reset()
         navigationItem.setRightBarButton(nil, animated: true)
     }
     

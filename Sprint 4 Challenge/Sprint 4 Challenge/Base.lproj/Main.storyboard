@@ -27,7 +27,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tL-du-Ht8">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="261"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDQ-fB-wOb">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDQ-fB-wOb" customClass="CustomLock" customModule="Sprint_4_Challenge" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="280" width="350" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0h-zm-x9F">
@@ -69,6 +69,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="54I-IM-BLt"/>
+                    <connections>
+                        <outlet property="customLock" destination="WDQ-fB-wOb" id="WDl-f6-jAM"/>
+                        <outlet property="lockImageView" destination="9tL-du-Ht8" id="BWm-Bt-s8N"/>
+                        <outlet property="lockView" destination="Ym5-bB-XFg" id="XsL-zs-ivo"/>
+                        <outlet property="sliderView" destination="T0h-zm-x9F" id="KSD-0n-XIn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

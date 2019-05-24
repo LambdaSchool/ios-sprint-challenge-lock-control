@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lxk-Jd-e3P">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Slide to Unlock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_4_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5V-wb-hD7">
+                                <rect key="frame" x="79" y="278" width="250" height="250"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="O64-8Z-g4H">
+                                        <rect key="frame" x="65" y="65" width="120" height="120"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-9F-NsH" customClass="CustomControl" customModule="Sprint_4_Challenge" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="193" width="234" height="49"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="lockControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="K72-Ae-bO2"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="O64-8Z-g4H" firstAttribute="centerY" secondItem="J5V-wb-hD7" secondAttribute="centerY" id="G1S-a8-IB4"/>
+                                    <constraint firstItem="O64-8Z-g4H" firstAttribute="leading" secondItem="J5V-wb-hD7" secondAttribute="leading" constant="65" id="KNK-lz-RSc"/>
+                                    <constraint firstItem="9MH-9F-NsH" firstAttribute="top" secondItem="O64-8Z-g4H" secondAttribute="bottom" constant="8" symbolic="YES" id="M9O-1G-VuV"/>
+                                    <constraint firstItem="O64-8Z-g4H" firstAttribute="centerX" secondItem="9MH-9F-NsH" secondAttribute="centerX" id="eht-Fh-tKk"/>
+                                    <constraint firstItem="O64-8Z-g4H" firstAttribute="top" secondItem="J5V-wb-hD7" secondAttribute="top" constant="65" id="kUS-5b-BxE"/>
+                                    <constraint firstItem="9MH-9F-NsH" firstAttribute="trailing" secondItem="J5V-wb-hD7" secondAttribute="trailingMargin" id="mQP-Lp-jBW"/>
+                                    <constraint firstItem="9MH-9F-NsH" firstAttribute="bottom" secondItem="J5V-wb-hD7" secondAttribute="bottomMargin" id="mq0-rI-hEo"/>
+                                    <constraint firstItem="9MH-9F-NsH" firstAttribute="leading" secondItem="J5V-wb-hD7" secondAttribute="leadingMargin" id="qD9-d6-Imz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J5V-wb-hD7" secondAttribute="bottom" constant="334" id="2Pg-B3-C5Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J5V-wb-hD7" secondAttribute="trailing" constant="85" id="byD-hG-J5e"/>
+                            <constraint firstItem="J5V-wb-hD7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="79" id="mlj-GZ-ywD"/>
+                            <constraint firstItem="J5V-wb-hD7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="qC7-dD-eoS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Slide to Unlock" id="hGY-UB-2DJ">
+                        <barButtonItem key="rightBarButtonItem" title="Unlock" id="SSy-ey-fg4">
+                            <connections>
+                                <action selector="reset:" destination="BYZ-38-t0r" id="cm7-AB-oSI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customControl" destination="9MH-9F-NsH" id="OHK-xB-5Lf"/>
+                        <outlet property="lockImageView" destination="O64-8Z-g4H" id="3fs-QD-8qH"/>
+                        <outlet property="resetButton" destination="SSy-ey-fg4" id="PBt-7A-r2D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="795.6521739130435" y="-536.38392857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="grq-Ao-MNw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lxk-Jd-e3P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vzg-du-5MA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MzN-l4-hCT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8L-Df-g7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="-536.38392857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="220" height="293"/>
+    </resources>
 </document>

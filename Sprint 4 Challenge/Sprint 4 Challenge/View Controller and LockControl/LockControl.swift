@@ -53,7 +53,7 @@ class LockControl: UIControl {
     }
     
     func reset() {
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.5) {
             self.slider.frame.origin.x = 5 // returns slider to original position
         }
         isUserInteractionEnabled = true
@@ -111,7 +111,7 @@ class LockControl: UIControl {
             sendActions(for: [.touchUpInside, .valueChanged])
         } else {
             
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.4) {
                 self.slider.frame.origin.x = 5 // returns slider to initial position
             }
             

@@ -1,24 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BXM-iq-KF8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Lock Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LockScreenViewController" customModule="Sprint_4_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjT-ww-E6F" customClass="CustomControl" customModule="Sprint_4_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locked" translatesAutoresizingMaskIntoConstraints="NO" id="d3s-EB-5M5">
+                                        <rect key="frame" x="8" y="8" width="284" height="232"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="232" id="nJU-Uv-D6Y"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ha-HG-FP7">
+                                        <rect key="frame" x="0.0" y="248" width="300" height="52"/>
+                                        <subviews>
+                                            <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="620-gc-gtq">
+                                                <rect key="frame" x="234" y="2" width="58" height="48"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="620-gc-gtq" firstAttribute="leading" secondItem="1Ha-HG-FP7" secondAttribute="leading" constant="8" id="8yI-cJ-57C"/>
+                                            <constraint firstItem="620-gc-gtq" firstAttribute="top" secondItem="1Ha-HG-FP7" secondAttribute="top" constant="2" id="Loq-xQ-3xE"/>
+                                            <constraint firstAttribute="bottom" secondItem="620-gc-gtq" secondAttribute="bottom" constant="2" id="RoN-nF-NaG"/>
+                                            <constraint firstAttribute="trailing" secondItem="620-gc-gtq" secondAttribute="trailing" constant="8" id="sAM-fL-t80"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8yI-cJ-57C"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="d3s-EB-5M5" firstAttribute="centerX" secondItem="1Ha-HG-FP7" secondAttribute="centerX" id="9Ww-9C-x8b"/>
+                                    <constraint firstItem="d3s-EB-5M5" firstAttribute="top" secondItem="cjT-ww-E6F" secondAttribute="topMargin" id="Awe-SR-OWL"/>
+                                    <constraint firstAttribute="width" secondItem="cjT-ww-E6F" secondAttribute="height" multiplier="1:1" id="BDq-c3-fxE"/>
+                                    <constraint firstItem="1Ha-HG-FP7" firstAttribute="top" secondItem="d3s-EB-5M5" secondAttribute="bottom" constant="8" id="K04-sU-1mT"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Ha-HG-FP7" secondAttribute="trailing" id="PJq-0Y-h7z"/>
+                                    <constraint firstItem="d3s-EB-5M5" firstAttribute="leading" secondItem="cjT-ww-E6F" secondAttribute="leadingMargin" id="Szt-5s-56H"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Ha-HG-FP7" secondAttribute="bottom" id="Zq8-bx-ZWj"/>
+                                    <constraint firstItem="1Ha-HG-FP7" firstAttribute="leading" secondItem="cjT-ww-E6F" secondAttribute="leading" id="jh2-ec-pXN"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="customControlUnlocked:" destination="BYZ-38-t0r" eventType="valueChanged" id="M0e-mK-tYP"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cjT-ww-E6F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="39F-RJ-Ahv"/>
+                            <constraint firstItem="cjT-ww-E6F" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="cmT-iY-D5S"/>
+                            <constraint firstItem="cjT-ww-E6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="stp-gG-ush"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="o74-L0-2ck">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="qxh-eW-v36">
+                            <connections>
+                                <action selector="resetLockButtonTapped:" destination="BYZ-38-t0r" id="2Qs-DD-jUz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customControl" destination="cjT-ww-E6F" id="rQL-qH-yO0"/>
+                        <outlet property="imageView" destination="d3s-EB-5M5" id="qSi-Mg-8UI"/>
+                        <outlet property="resetButton" destination="qxh-eW-v36" id="n1o-53-nOD"/>
+                        <outlet property="thumbNail" destination="620-gc-gtq" id="oaf-KL-IZi"/>
+                        <outlet property="thumbNailLeadingContraint" destination="8yI-cJ-57C" id="QpP-qg-VHj"/>
+                        <outlet property="thumbSliderView" destination="1Ha-HG-FP7" id="Bl3-kP-jGi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tfb-G7-tIF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BXM-iq-KF8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hET-dL-yvN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pV7-H4-U23"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NgG-e7-0SP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Locked" width="440" height="586"/>
+    </resources>
 </document>

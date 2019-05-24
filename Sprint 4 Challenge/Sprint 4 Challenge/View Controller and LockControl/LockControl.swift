@@ -11,7 +11,10 @@ import UIKit
 class LockControl: UIControl {
 
     // MARK: - Properties
-    
+    private var image: UIImageView!
+    private var slider: UIView!
+    private var sliderBar: UIView!
+    private var isLocked: Bool = true
     
     // MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
@@ -23,6 +26,28 @@ class LockControl: UIControl {
     // MARK: - Setup + Teardown
     func setup() {
         
+        // Create Image
+        image = UIImageView(image: UIImage(named: "Locked"))
+        image.frame = CGRect(x: (bounds.width - image.bounds.width) / 2.0, y: 8, width: image.bounds.width, height: image.bounds.height) // will center image 8 points from top of view
+        addSubview(image)
+        
+        // Create Bar
+        sliderBar = UIView()
+        sliderBar.layer.cornerRadius = 27 // half of height
+        sliderBar.backgroundColor = Appearance.offEggplant
+        sliderBar.clipsToBounds = true
+        sliderBar.isUserInteractionEnabled = false
+        sliderBar.frame = CGRect(x: 16, y: image.frame.maxY + 8, width: self.frame.width - 32, height: 54) // Bar is 16 point in on leading and trailing and 8 points down from the bottom of the image. 54 because apple says 44 points is a good size for touchable items (the slider) and I want 5 points on either side of the slider (44 + 5 + 5 = 54)
+        addSubview(sliderBar)
+        
+        // Create Slider
+        slider = UIView()
+        slider.layer.cornerRadius = 22 // half of height
+        slider.backgroundColor = Appearance.eggplant
+        slider.clipsToBounds = true
+        slider.isUserInteractionEnabled = false
+        slider.frame = CGRect(x: 5, y: 5, width: 44, height: 44)
+        sliderBar.addSubview(slider)
     }
     
     func reset() {
@@ -31,18 +56,22 @@ class LockControl: UIControl {
     
     // MARK: - Touch Handling
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        
+        
+        return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        <#code#>
+        
+        
+        return true
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        <#code#>
+        
     }
     
     override func cancelTracking(with event: UIEvent?) {
-        <#code#>
+        sendActions(for: [.touchCancel])
     }
 }

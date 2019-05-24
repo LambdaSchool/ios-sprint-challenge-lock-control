@@ -24,8 +24,9 @@ class LockScreenViewController: UIViewController {
         thumbNail.backgroundColor = ThemeHelper.customPurple
         thumbNail.layer.cornerRadius = 10
         thumbNail.clipsToBounds = true
-        resetButton.title = ""
+        resetButton.title = "Locked"
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
     }
     
     @IBAction func customControlUnlocked(_ sender: CustomControl) {
@@ -46,6 +47,7 @@ class LockScreenViewController: UIViewController {
         UIView.animate(withDuration: 1) {
             self.imageView.image = UIImage(named: "Unlocked")
             self.resetButton.title = "Reset"
+            self.title = "Unlocked"
         }
 
     }
@@ -54,8 +56,9 @@ class LockScreenViewController: UIViewController {
 
     @IBAction func resetLockButtonTapped(_ sender: Any) {
 
-        resetButton.title = " "
+        resetButton.title = "Locked"
         imageView.image = UIImage(named: "Locked")
+        thumbNailLeadingContraint.constant = 0
 
     }
 

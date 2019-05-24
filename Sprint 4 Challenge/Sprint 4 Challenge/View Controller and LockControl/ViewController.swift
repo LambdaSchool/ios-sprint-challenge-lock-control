@@ -9,14 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var resetButton: UIBarButtonItem!
+    @IBOutlet weak var lockControl: LockControl!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.setRightBarButton(nil, animated: true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func resetLock(_ sender: Any) {
+        
+        navigationItem.setRightBarButton(nil, animated: true)
     }
+    
+    @IBAction func unlocked(_ sender: LockControl) {
+        navigationItem.setRightBarButton(resetButton, animated: true)
+    }
+    
 }

@@ -29,6 +29,9 @@
                                         <integer key="value" value="48"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="unlocked:" destination="BYZ-38-t0r" eventType="valueChanged" id="AYq-Tc-E1F"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,8 +43,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="NFh-2P-bbA">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="SPM-XW-YeU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="SPM-XW-YeU">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="LcR-AQ-RsU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lockControl" destination="wOL-vM-1CO" id="prp-06-lK8"/>
+                        <outlet property="resetButton" destination="SPM-XW-YeU" id="9lS-oy-Sfa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

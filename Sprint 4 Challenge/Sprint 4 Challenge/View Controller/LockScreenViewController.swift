@@ -17,6 +17,7 @@ class LockScreenViewController: UIViewController {
 
     }
 
+    // This will be called when view is loaded to give app a better looking scene
     private func setupViews() {
 
         thumbSliderView.layer.cornerRadius = 10
@@ -43,6 +44,7 @@ class LockScreenViewController: UIViewController {
         }
     }
 
+    // This animation changes the lock image to unlocked
     private func unlockAnimation() {
         UIView.animate(withDuration: 1) {
             self.imageView.image = UIImage(named: "Unlocked")
@@ -53,7 +55,7 @@ class LockScreenViewController: UIViewController {
     }
 
 
-
+// this should change features back to the default when button is tapped
     @IBAction func resetLockButtonTapped(_ sender: Any) {
 
         resetButton.title = "Locked"

@@ -54,6 +54,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ballView" destination="iRO-Px-wqP" id="7Gl-xB-eEO"/>
+                        <outlet property="controlView" destination="Mho-fZ-auh" id="PqI-4s-t9j"/>
                         <outlet property="lockImageView" destination="r6d-We-MaB" id="k89-jD-lW1"/>
                         <outlet property="masterView" destination="aaY-VR-jTu" id="1mn-dS-7qe"/>
                     </connections>

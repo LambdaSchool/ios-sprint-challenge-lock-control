@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lockImageView.image = UIImage(named: "Locked")
-        lockImageView.clipsToBounds = true
+        
     }
 
     @IBOutlet weak var masterView: UIView!
     @IBOutlet weak var lockImageView: UIImageView!
+    @IBOutlet weak var controlView: UIView!
+    @IBOutlet weak var ballView: UIView!
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         resetButton()

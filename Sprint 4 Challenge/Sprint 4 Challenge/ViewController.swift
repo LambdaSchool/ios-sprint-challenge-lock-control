@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-        
     }
 
     @IBOutlet weak var resetButton: UIBarButtonItem!
@@ -54,12 +53,12 @@ class ViewController: UIViewController {
     
     
     func reset() {
+        customControlView.reset()
         UIView.animate(withDuration: 10) {
             self.lockImageView.image = UIImage(named: "Locked")
             self.title = "Locked"
             self.resetButton.tintColor = .clear
             self.customControlView.isEnabled = true
-            
         }
     }
 }

@@ -12,11 +12,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        lockImageView.image = UIImage(named: "Locked")
+        lockImageView.clipsToBounds = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var masterView: UIView!
+    @IBOutlet weak var lockImageView: UIImageView!
+    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        resetButton()
     }
+    
+    func unlockAnimation() {
+        title = "Unlocked!"
+    }
+    
+    
+    func resetButton() {
+        title = "Locked"
+    }
+    
 }

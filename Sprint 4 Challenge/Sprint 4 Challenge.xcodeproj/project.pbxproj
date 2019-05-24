@@ -12,6 +12,8 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		FFCBE76D2298415B00DBBDC2 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE76C2298415B00DBBDC2 /* AppearanceHelper.swift */; };
+		FFCBE771229843A100DBBDC2 /* LockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE770229843A100DBBDC2 /* LockControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFCBE76C2298415B00DBBDC2 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		FFCBE770229843A100DBBDC2 /* LockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		468B89DF2137397400E7FF73 /* Sprint 4 Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
-				468B89EC2137397500E7FF73 /* Info.plist */,
+				FFCBE76B2298414400DBBDC2 /* Helpers */,
+				FFCBE76A2298411600DBBDC2 /* View Controller and LockControl */,
+				FFCBE7692298410600DBBDC2 /* Storyboards */,
+				FFCBE768229840F700DBBDC2 /* Resources */,
 			);
 			path = "Sprint 4 Challenge";
+			sourceTree = "<group>";
+		};
+		FFCBE768229840F700DBBDC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				468B89E72137397500E7FF73 /* Assets.xcassets */,
+				468B89EC2137397500E7FF73 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFCBE7692298410600DBBDC2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E42137397400E7FF73 /* Main.storyboard */,
+				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FFCBE76A2298411600DBBDC2 /* View Controller and LockControl */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+				FFCBE770229843A100DBBDC2 /* LockControl.swift */,
+			);
+			path = "View Controller and LockControl";
+			sourceTree = "<group>";
+		};
+		FFCBE76B2298414400DBBDC2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFCBE76C2298415B00DBBDC2 /* AppearanceHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +197,8 @@
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				FFCBE771229843A100DBBDC2 /* LockControl.swift in Sources */,
+				FFCBE76D2298415B00DBBDC2 /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,7 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

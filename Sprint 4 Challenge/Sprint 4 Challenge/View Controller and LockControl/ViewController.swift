@@ -10,16 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet var resetButton: UIBarButtonItem!
     @IBOutlet weak var lockControl: LockControl!
     
-
+    // MARK: - View Loading
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.setRightBarButton(nil, animated: true)
     }
 
+    // MARK: - Actions
     @IBAction func resetLock(_ sender: Any) {
         
         navigationItem.setRightBarButton(nil, animated: true)

@@ -8,15 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func lockControlChanged(_ sender: Any) {
+        if lockControl.isLocked == false{
+            resetButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+        if lockControl.isLocked == true {
+            resetButton.tintColor = .clear
+        }
+    }
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        lockControl.resetLock()
+        resetButton.tintColor = .clear
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        guard let lockControl = lockControl else { return }
+            lockControl.setupView()
+            lockControl.setupImage()
+            lockControl.setupSliderTrack()
+            lockControl.setupThumb()
+            view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            navigationItem.title = "SlideToUnlock"
+            resetButton.tintColor = .clear
+
     }
+
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var lockControl: LockControl!
+
 }

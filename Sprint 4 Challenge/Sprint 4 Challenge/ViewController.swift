@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var lockImageView: UIImageView!
     @IBOutlet weak var customLock: CustomLock!
     @IBOutlet weak var sliderView: UIView!
-    
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
     
@@ -28,7 +27,8 @@ class ViewController: UIViewController {
         customLock.maxX = Int(customLock.frame.width - (sliderView.frame.width / 2))
         customLock.minX = Int(sliderView.center.x)
         setAppearance()
-        print(sliderView.frame.width)
+        
+        print(sliderView.center)
         print(customLock.frame.width)
 
     }
@@ -39,18 +39,27 @@ class ViewController: UIViewController {
         sliderView.layer.cornerRadius = sliderView.frame.width / 2
     }
     
-    @IBAction func sliderMoved(_ sender: Any) {
-    }
+
     
     @IBAction func resetLock(_ sender: Any) {
+        lock()
     }
     
     func unlock() {
-        
+        lockImageView.image = UIImage(named: "Unlocked")
+        customLock.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.3) {
+            self.sliderView.center.x = 315
+        }
         resetButton.isEnabled = true
     }
     
     func lock() {
+        lockImageView.image = UIImage(named: "Locked")
+        customLock.isUserInteractionEnabled = true
+        UIView.animate(withDuration: 0.3) {
+            self.sliderView.center.x = 35
+        }
         
         resetButton.isEnabled = false
     }

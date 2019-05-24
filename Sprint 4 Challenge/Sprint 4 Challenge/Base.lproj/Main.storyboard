@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hello!-->
+        <!--Swipe To Unlcok!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_4_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hello!" id="54I-IM-BLt">
+                    <navigationItem key="navigationItem" title="Swipe To Unlcok!" id="54I-IM-BLt">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="UdZ-Ip-6kL">
                             <connections>
                                 <action selector="resetLock:" destination="BYZ-38-t0r" id="WwC-Yv-piN"/>

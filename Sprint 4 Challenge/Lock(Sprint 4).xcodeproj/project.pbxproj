@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E02137397400E7FF73 /* AppDelegate.swift */; };
-		468B89E32137397400E7FF73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B89E22137397400E7FF73 /* ViewController.swift */; };
-		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
-		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
-		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		8BFEC9C822A0917F00B2F5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9C722A0917F00B2F5A4 /* AppDelegate.swift */; };
+		8BFEC9CA22A0917F00B2F5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9C922A0917F00B2F5A4 /* ViewController.swift */; };
+		8BFEC9CD22A0917F00B2F5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9CB22A0917F00B2F5A4 /* Main.storyboard */; };
+		8BFEC9CF22A0918400B2F5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9CE22A0918400B2F5A4 /* Assets.xcassets */; };
+		8BFEC9D222A0918400B2F5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9D022A0918400B2F5A4 /* LaunchScreen.storyboard */; };
+		8BFEC9DA22A0981F00B2F5A4 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9D922A0981F00B2F5A4 /* CustomControl.swift */; };
+		8BFEC9DC22A09D4200B2F5A4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9DB22A09D4200B2F5A4 /* AppearanceHelper.swift */; };
+		8BFEC9DE22A09E1800B2F5A4 /* UIColor & CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9DD22A09E1800B2F5A4 /* UIColor & CustomColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 4 Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		468B89E02137397400E7FF73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		468B89E22137397400E7FF73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		468B89E52137397400E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BFEC9C422A0917F00B2F5A4 /* Lock(Sprint 4).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lock(Sprint 4).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BFEC9C722A0917F00B2F5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BFEC9C922A0917F00B2F5A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BFEC9CC22A0917F00B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BFEC9CE22A0918400B2F5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BFEC9D122A0918400B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BFEC9D322A0918400B2F5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BFEC9D922A0981F00B2F5A4 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		8BFEC9DB22A09D4200B2F5A4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		8BFEC9DD22A09E1800B2F5A4 /* UIColor & CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor & CustomColors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		468B89DA2137397400E7FF73 /* Frameworks */ = {
+		8BFEC9C122A0917F00B2F5A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,72 +41,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		468B89D42137397400E7FF73 = {
+		8BFEC9BB22A0917F00B2F5A4 = {
 			isa = PBXGroup;
 			children = (
-				468B89DF2137397400E7FF73 /* Sprint 4 Challenge */,
-				468B89DE2137397400E7FF73 /* Products */,
+				8BFEC9C622A0917F00B2F5A4 /* Lock(Sprint 4) */,
+				8BFEC9C522A0917F00B2F5A4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		468B89DE2137397400E7FF73 /* Products */ = {
+		8BFEC9C522A0917F00B2F5A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */,
+				8BFEC9C422A0917F00B2F5A4 /* Lock(Sprint 4).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		468B89DF2137397400E7FF73 /* Sprint 4 Challenge */ = {
+		8BFEC9C622A0917F00B2F5A4 /* Lock(Sprint 4) */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
-				468B89EC2137397500E7FF73 /* Info.plist */,
+				8BFEC9C722A0917F00B2F5A4 /* AppDelegate.swift */,
+				8BFEC9C922A0917F00B2F5A4 /* ViewController.swift */,
+				8BFEC9D922A0981F00B2F5A4 /* CustomControl.swift */,
+				8BFEC9DB22A09D4200B2F5A4 /* AppearanceHelper.swift */,
+				8BFEC9DD22A09E1800B2F5A4 /* UIColor & CustomColors.swift */,
+				8BFEC9CB22A0917F00B2F5A4 /* Main.storyboard */,
+				8BFEC9CE22A0918400B2F5A4 /* Assets.xcassets */,
+				8BFEC9D022A0918400B2F5A4 /* LaunchScreen.storyboard */,
+				8BFEC9D322A0918400B2F5A4 /* Info.plist */,
 			);
-			path = "Sprint 4 Challenge";
+			path = "Lock(Sprint 4)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		468B89DC2137397400E7FF73 /* Sprint 4 Challenge */ = {
+		8BFEC9C322A0917F00B2F5A4 /* Lock(Sprint 4) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 4 Challenge" */;
+			buildConfigurationList = 8BFEC9D622A0918400B2F5A4 /* Build configuration list for PBXNativeTarget "Lock(Sprint 4)" */;
 			buildPhases = (
-				468B89D92137397400E7FF73 /* Sources */,
-				468B89DA2137397400E7FF73 /* Frameworks */,
-				468B89DB2137397400E7FF73 /* Resources */,
-				33A5D96D228F0A96007467EF /* Run Script - swiftlint */,
+				8BFEC9C022A0917F00B2F5A4 /* Sources */,
+				8BFEC9C122A0917F00B2F5A4 /* Frameworks */,
+				8BFEC9C222A0917F00B2F5A4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Sprint 4 Challenge";
-			productName = "Sprint 6 Challenge";
-			productReference = 468B89DD2137397400E7FF73 /* Sprint 4 Challenge.app */;
+			name = "Lock(Sprint 4)";
+			productName = "Lock(Sprint 4)";
+			productReference = 8BFEC9C422A0917F00B2F5A4 /* Lock(Sprint 4).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		468B89D52137397400E7FF73 /* Project object */ = {
+		8BFEC9BC22A0917F00B2F5A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Lambda School";
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Jordan Davis";
 				TargetAttributes = {
-					468B89DC2137397400E7FF73 = {
-						CreatedOnToolsVersion = 9.4.1;
+					8BFEC9C322A0917F00B2F5A4 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 4 Challenge" */;
+			buildConfigurationList = 8BFEC9BF22A0917F00B2F5A4 /* Build configuration list for PBXProject "Lock(Sprint 4)" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,75 +116,57 @@
 				en,
 				Base,
 			);
-			mainGroup = 468B89D42137397400E7FF73;
-			productRefGroup = 468B89DE2137397400E7FF73 /* Products */;
+			mainGroup = 8BFEC9BB22A0917F00B2F5A4;
+			productRefGroup = 8BFEC9C522A0917F00B2F5A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				468B89DC2137397400E7FF73 /* Sprint 4 Challenge */,
+				8BFEC9C322A0917F00B2F5A4 /* Lock(Sprint 4) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		468B89DB2137397400E7FF73 /* Resources */ = {
+		8BFEC9C222A0917F00B2F5A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
-				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
-				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
+				8BFEC9D222A0918400B2F5A4 /* LaunchScreen.storyboard in Resources */,
+				8BFEC9CF22A0918400B2F5A4 /* Assets.xcassets in Resources */,
+				8BFEC9CD22A0917F00B2F5A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		33A5D96D228F0A96007467EF /* Run Script - swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script - swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		468B89D92137397400E7FF73 /* Sources */ = {
+		8BFEC9C022A0917F00B2F5A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
-				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				8BFEC9CA22A0917F00B2F5A4 /* ViewController.swift in Sources */,
+				8BFEC9DC22A09D4200B2F5A4 /* AppearanceHelper.swift in Sources */,
+				8BFEC9DA22A0981F00B2F5A4 /* CustomControl.swift in Sources */,
+				8BFEC9C822A0917F00B2F5A4 /* AppDelegate.swift in Sources */,
+				8BFEC9DE22A09E1800B2F5A4 /* UIColor & CustomColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		468B89E42137397400E7FF73 /* Main.storyboard */ = {
+		8BFEC9CB22A0917F00B2F5A4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				468B89E52137397400E7FF73 /* Base */,
+				8BFEC9CC22A0917F00B2F5A4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		468B89E92137397500E7FF73 /* LaunchScreen.storyboard */ = {
+		8BFEC9D022A0918400B2F5A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				468B89EA2137397500E7FF73 /* Base */,
+				8BFEC9D122A0918400B2F5A4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -184,7 +174,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		468B89ED2137397500E7FF73 /* Debug */ = {
+		8BFEC9D422A0918400B2F5A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,8 +225,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -244,7 +235,7 @@
 			};
 			name = Debug;
 		};
-		468B89EE2137397500E7FF73 /* Release */ = {
+		8BFEC9D522A0918400B2F5A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,8 +280,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -298,34 +290,36 @@
 			};
 			name = Release;
 		};
-		468B89F02137397500E7FF73 /* Debug */ = {
+		8BFEC9D722A0918400B2F5A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = 8RRD3BRVL2;
+				INFOPLIST_FILE = "Lock(Sprint 4)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-4-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordandavis.Lock-Sprint-4-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		468B89F12137397500E7FF73 /* Release */ = {
+		8BFEC9D822A0918400B2F5A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = 8RRD3BRVL2;
+				INFOPLIST_FILE = "Lock(Sprint 4)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Sprint-4-Challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordandavis.Lock-Sprint-4-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -335,25 +329,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		468B89D82137397400E7FF73 /* Build configuration list for PBXProject "Sprint 4 Challenge" */ = {
+		8BFEC9BF22A0917F00B2F5A4 /* Build configuration list for PBXProject "Lock(Sprint 4)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				468B89ED2137397500E7FF73 /* Debug */,
-				468B89EE2137397500E7FF73 /* Release */,
+				8BFEC9D422A0918400B2F5A4 /* Debug */,
+				8BFEC9D522A0918400B2F5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		468B89EF2137397500E7FF73 /* Build configuration list for PBXNativeTarget "Sprint 4 Challenge" */ = {
+		8BFEC9D622A0918400B2F5A4 /* Build configuration list for PBXNativeTarget "Lock(Sprint 4)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				468B89F02137397500E7FF73 /* Debug */,
-				468B89F12137397500E7FF73 /* Release */,
+				8BFEC9D722A0918400B2F5A4 /* Debug */,
+				8BFEC9D822A0918400B2F5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 468B89D52137397400E7FF73 /* Project object */;
+	rootObject = 8BFEC9BC22A0917F00B2F5A4 /* Project object */;
 }

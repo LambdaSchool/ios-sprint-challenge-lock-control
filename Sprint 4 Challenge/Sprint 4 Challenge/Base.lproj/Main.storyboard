@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dI6-eU-oyJ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Slide To Unlock-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lock_Sprint_4_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODU-f2-6c7" userLabel="Overall View">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-cU-90C">
+                                        <rect key="frame" x="65" y="65" width="120" height="120"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrT-EF-Eoy" userLabel="Custom Control" customClass="CustomControl" customModule="Lock_Sprint_4_" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="193" width="234" height="49"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7hL-cU-90C" firstAttribute="leading" secondItem="ODU-f2-6c7" secondAttribute="leading" constant="65" id="2oA-kx-aYY"/>
+                                    <constraint firstItem="QrT-EF-Eoy" firstAttribute="top" secondItem="7hL-cU-90C" secondAttribute="bottom" constant="8" id="4Si-Jb-3M0"/>
+                                    <constraint firstAttribute="trailing" secondItem="QrT-EF-Eoy" secondAttribute="trailing" constant="8" id="5gd-Vy-qww"/>
+                                    <constraint firstAttribute="bottom" secondItem="7hL-cU-90C" secondAttribute="bottom" constant="65" id="9id-hj-rQF"/>
+                                    <constraint firstAttribute="trailing" secondItem="7hL-cU-90C" secondAttribute="trailing" constant="65" id="I6F-bV-u31"/>
+                                    <constraint firstAttribute="bottom" secondItem="QrT-EF-Eoy" secondAttribute="bottom" constant="8" id="JOU-iL-Z1t"/>
+                                    <constraint firstItem="7hL-cU-90C" firstAttribute="top" secondItem="ODU-f2-6c7" secondAttribute="top" constant="65" id="UH0-s5-PCS"/>
+                                    <constraint firstItem="QrT-EF-Eoy" firstAttribute="leading" secondItem="ODU-f2-6c7" secondAttribute="leading" constant="8" id="hwT-sS-jgq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ODU-f2-6c7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="5Jh-kV-MtW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ODU-f2-6c7" secondAttribute="bottom" constant="289" id="QWq-XM-Zpq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ODU-f2-6c7" secondAttribute="trailing" constant="82" id="kH7-cS-28u"/>
+                            <constraint firstItem="ODU-f2-6c7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="n6x-IU-CGS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Slide To Unlock" id="3Tj-zN-pbb">
+                        <barButtonItem key="rightBarButtonItem" title="Lock" id="EZn-zu-gcx"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customControl" destination="QrT-EF-Eoy" id="M2M-U1-FSk"/>
+                        <outlet property="imageView" destination="7hL-cU-90C" id="CsX-7u-wzf"/>
+                        <outlet property="lockButton" destination="EZn-zu-gcx" id="mZP-4q-5xx"/>
+                        <outlet property="overallView" destination="ODU-f2-6c7" id="a5U-lk-y2j"/>
+                        <outlet property="sliderView" destination="QrT-EF-Eoy" id="Uxc-mP-DGd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="84.375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pWM-rl-EWy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dI6-eU-oyJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="LxK-ls-atX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mI1-bP-nEt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkY-46-qzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120" y="84"/>
         </scene>
     </scenes>
 </document>

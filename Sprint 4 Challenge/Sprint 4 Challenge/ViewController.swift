@@ -12,11 +12,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setupView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupView() {
+        outsideView.layer.cornerRadius = 20
+        if let button = self.navigationItem.rightBarButtonItem {
+            button.isEnabled = false
+            button.tintColor = UIColor.clear
+        }
     }
+    
+    @IBOutlet weak var outsideView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    
+    
+    
 }

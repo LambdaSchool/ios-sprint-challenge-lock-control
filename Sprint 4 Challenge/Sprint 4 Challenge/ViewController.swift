@@ -30,9 +30,8 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5) {
             self.setupView()
-            
-            // code to reset slider thumb to start
-            
+            self.customControl.reset()
+           
         }
     }
     
@@ -55,5 +54,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
+    @IBOutlet weak var customControl: CustomControl!
     
 }

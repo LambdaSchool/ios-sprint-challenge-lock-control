@@ -66,6 +66,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="customControl" destination="tMM-5X-AWo" id="GhG-T8-dYb"/>
                         <outlet property="customSliderView" destination="tMM-5X-AWo" id="ST7-3P-Io6"/>
                         <outlet property="imageView" destination="oZ5-4B-Oqh" id="LsR-Gd-cjP"/>
                         <outlet property="outsideView" destination="luL-rS-nvC" id="0cu-xV-pqO"/>

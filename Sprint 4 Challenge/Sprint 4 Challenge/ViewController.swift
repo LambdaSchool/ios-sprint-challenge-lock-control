@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpGraySquare()
-        rangeSlider?.sliderAreaSize
+        //setUpGraySquare()
+        rangeSlider?.intrinsicContentSize
     }
     
     @IBAction func resetLock(_ sender: Any) {
@@ -26,11 +26,15 @@ class ViewController: UIViewController {
         // 3.  vanish the Reset button
     }
     
-    @IBAction func sliderBallControl(_ sender: Any) {
+    @IBAction func openLockSlider(_ ratingControl: RangeSlider) {
+        
+        // if value >= 0.8 { openLockAnimation AND
+        // enable "Reset" button to appear in NavBar
+        // else { go back to identity
+        
         
     }
-    
-    
+
     func setUpGraySquare() {
         
         let graySquare = UIView()
@@ -56,6 +60,6 @@ class ViewController: UIViewController {
             ])
     }
     
+    @IBOutlet var rangeSlider: RangeSlider!
     var graySquare: UIView?
-    var rangeSlider: RangeSlider?
 }

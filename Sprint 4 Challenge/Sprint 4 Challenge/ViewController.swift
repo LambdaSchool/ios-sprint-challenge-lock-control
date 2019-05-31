@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "Unlocked")
             customControl.isUserInteractionEnabled = true
             lockButton.title = "Lock"
-            navigationItem.title = "Unlocked!"
+            navigationItem.title = "Reset"
         }
     }
     

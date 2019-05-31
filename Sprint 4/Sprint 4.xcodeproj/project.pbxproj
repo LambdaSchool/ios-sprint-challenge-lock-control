@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8BFEC9C822A0917F00B2F5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9C722A0917F00B2F5A4 /* AppDelegate.swift */; };
-		8BFEC9CA22A0917F00B2F5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9C922A0917F00B2F5A4 /* ViewController.swift */; };
-		8BFEC9CD22A0917F00B2F5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9CB22A0917F00B2F5A4 /* Main.storyboard */; };
-		8BFEC9CF22A0918400B2F5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9CE22A0918400B2F5A4 /* Assets.xcassets */; };
-		8BFEC9D222A0918400B2F5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9D022A0918400B2F5A4 /* LaunchScreen.storyboard */; };
-		8BFEC9DA22A0981F00B2F5A4 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9D922A0981F00B2F5A4 /* CustomControl.swift */; };
-		8BFEC9DC22A09D4200B2F5A4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9DB22A09D4200B2F5A4 /* AppearanceHelper.swift */; };
-		8BFEC9DE22A09E1800B2F5A4 /* UIColor & CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9DD22A09E1800B2F5A4 /* UIColor & CustomColors.swift */; };
+		8BFEC9EE22A17D2E00B2F5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFEC9ED22A17D2E00B2F5A4 /* AppDelegate.swift */; };
+		8BFEC9F522A17D3300B2F5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9F422A17D3300B2F5A4 /* Assets.xcassets */; };
+		8BFEC9F822A17D3300B2F5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9F622A17D3300B2F5A4 /* LaunchScreen.storyboard */; };
+		8BFECA0122A17D6F00B2F5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9FF22A17D6F00B2F5A4 /* Main.storyboard */; };
+		8BFECA0322A17D9500B2F5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0222A17D9500B2F5A4 /* ViewController.swift */; };
+		8BFECA0722A17D9D00B2F5A4 /* UIColor & CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0422A17D9D00B2F5A4 /* UIColor & CustomColors.swift */; };
+		8BFECA0822A17D9D00B2F5A4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0522A17D9D00B2F5A4 /* AppearanceHelper.swift */; };
+		8BFECA0922A17D9D00B2F5A4 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0622A17D9D00B2F5A4 /* CustomControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8BFEC9C422A0917F00B2F5A4 /* Lock(Sprint 4).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lock(Sprint 4).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BFEC9C722A0917F00B2F5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BFEC9C922A0917F00B2F5A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8BFEC9CC22A0917F00B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8BFEC9CE22A0918400B2F5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8BFEC9D122A0918400B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8BFEC9D322A0918400B2F5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BFEC9D922A0981F00B2F5A4 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
-		8BFEC9DB22A09D4200B2F5A4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
-		8BFEC9DD22A09E1800B2F5A4 /* UIColor & CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor & CustomColors.swift"; sourceTree = "<group>"; };
+		8BFEC9EA22A17D2E00B2F5A4 /* Sprint 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprint 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BFEC9ED22A17D2E00B2F5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BFEC9F422A17D3300B2F5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BFEC9F722A17D3300B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BFEC9F922A17D3300B2F5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BFECA0022A17D6F00B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		8BFECA0222A17D9500B2F5A4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/ViewController.swift"; sourceTree = "<group>"; };
+		8BFECA0422A17D9D00B2F5A4 /* UIColor & CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor & CustomColors.swift"; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/UIColor & CustomColors.swift"; sourceTree = "<group>"; };
+		8BFECA0522A17D9D00B2F5A4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppearanceHelper.swift; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/AppearanceHelper.swift"; sourceTree = "<group>"; };
+		8BFECA0622A17D9D00B2F5A4 /* CustomControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomControl.swift; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/CustomControl.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8BFEC9C122A0917F00B2F5A4 /* Frameworks */ = {
+		8BFEC9E722A17D2E00B2F5A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,74 +41,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8BFEC9BB22A0917F00B2F5A4 = {
+		8BFEC9E122A17D2E00B2F5A4 = {
 			isa = PBXGroup;
 			children = (
-				8BFEC9C622A0917F00B2F5A4 /* Lock(Sprint 4) */,
-				8BFEC9C522A0917F00B2F5A4 /* Products */,
+				8BFEC9EC22A17D2E00B2F5A4 /* Sprint 4 */,
+				8BFEC9EB22A17D2E00B2F5A4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8BFEC9C522A0917F00B2F5A4 /* Products */ = {
+		8BFEC9EB22A17D2E00B2F5A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8BFEC9C422A0917F00B2F5A4 /* Lock(Sprint 4).app */,
+				8BFEC9EA22A17D2E00B2F5A4 /* Sprint 4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8BFEC9C622A0917F00B2F5A4 /* Lock(Sprint 4) */ = {
+		8BFEC9EC22A17D2E00B2F5A4 /* Sprint 4 */ = {
 			isa = PBXGroup;
 			children = (
-				8BFEC9C722A0917F00B2F5A4 /* AppDelegate.swift */,
-				8BFEC9C922A0917F00B2F5A4 /* ViewController.swift */,
-				8BFEC9D922A0981F00B2F5A4 /* CustomControl.swift */,
-				8BFEC9DB22A09D4200B2F5A4 /* AppearanceHelper.swift */,
-				8BFEC9DD22A09E1800B2F5A4 /* UIColor & CustomColors.swift */,
-				8BFEC9CB22A0917F00B2F5A4 /* Main.storyboard */,
-				8BFEC9CE22A0918400B2F5A4 /* Assets.xcassets */,
-				8BFEC9D022A0918400B2F5A4 /* LaunchScreen.storyboard */,
-				8BFEC9D322A0918400B2F5A4 /* Info.plist */,
+				8BFEC9ED22A17D2E00B2F5A4 /* AppDelegate.swift */,
+				8BFECA0222A17D9500B2F5A4 /* ViewController.swift */,
+				8BFECA0522A17D9D00B2F5A4 /* AppearanceHelper.swift */,
+				8BFECA0622A17D9D00B2F5A4 /* CustomControl.swift */,
+				8BFECA0422A17D9D00B2F5A4 /* UIColor & CustomColors.swift */,
+				8BFEC9FF22A17D6F00B2F5A4 /* Main.storyboard */,
+				8BFEC9F422A17D3300B2F5A4 /* Assets.xcassets */,
+				8BFEC9F622A17D3300B2F5A4 /* LaunchScreen.storyboard */,
+				8BFEC9F922A17D3300B2F5A4 /* Info.plist */,
 			);
-			path = "Lock(Sprint 4)";
+			path = "Sprint 4";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BFEC9C322A0917F00B2F5A4 /* Lock(Sprint 4) */ = {
+		8BFEC9E922A17D2E00B2F5A4 /* Sprint 4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BFEC9D622A0918400B2F5A4 /* Build configuration list for PBXNativeTarget "Lock(Sprint 4)" */;
+			buildConfigurationList = 8BFEC9FC22A17D3300B2F5A4 /* Build configuration list for PBXNativeTarget "Sprint 4" */;
 			buildPhases = (
-				8BFEC9C022A0917F00B2F5A4 /* Sources */,
-				8BFEC9C122A0917F00B2F5A4 /* Frameworks */,
-				8BFEC9C222A0917F00B2F5A4 /* Resources */,
+				8BFEC9E622A17D2E00B2F5A4 /* Sources */,
+				8BFEC9E722A17D2E00B2F5A4 /* Frameworks */,
+				8BFEC9E822A17D2E00B2F5A4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Lock(Sprint 4)";
-			productName = "Lock(Sprint 4)";
-			productReference = 8BFEC9C422A0917F00B2F5A4 /* Lock(Sprint 4).app */;
+			name = "Sprint 4";
+			productName = "Sprint 4";
+			productReference = 8BFEC9EA22A17D2E00B2F5A4 /* Sprint 4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8BFEC9BC22A0917F00B2F5A4 /* Project object */ = {
+		8BFEC9E222A17D2E00B2F5A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Jordan Davis";
 				TargetAttributes = {
-					8BFEC9C322A0917F00B2F5A4 = {
+					8BFEC9E922A17D2E00B2F5A4 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 8BFEC9BF22A0917F00B2F5A4 /* Build configuration list for PBXProject "Lock(Sprint 4)" */;
+			buildConfigurationList = 8BFEC9E522A17D2E00B2F5A4 /* Build configuration list for PBXProject "Sprint 4" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,65 +116,65 @@
 				en,
 				Base,
 			);
-			mainGroup = 8BFEC9BB22A0917F00B2F5A4;
-			productRefGroup = 8BFEC9C522A0917F00B2F5A4 /* Products */;
+			mainGroup = 8BFEC9E122A17D2E00B2F5A4;
+			productRefGroup = 8BFEC9EB22A17D2E00B2F5A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8BFEC9C322A0917F00B2F5A4 /* Lock(Sprint 4) */,
+				8BFEC9E922A17D2E00B2F5A4 /* Sprint 4 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8BFEC9C222A0917F00B2F5A4 /* Resources */ = {
+		8BFEC9E822A17D2E00B2F5A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BFEC9D222A0918400B2F5A4 /* LaunchScreen.storyboard in Resources */,
-				8BFEC9CF22A0918400B2F5A4 /* Assets.xcassets in Resources */,
-				8BFEC9CD22A0917F00B2F5A4 /* Main.storyboard in Resources */,
+				8BFECA0122A17D6F00B2F5A4 /* Main.storyboard in Resources */,
+				8BFEC9F822A17D3300B2F5A4 /* LaunchScreen.storyboard in Resources */,
+				8BFEC9F522A17D3300B2F5A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8BFEC9C022A0917F00B2F5A4 /* Sources */ = {
+		8BFEC9E622A17D2E00B2F5A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BFEC9CA22A0917F00B2F5A4 /* ViewController.swift in Sources */,
-				8BFEC9DC22A09D4200B2F5A4 /* AppearanceHelper.swift in Sources */,
-				8BFEC9DA22A0981F00B2F5A4 /* CustomControl.swift in Sources */,
-				8BFEC9C822A0917F00B2F5A4 /* AppDelegate.swift in Sources */,
-				8BFEC9DE22A09E1800B2F5A4 /* UIColor & CustomColors.swift in Sources */,
+				8BFECA0322A17D9500B2F5A4 /* ViewController.swift in Sources */,
+				8BFECA0822A17D9D00B2F5A4 /* AppearanceHelper.swift in Sources */,
+				8BFEC9EE22A17D2E00B2F5A4 /* AppDelegate.swift in Sources */,
+				8BFECA0722A17D9D00B2F5A4 /* UIColor & CustomColors.swift in Sources */,
+				8BFECA0922A17D9D00B2F5A4 /* CustomControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8BFEC9CB22A0917F00B2F5A4 /* Main.storyboard */ = {
+		8BFEC9F622A17D3300B2F5A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8BFEC9CC22A0917F00B2F5A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8BFEC9D022A0918400B2F5A4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8BFEC9D122A0918400B2F5A4 /* Base */,
+				8BFEC9F722A17D3300B2F5A4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8BFEC9FF22A17D6F00B2F5A4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BFECA0022A17D6F00B2F5A4 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8BFEC9D422A0918400B2F5A4 /* Debug */ = {
+		8BFEC9FA22A17D3300B2F5A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +235,7 @@
 			};
 			name = Debug;
 		};
-		8BFEC9D522A0918400B2F5A4 /* Release */ = {
+		8BFEC9FB22A17D3300B2F5A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -290,36 +290,36 @@
 			};
 			name = Release;
 		};
-		8BFEC9D722A0918400B2F5A4 /* Debug */ = {
+		8BFEC9FD22A17D3300B2F5A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RRD3BRVL2;
-				INFOPLIST_FILE = "Lock(Sprint 4)/Info.plist";
+				INFOPLIST_FILE = "Sprint 4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jordandavis.Lock-Sprint-4-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordandavis.Sprint-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		8BFEC9D822A0918400B2F5A4 /* Release */ = {
+		8BFEC9FE22A17D3300B2F5A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RRD3BRVL2;
-				INFOPLIST_FILE = "Lock(Sprint 4)/Info.plist";
+				INFOPLIST_FILE = "Sprint 4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jordandavis.Lock-Sprint-4-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordandavis.Sprint-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -329,25 +329,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BFEC9BF22A0917F00B2F5A4 /* Build configuration list for PBXProject "Lock(Sprint 4)" */ = {
+		8BFEC9E522A17D2E00B2F5A4 /* Build configuration list for PBXProject "Sprint 4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BFEC9D422A0918400B2F5A4 /* Debug */,
-				8BFEC9D522A0918400B2F5A4 /* Release */,
+				8BFEC9FA22A17D3300B2F5A4 /* Debug */,
+				8BFEC9FB22A17D3300B2F5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BFEC9D622A0918400B2F5A4 /* Build configuration list for PBXNativeTarget "Lock(Sprint 4)" */ = {
+		8BFEC9FC22A17D3300B2F5A4 /* Build configuration list for PBXNativeTarget "Sprint 4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BFEC9D722A0918400B2F5A4 /* Debug */,
-				8BFEC9D822A0918400B2F5A4 /* Release */,
+				8BFEC9FD22A17D3300B2F5A4 /* Debug */,
+				8BFEC9FE22A17D3300B2F5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8BFEC9BC22A0917F00B2F5A4 /* Project object */;
+	rootObject = 8BFEC9E222A17D2E00B2F5A4 /* Project object */;
 }

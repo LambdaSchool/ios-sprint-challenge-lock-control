@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setUpGraySquare()
+        //layer.addSublayer(setUpGraySquare())   why won't this work?
         rangeSlider?.intrinsicContentSize
     }
     

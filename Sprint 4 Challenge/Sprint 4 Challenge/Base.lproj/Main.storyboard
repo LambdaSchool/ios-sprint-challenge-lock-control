@@ -28,12 +28,15 @@
                                             <constraint firstAttribute="height" constant="120" id="zP8-WW-6Mw"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMM-5X-AWo">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMM-5X-AWo" customClass="CustomControl" customModule="Sprint_4_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="176" width="184" height="40"/>
                                         <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kVB-fw-fEZ"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fo9-TT-lu1"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,9 +59,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hello!" id="cHr-Fd-UaU">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="uGw-d0-6mG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="uGw-d0-6mG">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="FV7-ce-RCE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="customSliderView" destination="tMM-5X-AWo" id="ST7-3P-Io6"/>
                         <outlet property="imageView" destination="oZ5-4B-Oqh" id="LsR-Gd-cjP"/>
                         <outlet property="outsideView" destination="luL-rS-nvC" id="0cu-xV-pqO"/>
                         <outlet property="resetButton" destination="uGw-d0-6mG" id="Rd2-ak-kG5"/>

@@ -12,7 +12,6 @@
 		8BFEC9F822A17D3300B2F5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9F622A17D3300B2F5A4 /* LaunchScreen.storyboard */; };
 		8BFECA0122A17D6F00B2F5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFEC9FF22A17D6F00B2F5A4 /* Main.storyboard */; };
 		8BFECA0322A17D9500B2F5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0222A17D9500B2F5A4 /* ViewController.swift */; };
-		8BFECA0722A17D9D00B2F5A4 /* UIColor & CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0422A17D9D00B2F5A4 /* UIColor & CustomColors.swift */; };
 		8BFECA0822A17D9D00B2F5A4 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0522A17D9D00B2F5A4 /* AppearanceHelper.swift */; };
 		8BFECA0922A17D9D00B2F5A4 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFECA0622A17D9D00B2F5A4 /* CustomControl.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		8BFEC9F922A17D3300B2F5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BFECA0022A17D6F00B2F5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		8BFECA0222A17D9500B2F5A4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/ViewController.swift"; sourceTree = "<group>"; };
-		8BFECA0422A17D9D00B2F5A4 /* UIColor & CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor & CustomColors.swift"; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/UIColor & CustomColors.swift"; sourceTree = "<group>"; };
 		8BFECA0522A17D9D00B2F5A4 /* AppearanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppearanceHelper.swift; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/AppearanceHelper.swift"; sourceTree = "<group>"; };
 		8BFECA0622A17D9D00B2F5A4 /* CustomControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomControl.swift; path = "../../Sprint 4 Challenge/Sprint 4 Challenge/CustomControl.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +62,6 @@
 				8BFECA0222A17D9500B2F5A4 /* ViewController.swift */,
 				8BFECA0522A17D9D00B2F5A4 /* AppearanceHelper.swift */,
 				8BFECA0622A17D9D00B2F5A4 /* CustomControl.swift */,
-				8BFECA0422A17D9D00B2F5A4 /* UIColor & CustomColors.swift */,
 				8BFEC9FF22A17D6F00B2F5A4 /* Main.storyboard */,
 				8BFEC9F422A17D3300B2F5A4 /* Assets.xcassets */,
 				8BFEC9F622A17D3300B2F5A4 /* LaunchScreen.storyboard */,
@@ -147,7 +144,6 @@
 				8BFECA0322A17D9500B2F5A4 /* ViewController.swift in Sources */,
 				8BFECA0822A17D9D00B2F5A4 /* AppearanceHelper.swift in Sources */,
 				8BFEC9EE22A17D2E00B2F5A4 /* AppDelegate.swift in Sources */,
-				8BFECA0722A17D9D00B2F5A4 /* UIColor & CustomColors.swift in Sources */,
 				8BFECA0922A17D9D00B2F5A4 /* CustomControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

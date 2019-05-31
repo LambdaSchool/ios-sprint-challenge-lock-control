@@ -2,7 +2,7 @@
 //  CustomControl.swift
 //  Lock(Sprint 4)
 //
-//  Created by Jordan Davis on 5/30/19.
+//  Created by Jordan Davis on 5/31/19.
 //  Copyright © 2019 Jordan Davis. All rights reserved.
 //
 
@@ -12,11 +12,11 @@ import UIKit
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setUpBall(ballView)
+        setupBall(ballView)
         updateFrames()
     }
     
-    private func setUpBall(_ ball: UIView) {
+    private func setupBall(_ ball: UIView) {
         let ballFrame = CGRect(x: 0, y: 0, width: ballWidth, height: ballWidth)
         ball.frame = ballFrame
         ball.backgroundColor = .black
@@ -28,10 +28,10 @@ import UIKit
     }
     
     func position(for value: CGFloat) -> CGFloat {
-        return(bounds.width - ballWidth - 10) * value
+        return (bounds.width - ballWidth - 10) * value
     }
     
-    private func ballFrame(for value: CGFloat) -> CGRect {
+    private func ballFrame(for value:CGFloat) -> CGRect {
         let x = position(for: value) + 6
         let y = (bounds.height - ballWidth) / 2
         return CGRect(x: x, y: y, width: ballWidth, height: ballWidth)
@@ -49,7 +49,7 @@ import UIKit
         self.isUserInteractionEnabled = true
     }
     
-    //MARK: - Touch Handling
+    // MARK: - Touch Tracking Methods
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
@@ -90,7 +90,7 @@ import UIKit
             UIView.animate(withDuration: 1.0) {
                 self.ballView.frame = self.ballFrame(for: 1.0)
             }
-        } else {
+        }   else {
             sendActions(for: [.touchUpInside, .valueChanged])
             isUnlocked = false
             ballValue = 0
@@ -106,9 +106,7 @@ import UIKit
         super.cancelTracking(with: event)
     }
     
-    
-    //MARK: - Properties
-    
+    // MARK: - Properties
     var minimumValue: CGFloat = 0
     var maximumValue: CGFloat = 1
     var ballValue: CGFloat = 0.0
@@ -120,6 +118,7 @@ import UIKit
     private var ballWidth: CGFloat {
         return frame.height * 0.825
     }
+    
     
     
 }

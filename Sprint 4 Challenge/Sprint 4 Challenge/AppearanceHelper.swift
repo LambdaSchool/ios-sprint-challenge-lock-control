@@ -1,8 +1,8 @@
 //
 //  AppearanceHelper.swift
-//  Lock(Sprint 4)
+//  Sprint 4
 //
-//  Created by Jordan Davis on 5/30/19.
+//  Created by Jordan Davis on 5/31/19.
 //  Copyright © 2019 Jordan Davis. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 enum AppearanceHelper {
     
     static func setCustomAppearance() {
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.smokeGray]
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.marvelRed]
         
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
@@ -22,4 +22,5 @@ enum AppearanceHelper {
     }
     
     
+    //for some reason, something in my code is preventing my UINav Bar form changing its appearance. 
 }

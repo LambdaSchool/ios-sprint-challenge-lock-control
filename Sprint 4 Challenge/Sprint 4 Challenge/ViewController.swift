@@ -30,7 +30,9 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5) {
             self.setupView()
-        
+            
+            // code to reset slider thumb to start
+            
         }
     }
     

@@ -106,9 +106,11 @@ class CustomControl: UIControl {
         
     }
     
-    func reset() {
-        
-    }
+//    func reset() {
+//      lowerValue = 0.1
+//        updateControlFrames()
+//        
+//    }
     
     private func thumbFrame(for value: CGFloat) -> CGRect {
         let x = position(for: value) - thumbWidth/2

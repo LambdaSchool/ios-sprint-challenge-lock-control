@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         print("rangeChanged")
         if sender.isLocked {
+            print("true")
             imageView.image = UIImage(named: "Locked")
         } else {
             imageView.image = UIImage(named: "Unlocked")

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     @IBAction func rangeChanged(_ sender: RangeSlider) {
         
+        print("rangeChanged")
         if sender.isLocked {
             imageView.image = UIImage(named: "Locked")
         } else {
@@ -30,6 +31,16 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        
+        // lock back up
+        imageView.image = UIImage(named: "Locked")    // this works perfectly
+        rangeSlider.isLocked = true
+        
+        // move ball to the far left
+        rangeSlider.layoutSubviews()
+        
+    }
     
     
     @IBOutlet var rangeSlider: RangeSlider!

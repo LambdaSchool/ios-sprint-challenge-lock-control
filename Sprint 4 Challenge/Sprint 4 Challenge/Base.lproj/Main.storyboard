@@ -47,7 +47,7 @@
                     <navigationItem key="navigationItem" title="Hello!" id="3mZ-L8-XSR">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="LSY-y9-rb8">
                             <connections>
-                                <action selector="resetLock:" destination="BYZ-38-t0r" id="B0h-eK-GP9"/>
+                                <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="V2x-9i-Sfg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

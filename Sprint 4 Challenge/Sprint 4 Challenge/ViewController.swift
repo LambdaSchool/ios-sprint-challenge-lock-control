@@ -39,7 +39,8 @@ class ViewController: UIViewController {
         rangeSlider.isLocked = true
         
         // move ball to the far left
-        rangeSlider.layoutSubviews()
+        rangeSlider.animateReturn()
+        //rangeSlider.layoutSubviews()
         
     }
     

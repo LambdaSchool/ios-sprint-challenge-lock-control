@@ -9,14 +9,43 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        imageView.image = UIImage(named: "Locked")
     }
+    
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func rangeChanged(_ sender: RangeSlider) {
+        
+        print("rangeChanged")
+        if sender.isLocked {
+            print("true")
+            imageView.image = UIImage(named: "Locked")
+        } else {
+            imageView.image = UIImage(named: "Unlocked")
+        }
+        
     }
+    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        
+        // lock back up
+        imageView.image = UIImage(named: "Locked")    // this works perfectly
+        rangeSlider.isLocked = true
+        
+        // move ball to the far left
+        rangeSlider.animateReturn()
+        //rangeSlider.layoutSubviews()
+        
+    }
+    
+    
+    @IBOutlet var rangeSlider: RangeSlider!
+    @IBOutlet var imageView: UIImageView!
+    
 }

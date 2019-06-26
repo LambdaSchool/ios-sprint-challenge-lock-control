@@ -11,10 +11,15 @@ import UIKit
 class LockControl: UIControl {
     
     var lock: UIImage = UIImage(named: "Locked")!
+    
+    let step: Float = 1
+    
     let circleControl = UIView()
+//    let slideBackground = UISlider()
     let slideBackground = UIView()
     let imageView = UIImageView()
     let lockView = UIView()
+    let superViewSize: CGFloat = 280.0
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -23,8 +28,6 @@ class LockControl: UIControl {
     }
 
     private func setup() {
-        let superViewSize: CGFloat = 280.0
-        
         // create background
         lockView.frame = CGRect(x: 0.0, y: 0.0, width: superViewSize, height: superViewSize)
         lockView.backgroundColor = .gray
@@ -47,28 +50,43 @@ class LockControl: UIControl {
         
         // create controlable circle
         circleControl.frame = CGRect(x: 15.0, y: superViewSize - 55.0, width: 40.0, height: 40.0)
+//        circleControl.frame = CGRect(x: 225.0, y: superViewSize - 55.0, width: 40.0, height: 40.0)
         circleControl.backgroundColor = .black
         circleControl.layer.cornerRadius = 20.0
         addSubview(circleControl)
+        circleControl.isUserInteractionEnabled = false
     }
+
     
     private func updateValue(at touch: UITouch) {
         let touchPoint = touch.location(in: self)
         
-        if slideBackground.frame.contains(touchPoint) {
-            print(touchPoint)
+        UIView.animate(withDuration: 0.01) {
+            self.circleControl.center.x = touchPoint.x
+        }
+    }
+    
+    func reset() {
+        UIView.animate(withDuration: 0.01) {
+            self.circleControl.frame.origin.x = 15.0
+            self.imageView.image = UIImage(named: "Locked")!
         }
     }
     
     // MARK: - Touch Handlers
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        updateValue(at: touch)
+        let touchPoint = touch.location(in: circleControl)
+        if circleControl.bounds.contains(touchPoint) {
+            sendActions(for: [.touchDown])
+            updateValue(at: touch)
+        }
         return true
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        let touchPoint = touch.location(in: self)
-        if bounds.contains(touchPoint) {
+        let touchPoint = touch.location(in: slideBackground)
+        
+        if slideBackground.bounds.contains(touchPoint) {
             sendActions(for: [.touchDragInside, .valueChanged])
             updateValue(at: touch)
         } else {
@@ -78,15 +96,14 @@ class LockControl: UIControl {
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        defer { super.endTracking(touch, with: event) }
-        guard let touch = touch else { return }
-        
-        let touchPoint = touch.location(in: self)
-        if bounds.contains(touchPoint) {
-            sendActions(for: [.touchUpInside, .valueChanged])
-            updateValue(at: touch)
+        if circleControl.center.x < slideBackground.bounds.width * 0.80 {
+            UIView.animate(withDuration: 0.01) {
+                self.circleControl.frame.origin.x = 15.0
+            }
         } else {
-            sendActions(for: [.touchUpOutside])
+            UIView.animate(withDuration: 0.01) {
+                self.circleControl.frame.origin.x = 225.0
+            }
         }
     }
     

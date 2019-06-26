@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var resetButton: UIBarButtonItem!
     @IBOutlet var lockControl: LockControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = nil
         self.setupAppearances()
     }
 
@@ -22,6 +24,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func updateLock(_ sender: LockControl) {
-        // change from locked to unlocked
+        if sender.circleControl.center.x > sender.slideBackground.bounds.width * 0.80 {
+            UIView.animate(withDuration: 0.01) {
+                sender.imageView.image = UIImage(named: "Unlocked")!
+                self.navigationItem.rightBarButtonItem = self.resetButton
+            }
+        }
+    }
+    
+    @IBAction func resetLock(_ sender: UIBarButtonItem) {
+        self.navigationItem.rightBarButtonItem = nil
+        lockControl.reset()
     }
 }

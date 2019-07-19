@@ -20,4 +20,7 @@ class ViewController: UIViewController {
     @IBAction func resetLockButtonTapped(_ sender: Any) {
         
     }
+    
+    @IBAction func lockValueChanged(_ sender: Any) {
+    }
 }

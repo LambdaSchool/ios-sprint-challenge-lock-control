@@ -20,11 +20,14 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKX-V3-YZd" customClass="LockControl" customModule="Sprint_4_Challenge" customModuleProvider="target">
                                 <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.47741866438356162" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="2s6-15-G3Z"/>
                                     <constraint firstAttribute="width" secondItem="VKX-V3-YZd" secondAttribute="height" multiplier="1:1" id="sKy-91-NoV"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="lockValueChanged:" destination="S7G-9c-fqm" eventType="valueChanged" id="9HV-5A-orc"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

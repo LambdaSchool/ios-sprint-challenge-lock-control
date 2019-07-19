@@ -16,10 +16,6 @@ class LockControl: UIControl {
     var sliderButton: UIView = UIView()
     var sliderBackground = UIView()
     
-    var minValue = 0.0
-    var maxValue = 1.0
-    var sliderValue = 0.0
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -123,15 +119,28 @@ extension LockControl {
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         guard let touch = touch else { return }
+        let touchPoint = touch.location(in: self)
         
-        if sliderBackground.bounds.contains(touch.location(in: self)) {
-            updateValue(at: touch)
-            sendActions(for: [.touchUpInside])
-            print("touchupinside")
+        if touchPoint.x >= (sliderBackground.frame.maxX - 33) * 0.8 {
+            imageView.image = UIImage(named: "Unlocked")
+            sendActions(for: [.touchUpOutside])
+            print("touchupoutside")
         } else {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                self.sliderButton.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 39, width: 30, height: 30)
+            }, completion: nil)
             sendActions(for: [.touchUpOutside])
             print("touchupoutside")
         }
+        
+//        if sliderBackground.frame.contains(touch.location(in: self)) {
+//            updateValue(at: touch)
+//            sendActions(for: [.touchUpInside])
+//            print("touchupinside")
+//        } else {
+//
+//
+//        }
     }
     
     override func cancelTracking(with event: UIEvent?) {

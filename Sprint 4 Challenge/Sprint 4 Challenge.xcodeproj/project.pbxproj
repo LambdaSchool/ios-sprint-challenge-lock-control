@@ -13,6 +13,7 @@
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
 		F629827D22E21A48005D5B02 /* LockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629827C22E21A48005D5B02 /* LockController.swift */; };
+		F629827F22E2692B005D5B02 /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629827E22E2692B005D5B02 /* AppearanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F629827C22E21A48005D5B02 /* LockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockController.swift; sourceTree = "<group>"; };
+		F629827E22E2692B005D5B02 /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				468B89E72137397500E7FF73 /* Assets.xcassets */,
 				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
 				468B89EC2137397500E7FF73 /* Info.plist */,
+				F629827E22E2692B005D5B02 /* AppearanceHelper.swift */,
 			);
 			path = "Sprint 4 Challenge";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
+				F629827F22E2692B005D5B02 /* AppearanceHelper.swift in Sources */,
 				F629827D22E21A48005D5B02 /* LockController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
 			);

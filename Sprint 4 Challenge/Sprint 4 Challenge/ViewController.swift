@@ -47,13 +47,14 @@ class ViewController: UIViewController {
     //Functions
     func startingPosition() {
         title = "Locked"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppearanceHelper.myRed]
         
         lockImage.image = UIImage(named: "Locked")
         lockImage.layer.cornerRadius = viewCornerRadius
         
         lockView.layer.cornerRadius = viewCornerRadius
         
-        sliderTrackView.layer.cornerRadius = viewCornerRadius / 2
+        sliderTrackView.layer.cornerRadius = viewCornerRadius / 2.5
         
         resetButton.tintColor = .clear
     }
@@ -61,17 +62,21 @@ class ViewController: UIViewController {
     
     func unlock() {
         
-        title = "Unlocked!"
+        title = "Unlocked"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
         lockImage.image = UIImage(named: "Unlocked")
         
-        resetButton.tintColor = .red
+        resetButton.tintColor = AppearanceHelper.myRed
         
         
     }
     
     
     func reset() {
+        
+        title = "Locked"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppearanceHelper.myRed]
         
         sliderTrackView.reset()
         sliderTrackView.isEnabled = true

@@ -79,7 +79,6 @@ class LockController: UIControl {
         lockSliderValue = 0.0
         isUnlocked = false
         updateSlider()
-        
     }
     
     

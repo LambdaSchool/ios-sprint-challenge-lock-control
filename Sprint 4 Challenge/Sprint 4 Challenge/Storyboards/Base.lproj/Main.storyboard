@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" secondItem="VKX-V3-YZd" secondAttribute="height" multiplier="1:1" id="sKy-91-NoV"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="lockValueChanged:" destination="S7G-9c-fqm" eventType="valueChanged" id="9HV-5A-orc"/>
+                                    <action selector="lockControlValueChanged:" destination="S7G-9c-fqm" eventType="valueChanged" id="3e5-KD-n5D"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -46,6 +46,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lockControl" destination="VKX-V3-YZd" id="Bui-cQ-Opf"/>
+                        <outlet property="resetLockButton" destination="eqg-te-1Rv" id="Z0v-KT-AQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHf-uo-fnn" userLabel="First Responder" sceneMemberID="firstResponder"/>

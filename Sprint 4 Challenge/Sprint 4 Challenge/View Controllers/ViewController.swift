@@ -11,16 +11,29 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var lockControl: LockControl!
+    @IBOutlet weak var resetLockButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        resetLockButton.tintColor = .white
+        resetLockButton.isEnabled = false
     }
     
     @IBAction func resetLockButtonTapped(_ sender: Any) {
+        lockControl.reset()
+        UIView.animate(withDuration: 2) {
+            self.resetLockButton.tintColor = .white
+        }
         
+        resetLockButton.isEnabled = false
     }
     
-    @IBAction func lockValueChanged(_ sender: Any) {
+    @IBAction func lockControlValueChanged(_ sender: Any) {
+            UIView.animate(withDuration: 2) {
+                self.resetLockButton.tintColor = .red
+            }
+            
+            resetLockButton.isEnabled = true
     }
+
 }

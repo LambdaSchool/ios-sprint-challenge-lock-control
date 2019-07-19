@@ -90,6 +90,12 @@ class LockControl: UIControl {
         }
         
     }
+    
+    func reset() {
+        sliderButton.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 39, width: 30, height: 30)
+        imageView.image = UIImage(named: "Locked")
+        self.isUserInteractionEnabled = true
+    }
 }
 
 
@@ -123,28 +129,18 @@ extension LockControl {
         
         if touchPoint.x >= (sliderBackground.frame.maxX - 33) * 0.8 {
             imageView.image = UIImage(named: "Unlocked")
-            sendActions(for: [.touchUpOutside])
-            print("touchupoutside")
+            self.isUserInteractionEnabled = false
+            sendActions(for: [.touchUpOutside, .valueChanged])
         } else {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
                 self.sliderButton.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 39, width: 30, height: 30)
             }, completion: nil)
             sendActions(for: [.touchUpOutside])
-            print("touchupoutside")
         }
-        
-//        if sliderBackground.frame.contains(touch.location(in: self)) {
-//            updateValue(at: touch)
-//            sendActions(for: [.touchUpInside])
-//            print("touchupinside")
-//        } else {
-//
-//
-//        }
     }
     
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: [.touchCancel])
-        print("tracking cancelled")
     }
+    
 }

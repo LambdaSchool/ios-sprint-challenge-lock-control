@@ -9,20 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var lockView: UIView!
-    @IBOutlet weak var lockImageView: UIImageView!
+   
     @IBOutlet weak var lockControl: LockControl!
-    @IBOutlet weak var sliderView: UIView!
+    
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lockImageView.image = UIImage(named: "Locked")
         resetButton.isEnabled = false
-        lockControl.maxX = lockControl.frame.width - (sliderView.frame.width / 2)
-        lockControl.minX = sliderView.center.x
-        setAppearance()
+
+                setAppearance()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,24 +28,8 @@ class ViewController: UIViewController {
     }
     
     func setAppearance() {
-        lockView.layer.cornerRadius = lockControl.frame.width / 2
-        lockControl.layer.cornerRadius = sliderView.frame.width / 2
-        sliderView.layer.cornerRadius = sliderView.frame.width / 2
-        
-        lockView.backgroundColor = AppearanceHelper.grayish
         view.backgroundColor = AppearanceHelper.blueColor
-        lockControl.backgroundColor = UIColor.darkGray
-        sliderView.backgroundColor = AppearanceHelper.blueColor
-        
-        sliderView.layer.shadowColor = UIColor.darkGray.cgColor
-        sliderView.layer.shadowOffset = .zero
-        sliderView.layer.shadowRadius = 4
-        sliderView.layer.shadowOpacity = 1
-        
-        lockView.layer.shadowColor = UIColor.darkGray.cgColor
-        lockView.layer.shadowOffset = .zero
-        lockView.layer.shadowRadius = 4
-        lockView.layer.shadowOpacity = 1
+        lockControl.backgroundColor = AppearanceHelper.grayish
         
         lockControl.layer.shadowColor = UIColor.darkGray.cgColor
         lockControl.layer.shadowOffset = .zero
@@ -57,55 +38,14 @@ class ViewController: UIViewController {
     }
                 
     @IBAction func sliderMoved(_ sender: LockControl) {
-        UIView.animate(withDuration: 0.25) {
-            self.sliderView.center.x = CGFloat(-sender.x)
-            
-            }
-        if sender.x >= -(sliderView.frame.width * 0.80 - sender.frame.width) {
-            unlock()
-        } else if sender.x <= (sliderView.frame.width * 0.05) && sender.x != 0 {
-            lock()
-        } else {
-            lock()
-        }
-                    
-    }
-                
-    @IBAction func resetLock(_ sender: UIBarButtonItem) {
-        lock()
-        
-        lockView.backgroundColor = AppearanceHelper.grayish
-        view.backgroundColor = AppearanceHelper.blueColor
-        lockControl.backgroundColor = UIColor.darkGray
-        sliderView.backgroundColor = AppearanceHelper.blueColor
-    }
-                
-    func unlock() {
-            lockImageView.image = UIImage(named: "Unlocked")
-            lockControl.isUserInteractionEnabled = false
-            UIView.animate(withDuration: 0.25) {
-            self.sliderView.center.x = self.sliderView.frame.maxX * (-1.08)
-            
-            }
         resetButton.isEnabled = true
-        
-        
-        lockView.backgroundColor = AppearanceHelper.blueColor
-        view.backgroundColor = AppearanceHelper.grayish
-        lockControl.backgroundColor = UIColor.lightGray
-        sliderView.backgroundColor = AppearanceHelper.blueColor
-        view.reloadInputViews()
-        
+
+    }
+    
+    @IBAction func resetLock(_ sender: UIBarButtonItem) {
+        lockControl.resetSlider()
+        self.resetButton.isEnabled = false
     }
                 
-    func lock() {
-            lockImageView.image = UIImage(named: "Locked")
-            lockControl.isUserInteractionEnabled = true
-            UIView.animate(withDuration: 0.18) {
-                self.sliderView.center.x = 35
-        }
-                    
-        resetButton.isEnabled = false
-    }
     
 }

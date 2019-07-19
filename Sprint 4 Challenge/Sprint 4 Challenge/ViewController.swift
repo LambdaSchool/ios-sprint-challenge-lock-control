@@ -73,6 +73,11 @@ class ViewController: UIViewController {
                 
     @IBAction func resetLock(_ sender: UIBarButtonItem) {
         lock()
+        
+        lockView.backgroundColor = AppearanceHelper.grayish
+        view.backgroundColor = AppearanceHelper.blueColor
+        lockControl.backgroundColor = UIColor.darkGray
+        sliderView.backgroundColor = AppearanceHelper.blueColor
     }
                 
     func unlock() {
@@ -83,6 +88,14 @@ class ViewController: UIViewController {
             
             }
         resetButton.isEnabled = true
+        
+        
+        lockView.backgroundColor = AppearanceHelper.blueColor
+        view.backgroundColor = AppearanceHelper.grayish
+        lockControl.backgroundColor = UIColor.lightGray
+        sliderView.backgroundColor = AppearanceHelper.blueColor
+        view.reloadInputViews()
+        
     }
                 
     func lock() {

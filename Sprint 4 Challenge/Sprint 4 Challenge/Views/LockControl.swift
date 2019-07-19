@@ -86,6 +86,13 @@ class LockControl: UIControl {
         let adjustedSliderBackgroundFrame = CGRect(x: sliderBackground.frame.minX + 4, y: sliderBackground.frame.minY, width: sliderBackground.frame.width - 37, height: sliderBackground.frame.height)
         
         if adjustedSliderBackgroundFrame.contains(touchLocation) {
+            
+            if touchLocation.x >= (sliderBackground.frame.maxX - 33) * 0.8 {
+                imageView.image = UIImage(named: "Unlocked")
+                self.isUserInteractionEnabled = false
+                sendActions(for: [.touchUpOutside, .valueChanged])
+            }
+            
             sliderButton.frame = CGRect(x: touchLocation.x, y: self.bounds.maxY - sliderBackground.frame.height, width: 30, height: 30)
         }
         

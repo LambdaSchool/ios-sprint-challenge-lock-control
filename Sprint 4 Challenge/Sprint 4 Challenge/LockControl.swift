@@ -40,10 +40,10 @@ import UIKit
         
         //stack view constraints.
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4),
-            stackView.topAnchor.constraint(equalTo: self.topAnchor)
+            stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
             ])
         
         // imageview
@@ -71,8 +71,8 @@ import UIKit
         
         // slider background view constraints
         NSLayoutConstraint.activate([
-            sliderView.heightAnchor.constraint(equalToConstant: 40),
-            sliderView.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -10)
+            sliderView.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -10),
+            sliderView.heightAnchor.constraint(equalToConstant: 40)
             ])
     
         // slider circle setup

@@ -37,7 +37,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-tM-hxT" userLabel="Slider View" customClass="LockController" customModule="Sprint_4_Challenge" customModuleProvider="target">
-                                <rect key="frame" x="48" y="568" width="318" height="54"/>
+                                <rect key="frame" x="82" y="575" width="250" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>

@@ -65,11 +65,13 @@ class LockController: UIControl {
     
     
     func getSliderRect(for value:CGFloat) -> CGRect {
-        let x = (bounds.width - lockSliderHeight) / 6.67
+        let x = ((bounds.width - lockSliderWidth - 10) * value) + 5
         let y = (bounds.height - lockSliderWidth) / 2
         
         return CGRect(x: x, y: y, width: lockSliderWidth, height: lockSliderWidth)
     }
+
+    
     
     //To reset the lock
     func reset() {

@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import UIKit
+
+enum AppearanceHelper {
+    
+    static func setAppearance() {
+        UINavigationBar.appearance().barTintColor = .black
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+        
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        UINavigationBar.appearance().largeTitleTextAttributes = textAttributes
+        UINavigationBar.appearance().tintColor = .red
+    }
+    
+
+    
+}

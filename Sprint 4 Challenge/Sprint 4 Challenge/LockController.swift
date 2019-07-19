@@ -19,10 +19,12 @@ class LockController: UIControl {
     var lockSliderValue: Double = 0
     
     
+    
     var sliderView = UIView()
     var lockSliderView = UIView()
     
     
+    //Slider height and width
     var lockSliderWidth: CGFloat {
         
         return frame.height * 0.825
@@ -35,7 +37,7 @@ class LockController: UIControl {
     
     
     
-    
+    // Functions
     func createSlider(_ slider: UIView) {
         let sliderRect = CGRect(x: 5, y: 5, width: lockSliderWidth, height: lockSliderWidth)
         
@@ -54,11 +56,23 @@ class LockController: UIControl {
         
     }
     
+    func reset() {
+        
+        lockSliderValue = 0.0
+        isUnlocked = false
+        updateSlider()
+        
+    }
+    
     func getSliderRect(for value:CGFloat) -> CGRect {
         let x = (bounds.width)
         let y = (bounds.height - lockSliderWidth) / 2
+        
         return CGRect(x: x, y: y, width: lockSliderWidth, height: lockSliderWidth)
     }
+    
+    
+    
     
     
 }

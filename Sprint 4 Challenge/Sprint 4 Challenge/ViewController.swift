@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //Properties
     @IBOutlet weak var lockView: UIView!
     @IBOutlet weak var sliderTrackView: LockController!
@@ -22,7 +22,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    
+    //Functions
     func startingPosition() {
         title = "Locked"
         
@@ -37,4 +39,27 @@ class ViewController: UIViewController {
     }
     
     
+    func unlock() {
+        
+        title = "Unlocked!"
+        
+        lockImage.image = UIImage(named: "Unlocked")
+        
+        resetButton.tintColor = .red
+        
+        
+    }
+    
+    
+    func reset() {
+        
+        sliderTrackView.reset()
+        sliderTrackView.isEnabled = true
+        sliderTrackView.isEnabled = true
+        
+        lockImage.image = UIImage(named: "Locked")
+        
+        resetButton.tintColor = .clear
+        
+    }
 }

@@ -15,14 +15,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetLockButton.tintColor = .white
+        resetLockButton.tintColor = .clear
         resetLockButton.isEnabled = false
     }
     
     @IBAction func resetLockButtonTapped(_ sender: Any) {
         lockControl.reset()
         UIView.animate(withDuration: 2) {
-            self.resetLockButton.tintColor = .white
+            self.resetLockButton.tintColor = .clear
         }
         
         resetLockButton.isEnabled = false

@@ -14,6 +14,7 @@ class LockControl: UIControl {
     
     var imageView: UIImageView = UIImageView()
     var sliderButton: UIView = UIView()
+    var sliderBackground = UIView()
     
     var minValue = 0.0
     var maxValue = 1.0
@@ -36,26 +37,26 @@ class LockControl: UIControl {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
+        stackView.isUserInteractionEnabled = false
         stackView.spacing = 8
         
         // setup imageview
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "Locked")
+        imageView.isUserInteractionEnabled = false
         
         stackView.addArrangedSubview(imageView)
         
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 150),
             imageView.widthAnchor.constraint(equalToConstant: 150)
             ])
         
-        
-        
         // setup slider background view
-        let sliderBackground = UIView()
         sliderBackground.backgroundColor = .lightGray
         sliderBackground.clipsToBounds = true
         sliderBackground.layer.cornerRadius = 18
+        sliderBackground.isUserInteractionEnabled = false
+        sliderBackground.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.addArrangedSubview(sliderBackground)
         
@@ -73,19 +74,68 @@ class LockControl: UIControl {
         
         
         // setup slider button
+        sliderButton.translatesAutoresizingMaskIntoConstraints = false
         sliderButton.backgroundColor = .black
         sliderButton.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 39, width: 30, height: 30)
         sliderButton.clipsToBounds = true
+        sliderButton.isUserInteractionEnabled = false
         sliderButton.layer.cornerRadius = sliderButton.frame.width / 2
         
         self.addSubview(sliderButton)
     }
     
+    
     func updateValue(at touch: UITouch) {
+        let touchLocation = touch.location(in: self)
+        let adjustedSliderBackgroundFrame = CGRect(x: sliderBackground.frame.minX + 4, y: sliderBackground.frame.minY, width: sliderBackground.frame.width - 37, height: sliderBackground.frame.height)
         
+        if adjustedSliderBackgroundFrame.contains(touchLocation) {
+            sliderButton.frame = CGRect(x: touchLocation.x, y: self.bounds.maxY - 39, width: 30, height: 30)
+        }
         
     }
 }
 
 
-
+extension LockControl {
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        if sliderButton.bounds.contains(touchPoint) {
+            sendActions(for: [.touchDown])
+        }
+        
+        return true
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let touchPoint = touch.location(in: self)
+        
+        if sliderBackground.frame.contains(touchPoint) {
+            updateValue(at: touch)
+            sendActions(for: [.touchDragInside])
+        } else {
+            sendActions(for: [.touchDragOutside])
+        }
+        
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        guard let touch = touch else { return }
+        
+        if sliderBackground.bounds.contains(touch.location(in: self)) {
+            updateValue(at: touch)
+            sendActions(for: [.touchUpInside])
+            print("touchupinside")
+        } else {
+            sendActions(for: [.touchUpOutside])
+            print("touchupoutside")
+        }
+    }
+    
+    override func cancelTracking(with event: UIEvent?) {
+        sendActions(for: [.touchCancel])
+        print("tracking cancelled")
+    }
+}

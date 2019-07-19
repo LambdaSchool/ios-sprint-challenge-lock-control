@@ -9,14 +9,82 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //Properties
+    @IBOutlet weak var lockView: UIView!
+    @IBOutlet weak var sliderTrackView: LockController!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var lockImage: UIImageView!
+    
+    let viewCornerRadius: CGFloat = 40
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        startingPosition()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func resetButtonTapped(_ sender: Any) {
+        
+        reset()
+        
+    }
+    
+    @IBAction func sliderUnlocked(_ sender: LockController) {
+        
+        if sender.lockSliderValue >= 0.80 {
+            
+            sender.lockSliderValue = 1
+            sliderTrackView.isEnabled = false
+            unlock()
+            
+            
+        }
+    }
+    
+    
+    //Functions
+    func startingPosition() {
+        title = "Locked"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppearanceHelper.myRed]
+        
+        lockImage.image = UIImage(named: "Locked")
+        lockImage.layer.cornerRadius = viewCornerRadius
+        
+        lockView.layer.cornerRadius = viewCornerRadius
+        
+        sliderTrackView.layer.cornerRadius = viewCornerRadius / 2.5
+        
+        resetButton.tintColor = .clear
+    }
+    
+    
+    func unlock() {
+        
+        title = "Unlocked"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        lockImage.image = UIImage(named: "Unlocked")
+        
+        resetButton.tintColor = AppearanceHelper.myRed
+        
+        
+    }
+    
+    
+    func reset() {
+        
+        title = "Locked"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppearanceHelper.myRed]
+        
+        sliderTrackView.reset()
+        sliderTrackView.isEnabled = true
+        sliderTrackView.isEnabled = true
+        
+        lockImage.image = UIImage(named: "Locked")
+        
+        resetButton.tintColor = .clear
+        
     }
 }

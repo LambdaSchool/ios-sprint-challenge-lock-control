@@ -16,5 +16,26 @@ class LockController: UIControl {
     var isUnlocked: Bool = false
     let minValue: Double = 0
     let maxValue: Double = 1
-    var lockValue: Double = 0
+    var lockSliderValue: Double = 0
+    
+    var lockSliderWidth: CGFloat {
+        
+        return frame.height * 0.825
+    }
+    
+    var lockSliderView = UIView()
+    
+    
+    func createSlider(_ slider: UIView) {
+        let sliderRect = CGRect(x: 5, y: 5, width: lockSliderWidth, height: lockSliderWidth)
+        slider.frame = sliderRect
+        slider.backgroundColor = .black
+        slider.layer.cornerRadius = lockSliderWidth / 2
+        
+        addSubview(slider)
+        
+        slider.isUserInteractionEnabled = false
+    }
+    
+    
 }

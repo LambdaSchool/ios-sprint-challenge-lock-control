@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-//@IBDesignable
+@IBDesignable
 class LockController: UIControl {
 
     //Properties
@@ -35,6 +35,11 @@ class LockController: UIControl {
         return frame.width * 0.15
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        createSlider(lockSliderView)
+    }
     
     
     // Functions
@@ -44,10 +49,12 @@ class LockController: UIControl {
         slider.frame = sliderRect
         slider.backgroundColor = .black
         slider.layer.cornerRadius = lockSliderWidth / 2
+        slider.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(slider)
         
         slider.isUserInteractionEnabled = false
+        
     }
     
     func updateSlider() {

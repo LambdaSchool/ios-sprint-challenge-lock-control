@@ -23,24 +23,26 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzV-FJ-RB9" userLabel="Lock Image">
                                         <rect key="frame" x="8" y="8" width="318" height="288"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="288" id="mTB-BF-jwI"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-tM-hxT" userLabel="Slider View" customClass="LockController" customModule="Sprint_4_Challenge" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="304" width="318" height="54"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="hzV-FJ-RB9" firstAttribute="leading" secondItem="oIn-tM-hxT" secondAttribute="leading" id="08u-0C-nu9"/>
                                     <constraint firstItem="hzV-FJ-RB9" firstAttribute="leading" secondItem="Izw-rD-ADy" secondAttribute="leading" constant="8" id="7Js-LT-N36"/>
                                     <constraint firstAttribute="trailing" secondItem="hzV-FJ-RB9" secondAttribute="trailing" constant="8" id="7Mm-q6-pKr"/>
-                                    <constraint firstItem="hzV-FJ-RB9" firstAttribute="trailing" secondItem="oIn-tM-hxT" secondAttribute="trailing" id="BKa-22-4fD"/>
-                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="hzV-FJ-RB9" secondAttribute="bottom" constant="8" symbolic="YES" id="gpu-R6-qBF"/>
                                     <constraint firstItem="hzV-FJ-RB9" firstAttribute="top" secondItem="Izw-rD-ADy" secondAttribute="top" constant="8" id="ioc-uH-V54"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-tM-hxT" userLabel="Slider View" customClass="LockController" customModule="Sprint_4_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="48" y="568" width="318" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="sliderUnlocked:" destination="BYZ-38-t0r" eventType="valueChanged" id="u9Z-9C-wPt"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,7 +55,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Locked" id="NkO-cY-Z9O">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Im7-jQ-ruR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Im7-jQ-ruR">
+                            <connections>
+                                <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="pzd-6Y-jB3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="lockImage" destination="hzV-FJ-RB9" id="reJ-OV-kLg"/>
@@ -64,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="139"/>
+            <point key="canvasLocation" x="1128.985507246377" y="138.61607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ffR-Xx-UeB">

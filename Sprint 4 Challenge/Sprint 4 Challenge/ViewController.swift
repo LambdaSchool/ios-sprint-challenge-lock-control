@@ -18,9 +18,29 @@ class ViewController: UIViewController {
     
     let viewCornerRadius: CGFloat = 40
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        startingPosition()
+    }
+    
+    @IBAction func resetButtonTapped(_ sender: Any) {
+        
+        reset()
+        
+    }
+    
+    @IBAction func sliderUnlocked(_ sender: LockController) {
+        
+        if sender.lockSliderValue >= 0.80 {
+            
+            sender.lockSliderValue = 1
+            sliderTrackView.isEnabled = false
+            unlock()
+            
+            
+        }
     }
     
     

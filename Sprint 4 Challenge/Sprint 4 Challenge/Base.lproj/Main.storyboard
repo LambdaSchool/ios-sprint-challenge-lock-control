@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gai-Ch-1ma">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Locked-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sprint_4_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-rD-ADy" userLabel="Lock View">
+                                <rect key="frame" x="40" y="265" width="334" height="366"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzV-FJ-RB9" userLabel="Lock Image">
+                                        <rect key="frame" x="8" y="8" width="318" height="288"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-tM-hxT" userLabel="Slider View">
+                                        <rect key="frame" x="8" y="304" width="318" height="54"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hzV-FJ-RB9" firstAttribute="leading" secondItem="Izw-rD-ADy" secondAttribute="leading" constant="8" id="7Js-LT-N36"/>
+                                    <constraint firstAttribute="trailing" secondItem="hzV-FJ-RB9" secondAttribute="trailing" constant="8" id="7Mm-q6-pKr"/>
+                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="hzV-FJ-RB9" secondAttribute="bottom" constant="8" id="Qk4-OT-MUP"/>
+                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="trailing" secondItem="hzV-FJ-RB9" secondAttribute="trailing" id="RjK-Nr-l7d"/>
+                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="Izw-rD-ADy" secondAttribute="top" constant="304" id="bzV-6d-zDO"/>
+                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="leading" secondItem="Izw-rD-ADy" secondAttribute="leading" constant="8" id="cYo-Dp-LfE"/>
+                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="hzV-FJ-RB9" secondAttribute="bottom" constant="8" id="epF-nY-r2h"/>
+                                    <constraint firstAttribute="bottom" secondItem="oIn-tM-hxT" secondAttribute="bottom" constant="8" id="hX8-lk-g23"/>
+                                    <constraint firstItem="hzV-FJ-RB9" firstAttribute="top" secondItem="Izw-rD-ADy" secondAttribute="top" constant="8" id="ioc-uH-V54"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Izw-rD-ADy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A5Y-I6-dLf"/>
+                            <constraint firstItem="Izw-rD-ADy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="177" id="dKB-uG-Lnn"/>
+                            <constraint firstItem="Izw-rD-ADy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hrL-Go-NJn"/>
+                            <constraint firstItem="Izw-rD-ADy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="omg-SL-dUr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Locked" id="NkO-cY-Z9O">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="Im7-jQ-ruR"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1130" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ffR-Xx-UeB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gai-Ch-1ma" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VwE-aH-3b8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7i4-JO-kPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbE-tc-Nq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="139"/>
         </scene>
     </scenes>
 </document>

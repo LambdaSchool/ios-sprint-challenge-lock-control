@@ -8,3 +8,13 @@
 
 import Foundation
 import UIKit
+
+class LockController: UIControl {
+    
+    //Properties
+    
+    var isUnlocked: Bool = false
+    let minValue: Double = 0
+    let maxValue: Double = 1
+    var lockValue: Double = 0
+}

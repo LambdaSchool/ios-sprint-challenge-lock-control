@@ -12,6 +12,9 @@
 		468B89E62137397400E7FF73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E42137397400E7FF73 /* Main.storyboard */; };
 		468B89E82137397500E7FF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E72137397500E7FF73 /* Assets.xcassets */; };
 		468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B89E92137397500E7FF73 /* LaunchScreen.storyboard */; };
+		D6C36DE522B546BB00A8D98E /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C36DE422B546BB00A8D98E /* AppearanceHelper.swift */; };
+		D6C36DE722B5479200A8D98E /* CGF Arch Reactor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6C36DE622B5479200A8D98E /* CGF Arch Reactor.ttf */; };
+		D6C36DEA22B54C3800A8D98E /* LockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C36DE922B54C3800A8D98E /* LockControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		468B89E72137397500E7FF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		468B89EA2137397500E7FF73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		468B89EC2137397500E7FF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6C36DE422B546BB00A8D98E /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
+		D6C36DE622B5479200A8D98E /* CGF Arch Reactor.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CGF Arch Reactor.ttf"; sourceTree = "<group>"; };
+		D6C36DE922B54C3800A8D98E /* LockControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,57 @@
 		468B89DF2137397400E7FF73 /* Sprint 4 Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				468B89E02137397400E7FF73 /* AppDelegate.swift */,
-				468B89E22137397400E7FF73 /* ViewController.swift */,
-				468B89E42137397400E7FF73 /* Main.storyboard */,
-				468B89E72137397500E7FF73 /* Assets.xcassets */,
-				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
-				468B89EC2137397500E7FF73 /* Info.plist */,
+				D6C36DE822B54C0000A8D98E /* Custom Control */,
+				D6C36DE022B5430C00A8D98E /* View Controllers */,
+				D6C36DE322B546A400A8D98E /* Helpers */,
+				D6C36DDF22B5430200A8D98E /* Storyboards */,
+				D6C36DDE22B542F400A8D98E /* Resources */,
 			);
 			path = "Sprint 4 Challenge";
+			sourceTree = "<group>";
+		};
+		D6C36DDE22B542F400A8D98E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D6C36DE622B5479200A8D98E /* CGF Arch Reactor.ttf */,
+				468B89E02137397400E7FF73 /* AppDelegate.swift */,
+				468B89E72137397500E7FF73 /* Assets.xcassets */,
+				468B89EC2137397500E7FF73 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D6C36DDF22B5430200A8D98E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E42137397400E7FF73 /* Main.storyboard */,
+				468B89E92137397500E7FF73 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D6C36DE022B5430C00A8D98E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				468B89E22137397400E7FF73 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D6C36DE322B546A400A8D98E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D6C36DE422B546BB00A8D98E /* AppearanceHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D6C36DE822B54C0000A8D98E /* Custom Control */ = {
+			isa = PBXGroup;
+			children = (
+				D6C36DE922B54C3800A8D98E /* LockControl.swift */,
+			);
+			path = "Custom Control";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +174,7 @@
 			files = (
 				468B89EB2137397500E7FF73 /* LaunchScreen.storyboard in Resources */,
 				468B89E82137397500E7FF73 /* Assets.xcassets in Resources */,
+				D6C36DE722B5479200A8D98E /* CGF Arch Reactor.ttf in Resources */,
 				468B89E62137397400E7FF73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +209,8 @@
 			files = (
 				468B89E32137397400E7FF73 /* ViewController.swift in Sources */,
 				468B89E12137397400E7FF73 /* AppDelegate.swift in Sources */,
+				D6C36DEA22B54C3800A8D98E /* LockControl.swift in Sources */,
+				D6C36DE522B546BB00A8D98E /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +355,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = 3XVDLP5XYQ;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,7 +373,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Info.plist";
+				DEVELOPMENT_TEAM = 3XVDLP5XYQ;
+				INFOPLIST_FILE = "$(SRCROOT)/Sprint 4 Challenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

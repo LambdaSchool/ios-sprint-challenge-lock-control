@@ -18,25 +18,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG9-Kj-Pkr">
-                                <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qh-XS-51q">
+                                <rect key="frame" x="40" y="188" width="334" height="334"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-oO-3wX">
+                                        <rect key="frame" x="0.0" y="67" width="334" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="QzW-ex-BgS"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="r3A-QM-Noc"/>
-                                    <constraint firstAttribute="width" secondItem="kG9-Kj-Pkr" secondAttribute="height" multiplier="1:1" id="xa7-bP-vic"/>
+                                    <constraint firstItem="Uw2-oO-3wX" firstAttribute="width" secondItem="9Qh-XS-51q" secondAttribute="height" multiplier="1:1" id="Lmh-hv-noh"/>
+                                    <constraint firstAttribute="width" secondItem="9Qh-XS-51q" secondAttribute="height" multiplier="1:1" id="fv2-ph-o8R"/>
+                                    <constraint firstItem="Uw2-oO-3wX" firstAttribute="centerY" secondItem="9Qh-XS-51q" secondAttribute="centerY" id="nGP-OB-idV"/>
+                                    <constraint firstItem="Uw2-oO-3wX" firstAttribute="centerX" secondItem="9Qh-XS-51q" secondAttribute="centerX" id="v13-13-V2v"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoC-4I-Cnr" customClass="LockControl" customModule="Sprint_4_Challenge" customModuleProvider="target">
+                                <rect key="frame" x="57" y="542" width="300" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Es7-h8-sjL">
+                                        <rect key="frame" x="8" y="7" width="56" height="56"/>
+                                        <color key="backgroundColor" red="0.13505540460000001" green="0.51922058760000001" blue="0.70247065360000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Es7-h8-sjL" secondAttribute="height" multiplier="1:1" id="vgv-nt-Y0o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8KN-FG-Dh4"/>
+                                    <constraint firstItem="Es7-h8-sjL" firstAttribute="leading" secondItem="hoC-4I-Cnr" secondAttribute="leading" constant="8" id="KJi-g8-dgi"/>
+                                    <constraint firstItem="Es7-h8-sjL" firstAttribute="centerY" secondItem="hoC-4I-Cnr" secondAttribute="centerY" id="ROg-Ep-CNN"/>
+                                    <constraint firstItem="Es7-h8-sjL" firstAttribute="height" secondItem="hoC-4I-Cnr" secondAttribute="height" multiplier="8/10" id="WRR-o0-VGu"/>
+                                    <constraint firstAttribute="height" constant="70" id="k7R-yQ-wH5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="hID-yS-uVa"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kG9-Kj-Pkr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4fo-Nb-jSk"/>
-                            <constraint firstItem="kG9-Kj-Pkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vh5-6P-dbR"/>
+                            <constraint firstItem="hoC-4I-Cnr" firstAttribute="top" secondItem="9Qh-XS-51q" secondAttribute="bottom" constant="20" id="Eqn-0V-3fR"/>
+                            <constraint firstItem="9Qh-XS-51q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Igu-cw-QqV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Qh-XS-51q" secondAttribute="trailing" constant="40" id="Il2-uL-KvO"/>
+                            <constraint firstItem="9Qh-XS-51q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NNp-Zm-tR9"/>
+                            <constraint firstItem="hoC-4I-Cnr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mRR-Eq-GP1"/>
+                            <constraint firstItem="9Qh-XS-51q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="w2O-Ys-IaG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hVr-uw-O8a">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="tln-dw-YLs"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="tln-dw-YLs">
+                            <connections>
+                                <action selector="resetLock:" destination="BYZ-38-t0r" id="JUq-ab-NMg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lockControl" destination="hoC-4I-Cnr" id="05v-k1-Uc1"/>
+                        <outlet property="lockImageView" destination="Uw2-oO-3wX" id="T9U-7R-uAV"/>
+                        <outlet property="lockView" destination="9Qh-XS-51q" id="nWW-HO-d9Q"/>
+                        <outlet property="resetButton" destination="tln-dw-YLs" id="g1P-zk-nMT"/>
+                        <outlet property="sliderView" destination="Es7-h8-sjL" id="Xa6-Uf-YsB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

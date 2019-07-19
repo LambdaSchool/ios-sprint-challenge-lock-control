@@ -78,7 +78,7 @@ class ViewController: UIViewController {
     func unlock() {
             lockImageView.image = UIImage(named: "Unlocked")
             lockControl.isUserInteractionEnabled = false
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.25) {
             self.sliderView.center.x = self.sliderView.frame.maxX * (-1.08)
             
             }

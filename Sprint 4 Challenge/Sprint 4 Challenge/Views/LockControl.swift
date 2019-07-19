@@ -86,13 +86,13 @@ class LockControl: UIControl {
         let adjustedSliderBackgroundFrame = CGRect(x: sliderBackground.frame.minX + 4, y: sliderBackground.frame.minY, width: sliderBackground.frame.width - 37, height: sliderBackground.frame.height)
         
         if adjustedSliderBackgroundFrame.contains(touchLocation) {
-            sliderButton.frame = CGRect(x: touchLocation.x, y: self.bounds.maxY - 39, width: 30, height: 30)
+            sliderButton.frame = CGRect(x: touchLocation.x, y: self.bounds.maxY - sliderBackground.frame.height, width: 30, height: 30)
         }
         
     }
     
     func reset() {
-        sliderButton.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 39, width: 30, height: 30)
+        sliderButton.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - sliderBackground.frame.height, width: 30, height: 30)
         imageView.image = UIImage(named: "Locked")
         self.isUserInteractionEnabled = true
     }
@@ -116,11 +116,12 @@ extension LockControl {
         if sliderBackground.frame.contains(touchPoint) {
             updateValue(at: touch)
             sendActions(for: [.touchDragInside])
+            return true
         } else {
             sendActions(for: [.touchDragOutside])
+            return false
         }
-        
-        return true
+
     }
     
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {

@@ -15,26 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         lockImageView.image = UIImage(named: "Locked")
         resetButton.isEnabled = false
         lockControl.maxX = lockControl.frame.width - (sliderView.frame.width / 2)
         lockControl.minX = sliderView.center.x
         setAppearance()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
     
     func setAppearance() {
         lockView.layer.cornerRadius = lockControl.frame.width / 2
@@ -88,7 +82,7 @@ class ViewController: UIViewController {
             
             }
         resetButton.isEnabled = true
-        }
+    }
                 
     func lock() {
             lockImageView.image = UIImage(named: "Locked")
@@ -98,8 +92,6 @@ class ViewController: UIViewController {
         }
                     
         resetButton.isEnabled = false
-        }
-                
-        
+    }
     
 }

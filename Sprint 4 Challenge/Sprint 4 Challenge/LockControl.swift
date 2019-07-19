@@ -28,6 +28,8 @@ import UIKit
         }
     }
     
+    // MARK: - Tracking
+    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         if bounds.contains(touchPoint) {
@@ -64,9 +66,6 @@ import UIKit
     override func cancelTracking(with event: UIEvent?) {
         sendActions(for: .touchCancel)
     }
-    
-
-    
     
 }
 

@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
-
+//@IBDesignable
 class LockController: UIControl {
-    
+
     //Properties
     
     var isUnlocked: Bool = false

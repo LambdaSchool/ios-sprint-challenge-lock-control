@@ -23,22 +23,22 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzV-FJ-RB9" userLabel="Lock Image">
                                         <rect key="frame" x="8" y="8" width="318" height="288"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="288" id="mTB-BF-jwI"/>
+                                        </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-tM-hxT" userLabel="Slider View">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-tM-hxT" userLabel="Slider View" customClass="LockController" customModule="Sprint_4_Challenge" customModuleProvider="target">
                                         <rect key="frame" x="8" y="304" width="318" height="54"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="hzV-FJ-RB9" firstAttribute="leading" secondItem="oIn-tM-hxT" secondAttribute="leading" id="08u-0C-nu9"/>
                                     <constraint firstItem="hzV-FJ-RB9" firstAttribute="leading" secondItem="Izw-rD-ADy" secondAttribute="leading" constant="8" id="7Js-LT-N36"/>
                                     <constraint firstAttribute="trailing" secondItem="hzV-FJ-RB9" secondAttribute="trailing" constant="8" id="7Mm-q6-pKr"/>
-                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="hzV-FJ-RB9" secondAttribute="bottom" constant="8" id="Qk4-OT-MUP"/>
-                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="trailing" secondItem="hzV-FJ-RB9" secondAttribute="trailing" id="RjK-Nr-l7d"/>
-                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="Izw-rD-ADy" secondAttribute="top" constant="304" id="bzV-6d-zDO"/>
-                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="leading" secondItem="Izw-rD-ADy" secondAttribute="leading" constant="8" id="cYo-Dp-LfE"/>
-                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="hzV-FJ-RB9" secondAttribute="bottom" constant="8" id="epF-nY-r2h"/>
-                                    <constraint firstAttribute="bottom" secondItem="oIn-tM-hxT" secondAttribute="bottom" constant="8" id="hX8-lk-g23"/>
+                                    <constraint firstItem="hzV-FJ-RB9" firstAttribute="trailing" secondItem="oIn-tM-hxT" secondAttribute="trailing" id="BKa-22-4fD"/>
+                                    <constraint firstItem="oIn-tM-hxT" firstAttribute="top" secondItem="hzV-FJ-RB9" secondAttribute="bottom" constant="8" symbolic="YES" id="gpu-R6-qBF"/>
                                     <constraint firstItem="hzV-FJ-RB9" firstAttribute="top" secondItem="Izw-rD-ADy" secondAttribute="top" constant="8" id="ioc-uH-V54"/>
                                 </constraints>
                             </view>
@@ -55,6 +55,12 @@
                     <navigationItem key="navigationItem" title="Locked" id="NkO-cY-Z9O">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Im7-jQ-ruR"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lockImage" destination="hzV-FJ-RB9" id="reJ-OV-kLg"/>
+                        <outlet property="lockView" destination="Izw-rD-ADy" id="imU-rT-6G1"/>
+                        <outlet property="resetButton" destination="Im7-jQ-ruR" id="vFB-q6-GJb"/>
+                        <outlet property="sliderTrackView" destination="oIn-tM-hxT" id="aW6-rE-Pjq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

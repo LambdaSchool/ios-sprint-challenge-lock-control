@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         lockView.backgroundColor = AppearanceHelper.grayish
         view.backgroundColor = AppearanceHelper.blueColor
         lockControl.backgroundColor = UIColor.darkGray
+        sliderView.backgroundColor = AppearanceHelper.blueColor
         
         sliderView.layer.shadowColor = UIColor.darkGray.cgColor
         sliderView.layer.shadowOffset = .zero

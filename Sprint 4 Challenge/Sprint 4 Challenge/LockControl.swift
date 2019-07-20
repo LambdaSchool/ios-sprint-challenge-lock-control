@@ -54,7 +54,7 @@ import UIKit
         
         // imageview constraint
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 150)
+            imageView.widthAnchor.constraint(equalToConstant: 120)
             ])
         
         // slider background view
@@ -145,7 +145,7 @@ extension LockControl {
             sendActions(for: [.touchUpOutside, .valueChanged])
         } else {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
-                self.sliderCircle.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 39, width: 30, height: 30)
+                self.sliderCircle.frame = CGRect(x: self.bounds.minX + 10, y: self.bounds.maxY - 40, width: 30, height: 30)
             }, completion: nil)
             sendActions(for: [.touchUpOutside])
         }
